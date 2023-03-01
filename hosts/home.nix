@@ -15,8 +15,8 @@
 
 { config, lib, pkgs, user, ... }:
 
-{ 
-  imports =                                   # Home Manager Modules
+{
+  imports = # Home Manager Modules
     (import ../modules/editors) ++
     (import ../modules/programs) ++
     (import ../modules/services);
@@ -27,38 +27,46 @@
 
     packages = with pkgs; [
       # Terminal
-      pfetch            # Minimal fetch
-      ranger            # File Manager
-      tldr              # Helper
+      pfetch # Minimal fetch
+      ranger # File Manager
+      tldr # Helper
+      ripgrep
+      fd
 
       # Video/Audio
-      feh               # Image Viewer
-      mpv               # Media Player
-      pavucontrol       # Audio Control
-      vlc               # Media Player
+      feh # Image Viewer
+      mpv # Media Player
+      pavucontrol # Audio Control
+      vlc # Media Player
 
       # Apps
-      appimage-run      # Runs AppImages on NixOS
-      firefox           # Browser
-      microsoft-edge-dev# Browser
+      appimage-run # Runs AppImages on NixOS
+      firefox # Browser
+      microsoft-edge-dev # Browser
 
       # File Management
-      okular            # PDF Viewer
+      okular # PDF Viewer
       gnome.file-roller # Archive Manager
-      pcmanfm           # File Manager
-      rsync             # Syncer - $ ssync -r dir1/ dir2/
-      unzip             # Zip Files
-      unrar             # Rar Files
-       
-      obs-studio       # Recording/Live Streaming
+      pcmanfm # File Manager
+      rsync # Syncer - $ ssync -r dir1/ dir2/
+      unzip # Zip Files
+      unrar # Rar Files
+
+      obs-studio # Recording/Live Streaming
       keyd
       v2raya
+
+      gcc
+      nodejs
+
+      yesplaymusic
     ];
     file.".config/themes/wallpaper.jpg".source = ../modules/themes/wallpaper.jpg;
     file.".config/themes/winter-wall.png".source = ../modules/themes/winter-wall.png;
     file.".config/themes/wall".source = ../modules/themes/wall;
     file.".config/themes/wall.mp4".source = ../modules/themes/wall.mp4;
-    pointerCursor = {                         # This will set cursor system-wide so applications can not choose their own
+    pointerCursor = {
+      # This will set cursor system-wide so applications can not choose their own
       gtk.enable = true;
       #name = "Dracula-cursors";
       #name = "Catppuccin-Mocha-Dark-Cursors";
@@ -75,7 +83,8 @@
     home-manager.enable = true;
   };
 
-  gtk = {                                     # Theming
+  gtk = {
+    # Theming
     enable = true;
     theme = {
       #name = "Dracula";
@@ -90,7 +99,7 @@
       package = pkgs.papirus-icon-theme;
     };
     font = {
-      name = "JetBrains Mono Medium";         # or FiraCode Nerd Font Mono Medium
-    };                                        # Cursor is declared under home.pointerCursor
+      name = "JetBrains Mono Medium"; # or FiraCode Nerd Font Mono Medium
+    }; # Cursor is declared under home.pointerCursor
   };
 }

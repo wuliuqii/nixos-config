@@ -120,13 +120,11 @@ let
     bind=ALTSHIFT,8,movetoworkspace,8
     bind=ALTSHIFT,9,movetoworkspace,9
     bind=ALTSHIFT,0,movetoworkspace,10
-    bind=ALTSHIFT,l,movetoworkspace,+1
-    bind=ALTSHIFT,h,movetoworkspace,-1
 
-    bind=CTRL,l,resizeactive,20 0
-    bind=CTRL,h,resizeactive,-20 0
-    bind=CTRL,j,resizeactive,0 -20
-    bind=CTRL,k,resizeactive,0 20
+    bind=ALTSHIFT,l,resizeactive,20 0
+    bind=ALTSHIFT,h,resizeactive,-20 0
+    bind=ALTSHIFT,j,resizeactive,0 -20
+    bind=ALTSHIFT,k,resizeactive,0 20
 
     bind=,print,exec,${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.swappy}/bin/swappy -f - -o ~/Pictures/$(date +%Hh_%Mm_%Ss_%d_%B_%Y).png && notify-send "Saved to ~/Pictures/$(date +%Hh_%Mm_%Ss_%d_%B_%Y).png"
 

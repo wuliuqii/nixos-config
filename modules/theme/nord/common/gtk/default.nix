@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, user, ... }:
+{ pkgs, ... }:
 
 {
   home.sessionVariables = {

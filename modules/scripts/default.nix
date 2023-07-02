@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   cava-internal = pkgs.writeShellScriptBin "cava-internal" ''

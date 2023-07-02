@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.firefox = {
@@ -68,7 +68,7 @@
 
               * {
               font-family: JetBrainsMono Nerd Font Mono !important;
-              font-size: 12pt !important;
+              font-size: 16pt !important;
               }
 
               /* #nav-bar { visibility: collapse !important; } */

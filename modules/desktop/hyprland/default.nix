@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   imports = [ ../../programs/wayland/waybar ];
   programs = {

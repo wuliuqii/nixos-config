@@ -23,6 +23,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" ];
   };
+  security.sudo.wheelNeedsPassword = false;
 
   boot = {
     loader = {
@@ -82,17 +83,4 @@
     };
   };
   security.polkit.enable = true;
-  security.sudo = {
-    enable = false;
-    extraConfig = ''
-      ${user} ALL=(ALL) NOPASSWD:ALL
-    '';
-  };
-  security.doas = {
-    enable = true;
-    extraConfig = ''
-      permit nopass :wheel
-    '';
-  };
-
 }

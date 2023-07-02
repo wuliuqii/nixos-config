@@ -11,11 +11,6 @@
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
-
-    packages = with pkgs; [
-      vscode
-      microsoft-edge-dev
-    ];
   };
 
   programs = {

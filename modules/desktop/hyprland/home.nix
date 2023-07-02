@@ -2,7 +2,6 @@
 
 {
   home.sessionVariables = {
-    EDITOR = "code";
     BROWSER = "firefox";
     TERMINAL = "foot";
     GTK_IM_MODULE = "fcitx5";
@@ -32,9 +31,9 @@
     extraConfig = ''
       $mainMod = ALT
 
-      monitor=,preferred,auto,1 
-      # monitor=HDMI-A-1, 1920x1080, 0x0, 1
-      # monitor=eDP-1, 1920x1080, 1920x0, 1
+      # monitor=,preferred,auto,1 
+      monitor=DP-1, 3840x2160, 0x0, 2
+      monitor=eDP-1, 2880x1800@120, 3820x0, 2
 
       input {
         kb_layout = us
@@ -304,6 +303,7 @@
       # auto start #
       #------------#
       exec-once = fcitx5 &
+      exec-once = waybar &
       exec-once = launch_waybar &
       exec-once = mako &
       exec-once = border_color &
@@ -334,7 +334,16 @@
       #-----------------#
       # workspace rules #
       #-----------------#
-      #workspace=HDMI-A-1,10
+      workspace=DP-1,1
+      workspace=DP-1,2
+      workspace=DP-1,3
+      workspace=DP-1,4
+      workspace=DP-1,5
+      workspace=eDP-1,6
+      workspace=eDP-1,7
+      workspace=eDP-1,8
+      workspace=eDP-1,9
+      workspace=eDP-1,10
     '';
   };
 }

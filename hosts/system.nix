@@ -34,10 +34,10 @@
 
   nix = {
     settings = {
-      # substituters = [
-      #   "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-      #   "https://cache.nixos.org/"
-      # ];
+      substituters = [
+        #   "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+        "https://cache.nixos.org/"
+      ];
       auto-optimise-store = true; # Optimise syslinks
     };
     gc = {

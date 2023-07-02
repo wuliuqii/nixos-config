@@ -8,4 +8,5 @@
   ./search
   ./zathura
   ./foot
+  ./vscode
 ]

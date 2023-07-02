@@ -58,6 +58,7 @@
 
   services = {
     getty.autologinUser = "${user}";
+    tlp.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

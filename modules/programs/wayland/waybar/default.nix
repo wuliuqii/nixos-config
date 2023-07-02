@@ -203,7 +203,7 @@
           "format" = "{:%I:%M %p  %A %b %d}";
           "interval" = 1;
           "tooltip" = true;
-          "tooltip-format" = "上午：高数\n下午：Ps\n晚上：Golang\n<tt>{calendar}</tt>";
+          "tooltip-format" = "<tt>{calendar}</tt>";
         };
         "cpu" = {
           "format" = "󰻠 {usage}%";

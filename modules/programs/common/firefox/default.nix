@@ -68,7 +68,7 @@
 
               * {
               font-family: JetBrainsMono Nerd Font Mono !important;
-              font-size: 16pt !important;
+              font-size: 14pt !important;
               }
 
               /* #nav-bar { visibility: collapse !important; } */

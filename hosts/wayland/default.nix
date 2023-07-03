@@ -25,9 +25,14 @@
   };
   security.sudo.wheelNeedsPassword = false;
 
+  sops.age.keyFile = "/home/${user}/.config/sops/age/keys.txt";
+
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 10;
+      };
       efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";

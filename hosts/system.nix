@@ -42,7 +42,7 @@
     };
     gc = {
       automatic = true;
-      dates = "daily";
+      dates = "weekly";
       options = "--delete-older-than 2d";
     };
     package = pkgs.nixVersions.unstable;

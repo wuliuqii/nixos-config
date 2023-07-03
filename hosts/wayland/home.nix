@@ -1,4 +1,4 @@
-{ user, ... }:
+{ pkgs, user, ... }:
 
 {
   imports =
@@ -11,6 +11,11 @@
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
+
+    packages = with pkgs; [
+      gnumake
+      nix-output-monitor
+    ];
   };
 
   programs = {

@@ -33,7 +33,7 @@
 
       # monitor=,preferred,auto,1 
       monitor=DP-1, 3840x2160, 0x0, 2
-      monitor=eDP-1, 2880x1800@120, 3820x0, 2
+      monitor=eDP-1, 2880x1800@60, 3820x0, 2
 
       input {
         kb_layout = us

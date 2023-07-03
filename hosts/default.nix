@@ -10,10 +10,12 @@ in
     modules = [
       ./wayland
     ] ++ [
+      ../secrets
       ./system.nix
     ] ++ [
       inputs.hyprland.nixosModules.default
       inputs.home-manager.nixosModules.home-manager
+      inputs.sops-nix.nixosModules.sops
       {
         home-manager = {
           useGlobalPkgs = true;

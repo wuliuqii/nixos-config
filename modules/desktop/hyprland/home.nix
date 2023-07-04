@@ -1,17 +1,22 @@
 { ... }:
 
 {
-  home.sessionVariables = {
-    EDITOR = "hx";
-    BROWSER = "firefox";
-    TERMINAL = "foot";
-    GTK_IM_MODULE = "fcitx5";
-    QT_IM_MODULE = "fcitx5";
-    XMODIFIERS = "@im=fcitx5";
-    XDG_CONFIG_HOME = "\${HOME}/.config";
-    XDG_CACHE_HOME = "\${HOME}/.cache";
-    XDG_BIN_HOME = "\${HOME}/.local/bin";
-    XDG_DATA_HOME = "\${HOME}/.local/share";
+  home = {
+    sessionVariables = {
+      EDITOR = "hx";
+      BROWSER = "firefox";
+      TERMINAL = "foot";
+      GTK_IM_MODULE = "fcitx5";
+      QT_IM_MODULE = "fcitx5";
+      XMODIFIERS = "@im=fcitx5";
+      XDG_CONFIG_HOME = "\${HOME}/.config";
+      XDG_CACHE_HOME = "\${HOME}/.cache";
+      XDG_BIN_HOME = "\${HOME}/.local/bin";
+      XDG_DATA_HOME = "\${HOME}/.local/share";
+    };
+    sessionPath = [
+      "$HOME/go/bin"
+    ];
   };
   programs = {
     bash = {

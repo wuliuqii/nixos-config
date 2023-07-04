@@ -13,6 +13,7 @@ in
       ../secrets
       ./system.nix
     ] ++ [
+      { nixpkgs.overlays = [ inputs.fenix.overlays.default ]; }
       inputs.hyprland.nixosModules.default
       inputs.home-manager.nixosModules.home-manager
       inputs.sops-nix.nixosModules.sops

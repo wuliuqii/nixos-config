@@ -13,6 +13,7 @@
       l = "exa";
       ls = "exa";
       vim = "hx";
+      grep = "rg";
       c = "clear";
       top = "btop";
       lg = "lazygit";
@@ -30,3 +31,4 @@
     ];
   };
 }
+

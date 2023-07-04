@@ -10,4 +10,5 @@
   ./foot
   ./vscode
   ./helix
-]
+] ++
+(import ./develop)

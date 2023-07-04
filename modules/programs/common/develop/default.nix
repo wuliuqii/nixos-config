@@ -1,0 +1,4 @@
+[
+  ./go.nix
+  ./rust.nix
+]

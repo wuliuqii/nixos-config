@@ -3,11 +3,12 @@
 
   nixConfig = { };
 
-  outputs = inputs @ { nixpkgs, ... }:
+  outputs =inputs @ { nixpkgs, ... }:
     let
       user = "gallon";
     in
     {
+      packages.x86_64-linux.default = inputs.fenix.packages.x86_64-linux.minimal.toolchain;
       nixosConfigurations = (
         import ./hosts {
           system = "x86_64-linux";
@@ -31,5 +32,10 @@
       };
 
       sops-nix.url = "github:Mic92/sops-nix";
+
+      fenix = {
+        url = "github:nix-community/fenix";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
     };
 }

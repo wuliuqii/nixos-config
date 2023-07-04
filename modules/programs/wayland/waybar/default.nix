@@ -89,7 +89,7 @@
                 padding-right: 6px;
                 color: #7ebae4;
               }
-        #mode, #clock, #memory, #temperature,#cpu,#mpd, #custom-wall, #temperature, #backlight, #pulseaudio, #network, #battery, #custom-powermenu, #custom-cava-internal {
+        #mode, #clock, #memory, #temperature,#cpu,#mpd, #temperature, #backlight, #pulseaudio, #network, #battery, #custom-powermenu, #custom-cava-internal {
                 padding-left: 10px;
                 padding-right: 10px;
               }
@@ -218,13 +218,6 @@
           "on-click" = "pkill rofi || ~/.config/rofi/launcher.sh";
           "tooltip" = false;
         };
-        "custom/wall" = {
-          "on-click" = "wallpaper_random";
-          "on-click-middle" = "default_wall";
-          "on-click-right" = "killall dynamic_wallpaper || dynamic_wallpaper &";
-          "format" = " 󰠖 ";
-          "tooltip" = false;
-        };
         "custom/powermenu" = {
           "format" = "";
           "on-click" = "pkill rofi || ~/.config/rofi/powermenu.sh";
@@ -254,7 +247,6 @@
           "wlr/workspaces"
           "temperature"
           # "idle_inhibitor"
-          "custom/wall"
           "mpd"
           "custom/cava-internal"
         ];
@@ -305,6 +297,7 @@
           "tooltip" = false;
         };
         "temperature" = {
+          "hwmon-path" = "/sys/class/hwmon/hwmon1/temp1_input";
           "format" = " {temperatureC}°C";
           "tooltip" = false;
         };

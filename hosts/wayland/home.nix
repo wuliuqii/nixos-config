@@ -19,6 +19,7 @@
       age
       sops
       thefuck
+      killall
     ];
   };
 

@@ -151,6 +151,9 @@
         sensitivity = -0.5
       }
 
+      #--------------#
+      # quick launch #
+      #--------------#
       bind = $mainMod, Return, exec, foot
       bind = $mainMod, Q, killactive,
       bind = $mainMod SHIFT, Space, togglefloating,
@@ -160,6 +163,8 @@
       bind = $mainMod, J, togglesplit, # dwindle
       bind = $mainMod, V, exec, code
       bind = $mainMod, W, exec, firefox
+      bind = $mainMod, Z, exec, grimblast --notify --cursor copy area
+      bind = $mainMod CLTR, Z, exec, grimblast --notify --cursor copysave area ~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
 
       #------------#
       # change gap #

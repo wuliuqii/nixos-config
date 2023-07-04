@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [ ../../programs/wayland/waybar ];
   programs = {
@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     swaylock-effects
     pamixer
+    inputs.hypr-contrib.packages.${pkgs.system}.grimblast
   ];
 
   security.pam.services.swaylock = { };

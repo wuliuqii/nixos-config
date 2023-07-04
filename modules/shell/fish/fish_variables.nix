@@ -33,5 +33,5 @@
   SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
   SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dbrblack
 
-  SETUVAR fish_user_paths:/home/ruixi/\x2enpm\x2dglobal/bin
+  SETUVAR fish_user_paths:/home/gallon/\x2enpm\x2dglobal/bin
 ''

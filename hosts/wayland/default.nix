@@ -71,6 +71,21 @@
       pulse.enable = true;
       jack.enable = true;
     };
+    keyd = {
+      enable = true;
+      settings = {
+        main = {
+          capslock = "overload(control, esc)";
+          rightalt = "layer(rightalt)";
+        };
+        rightalt = {
+          h = "left";
+          j = "down";
+          k = "up";
+          l = "right";
+        };
+      };
+    };
   };
 
   systemd = {

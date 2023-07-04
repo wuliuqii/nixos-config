@@ -18,6 +18,7 @@
       nix-output-monitor
       age
       sops
+      thefuck
     ];
   };
 

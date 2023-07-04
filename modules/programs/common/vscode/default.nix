@@ -1,18 +1,11 @@
 { pkgs
 , ...
 }:
-let
-  fcitx-remote = "${pkgs.fcitx5}/bin/fcitx5-remote";
-in
 {
   home.packages = with pkgs; [
     nixpkgs-fmt
     nil
   ];
-
-  home.sessionVariables = {
-    EDITOR = "code";
-  };
 
   programs.vscode = {
     enable = true;

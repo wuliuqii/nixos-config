@@ -2,4 +2,5 @@
   ./fish
   ./git
   ./bash
+  ./starship
 ]

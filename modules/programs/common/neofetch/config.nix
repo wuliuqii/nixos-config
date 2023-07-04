@@ -64,19 +64,4 @@
   memory_display="off"
   battery_display="off"
   disk_display="off"
-  # image_backend = "sixel"
-  # # image_source="${./sakurafetch.png}"
-  # image_source="${./nixgirl.png}"
-  # ascii_distro="auto"
-  # ascii_colors=(distro)
-  # ascii_bold="on"
-  # image_loop="off"
-  # crop_mode="normal"
-  # crop_offset="center"
-  # image_size="208px"
-  # gap=2
-  # yoffset=0
-  # xoffset=0
-  # background_color=
-  # stdout="off"
 ''

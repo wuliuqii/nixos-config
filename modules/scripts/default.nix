@@ -22,7 +22,7 @@ let
            --fade-in 0.3
   '';
   default_wall = pkgs.writeShellScriptBin "default_wall" ''
-    swww img "${../theme/nord/common/wall/default.png}" --transition-type random
+    swww img "${../theme/nord/common/wall/earth-in-space.png}" --transition-type random
   '';
   border_color = pkgs.writeShellScriptBin "border_color" ''
     function border_color {

@@ -66,6 +66,7 @@
       "workbench.colorTheme" = "Nord";
       "workbench.iconTheme" = "eq-material-theme-icons";
 
+      "explorer.confirmDelete" = false;
 
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nil";

@@ -9,4 +9,5 @@
   ./zathura
   ./foot
   ./vscode
+  ./helix
 ]

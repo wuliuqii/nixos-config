@@ -158,12 +158,8 @@
       bind = $mainMod,Y,pin
       bind = $mainMod, P, pseudo, # dwindle
       bind = $mainMod, J, togglesplit, # dwindle
-
-      #-----------------------#
-      # Toggle grouped layout #
-      #-----------------------#
-      bind = $mainMod, K, togglegroup,
-      bind = $mainMod, Tab, changegroupactive, f
+      bind = $mainMod, V, exec, code
+      bind = $mainMod, W, exec, firefox
 
       #------------#
       # change gap #
@@ -194,9 +190,6 @@
       bind = $mainMod, 0, workspace, 10
       bind = $mainMod, period, workspace, e+1
       bind = $mainMod, comma, workspace,e-1
-      bind = $mainMod, Q, workspace,QQ
-      bind = $mainMod, T, workspace,TG
-      bind = $mainMod, M, workspace,Music
 
       #-------------------------------#
       # special workspace(scratchpad) #
@@ -254,8 +247,8 @@
       #------------------------#
       # quickly launch program #
       #------------------------# 
-      bind=$mainMod,L,exec,myswaylock
-      bind=,Super_L,exec, pkill rofi || ~/.config/rofi/launcher.sh
+      bind=SUPER,L,exec,myswaylock
+      bind=SUPER,Space,exec, pkill rofi || ~/.config/rofi/launcher.sh
       bind=$mainMod,Super_L,exec, bash ~/.config/rofi/powermenu.sh
 
       #-----------------------------------------#

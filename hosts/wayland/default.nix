@@ -76,9 +76,9 @@
       settings = {
         main = {
           capslock = "overload(control, esc)";
-          rightalt = "layer(rightalt)";
+          rightalt = "layer(alt)";
         };
-        rightalt = {
+        alt = {
           h = "left";
           j = "down";
           k = "up";

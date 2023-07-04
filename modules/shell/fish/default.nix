@@ -21,12 +21,15 @@
     plugins = [
       {
         name = "z";
-        src = pkgs.fetchFromGitHub {
-          owner = "jethrokuan";
-          repo = "z";
-          rev = "ddeb28a7b6a1f0ec6dae40c636e5ca4908ad160a";
-          sha256 = "0c5i7sdrsp0q3vbziqzdyqn4fmp235ax4mn4zslrswvn8g3fvdyh";
-        };
+        src = pkgs.fishPlugins.z.src;
+      }
+      {
+        name = "plugin-git";
+        src = pkgs.fishPlugins.plugin-git.src;
+      }
+      {
+        name = "autopair";
+        src = pkgs.fishPlugins.autopair.src;
       }
     ];
   };

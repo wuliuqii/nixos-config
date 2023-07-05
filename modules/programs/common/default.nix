@@ -7,7 +7,7 @@
   ./resource_monitor
   ./search
   ./zathura
-  ./foot
+  ./kitty
   ./vscode
   ./helix
   ./joshuto

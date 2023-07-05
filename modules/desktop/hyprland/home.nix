@@ -5,7 +5,7 @@
     sessionVariables = {
       EDITOR = "hx";
       BROWSER = "firefox";
-      TERMINAL = "foot";
+      TERMINAL = "kitty";
       GTK_IM_MODULE = "fcitx5";
       QT_IM_MODULE = "fcitx5";
       XMODIFIERS = "@im=fcitx5";
@@ -155,7 +155,8 @@
       #--------------#
       # quick launch #
       #--------------#
-      bind = $mainMod, Return, exec, foot
+      bind = $mainMod, Return, exec, kitty
+      bind = $mainMod SHIFT, Return, exec, kitty --class="termfloat"
       bind = $mainMod, Q, killactive,
       bind = $mainMod SHIFT, Space, togglefloating,
       bind = $mainMod,F,fullscreen
@@ -251,9 +252,10 @@
       #------------------------#
       # quickly launch program #
       #------------------------# 
-      bind=$mainMod ,P,exec,myswaylock
-      bind=SUPER,Space,exec, pkill rofi || ~/.config/rofi/launcher.sh
-      bind=$mainMod,Super_L,exec, bash ~/.config/rofi/powermenu.sh
+      bind=$mainMod, M, exec, kitty --class="musicfox" --hold sh -c "musicfox"
+      bind=$mainMod, P, exec, myswaylock
+      bind=SUPER, Space, exec, pkill rofi || ~/.config/rofi/launcher.sh
+      bind=$mainMod, Super_L, exec, bash ~/.config/rofi/powermenu.sh
 
       #-----------------------------------------#
       # control volume,brightness,media players-#
@@ -289,10 +291,6 @@
       bind=,escape,submap,reset 
       submap=reset
 
-      bind=CTRL SHIFT, left, resizeactive,-15 0
-      bind=CTRL SHIFT, right, resizeactive,15 0
-      bind=CTRL SHIFT, up, resizeactive,0 -15
-      bind=CTRL SHIFT, down, resizeactive,0 15
       bind=CTRL SHIFT, l, resizeactive, 15 0
       bind=CTRL SHIFT, h, resizeactive,-15 0
       bind=CTRL SHIFT, k, resizeactive, 0 -15
@@ -333,6 +331,7 @@
       windowrule=move 25%-,termfloat
       windowrule=size 960 540,termfloat
       windowrule=rounding 5,termfloat
+      windowrule=animation slide right,kitty
       windowrule=float,ncmpcpp
       windowrule=move 25%-,ncmpcpp
       windowrule=size 960 540,ncmpcpp

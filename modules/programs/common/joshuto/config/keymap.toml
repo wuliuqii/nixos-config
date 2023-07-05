@@ -18,21 +18,21 @@ keymap = [
   { keys = ["\t"], command = "tab_switch 1" },
   { keys = ["backtab"], command = "tab_switch -1" },
 
-  { keys = ["alt+1"], command = "tab_switch_index 1" },
-  { keys = ["alt+2"], command = "tab_switch_index 2" },
-  { keys = ["alt+3"], command = "tab_switch_index 3" },
-  { keys = ["alt+4"], command = "tab_switch_index 4" },
-  { keys = ["alt+5"], command = "tab_switch_index 5" },
+  # { keys = ["ctrl+1"], command = "tab_switch_index 1" },
+  # { keys = ["ctrl+2"], command = "tab_switch_index 2" },
+  # { keys = ["ctrl+3"], command = "tab_switch_index 3" },
+  # { keys = ["ctrl+4"], command = "tab_switch_index 4" },
+  # { keys = ["ctrl+5"], command = "tab_switch_index 5" },
 
-  { keys = ["1"], command = "numbered_command 1" },
-  { keys = ["2"], command = "numbered_command 2" },
-  { keys = ["3"], command = "numbered_command 3" },
-  { keys = ["4"], command = "numbered_command 4" },
-  { keys = ["5"], command = "numbered_command 5" },
-  { keys = ["6"], command = "numbered_command 6" },
-  { keys = ["7"], command = "numbered_command 7" },
-  { keys = ["8"], command = "numbered_command 8" },
-  { keys = ["9"], command = "numbered_command 9" },
+  # { keys = ["1"], command = "numbered_command 1" },
+  # { keys = ["2"], command = "numbered_command 2" },
+  # { keys = ["3"], command = "numbered_command 3" },
+  # { keys = ["4"], command = "numbered_command 4" },
+  # { keys = ["5"], command = "numbered_command 5" },
+  # { keys = ["6"], command = "numbered_command 6" },
+  # { keys = ["7"], command = "numbered_command 7" },
+  # { keys = ["8"], command = "numbered_command 8" },
+  # { keys = ["9"], command = "numbered_command 9" },
 
   # arrow keys
   { keys = ["arrow_up"], command = "cursor_move_up" },
@@ -125,14 +125,11 @@ keymap = [
   { keys = ["g", "d"], command = "cd ~/Downloads" },
   { keys = ["g", "e"], command = "cd /etc" },
   { keys = ["g", "h"], command = "cd ~/" },
-  { keys = ["g", "f"], command = "cd ~/Flakes" },
+  { keys = ["g", "f"], command = "cd ~/src/nixos-config" },
   { keys = ["?"], command = "help" },
 
   # `Shift + s` enter shell 
   { keys = ["S"], command = "shell fish" },
-  #youtube-dl 
-  { keys = ["y", "a"], command = ":shell yt-dlp -x --audio-format mp3 " },
-  { keys = ["y", "v"], command = ":shell yt-dlp -x -ic " },
 ]
 
 [task_view]

@@ -186,8 +186,8 @@ handle_mime() {
             ## Image
         image/*)
             ## Preview as text conversion
-            exiftool "${FILE_PATH}" && exit 0
-            exit 1 ;;
+            # exiftool "${FILE_PATH}" && exit 0
+            exit 5 ;;
 
             ## Video and audio
         video/* | audio/*)

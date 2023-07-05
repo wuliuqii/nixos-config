@@ -18,6 +18,7 @@
       top = "btop";
       lg = "lazygit";
       j = "joshuto";
+      n = "neofetch";
     };
     plugins = [
       {

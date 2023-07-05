@@ -1,17 +1,34 @@
 ''
   print_info()
-  {
-      info title
-      info underline
-      info " " distro
-      info " " kernel
-      info " " packages
-      info " " de
-      info " " wm
-      info "󰍛 " memory
-      info "󰔟 " uptime
-      info cols
-  }
+  (
+    prin "Eat  , Sleep  , Linux  ."
+    info underline
+    prin "Hardware Information"
+    # info "󰌢 " model
+    info "󰍛 " cpu
+    # info "󰘚 " gpu
+    # info " " disk
+    info "󰟖 " memory
+    info "󰍹 " resolution
+    # info "󱈑 " battery 
+    info underline
+    prin "Software Information"
+    info " " distro
+    info " " kernel
+    info " " de
+    info " " wm
+    info " " shell
+    info " " term
+    info " " term_font
+    info "󰉼 " theme
+    info "󰀻 " icons
+    info "󰊠 " packages
+    info "󰅐 " uptime
+    info underline
+    info cols
+    prin " " # Padding
+    prin "$(color 3)󰮯 \n \n $(color 5)󰊠 \n \n $(color 2)󰊠  \n \n $(color 6)󰊠  \n \n $(color 4)󰊠  \n \n $(color 1)󰊠  \n \n $(color 7)󰊠  \n \n "
+  )
   title_fqdn="off"
   kernel_shorthand="on"
   distro_shorthand="on"
@@ -19,15 +36,15 @@
   uptime_shorthand="tiny"
   memory_percent="on"
   memory_unit="mib"
-  package_managers="off"
+  package_managers="on"
   shell_path="off"
   shell_version="on"
   speed_type="bios_limit"
   speed_shorthand="on"
   cpu_brand="on"
-  cpu_speed="on"
-  cpu_cores="logical"
-  cpu_temp="C"
+  cpu_speed="off"
+  cpu_cores="off"
+  cpu_temp="off"
   gpu_brand="on"
   gpu_type="all"
   refresh_rate="on"
@@ -44,10 +61,10 @@
   song_format="%artist% - %album% - %title%"
   song_shorthand="on"
   mpc_args=(-p 7777)
-  colors=(5 5 5 5 5 7)
+  colors=(distro)
   bold="on"
   underline_enabled="on"
-  underline_char="━"
+  underline_char="-"
   separator="⋮"
   block_range=(0 7)
   color_blocks="off"
@@ -64,4 +81,17 @@
   memory_display="off"
   battery_display="off"
   disk_display="off"
+  image_backend="kitty"
+  image_source="${./ign_duaAnime.png}"
+  ascii_distro="auto"
+  ascii_colors=(distro)
+  ascii_bold="on"
+  crop_mode="fit"
+  crop_offset="center"
+  image_size="auto"
+  gap=2
+  yoffset=0
+  xoffset=0
+  background_color=
+  stdout="off"
 ''

@@ -8,6 +8,8 @@
       editor = {
         line-number = "relative";
         bufferline = "multiple";
+        gutters = [ "diff" "diagnostics" "line-numbers" "spacer" ];
+        mouse = false;
         indent-guides.render = true;
         cursorline = true;
         true-color = true;
@@ -22,11 +24,7 @@
         tab = ":buffer-next";
         S-tab = ":buffer-previous";
         C-x = ":bc";
-      };
-      keys.insert = {
-        j = {
-          k = "normal_mode";
-        };
+        C-l = ":fmt";
       };
     };
 

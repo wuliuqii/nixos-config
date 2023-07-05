@@ -17,12 +17,9 @@
       c = "clear";
       top = "btop";
       lg = "lazygit";
+      j = "joshuto";
     };
     plugins = [
-      {
-        name = "z";
-        src = pkgs.fishPlugins.z.src;
-      }
       {
         name = "plugin-git";
         src = pkgs.fishPlugins.plugin-git.src;

@@ -10,5 +10,7 @@
   ./foot
   ./vscode
   ./helix
+  ./joshuto
+  ./zoxide
 ] ++
 (import ./develop)

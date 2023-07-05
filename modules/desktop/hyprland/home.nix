@@ -40,6 +40,7 @@
     recommendedEnvironment = true;
     extraConfig = ''
       $mainMod = ALT
+      $super = SUPER
 
       # monitor=,preferred,auto,1 
       monitor=DP-1, 3840x2160, 0x0, 2
@@ -159,12 +160,10 @@
       bind = $mainMod SHIFT, Space, togglefloating,
       bind = $mainMod,F,fullscreen
       bind = $mainMod,Y,pin
-      bind = $mainMod, P, pseudo, # dwindle
-      bind = $mainMod, J, togglesplit, # dwindle
       bind = $mainMod, V, exec, code
       bind = $mainMod, W, exec, firefox
       bind = $mainMod, Z, exec, grimblast --notify --cursor copy area
-      bind = $mainMod CLTR, Z, exec, grimblast --notify --cursor copysave area ~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
+      bind = $mainMod CTRL, Z, exec, grimblast --notify --cursor copysave area ~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
 
       #------------#
       # change gap #
@@ -175,10 +174,10 @@
       #--------------------------------------#
       # Move focus with mainMod + arrow keys #
       #--------------------------------------#
-      bind = $mainMod, left, movefocus, l
-      bind = $mainMod, right, movefocus, r
-      bind = $mainMod, up, movefocus, u
-      bind = $mainMod, down, movefocus, d
+      bind = $super, h, movefocus, l
+      bind = $super, l, movefocus, r
+      bind = $super, k, movefocus, u
+      bind = $super, j, movefocus, d
 
       #----------------------------------------#
       # Switch workspaces with mainMod + [0-9] #
@@ -205,10 +204,10 @@
       #----------------------------------#
       # move window in current workspace #
       #----------------------------------#
-      bind = $mainMod SHIFT,left ,movewindow, l
-      bind = $mainMod SHIFT,right ,movewindow, r
-      bind = $mainMod SHIFT,up ,movewindow, u
-      bind = $mainMod SHIFT,down ,movewindow, d
+      bind = $mainMod SHIFT,h ,movewindow, l
+      bind = $mainMod SHIFT,l ,movewindow, r
+      bind = $mainMod SHIFT,k ,movewindow, u
+      bind = $mainMod SHIFT,j ,movewindow, d
 
       #---------------------------------------------------------------#
       # Move active window to a workspace with mainMod + ctrl + [0-9] #
@@ -252,7 +251,7 @@
       #------------------------#
       # quickly launch program #
       #------------------------# 
-      bind=SUPER,L,exec,myswaylock
+      bind=$mainMod ,P,exec,myswaylock
       bind=SUPER,Space,exec, pkill rofi || ~/.config/rofi/launcher.sh
       bind=$mainMod,Super_L,exec, bash ~/.config/rofi/powermenu.sh
 

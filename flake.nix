@@ -42,5 +42,7 @@
         url = "github:nix-community/fenix";
         inputs.nixpkgs.follows = "nixpkgs";
       };
+
+      joshuto.url = "github:kamiyaa/joshuto";
     };
 }

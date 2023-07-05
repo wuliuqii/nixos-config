@@ -6,7 +6,11 @@
     functions = {
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
     };
-    shellAbbrs = {
+    interactiveShellInit = ''
+      set fish_greeting
+      neofetch
+    '';
+    shellAliases = {
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd .././..";

@@ -1,6 +1,5 @@
 ''
-  print_info()
-  (
+  print_info () {
     prin "Eat  , Sleep  , Linux  ."
     info underline
     prin "Hardware Information"
@@ -28,7 +27,7 @@
     info cols
     prin " " # Padding
     prin "$(color 3)󰮯 \n \n $(color 5)󰊠 \n \n $(color 2)󰊠  \n \n $(color 6)󰊠  \n \n $(color 4)󰊠  \n \n $(color 1)󰊠  \n \n $(color 7)󰊠  \n \n "
-  )
+  }
   title_fqdn="off"
   kernel_shorthand="on"
   distro_shorthand="on"

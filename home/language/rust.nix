@@ -9,6 +9,7 @@
       "clippy"
     ])
     rust-analyzer-nightly
+    taplo
   ];
 
   home.file = {

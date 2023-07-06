@@ -20,7 +20,6 @@
       keys.normal = {
         C-s = ":w";
         C-q = ":q";
-        C-o = ":open ~/.config/helix/config.toml";
         tab = ":buffer-next";
         S-tab = ":buffer-previous";
         C-x = ":bc";

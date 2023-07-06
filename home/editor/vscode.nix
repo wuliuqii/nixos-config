@@ -2,11 +2,6 @@
 , ...
 }:
 {
-  home.packages = with pkgs; [
-    nixpkgs-fmt
-    nil
-  ];
-
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;

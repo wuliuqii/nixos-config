@@ -26,6 +26,7 @@ in
       sops
       thefuck
       killall
+      libsForQt5.kdenlive
     ];
 
     sessionVariables = {

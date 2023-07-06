@@ -1,8 +1,11 @@
-{ user, ... }:
+{ config, ... }:
 let
+  user = "${config.machine.userName}";
   home = "/home/${user}";
 in
 {
+  home-manager.users.${user} = import ./home.nix;
+
   sops.secrets.id_ed22519 = {
     format = "binary";
     sopsFile = ./id_ed25519;

@@ -1,15 +1,15 @@
 .PHONY: switch
 
 switch:
-	sudo nixos-rebuild switch --flake .#laptop
+	@sudo nixos-rebuild switch --flake .#gallon-mechrevo |& nom
 
 update:
-	nix flake update
+	@nix flake update
 
 history:
-	nix profile history --profile /nix/var/nix/profiles/system
+	@nix profile history --profile /nix/var/nix/profiles/system
 
 gc:
-	sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 2d
+	@sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 2d
 
-	sudo nix store gc --debug
+	@sudo nix store gc --debug

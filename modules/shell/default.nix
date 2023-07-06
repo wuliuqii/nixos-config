@@ -1,6 +1,0 @@
-[
-  ./fish
-  ./git
-  ./bash
-  ./starship
-]

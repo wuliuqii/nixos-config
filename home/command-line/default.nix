@@ -97,8 +97,6 @@
 
   home = {
     packages = with pkgs; [
-      lazygit
-
       # search
       fd
       ripgrep
@@ -108,6 +106,19 @@
 
       # lanucher
       rofi-wayland
+
+      # build
+      just
+      nix-output-monitor
+
+      # encryption
+      age
+      sops
+
+      # misc
+      thefuck
+      killall
+      lazygit
     ];
   };
 }

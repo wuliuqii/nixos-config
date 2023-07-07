@@ -1,5 +1,3 @@
-.PHONY: switch
-
 switch:
 	@sudo nixos-rebuild switch --flake .#gallon-mechrevo |& nom
 

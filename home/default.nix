@@ -20,12 +20,6 @@ in
     homeDirectory = "/home/${user}";
 
     packages = with pkgs; [
-      gnumake
-      nix-output-monitor
-      age
-      sops
-      thefuck
-      killall
       libsForQt5.kdenlive
     ];
 

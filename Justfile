@@ -1,6 +1,9 @@
 switch:
 	@sudo nixos-rebuild switch --flake .#gallon-mechrevo |& nom
 
+check:
+	@nix flake check
+
 update:
 	@nix flake update
 

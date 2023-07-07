@@ -7,6 +7,7 @@
       ./hardware.nix
       ./security.nix
       ./service.nix
+      ./virtualisation.nix
     ];
 
   networking = {

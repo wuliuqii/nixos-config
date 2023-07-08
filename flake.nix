@@ -11,6 +11,7 @@
     , sops-nix
     , fenix
     , joshuto
+    , go-musicfox
     , ...
     }:
     let
@@ -41,6 +42,7 @@
           nixpkgs.overlays = [
             fenix.overlays.default
             joshuto.overlays.default
+            go-musicfox.overlays.default
           ];
         }
       ];
@@ -86,6 +88,7 @@
     };
 
     joshuto.url = "github:kamiyaa/joshuto";
+    go-musicfox.url = "github:go-musicfox/go-musicfox";
   };
 }
 

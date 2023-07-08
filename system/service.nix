@@ -10,7 +10,6 @@ in
     dbus.enable = true;
     v2raya.enable = true;
     syncthing.enable = true;
-    mpd.enable = true;
 
     pipewire = {
       enable = true;

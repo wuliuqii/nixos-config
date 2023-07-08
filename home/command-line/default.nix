@@ -1,10 +1,9 @@
 { pkgs, ... }:
 {
   imports = [
-    (import ./joshuto)
-    (import ./neofetch)
-  ] ++ [
-    ./music.nix
+    ./music
+    ./neofetch
+    ./joshuto
   ];
 
   programs = {

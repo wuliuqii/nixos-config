@@ -32,7 +32,7 @@
           };
           Install.WantedBy = [ "swww.service" ];
           Service = {
-            ExecStart = ''${pkgs.swww}/bin/swww img "${../../common/wall/earth-in-space.png}" --transition-type random'';
+            ExecStart = ''${pkgs.swww}/bin/swww img "${../../common/wall/nord_lake.png}" --transition-type random'';
             Restart = "on-failure";
             Type = "oneshot";
           };

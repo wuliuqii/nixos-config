@@ -1,6 +1,6 @@
 # My personal NixOS config
 
-![](https://raw.githubusercontent.com/wuliuqii/asserts/main/videos/nixos.mp4)
+https://github.com/wuliuqii/nixos-config/assets/34090258/9f6683e7-4ce2-4182-aff8-378d12da167a
 
 ## System Componets
 

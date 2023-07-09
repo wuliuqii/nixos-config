@@ -321,6 +321,7 @@
       windowrule=move 25%-,ncmpcpp
       windowrule=size 960 540,ncmpcpp
       windowrule=noblur,^(firefox)$
+      windowrule=workspace name:Music, musicfox
 
       #-----------------#
       # workspace rules #
@@ -330,10 +331,10 @@
       workspace=DP-1,3
       workspace=DP-1,4
       workspace=DP-1,5
-      workspace=eDP-1,6
-      workspace=eDP-1,7
-      workspace=eDP-1,8
-      workspace=eDP-1,9
+      workspace=DP-1,6
+      workspace=DP-1,7
+      workspace=DP-1,8
+      workspace=DP-1,9
       workspace=eDP-1,10
     '';
   };

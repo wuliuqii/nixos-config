@@ -16,6 +16,8 @@
       "...." = "cd .././..";
       l = "exa";
       ls = "exa";
+      la = "exa -a";
+      lla = "exa -la";
       vim = "hx";
       grep = "rg";
       c = "clear";

@@ -8,7 +8,7 @@
     };
     interactiveShellInit = ''
       set fish_greeting
-      neofetch
+      # neofetch
     '';
     shellAliases = {
       ".." = "cd ..";

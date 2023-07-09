@@ -6,12 +6,11 @@ let
   '';
   myswaylock = pkgs.writeShellScriptBin "myswaylock" ''
     swaylock  \
-           --screenshots \
+           --image "${../../modules/nord-theme/common/wall/nord_mountains.png}" \
            --clock \
            --indicator \
            --indicator-radius 100 \
            --indicator-thickness 7 \
-           --effect-blur 7x5 \
            --effect-vignette 0.5:0.5 \
            --ring-color 3b4252 \
            --key-hl-color 880033 \

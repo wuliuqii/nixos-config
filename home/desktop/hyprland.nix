@@ -297,6 +297,7 @@
       exec-once = mako &
       exec-once = border_color &
       exec-once = nm-applet --indicator &
+      exec-once = swayidle timeout 300 'myswaylock' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
 
       #---------------#
       # windows rules #

@@ -25,6 +25,7 @@ in
     wlr-randr
 
     swaylock-effects
+    swayidle
     pamixer
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
   ];

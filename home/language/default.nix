@@ -6,11 +6,12 @@
   ];
 
   home.packages = with pkgs; [
-    gopls
-    gomodifytags
-    gotests
-    impl
-    go-tools
-    delve
+    # lsp
+    # nil
+    nixpkgs-fmt
+    nil
+
+    # markdown
+    marksman
   ];
 }

@@ -139,7 +139,7 @@
       #--------------#
       # quick launch #
       #--------------#
-      bind = $mainMod, Return, exec, kitty
+      bind = $mainMod, Return, exec, foot
       bind = $mainMod SHIFT, Return, exec, kitty --class="termfloat"
       bind = $mainMod, Q, killactive,
       bind = $mainMod SHIFT, Space, togglefloating,

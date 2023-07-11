@@ -8,12 +8,11 @@
 
 
   home.packages = with pkgs; [
-    # lsp
-    # nil
-    nixpkgs-fmt
-    nil
-
-    # markdown
-    marksman
+    gopls
+    gomodifytags
+    gotests
+    impl
+    go-tools
+    delve
   ];
 }

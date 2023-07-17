@@ -57,7 +57,7 @@
               }
 
               /* remove top tabbar */ 
-        #titlebar { visibility: collapse !important; }
+        # titlebar { visibility: collapse !important; }
 
 
               /*================== URL BAR ==================*/
@@ -71,11 +71,11 @@
               font-size: 14pt !important;
               }
 
-              /* #nav-bar { visibility: collapse !important; } */
+              #nav-bar { visibility: collapse !important; }
                 /* hide horizontal tabs at the top of the window */
-                #TabsToolbar > * {
-                  visibility: collapse;
-                }
+                /* #TabsToolbar > * { */
+                /*  visibility: collapse; */
+                /* } */
 
                 /* hide navigation bar when it is not focused; use Ctrl+L to get focus */
                 #main-window:not([customizing]) #navigator-toolbox:not(:focus-within):not(:hover) {

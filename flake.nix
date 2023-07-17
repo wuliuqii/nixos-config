@@ -4,22 +4,13 @@
   nixConfig = { };
 
   outputs =
-    inputs @ { nixpkgs
-    , home-manager
-    , hyprland
-    , hypr-contrib
-    , sops-nix
-    , fenix
-    , joshuto
-    , go-musicfox
-    , ...
-    }:
+    inputs @ { nixpkgs, home-manager, ... }:
     let
       commonModules = [
         ./system/configuration.nix
-        sops-nix.nixosModules.sops
-        hyprland.nixosModules.default
-        home-manager.nixosModules.home-manager
+        inputs.sops-nix.nixosModules.sops
+        inputs.hyprland.nixosModules.default
+        inputs.home-manager.nixosModules.home-manager
         ({ config, ... }: {
           home-manager = {
             useGlobalPkgs = true;
@@ -33,22 +24,24 @@
                 ./home
                 ./modules/nord-theme/wayland
               ] ++ [
-                hyprland.homeManagerModules.default
+                inputs.hyprland.homeManagerModules.default
+                inputs.nix-doom-emacs.hmModule
               ];
             };
           };
         })
         {
           nixpkgs.overlays = [
-            fenix.overlays.default
-            joshuto.overlays.default
-            go-musicfox.overlays.default
+            inputs.fenix.overlays.default
+            inputs.joshuto.overlays.default
+            inputs.go-musicfox.overlays.default
+            # inputs.emacs-overlay.overlay
           ];
         }
       ];
     in
     {
-      packages.x86_64-linux.default = fenix.packages.x86_64-linux.minimal.toolchain;
+      packages.x86_64-linux.default = inputs.fenix.packages.x86_64-linux.minimal.toolchain;
       nixosConfigurations = {
         gallon-mechrevo = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -80,6 +73,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-doom-emacs = {
+      url = "github:nix-community/nix-doom-emacs";
+      inputs.emacs-overlay.follows = "emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix.url = "github:Mic92/sops-nix";
 
     fenix = {
@@ -87,8 +91,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    joshuto.url = "github:kamiyaa/joshuto";
-    go-musicfox.url = "github:go-musicfox/go-musicfox";
+    joshuto = {
+      url = "github:kamiyaa/joshuto";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    go-musicfox = {
+      url = "github:go-musicfox/go-musicfox";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
 

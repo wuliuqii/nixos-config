@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Matthias Benaets"
-      user-mail-address "matthias.benaets@gmail.com")
+(setq user-full-name "Gallon"
+      user-mail-address "h1090703848@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -21,7 +21,7 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 15 :weight 'semi-light)
 ;;      doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "JetbrainsMono Nerd Font" :size 16))
+(setq doom-font (font-spec :family "JetbrainsMono Nerd Font" :size 22))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -54,36 +54,20 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; General settings
-(blink-cursor-mode 1)
-(setq undo-limit 100000000
-      evil-want-fine-undo t
-      auto-save-default t)
-(setq-default initial-major-mode 'org-mode)
-(map! "<escape>" #'keyboard-escape-quit)
+;; lsp stuff
+(use-package lsp-mode
+  :ensure t)
 
-;; Scroll
-(setq mouse-wheel-scroll-amount '(3 ((shift) . 1))
-      mouse-wheel-progressive-speed nil
-      mouse-wheel-follow-mouse 't
-      scroll-preserve-screen-position 'always
-      scroll-conservatively 101
-      scroll-margin 8
-      scroll-step 1)
+(use-package lsp-nix
+  :ensure lsp-mode
+  :after (lsp-mode)
+  :demand t
+  :custom
+  (lsp-nix-nil-formatter ["nixpkgs-fmt"]))
 
-;; Scaling
-(map! "C-+"     #'text-scale-adjust
-      "C--"     #'text-scale-adjust
-      "C-0"     #'text-scale-adjust)
-
-;; Editing
-(map! "M-/"     #'evilnc-comment-operator
-      "M-["     #'er/contract-region
-      "M-]"     #'er/expand-region)
-
-;; Frame Size
-(add-to-list 'default-frame-alist '(height . 24))
-(add-to-list 'default-frame-alist '(width . 80))
+(use-package nix-mode
+  :hook (nix-mode . lsp-deferred)
+  :ensure t)
 
 ;; Set height of headers
 (custom-set-faces
@@ -140,82 +124,3 @@
 (add-hook 'org-mode-hook #'org-babel-do-load-languages)
 (setq org-confirm-babel-evaluate nil)
 
-;; Windows
-(setq evil-vsplit-window-right t
-      evil-split-window-below t)
-(defadvice! prompt-for-buffer (&rest _)
-  :after '(evil-window-split evil-window-vsplit)
-  (consult-buffer))
-(map! "M-SPC"           #'other-window
-      "M-q"             #'delete-window)
-(map! :map evil-window-map ;;SPC-w-...
-      "SPC"             #'rotate-layout
-      ;; Swapping windows
-      "C-<left>"        #'+evil/window-move-left
-      "C-<down>"        #'+evil/window-move-down
-      "C-<up>"          #'+evil/window-move-up
-      "C-<right>"       #'+evil/window-move-right)
-(map! :leader ;;SPC
-      "r"               #'rotate-layout
-      "<left>"          #'evil-window-left
-      "<down>"          #'evil-window-down
-      "<up>"            #'evil-window-up
-      "<right>"         #'evil-window-right)
-
-;; Completion
-(map! "C-s"             #'consult-line
-      "C-f"             #'consult-buffer-other-window
-      "C-M-l"           #'consult-imenu)
-(map! :leader
-      :desc "search"                    "s" #'consult-line
-      :desc "kill-buffer"               "k" #'kill-buffer
-      (:prefix-map ("b" . "buffer")
-        :desc "buffer"                  "b" #'consult-buffer
-        :desc "buffer-other-window"     "." #'consult-buffer-other-window)
-      (:prefix-map ("f" . "file")
-        :desc "find-file-other-window"  "." #'find-file-other-window)
-      (:prefix-map ("e" . "eval")
-        :desc "eval-region"             "r" #'eval-region
-        :desc "eval-buffer"             "b" #'eval-buffer
-        :desc "doom/reload"             "d" #'doom/reload))
-(define-key! :keymaps +default-minibuffer-maps
-             "M-s"      #'consult-history)
-
-;; Disable lazy load which-key
-(use-package! which-key
-  :init (which-key-mode)
-  :diminish which-key-mode
-  :config
-  (setq which-key-idle-delay 0.5))
-
-;; Ispell and Flyspell
-(setq ispell-alternate-dictionary "en_GB,nl_BE")
-
-;; Custom one kye bindings on dashboard
-(defun +doom-dashboard-setup-modified-keymap ()
-  (setq +doom-dashboard-mode-map (make-sparse-keymap))
-  (map! :map +doom-dashboard-mode-map
-        :desc "Find file" :ng "f" #'find-file
-        :desc "Recent files" :ng "r" #'consult-recent-file
-        :desc "Switch buffer" :ng "b" #'consult-buffer
-        :desc "Quit" :ng "q" #'save-buffers-kill-emacs
-        :desc "Show keybindings" :ng "h" (cmd! (which-key-show-keymap '+doom-dashboard-mode-map))))
-(add-transient-hook! #'+doom-dashboard-mode (+doom-dashboard-setup-modified-keymap))
-(add-transient-hook! #'+doom-dashboard-mode :append (+doom-dashboard-setup-modified-keymap))
-(add-hook! 'doom-init-ui-hook :append (+doom-dashboard-setup-modified-keymap))
-;; Open dashboard
-(map! :leader :desc "Dashboard" "d" #'+doom-dashboard/open)
-
-;; Dashboard Widgets
-(setq +doom-dashboard-functions
-      '(doom-dashboard-widget-banner
-        ;;doom-dashboard-widget-shortmenu
-        doom-dashboard-widget-loaded
-        doom-dashboard-widget-footer))
-(setq doom-modeline-major-mode-icon t)
-
-;; YASnippets
-(setq yas-triggers-in-field t)
-
-;; Load dashboard instead of scratchpad. Only needs to be enable when using nix-community/nix-doom-emacs modules is used
-;;(add-hook! 'emacs-startup-hook #'doom-init-ui-h)

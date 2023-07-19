@@ -13,5 +13,5 @@ in
     emacsPackage = emacsPkgs.emacsPgtk;
   };
 
-  services.emacs.enable = true;
+  # services.emacs.enable = true;
 }

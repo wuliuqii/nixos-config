@@ -147,6 +147,7 @@
       bind = $mainMod,Y,pin
       bind = $mainMod, V, exec, code
       bind = $mainMod, W, exec, firefox
+      bind = $mainMod, E, exec, emacs
       bind = $mainMod, Z, exec, grimblast --notify --cursor copy area
       bind = $mainMod CTRL, Z, exec, grimblast --notify --cursor copysave area ~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
 

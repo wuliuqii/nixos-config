@@ -33,7 +33,6 @@
         {
           nixpkgs.overlays = [
             inputs.fenix.overlays.default
-            inputs.joshuto.overlays.default
             inputs.go-musicfox.overlays.default
             # inputs.emacs-overlay.overlay
           ];
@@ -88,11 +87,6 @@
 
     fenix = {
       url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    joshuto = {
-      url = "github:kamiyaa/joshuto";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

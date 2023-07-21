@@ -3,7 +3,6 @@
   imports = [
     ./music
     ./neofetch
-    ./joshuto
   ];
 
   programs = {

@@ -1,0 +1,315 @@
+* My Emacs Configuration
+
+The Emacs configuration is done using Nix together with [[https://orgmode.org/manual/Extracting-Source-Code.html][Org Babel tangle]] to compile the final elisp file on Emacs startup. The starting point for this setup can be found from the [[default.nix]] file, which points to the [[config.org]] file and parses all [[https://www.emacswiki.org/emacs/UsePackage][use-package]] calls. Nix then fetches and builds these packages from [[https://github.com/nixos/nixpkgs][nixpkgs]] in a reproducible way.
+
+After fetching the packages, it copies the [[config.org]] and [[init.el]] files to ~$HOME/.emacs.d/~. When starting Emacs, the code in [[init.el]] gets all tangle blocks from the configuration, loading and compiling them.
+
+The Emacs distribution in use is the current Emacs master build with the [[https://git.savannah.gnu.org/cgit/emacs.git/log/?h=feature/pgtk][feature/pgtk]] patches that enables us to compile all elisp code to a native binary and rendering everything using [[https://docs.gtk.org/gtk3/][Gtk 3]] and works natively on [[https://wayland.freedesktop.org/][Wayland]].
+
+Updating packages can be done with ~nix flake update && sudo nixos-rebuild switch~, getting the latest commit from Emacs and the latest versions of the elisp libraries. Doing so might require a full recompilation if the caches are not warm yet, which is one of the downsides of the setup until native compilation and pgtk features land to a stable Emacs.
+
+* Generic UI
+Defines the general UI settings to remove the stupid menu and toolbars, and sets line numbers to all other files except when they're too much of a bother.
+
+#+begin_src emacs-lisp :tangle yes
+(setq inhibit-startup-screen t)
+(setq inhibit-startup-message t)
+(setq visible-bell t)
+(setq make-backup-files nil)
+(setq-default show-trailing-whitespace t)
+(setq-default indicate-empty-lines t)
+(setq sentence-end-double-space nil)
+
+;; tab stuff
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+(make-directory "~/.emacs.d/backup/" t)
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/backup/" t)))
+(setq backup-directory-alist '(("." . "~/.emacs.d/backup/")))
+(setq create-lockfiles nil)
+
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(set-fringe-mode 10)
+(tooltip-mode -1)
+
+(column-number-mode)
+(global-display-line-numbers-mode t)
+
+(dolist (mode '(org-mode-hook
+                term-mode-hook
+                vterm-mode-hook
+                eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+(use-package nerd-icons)
+#+end_src
+
+* Garbage Collector
+General garbage collector settings to make Emacs snappier. Taken from the [[https://github.com/hlissner/doom-emacs/blob/develop/docs/faq.org#how-does-doom-start-up-so-quickly][Doom Emacs FAQ]].
+
+#+begin_src emacs-lisp :tangle yes
+(defun hm/reduce-gc ()
+  "Reduce the frequency of garbage collection."
+  (setq gc-cons-threshold most-positive-fixnum
+        gc-cons-percentage 0.6))
+
+(defun hm/restore-gc ()
+  "Restore the frequency of garbage collection."
+  (setq gc-cons-threshold 16777216
+        gc-cons-percentage 0.1))
+
+;; Make GC more rare during init, while minibuffer is active, and
+;; when shutting down. In the latter two cases we try doing the
+;; reduction early in the hook.
+(hm/reduce-gc)
+
+(add-hook 'minibuffer-setup-hook #'hm/reduce-gc -50)
+(add-hook 'kill-emacs-hook #'hm/reduce-gc -50)
+
+;; But make it more regular after startup and after closing minibuffer.
+(add-hook 'emacs-startup-hook #'hm/restore-gc)
+(add-hook 'minibuffer-exit-hook #'hm/restore-gc)
+
+;; Avoid unnecessary regexp matching while loading .el files.
+(defvar hm/file-name-handler-alist file-name-handler-alist)
+(setq file-name-handler-alist nil)
+
+(defun hm/restore-file-name-handler-alist ()
+  "Restores the file-name-handler-alist variable."
+  (setq file-name-handler-alist hm/file-name-handler-alist)
+  (makunbound 'hm/file-name-handler-alist))
+(add-hook 'emacs-startup-hook #'hm/restore-file-name-handler-alist)
+#+end_src
+
+* Fonts
+[[https://www.levien.com/type/myfonts/inconsolata.html][Inconsolata]] for monospace, [[https://fonts.google.com/specimen/Cantarell][Cantarell]] for everything else.
+
+#+begin_src emacs-lisp :tangle yes
+(set-face-attribute 'default nil :font "JetbrainsMono Nerd Font" :height 180)
+(set-face-attribute 'fixed-pitch nil :font "JetbrainsMono Nerd Font" :height 180)
+#+end_src
+
+* Which-key
+[[https://github.com/justbur/emacs-which-key][Which-key]] enables the nice help panel describing the available commands, when not finishing a key combination completely.
+
+#+begin_src emacs-lisp :tangle yes
+(use-package which-key)
+
+(which-key-mode)
+(setq which-key-idle-delay 0.3)
+#+end_src
+
+* Ivy
+[[https://oremacs.com/swiper/][Ivy]] provides completion in non-code context, such as menus.
+
+#+begin_src emacs-lisp :tangle yes
+(use-package ivy
+  :diminish
+  :bind (("C-s" . swiper)
+         :map ivy-minibuffer-map
+         ("TAB" . ivy-alt-done)
+         ("C-l" . ivy-alt-done)
+         ("C-j" . ivy-next-line)
+         ("C-k" . ivy-previous-line)
+         :map ivy-switch-buffer-map
+         ("C-k" . ivy-previous-line)
+         ("C-l" . ivy-done)
+         ("C-d" . ivy-switch-buffer-kill)
+         :map ivy-reverse-i-search-map
+         ("C-k" . ivy-previous-line)
+         ("C-d" . ivy-reverse-i-search-kill))
+  :config
+  (ivy-mode 1))
+
+(use-package ivy-rich)
+(ivy-rich-mode 1)
+#+end_src
+
+* Counsel
+More completion goodies with [[https://oremacs.com/2015/04/09/counsel-completion/][Counsel]].
+
+#+begin_src emacs-lisp :tangle yes
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+         ("C-x b" . counsel-ibuffer)
+         ("C-x C-f" . counsel-find-file)
+         :map minibuffer-local-map
+         ("C-r" . 'counsel-minibuffer-history)))
+#+end_src
+
+* Evil
+[[https://github.com/emacs-evil/evil][Evil mode]] adds a perfect editor to the Emacs operating system.
+
+#+begin_src emacs-lisp :tangle yes
+(use-package evil
+  :init
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
+  (setq evil-want-C-i-jump nil)
+  :config
+  (evil-mode 1)
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+
+  ;; Use visual line motions even outside of visual-line-mode buffers
+  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
+
+  (evil-set-initial-state 'messages-buffer-mode 'normal)
+  (evil-set-initial-state 'dashboard-mode 'normal))
+
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
+#+end_src
+
+* Doom Modeline and themes
+Make Emacs to look like it's from the current century with [[https://seagle0128.github.io/doom-modeline/][Doom modeline]].
+
+#+begin_src emacs-lisp :tangle yes
+(use-package doom-themes)
+(load-theme 'doom-nord t)
+
+(use-package doom-modeline)
+(doom-modeline-mode 1)
+(setq doom-modeline-height 15)
+#+end_src
+
+* General Keyboard Shortcuts
+All custom keyboard shortcuts are defined here, together with the helpful [[https://github.com/noctuid/general.el][General framework]].
+
+#+begin_src emacs-lisp :tangle no
+(use-package general
+  :config
+  (general-create-definer leader
+    :keymaps 'normal
+    :prefix "SPC")
+
+  (leader
+    "SPC" 'projectile-find-file))
+#+end_src
+
+* Org
+Goodies for writing things and managing your life with the brilliant [[https://orgmode.org/][Org mode]].
+
+#+begin_src emacs-lisp :tangle yes
+(use-package org
+  :config
+  (setq org-ellipsis " ▾")
+  (setq evil-auto-indent nil)
+  (setq org-agenda-start-with-log-mode t)
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+  (setq org-src-preserve-indentation t)
+  (setq org-directory "~/Todo")
+
+  (setq org-capture-templates
+        `(("t" "Tasks / Projects")
+          ("tt" "Task" entry (file+olp "~/Todo/Prisma Sprints.org" "Inbox")
+           "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)
+
+          ("j" "Journal Entries")
+          ("jj" "Journal" entry
+           (file+olp+datetree "~/Todo/Journal.org")
+           "\n* %<%H:%M> - Journal :journal:\n\n%?\n\n"
+           :clock-in :clock-resume
+           :empty-lines 1)))
+
+  (setq org-agenda-files '("Prisma Sprints.org")))
+
+(use-package org-bullets)
+
+(add-hook 'org-mode-hook (lambda ()
+                           (org-indent-mode)
+                           (auto-fill-mode 0)
+                           (visual-line-mode 1)
+                           (org-bullets-mode 1)
+                           (variable-pitch-mode 1)))
+
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+(dolist (face '((org-level-1 . 1.2)
+                (org-level-2 . 1.1)
+                (org-level-3 . 1.05)
+                (org-level-4 . 1.0)
+                (org-level-5 . 1.1)
+                (org-level-6 . 1.1)
+                (org-level-7 . 1.1)
+                (org-level-8 . 1.1)))
+  (set-face-attribute (car face) nil :font "JetbrainsMono Nerd Font" :weight 'regular :height (cdr face)))
+
+(set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
+(set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch))
+(set-face-attribute 'org-table nil :inherit '(shadow fixed-pitch))
+(set-face-attribute 'org-table-header nil :inherit '(shadow fixed-pitch))
+(set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+(set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+(set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
+#+end_src
+
+* Nix
+[[https://github.com/NixOS/nix-mode][Nix mode]] for syntax hilight and LSP for Nix files.
+
+#+begin_src emacs-lisp :tangle yes
+(use-package nix-mode
+  :mode "\\.nix\\'")
+#+end_src
+
+* Git Gutter
+[[https://github.com/emacsorphanage/git-gutter][Git Gutter]] gives the green + and red - to the sidebar for added and deleted lines.
+
+#+begin_src emacs-lisp :tangle yes
+(use-package git-gutter)
+
+(global-git-gutter-mode +1)
+#+end_src
+
+* Markdown
+Syntax hilighting to markdown files with [[https://www.emacswiki.org/emacs/MarkdownMode][Markdown mode]].
+
+#+begin_src emacs-lisp :tangle yes
+(use-package markdown-mode)
+
+(add-to-list 'auto-mode-alist '("\\.mdx\\'" . markdown-mode))
+#+end_src
+
+* Magit
+Together with the Org mode [[https://magit.vc/][Magit]] is one of the best reasons to use Emacs. [[https://github.com/magit/forge][Forge]] makes it possible to fetch pull requests, issues and all that from GitHub/GitLab et.al.
+
+#+begin_src emacs-lisp :tangle yes
+(use-package magit
+  :custom
+  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+(use-package forge
+  :after magit)
+#+end_src
+
+* Projectile
+Project navigation, and detecting what is a project (by using the git folder) to make searching and completions to work better. Done with [[https://projectile.mx/][Projectile]].
+
+#+begin_src emacs-lisp :tangle yes
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :custom ((projectile-completion-system 'ivy))
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  (when (file-directory-p "~/src")
+    (setq projectile-project-search-path '("~/src")))
+  (setq projectile-switch-project-action #'projectile-dired))
+
+(use-package counsel-projectile
+  :config (counsel-projectile-mode))
+#+end_src
+
+

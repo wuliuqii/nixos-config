@@ -25,7 +25,6 @@
                 ./modules/nord-theme/wayland
               ] ++ [
                 inputs.hyprland.homeManagerModules.default
-                inputs.nix-doom-emacs.hmModule
               ];
             };
           };
@@ -34,7 +33,7 @@
           nixpkgs.overlays = [
             inputs.fenix.overlays.default
             inputs.go-musicfox.overlays.default
-            # inputs.emacs-overlay.overlay
+            inputs.emacs-overlay.overlay
           ];
         }
       ];
@@ -73,13 +72,7 @@
     };
 
     emacs-overlay = {
-      url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-doom-emacs = {
-      url = "github:nix-community/nix-doom-emacs";
-      inputs.emacs-overlay.follows = "emacs-overlay";
+      url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

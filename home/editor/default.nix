@@ -3,6 +3,6 @@
     ./helix.nix
     ./vscode.nix
 
-    ./doom-emacs
+    ./emacs
   ];
 }

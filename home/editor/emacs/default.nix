@@ -1,28 +1,34 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
+let
+  tangledConfig = pkgs.stdenv.mkDerivation {
+    name = "hm-emacs-tangled-config";
+
+    src = ./config.org;
+    phases = "buildPhase installPhase";
+
+    buildPhase = ''
+      cp $src config.org
+      ${pkgs.emacs-pgtk}/bin/emacs --batch -l org --eval "(org-babel-tangle-file \"config.org\")"
+    '';
+
+    installPhase = ''
+      cp config.el $out
+    '';
+  };
+in
 {
   home.packages = [
     (pkgs.emacsWithPackagesFromUsePackage {
       config = ./config.org;
       package = pkgs.emacs-pgtk;
       alwaysEnsure = true;
-      # alwaysTangle = true;
-      # defaultInitFile = pkgs.substituteAll {
-      #   name = "default.el";
-      #   src = ./init.el;
-      #   inherit (config.xdg) configHome dataHome;
-      # };
-      extraEmacsPackages = epkgs: [
-      ];
+      alwaysTangle = true;
     })
   ];
 
   home.file = {
     ".emacs.d/init.el" = {
-      source = ./init.el;
-      recursive = true;
-    };
-    ".emacs.d/config.org" = {
-      source = ./config.org;
+      source = tangledConfig;
       recursive = true;
     };
   };

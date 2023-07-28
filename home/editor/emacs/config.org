@@ -1,53 +1,95 @@
-* My Emacs Configuration
+#+title: Gallon's Emacs Configuration
+#+author: Gallon
+#+email: h1090703848@gmail.com
+#+startup: overview indent
+#+PROPERTY: header-args :noweb no-export
 
-The Emacs configuration is done using Nix together with [[https://orgmode.org/manual/Extracting-Source-Code.html][Org Babel tangle]] to compile the final elisp file on Emacs startup. The starting point for this setup can be found from the [[default.nix]] file, which points to the [[config.org]] file and parses all [[https://www.emacswiki.org/emacs/UsePackage][use-package]] calls. Nix then fetches and builds these packages from [[https://github.com/nixos/nixpkgs][nixpkgs]] in a reproducible way.
+#+begin_src emacs-lisp :tangle yes
+(use-package benchmark-init
+  :ensure t
+  :config
+  (add-hook 'after-init-hook 'benchmark-init/deactivate))
+#+end_src
+* Introduction
+The Emacs configuration is done using Nix together with [[https://orgmode.org/manual/Extracting-Source-Code.html][Org Babel tangle]]. The starting point for this setup can be found from the [[default.nix]] file, which points to the [[config.org]] file and parses all [[https://www.emacswiki.org/emacs/UsePackage][use-package]] calls. Nix then fetches and builds these packages from [[https://github.com/nixos/nixpkgs][nixpkgs]] in a reproducible way.
 
-After fetching the packages, it copies the [[config.org]] and [[init.el]] files to ~$HOME/.emacs.d/~. When starting Emacs, the code in [[init.el]] gets all tangle blocks from the configuration, loading and compiling them.
+After fetching the packages, it gets all tangle blocks from [[config.org]] and copies them into ~$HOME/.emacs.d/init.el~. If you don't want any configuration block, just set tangle to no.
 
 The Emacs distribution in use is the current Emacs master build with the [[https://git.savannah.gnu.org/cgit/emacs.git/log/?h=feature/pgtk][feature/pgtk]] patches that enables us to compile all elisp code to a native binary and rendering everything using [[https://docs.gtk.org/gtk3/][Gtk 3]] and works natively on [[https://wayland.freedesktop.org/][Wayland]].
 
 Updating packages can be done with ~nix flake update && sudo nixos-rebuild switch~, getting the latest commit from Emacs and the latest versions of the elisp libraries. Doing so might require a full recompilation if the caches are not warm yet, which is one of the downsides of the setup until native compilation and pgtk features land to a stable Emacs.
 
-* Generic UI
-Defines the general UI settings to remove the stupid menu and toolbars, and sets line numbers to all other files except when they're too much of a bother.
-
+The layout of the content below mainly follows [[https://github.com/doomemacs/doomemacs/tree/master/modules][doomemacs]].
+* Basics
+** Setting Expectations
+ Enabling [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Lexical-Binding.html][lexical binding]] for this file.
 #+begin_src emacs-lisp :tangle yes
-(setq inhibit-startup-screen t)
-(setq inhibit-startup-message t)
-(setq visible-bell t)
-(setq make-backup-files nil)
-(setq-default show-trailing-whitespace t)
-(setq-default indicate-empty-lines t)
-(setq sentence-end-double-space nil)
-
-;; tab stuff
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-
-(make-directory "~/.emacs.d/backup/" t)
-(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/backup/" t)))
-(setq backup-directory-alist '(("." . "~/.emacs.d/backup/")))
-(setq create-lockfiles nil)
-
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(set-fringe-mode 10)
-(tooltip-mode -1)
-
-(column-number-mode)
-(global-display-line-numbers-mode t)
-
-(dolist (mode '(org-mode-hook
-                term-mode-hook
-                vterm-mode-hook
-                eshell-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode 0))))
-
-(use-package nerd-icons)
+;;; init.el -*- lexical-binding: t -*-
 #+end_src
 
-* Garbage Collector
+Replace "yes or no" with "y or n".
+#+begin_src emacs-lisp :tangle yes
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq use-dialog-box nil)
+(setq confirm-kill-emacs 'y-or-n-p)
+#+end_src
+** File Editing
+Trailing whitespace.
+#+begin_src emacs-lisp :tangle yes
+(setq require-final-newline 'visit-save)
+(add-hook 'before-save-hook  'delete-trailing-whitespace)
+#+end_src
+
+Set backup and autosave behaviour:
+
++ Backup files go to =~/.emacs.d/backups=
++ Autosave files go to =~/.emacs.d/auto-saves=
++ Some extra options are tweaked (see comments)
+#+begin_src emacs-lisp :tangle yes
+(setq backup-by-copying t    ; Keep symlinks intact
+      version-control t      ; Make sure backups are numbered
+      delete-old-versions t  ; Always delete old backups
+      kept-new-versions 10   ; Keep the last 10 backups
+      kept-old-versions 0    ; Don't worry about keeping initial ones
+      auto-save-interval 50) ; Autosave every 50 characters typed
+
+(let ((backup-dir (concat user-emacs-directory "backups/"))
+      (auto-save-dir (concat user-emacs-directory "auto-saves/"))
+      (max-file-size (* 5 1024 1024))) ; 5 MB
+  (if (not (file-exists-p backup-dir))
+      (make-directory backup-dir))
+  (if (not (file-exists-p auto-save-dir))
+      (make-directory auto-save-dir))
+  (setq backup-directory-alist `(("" . ,backup-dir))
+        auto-save-file-name-transforms `((".*" ,auto-save-dir t))))
+#+end_src
+
+Remove lockfile.
+#+begin_src emacs-lisp :tangle yes
+(setq create-lockfiles nil)
+#+end_src
+
+Set delete selection  mode.
+#+begin_src emacs-lisp :tangle yes
+(delete-selection-mode 1)
+#+end_src
+
+Single space after full stops.
+#+begin_src emacs-lisp :tangle yes
+(setq sentence-end-double-space nil)
+#+end_src
+
+Tabs.
+#+begin_src emacs-lisp :tangle yes
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+#+end_src
+
+Default line length is 80 characters. Wrap lines to that length.
+#+begin_src emacs-lisp :tangle yes
+(setq-default fill-column 80)
+#+end_src
+** Garbage Collector
 General garbage collector settings to make Emacs snappier. Taken from the [[https://github.com/hlissner/doom-emacs/blob/develop/docs/faq.org#how-does-doom-start-up-so-quickly][Doom Emacs FAQ]].
 
 #+begin_src emacs-lisp :tangle yes
@@ -83,26 +125,255 @@ General garbage collector settings to make Emacs snappier. Taken from the [[http
   (makunbound 'hm/file-name-handler-alist))
 (add-hook 'emacs-startup-hook #'hm/restore-file-name-handler-alist)
 #+end_src
-
-* Fonts
-[[https://www.levien.com/type/myfonts/inconsolata.html][Inconsolata]] for monospace, [[https://fonts.google.com/specimen/Cantarell][Cantarell]] for everything else.
+* UI
+Anything concerned with changing Emacs' appearance or providing interfaces for its features, like sidebars, tabs, or fonts.
+** Font
+~JetbrainsMono Nerd Font~ for everything else.
 
 #+begin_src emacs-lisp :tangle yes
 (set-face-attribute 'default nil :font "JetbrainsMono Nerd Font" :height 180)
 (set-face-attribute 'fixed-pitch nil :font "JetbrainsMono Nerd Font" :height 180)
 #+end_src
-
-* Which-key
-[[https://github.com/justbur/emacs-which-key][Which-key]] enables the nice help panel describing the available commands, when not finishing a key combination completely.
-
+** Native UI
+Disable the startup splash and clear the scratch buffer.
 #+begin_src emacs-lisp :tangle yes
-(use-package which-key)
-
-(which-key-mode)
-(setq which-key-idle-delay 0.3)
+  (setq inhibit-startup-screen t
+        initial-scratch-message nil)
 #+end_src
 
-* Ivy
+Remove those gaudy UI elements.
+#+begin_src emacs-lisp :tangle yes
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(fringe-mode 1)
+#+end_src
+
+Show line numbers in all code files. Pretty much every programming mode derives from =prog-mode=, so we can hook into that.
+#+begin_src emacs-lisp :tangle yes
+(add-hook 'prog-mode-hook (lambda () (setq-local display-line-numbers t)))
+#+end_src
+** Theme
+[[https://github.com/hlissner/emacs-doom-themes][doom-themes]] has a bunch of good ones. Implementations for basically every common colour scheme under the sun like Monokai, Solarized, Dracula, and then some. I choose the doom-nord.
+#+begin_src emacs-lisp :tangle yes
+(use-package doom-themes)
+(load-theme 'doom-nord t)
+#+end_src
+** Modeline
+Make Emacs to look like it's from the current century with [[https://seagle0128.github.io/doom-modeline/][Doom modeline]].
+
+#+begin_src emacs-lisp :tangle yes
+(use-package nerd-icons)
+
+(use-package doom-modeline
+  :config
+  <<DOOMLINE-CONFIG>>)
+#+end_src
+Make the modeline nice and thick.
+#+begin_src emacs-lisp :noweb-ref DOOMLINE-CONFIG
+(setq doom-modeline-height 15)
+#+end_src
+
+Enable =column-number-mode= so that we can get column number displayed in the modeline, along with the line number.
+#+begin_src emacs-lisp :noweb-ref DOOMLINE-CONFIG
+(column-number-mode 1)
+#+end_src
+
+And enable =display-time-mode= for a clock in there as well.
+#+begin_src emacs-lisp :noweb-ref DOOMLINE-CONFIG
+(display-time-mode 1)
+#+end_src
+
+And activate.
+#+begin_src emacs-lisp :noweb-ref DOOMLINE-CONFIG
+(doom-modeline-mode 1)
+#+end_src
+** Dashboard
+Using [[https://github.com/emacs-dashboard/emacs-dashboard][emacs-dashboard]] to show most important stuffs on startup screen.
+#+begin_src emacs-lisp :tangle yes
+(use-package dashboard
+  :config
+  <<DASHBOARD-INIT>>
+  :init
+  <<DASHBOARD-CONFIG>>)
+#+end_src
+Set up the dashboard to open automatically at starup.
+#+begin_src emacs-lisp :noweb-ref DASHBOARD-INIT
+(dashboard-setup-startup-hook)
+#+end_src
+Update the banner or banner title
+#+begin_src emacs-lisp :noweb-ref DASHBOARD-CONFIG
+(setq dashboard-banner-logo-title "Welcome to Emacs")
+(setq dashboard-center-content t)
+#+end_src
+Customize which widgets are displayed.
+#+begin_src emacs-lisp :noweb-ref DASHBOARD-CONFIG
+(setq dashboard-items '((recents . 5)
+                        (projects . 5)))
+#+end_src
+Use nerd-icons.
+#+begin_src emacs-lisp :noweb-ref DASHBOARD-CONFIG
+(setq dashboard-display-icons-p t)
+(setq dashboard-icon-type 'nerd-icons)
+#+end_src
+Add icons to the widget headings and their items.
+#+begin_src emacs-lisp :noweb-ref DASHBOARD-CONFIG
+(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
+#+end_src
+Show navigator below the banner.
+#+begin_src emacs-lisp :noweb-ref DASHBOARD-CONFIG
+(setq dashboard-set-navigator t)
+#+end_src
+Show info about the packages loaded and the init time.
+#+begin_src emacs-lisp :noweb-ref DASHBOARD-CONFIG
+(setq dashboard-set-init-info t)
+#+end_src
+** Git Gutter
+[[https://github.com/emacsorphanage/git-gutter][Git Gutter]] gives the green + and red - to the sidebar for added and deleted lines.
+#+begin_src emacs-lisp :tangle yes
+(use-package git-gutter)
+
+(global-git-gutter-mode +1)
+#+end_src
+** Rainbow Delimiters
+Hilight matching delimiters with [[https://www.emacswiki.org/emacs/RainbowDelimiters][Rainbow Delimiters]].
+#+begin_src emacs-lisp :tangle yes
+(use-package rainbow-delimiters)
+
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+#+end_src
+* Editor
+** Evil
+[[https://github.com/emacs-evil/evil][Evil mode]] adds a perfect editor to the Emacs operating system.
+#+begin_src emacs-lisp :tangle yes
+  (use-package evil
+    :init
+    <<EVIL-INIT>>
+    :config
+    <<EVIL-CONFIG>>)
+#+end_src
+
+Enabe =evil-mode=. And set init states.
+#+begin_src emacs-lisp :noweb-ref EVIL-CONFIG
+(evil-mode 1)
+
+(evil-set-initial-state 'messages-buffer-mode 'normal)
+(evil-set-initial-state 'dashboard-mode 'normal)
+#+end_src
+
+Add [[https://github.com/emacs-evil/evil-collection][evil-collection]], which extends Evil's keybindings to a few other modes and extra packages.
+#+begin_src emacs-lisp :tangle yes
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init)
+  <<EVILCOLLECTION-CONFIG>>)
+#+end_src
+
+Evil-collection requires =evil-want-keybinding= to be set to =nil= before Evil is loaded.
+#+begin_src emacs-lisp :noweb-ref EVIL-INIT
+(setq evil-want-keybinding nil)
+#+end_src
+
+Tell evil-collection NOT to eat my =TAB= binding in Outline mode (and Org mode by extension).
+#+begin_src emacs-lisp :noweb-ref EVILCOLLECTION-CONFIG
+(setq evil-collection-outline-bind-tab-p t)
+#+end_src
+** Key binding
+All custom keyboard shortcuts are defined here, together with the helpful [[https://github.com/noctuid/general.el][General framework]].
+#+begin_src emacs-lisp :tangle yes
+(use-package general)
+#+end_src
+
+Use the same =SPC= leader key pattern that Emacs frameworks like doomemacs.
+#+begin_src emacs-lisp :tangle yes
+  (general-create-definer gallon/def-leader-key
+    :states '(normal visual motion emacs)
+    :keymaps 'override
+    :prefix "SPC"
+    :prefix-map 'gallon/leader-key-map)
+#+end_src
+
+One thing to note though - Evil's motion state defines =SPC= as moving point forward, which conflicts with this leader key definition. We'll have to remove that before we can get anywhere.
+#+begin_src emacs-lisp :tangle yes
+  (general-unbind 'motion "SPC")
+#+end_src
+
+[[https://github.com/justbur/emacs-which-key][which-key ]]enables the nice help panel describing the available commands, when not finishing a key combination completely.
+#+begin_src emacs-lisp :tangle yes
+  (use-package which-key
+    :config
+    (which-key-mode 1))
+#+end_src
+** Window navidation
+Use [[https://github.com/abo-abo/ace-window][ace-window]] to quickly switch windows. To simplify, bind it to =SPC w=.
+#+begin_src emacs-lisp :tangle yes
+  (use-package ace-window
+    :config
+    (gallon/def-leader-key
+      "w" '(ace-window :wk "Switch window")))
+#+end_src
+
+Bind =SPC b= to quickly switch buffers.
+#+begin_src emacs-lisp :tangle yes
+  (gallon/def-leader-key
+    "b" '(counsel-switch-buffer :wk "Switch buffer"))
+#+end_src
+** Projectile
+
+Project navigation, and detecting what is a project (by using the git folder) to make searching and completions to work better. Done with [[https://projectile.mx/][Projectile]].
+
+#+begin_src emacs-lisp :tangle yes
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :custom ((projectile-completion-system 'ivy))
+  :init
+  (when (file-directory-p "~/src")
+    (setq projectile-project-search-path '("~/src")))
+  (setq projectile-switch-project-action #'projectile-dired))
+
+(use-package counsel-projectile
+  :config (counsel-projectile-mode))
+#+end_src
+
+Add keybindings.
+#+begin_src emacs-lisp :tangle yes
+  (gallon/def-leader-key
+    "p" '(projectile-command-map :wk "Projectile"))
+#+end_src
+** Undo-tree
+Undo and redo as a tree with the [[https://www.emacswiki.org/emacs/UndoTree][Undo tree]].
+
+#+begin_src emacs-lisp :tangle yes
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode)
+  (setq undo-tree-auto-save-history nil))
+#+end_src
+* Completion
+These modules provide interfaces and frameworks completion, include code completion.
+** Company
+Company is a text completion framework for Emacs. The name stands for “complete anything”.  Completion will start automatically after you type a few letters. Use M-n and M-p to select, <return> to complete or <tab> to complete the common part.
+#+begin_src emacs-lisp :tangle yes
+(use-package company
+  :defer 2
+  :diminish
+  :custom
+  (company-begin-commands '(self-insert-command))
+  (company-idle-delay .1)
+  (company-minimum-prefix-length 2)
+  (company-show-numbers t)
+  (company-tooltip-align-annotations 't)
+  (global-company-mode t))
+
+(use-package company-box
+  :after company
+  :diminish
+  :hook (company-mode . company-box-mode))
+#+end_src
+** Ivy
 [[https://oremacs.com/swiper/][Ivy]] provides completion in non-code context, such as menus.
 
 #+begin_src emacs-lisp :tangle yes
@@ -124,13 +395,12 @@ General garbage collector settings to make Emacs snappier. Taken from the [[http
   :config
   (ivy-mode 1))
 
-(use-package ivy-rich)
-(ivy-rich-mode 1)
+(use-package ivy-rich
+  :config
+  (ivy-rich-mode 1))
 #+end_src
-
-* Counsel
+** Counsel
 More completion goodies with [[https://oremacs.com/2015/04/09/counsel-completion/][Counsel]].
-
 #+begin_src emacs-lisp :tangle yes
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
@@ -139,149 +409,70 @@ More completion goodies with [[https://oremacs.com/2015/04/09/counsel-completion
          :map minibuffer-local-map
          ("C-r" . 'counsel-minibuffer-history)))
 #+end_src
+* Development
+Specialize in intergration particular alnguages and their ecosystems.
+** Lsp
+The Emacs Language Server Protocol is done with [[https://github.com/joaotavora/eglot][Eglot]].
+#+begin_src emacs-lisp :tangle yes
+(use-package eglot
+  :config
+  (add-hook 'rustic-mode-hook 'eglot-ensure)
 
-* Evil
-[[https://github.com/emacs-evil/evil][Evil mode]] adds a perfect editor to the Emacs operating system.
+  (add-hook 'go-mode-hook 'eglot-ensure)
+
+  (add-to-list 'eglot-server-programs '(nix-mode .("nil")))
+  (add-hook 'nix-mode-hook 'eglot-ensure))
+#+end_src
+** Tree-sitter
+#+begin_src emacs-lisp :tangle yes
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
+
+(global-tree-sitter-mode)
+(add-hook 'tree-sitter-afteron-hook #'tree-sitter-hl-mode)
+
+(add-to-list 'tree-sitter-major-mode-language-alist '(markdown-mode . markdown))
+(add-to-list 'tree-sitter-major-mode-language-alist '(elisp-mode . elisp))
+#+end_src
+** Formatter
+Always nice to keep code clean, neat and pretty looking. Running a code formatter on save is what most people do to ensure consistent formatting. [[https://github.com/radian-software/apheleia][Apheleia]] can help us do that in Emacs. Luckily, it's default collection of formatters are exactly what I prefer, so I don't need to worry about configuring it up. Just set and forget. Nice when things work out like that, isn't it?
+#+begin_src emacs-lisp :tangle yes
+  (use-package apheleia
+    :config
+    (apheleia-global-mode))
+#+end_src
+** Yasnippet
+Using [[https://github.com/joaotavora/yasnippet][Yasnippet]]:
 
 #+begin_src emacs-lisp :tangle yes
-(use-package evil
+(use-package yasnippet
+  :ensure t
   :init
-  (setq evil-want-integration t)
-  (setq evil-want-keybinding nil)
-  (setq evil-want-C-u-scroll t)
-  (setq evil-want-C-i-jump nil)
+  (yas-global-mode 1))
+#+end_src
+** Flycheck
+All that red and yellow squiggly line comes from [[https://www.flycheck.org/en/latest/][Flycheck]].
+#+begin_src emacs-lisp :tangle yes
+(use-package flycheck
   :config
-  (evil-mode 1)
-  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-  (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
-
-  ;; Use visual line motions even outside of visual-line-mode buffers
-  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
-  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
-
-  (evil-set-initial-state 'messages-buffer-mode 'normal)
-  (evil-set-initial-state 'dashboard-mode 'normal))
-
-(use-package evil-collection
-  :after evil
+  (global-flycheck-mode))
+#+end_src
+** Helpful
+When finding help for functions or symbols, [[https://github.com/Wilfred/helpful][Helpful]] makes everything prettier and easier to read.
+#+begin_src emacs-lisp :tangle yes
+(use-package helpful
   :config
-  (evil-collection-init))
+  (setq counsel-describe-function-function #'helpful-callable)
+  (setq counsel-describe-variable-function #'helpful-variable))
 #+end_src
-
-* Doom Modeline and themes
-Make Emacs to look like it's from the current century with [[https://seagle0128.github.io/doom-modeline/][Doom modeline]].
-
+** Direnv
+[[https://github.com/wbolster/emacs-direnv][Direnv]] is the Emacs file manager.
 #+begin_src emacs-lisp :tangle yes
-(use-package doom-themes)
-(load-theme 'doom-nord t)
+(use-package direnv)
 
-(use-package doom-modeline)
-(doom-modeline-mode 1)
-(setq doom-modeline-height 15)
+(direnv-mode)
 #+end_src
-
-* General Keyboard Shortcuts
-All custom keyboard shortcuts are defined here, together with the helpful [[https://github.com/noctuid/general.el][General framework]].
-
-#+begin_src emacs-lisp :tangle no
-(use-package general
-  :config
-  (general-create-definer leader
-    :keymaps 'normal
-    :prefix "SPC")
-
-  (leader
-    "SPC" 'projectile-find-file))
-#+end_src
-
-* Org
-Goodies for writing things and managing your life with the brilliant [[https://orgmode.org/][Org mode]].
-
-#+begin_src emacs-lisp :tangle yes
-(use-package org
-  :config
-  (setq org-ellipsis " ▾")
-  (setq evil-auto-indent nil)
-  (setq org-agenda-start-with-log-mode t)
-  (setq org-log-done 'time)
-  (setq org-log-into-drawer t)
-  (setq org-src-preserve-indentation t)
-  (setq org-directory "~/Todo")
-
-  (setq org-capture-templates
-        `(("t" "Tasks / Projects")
-          ("tt" "Task" entry (file+olp "~/Todo/Prisma Sprints.org" "Inbox")
-           "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)
-
-          ("j" "Journal Entries")
-          ("jj" "Journal" entry
-           (file+olp+datetree "~/Todo/Journal.org")
-           "\n* %<%H:%M> - Journal :journal:\n\n%?\n\n"
-           :clock-in :clock-resume
-           :empty-lines 1)))
-
-  (setq org-agenda-files '("Prisma Sprints.org")))
-
-(use-package org-bullets)
-
-(add-hook 'org-mode-hook (lambda ()
-                           (org-indent-mode)
-                           (auto-fill-mode 0)
-                           (visual-line-mode 1)
-                           (org-bullets-mode 1)
-                           (variable-pitch-mode 1)))
-
-(font-lock-add-keywords 'org-mode
-                        '(("^ *\\([-]\\) "
-                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-
-(dolist (face '((org-level-1 . 1.2)
-                (org-level-2 . 1.1)
-                (org-level-3 . 1.05)
-                (org-level-4 . 1.0)
-                (org-level-5 . 1.1)
-                (org-level-6 . 1.1)
-                (org-level-7 . 1.1)
-                (org-level-8 . 1.1)))
-  (set-face-attribute (car face) nil :font "JetbrainsMono Nerd Font" :weight 'regular :height (cdr face)))
-
-(set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
-(set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch))
-(set-face-attribute 'org-table nil :inherit '(shadow fixed-pitch))
-(set-face-attribute 'org-table-header nil :inherit '(shadow fixed-pitch))
-(set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-(set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-(set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
-#+end_src
-
-* Nix
-[[https://github.com/NixOS/nix-mode][Nix mode]] for syntax hilight and LSP for Nix files.
-
-#+begin_src emacs-lisp :tangle yes
-(use-package nix-mode
-  :mode "\\.nix\\'")
-#+end_src
-
-* Git Gutter
-[[https://github.com/emacsorphanage/git-gutter][Git Gutter]] gives the green + and red - to the sidebar for added and deleted lines.
-
-#+begin_src emacs-lisp :tangle yes
-(use-package git-gutter)
-
-(global-git-gutter-mode +1)
-#+end_src
-
-* Markdown
-Syntax hilighting to markdown files with [[https://www.emacswiki.org/emacs/MarkdownMode][Markdown mode]].
-
-#+begin_src emacs-lisp :tangle yes
-(use-package markdown-mode)
-
-(add-to-list 'auto-mode-alist '("\\.mdx\\'" . markdown-mode))
-#+end_src
-
-* Magit
+** Magit
 Together with the Org mode [[https://magit.vc/][Magit]] is one of the best reasons to use Emacs. [[https://github.com/magit/forge][Forge]] makes it possible to fetch pull requests, issues and all that from GitHub/GitLab et.al.
 
 #+begin_src emacs-lisp :tangle yes
@@ -292,24 +483,132 @@ Together with the Org mode [[https://magit.vc/][Magit]] is one of the best reaso
 (use-package forge
   :after magit)
 #+end_src
-
-* Projectile
-Project navigation, and detecting what is a project (by using the git folder) to make searching and completions to work better. Done with [[https://projectile.mx/][Projectile]].
-
+** Org
+Goodies for writing things and managing your life with the brilliant [[https://orgmode.org/][Org mode]].
 #+begin_src emacs-lisp :tangle yes
-(use-package projectile
-  :diminish projectile-mode
-  :config (projectile-mode)
-  :custom ((projectile-completion-system 'ivy))
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
-  :init
-  (when (file-directory-p "~/src")
-    (setq projectile-project-search-path '("~/src")))
-  (setq projectile-switch-project-action #'projectile-dired))
-
-(use-package counsel-projectile
-  :config (counsel-projectile-mode))
+(use-package org
+  :config
+    <<ORG-CONFIG>>)
 #+end_src
 
+Set fonts.
+#+begin_src emacs-lisp :noweb-ref ORG-CONFIG
+(add-hook 'org-mode-hook (lambda () (progn
+                                      (setq-local buffer-face-mode-face 'variable-pitch)
+                                      (buffer-face-mode 1))))
 
+(set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
+(set-face-attribute 'org-code nil :inherit '(shadow fixed-pitch))
+(set-face-attribute 'org-table nil :inherit '(shadow fixed-pitch))
+(set-face-attribute 'org-table-header nil :inherit '(shadow fixed-pitch))
+(set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+(set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+(set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
+
+(font-lock-add-keywords 'org-mode
+                        '(("^ *\\([-]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+#+end_src
+
+Add some pretty symbols.
+#+begin_src emacs-lisp :noweb-ref ORG-CONFIG
+(setq org-ellipsis " ▾")
+(setq evil-auto-indent nil)
+(setq org-src-tab-acts-natively t)
+(setq org-src-preserve-indentation t)
+(setq org-src-fontify-natively t)
+(setq org-cycle-separator-lines -1)
+
+(defun load-prettify-symbols ()
+    (interactive)
+    (setq prettify-symbols-alist
+        (mapcan (lambda (x) (list x (cons (upcase (car x)) (cdr x))))
+                '(("(lamda" . ?λ)
+                    ("|>" . ?▷)
+                    ("<|" . ?◁)
+                    ("->>" . ?↠)
+                    ("->" . ?→)
+                    ("<-" . ?←)
+                    ("=>" . ?⇒)
+                    ("<=" . ?≤)
+                    (">=" . ?≥))))
+        (prettify-symbols-mode 1))
+(add-hook 'org-mode-hook 'load-prettify-symbols)
+#+end_src
+
+Make headings look a little prettier with [[https://github.com/sabof/org-bullets][org-bullets]].
+#+begin_src emacs-lisp :tangle yes
+  (use-package org-bullets
+    :hook (org-mode . org-bullets-mode))
+#+end_src
+
+Set height of headers
+#+begin_src emacs-lisp :noweb-ref ORG-CONFIG
+  (set-face-attribute 'org-document-title nil :height 2.5)
+  (set-face-attribute 'org-level-1 nil :height 1.20)
+  (set-face-attribute 'org-level-2 nil :height 1.15)
+  (set-face-attribute 'org-level-3 nil :height 1.12)
+  (set-face-attribute 'org-level-4 nil :height 1.08)
+  (set-face-attribute 'org-level-5 nil :height 1.05)
+#+end_src
+
+Visual Line mode will make sure they wrap around and don't fly way off the edge of the screen.
+#+begin_src emacs-lisp :noweb-ref ORG-CONFIG
+  (add-hook 'org-mode-hook 'visual-line-mode)
+#+end_src
+
+Enable visual indentation when viewing files, for a little extra visual separation between headers.
+#+begin_src emacs-lisp :noweb-ref ORG-CONFIG
+  (setq org-startup-indented t)
+#+end_src
+
+Don't worry about showing the symbols around things like *bold*, /italic/ or =inline code=.
+#+begin_src emacs-lisp :noweb-ref ORG-CONFIG
+  (setq org-hide-emphasis-markers t)
+#+end_src
+
+Doom-themes from earlier includes some stuff to tidy up Org visuals a little bit.
+#+begin_src emacs-lisp :noweb-ref DOOMTHEMES-CONFIG
+(doom-themes-org-config)
+#+end_src
+
+As part of writing these documents, I create a lot of emacs-lisp source blocks in Org. Like, a lot. A faster way to create those is definitely in order. Luckily, =org-structure-template-alist= comes in handy for us to add whatever shortcust we want for producing blocks. Let's add a shortcut for making an emacs-lisp source block.
+#+begin_src emacs-lisp :noweb-ref ORG-CONFIG
+  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+#+end_src
+
+To make things even faster, we can use Org Tempo to summon a block, just by typing =<el= and hitting TAB.
+#+begin_src emacs-lisp :noweb-ref ORG-CONFIG
+  (require 'org-tempo)
+#+end_src
+** Rust
+Writing Rust for living with [[https://github.com/brotzeit/rustic][Rustic]].
+#+begin_src emacs-lisp :tangle yes
+(use-package rustic
+  :config
+  (setq rustic-format-trigger 'on-save)
+  (setq rustic-lsp-client 'eglot)
+  (push 'rustic-clippy flycheck-checkers))
+#+end_src
+** Go
+[[https://github.com/dominikh/go-mode.el][Go mode]] for syntax highlight and LSP for Go files.
+#+begin_src emacs-lisp :tangle yes
+(use-package go-mode
+  :mode "\\.go\\'")
+#+end_src
+** Nix
+[[https://github.com/NixOS/nix-mode][Nix mode]] for syntax highlight and LSP for Nix files.
+#+begin_src emacs-lisp :tangle yes
+(use-package nix-mode
+  :mode "\\.nix\\'"
+  :config
+  (customize-set-variable 'nix-nixfmt-bin "nixpkgs-fmt"))
+#+end_src
+** Markdown
+Syntax hilighting to markdown files with [[https://www.emacswiki.org/emacs/MarkdownMode][Markdown mode]].
+#+begin_src emacs-lisp :tangle yes
+(use-package markdown-mode)
+
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+#+end_src

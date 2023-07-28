@@ -5,7 +5,7 @@
       "rustc"
       "cargo"
       "rustfmt"
-      "rust-std"
+      "rust-src"
       "clippy"
     ])
     rust-analyzer-nightly
@@ -16,7 +16,7 @@
     cargoConfig = {
       text = ''
         [net]
-        git-fetch-with-cli = true;
+        git-fetch-with-cli = true
       '';
       target = ".cargo/config.toml";
     };

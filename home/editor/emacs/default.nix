@@ -17,22 +17,14 @@ let
   };
 in
 {
-  home.packages = with pkgs; [
-    (emacsWithPackagesFromUsePackage {
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacsWithPackagesFromUsePackage {
       config = ./config.org;
       package = pkgs.emacs-pgtk;
       alwaysEnsure = true;
-      extraEmacsPackages = epkgs: [
-        epkgs.use-package
-        pkgs.emacsPackages.tree-sitter
-        (pkgs.emacsPackages.tree-sitter-langs.withPlugins (p: pkgs.emacsPackages.tree-sitter-langs.plugins ++ [
-          p.tree-sitter-markdown
-          p.tree-sitter-elisp
-          p.tree-sitter-toml
-        ]))
-      ];
-    })
-  ];
+    };
+  };
 
   home.file = {
     ".emacs.d/init.el" = {

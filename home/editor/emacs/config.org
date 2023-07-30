@@ -10,13 +10,6 @@
 #+begin_src emacs-lisp :tangle yes
 ;;; init.el -*- lexical-binding: t -*-
 #+end_src
-
-Replace "yes or no" with "y or n".
-#+begin_src emacs-lisp :tangle yes
-(fset 'yes-or-no-p 'y-or-n-p)
-(setq use-dialog-box nil)
-(setq confirm-kill-emacs 'y-or-n-p)
-#+end_src
 ** File Editing
 Trailing whitespace.
 #+begin_src emacs-lisp :tangle yes
@@ -65,7 +58,6 @@ Single space after full stops.
 
 Tabs.
 #+begin_src emacs-lisp :tangle yes
-(setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 #+end_src
 
@@ -118,20 +110,6 @@ Anything concerned with changing Emacs' appearance or providing interfaces for i
 (set-face-attribute 'default nil :font "JetbrainsMono Nerd Font" :height 180)
 #+end_src
 ** Native UI
-Disable the startup splash and clear the scratch buffer.
-#+begin_src emacs-lisp :tangle yes
-  (setq inhibit-startup-screen t
-        initial-scratch-message nil)
-#+end_src
-
-Remove those gaudy UI elements.
-#+begin_src emacs-lisp :tangle yes
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(fringe-mode 1)
-#+end_src
-
 Show line numbers in all code files. Pretty much every programming mode derives from =prog-mode=, so we can hook into that.
 #+begin_src emacs-lisp :tangle yes
 (global-display-line-numbers-mode 1)
@@ -140,8 +118,8 @@ Show line numbers in all code files. Pretty much every programming mode derives 
 ** Theme
 [[https://github.com/hlissner/emacs-doom-themes][doom-themes]] has a bunch of good ones. Implementations for basically every common colour scheme under the sun like Monokai, Solarized, Dracula, and then some. I choose the doom-nord.
 #+begin_src emacs-lisp :tangle yes
-(use-package doom-themes)
-(load-theme 'doom-nord t)
+(use-package nord-theme)
+(load-theme 'nord t)
 #+end_src
 ** Modeline
 Make Emacs to look like it's from the current century with [[https://seagle0128.github.io/doom-modeline/][Doom modeline]].
@@ -159,23 +137,22 @@ Make Emacs to look like it's from the current century with [[https://seagle0128.
 ** Dashboard
 Using [[https://github.com/emacs-dashboard/emacs-dashboard][emacs-dashboard]] to show most important stuffs on startup screen.
 #+begin_src emacs-lisp :tangle yes
-(use-package dashboard
-  :init
-  (setq dashboard-center-content t)
-  (setq dashboard-display-icons-p t)
-  (setq dashboard-icon-type 'nerd-icons)
-  (setq dashboard-set-heading-icons t)
-  (setq dashboard-set-file-icons t)
-  (setq dashboard-set-navigator t)
-  (setq dashboard-set-init-info t)
-  :config
-  (dashboard-setup-startup-hook))
+  (use-package dashboard
+    :init
+    (setq dashboard-center-content t)
+    (setq dashboard-display-icons-p t)
+    (setq dashboard-icon-type 'nerd-icons)
+    (setq dashboard-set-heading-icons t)
+    (setq dashboard-set-file-icons t)
+    (setq dashboard-set-navigator t)
+    (setq dashboard-set-init-info t)
+    (dashboard-setup-startup-hook))
 #+end_src
 ** Git Gutter
 [[https://github.com/emacsorphanage/git-gutter][Git Gutter]] gives the green + and red - to the sidebar for added and deleted lines.
 #+begin_src emacs-lisp :tangle yes
 (use-package git-gutter
-  :defer t
+  :defer 2
   :config
   (global-git-gutter-mode +1))
 #+end_src
@@ -183,7 +160,7 @@ Using [[https://github.com/emacs-dashboard/emacs-dashboard][emacs-dashboard]] to
 Hilight matching delimiters with [[https://www.emacswiki.org/emacs/RainbowDelimiters][Rainbow Delimiters]].
 #+begin_src emacs-lisp :tangle yes
 (use-package rainbow-delimiters
-  :defer t
+  :defer 2
   :config
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 #+end_src
@@ -269,26 +246,17 @@ All custom keyboard shortcuts are defined here, together with the helpful [[http
 Project navigation, and detecting what is a project (by using the git folder) to make searching and completions to work better. Done with [[https://projectile.mx/][Projectile]].
 
 #+begin_src emacs-lisp :tangle yes
-(use-package projectile
-  :config (projectile-mode 1)
-  :custom ((projectile-completion-system 'ivy))
-  :init
-  (when (file-directory-p "~/src")
-    (setq projectile-project-search-path '("~/src")))
-  (setq projectile-switch-project-action #'projectile-dired))
+  (use-package projectile
+    :config (projectile-mode 1)
+    :custom ((projectile-completion-system 'ivy))
+    :init
+    (when (file-directory-p "~/src")
+      (setq projectile-project-search-path '("~/src")))
+    (setq projectile-switch-project-action #'projectile-dired))
 
-(use-package counsel-projectile
-  :config (counsel-projectile-mode))
-#+end_src
-** Undo-tree
-Undo and redo as a tree with the [[https://www.emacswiki.org/emacs/UndoTree][Undo tree]].
-
-#+begin_src emacs-lisp :tangle yes
-(use-package undo-tree
-  :defer t
-  :config
-  (global-undo-tree-mode)
-  (setq undo-tree-auto-save-history nil))
+  (use-package counsel-projectile
+    :after projectile
+    :config (counsel-projectile-mode))
 #+end_src
 * Completion
 These modules provide interfaces and frameworks completion, include code completion.
@@ -304,23 +272,20 @@ Company is a text completion framework for Emacs. The name stands for “complet
   (company-show-numbers t)
   (company-tooltip-align-annotations 't)
   (global-company-mode t))
-
-(use-package company-box
-  :after company
-  :hook (company-mode . company-box-mode))
 #+end_src
 ** Ivy
 [[https://oremacs.com/swiper/][Ivy]] provides completion in non-code context, such as menus.
 
 #+begin_src emacs-lisp :tangle yes
-(use-package ivy
-  :config
-  (ivy-mode))
+  (use-package ivy
+    :defer t
+    :config
+    (ivy-mode))
 
-(use-package ivy-rich
-  :after ivy
-  :init
-  (ivy-rich-mode 1))
+  (use-package ivy-rich
+    :after ivy
+    :init
+    (ivy-rich-mode 1))
 #+end_src
 ** Counsel
 More completion goodies with [[https://oremacs.com/2015/04/09/counsel-completion/][Counsel]].
@@ -335,30 +300,25 @@ Specialize in intergration particular alnguages and their ecosystems.
 ** Lsp
 The Emacs Language Server Protocol is done with [[https://github.com/joaotavora/eglot][Eglot]].
 #+begin_src emacs-lisp :tangle yes
-(use-package eglot
-  :config
-  (add-hook 'rustic-mode-hook 'eglot-ensure)
-
-  (add-hook 'go-mode-hook 'eglot-ensure)
-
-  (add-to-list 'eglot-server-programs '(nix-mode .("nil")))
-  (add-hook 'nix-mode-hook 'eglot-ensure))
-#+end_src
-** Formatter
-Always nice to keep code clean, neat and pretty looking. Running a code formatter on save is what most people do to ensure consistent formatting. [[https://github.com/radian-software/apheleia][Apheleia]] can help us do that in Emacs. Luckily, it's default collection of formatters are exactly what I prefer, so I don't need to worry about configuring it up. Just set and forget. Nice when things work out like that, isn't it?
-#+begin_src emacs-lisp :tangle yes
-  (use-package apheleia
+  (use-package eglot
     :defer t
     :config
-    (apheleia-global-mode))
+    (add-hook 'rustic-mode-hook 'eglot-ensure)
+
+    (add-hook 'go-mode-hook 'eglot-ensure)
+
+    (add-to-list 'eglot-server-programs '(nix-mode .("nil")))
+    (add-hook 'nix-mode-hook 'eglot-ensure))
 #+end_src
 ** Yasnippet
 Using [[https://github.com/joaotavora/yasnippet][Yasnippet]]:
 #+begin_src emacs-lisp :tangle yes
-(use-package yasnippet
-  :after eglot
-  :init
-  (yas-global-mode 1))
+  (use-package yasnippet
+    :after eglot
+    :hook
+    ((prog-mode) . yas-minor-mode)
+    :config
+    (yas-reload-all))
 #+end_src
 ** Flycheck
 All that red and yellow squiggly line comes from [[https://www.flycheck.org/en/latest/][Flycheck]].
@@ -368,15 +328,6 @@ All that red and yellow squiggly line comes from [[https://www.flycheck.org/en/l
   :init
   (global-flycheck-mode))
 #+end_src
-** Helpful
-When finding help for functions or symbols, [[https://github.com/Wilfred/helpful][Helpful]] makes everything prettier and easier to read.
-#+begin_src emacs-lisp :tangle yes
-(use-package helpful
-  :defer t
-  :config
-  (setq counsel-describe-function-function #'helpful-callable)
-  (setq counsel-describe-variable-function #'helpful-variable))
-#+end_src
 ** Magit
 Together with the Org mode [[https://magit.vc/][Magit]] is one of the best reasons to use Emacs. [[https://github.com/magit/forge][Forge]] makes it possible to fetch pull requests, issues and all that from GitHub/GitLab et.al.
 
@@ -385,9 +336,6 @@ Together with the Org mode [[https://magit.vc/][Magit]] is one of the best reaso
   :defer t
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
-
-(use-package forge
-  :after magit)
 #+end_src
 ** Org
 Goodies for writing things and managing your life with the brilliant [[https://orgmode.org/][Org mode]].
@@ -429,11 +377,12 @@ Writing Rust for living with [[https://github.com/brotzeit/rustic][Rustic]].
 ** Nix
 [[https://github.com/NixOS/nix-mode][Nix mode]] for syntax highlight and LSP for Nix files.
 #+begin_src emacs-lisp :tangle yes
-(use-package nix-mode
-  :defer t
-  :mode "\\.nix\\'"
-  :config
-  (customize-set-variable 'nix-nixfmt-bin "nixpkgs-fmt"))
+  (use-package nix-mode
+    :defer t
+    :mode "\\.nix\\'"
+    :hook ((before-save . nix-format-before-save))
+    :config
+    (customize-set-variable 'nix-nixfmt-bin "nixpkgs-fmt"))
 #+end_src
 ** Markdown
 Syntax hilighting to markdown files with [[https://www.emacswiki.org/emacs/MarkdownMode][Markdown mode]].

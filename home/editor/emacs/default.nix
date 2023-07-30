@@ -31,5 +31,10 @@ in
       source = tangledConfig;
       recursive = true;
     };
+
+    ".emacs.d/early-init.el" = {
+      source = ./early-init.el;
+      recursive = true;
+    };
   };
 }

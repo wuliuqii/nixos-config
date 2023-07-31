@@ -96,6 +96,7 @@
   home = {
     packages = with pkgs; [
       # search
+      bat
       fd
       ripgrep
 

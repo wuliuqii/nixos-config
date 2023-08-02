@@ -154,8 +154,8 @@
       #------------#
       # change gap #
       #------------#
-      bind = $mainMod SHIFT, G,exec,hyprctl --batch "keyword general:gaps_out 5;keyword general:gaps_in 3"
-      bind = $mainMod , G,exec,hyprctl --batch "keyword general:gaps_out 0;keyword general:gaps_in 0"
+      # bind = $mainMod SHIFT, G,exec,hyprctl --batch "keyword general:gaps_out 5;keyword general:gaps_in 3"
+      # bind = $mainMod , G,exec,hyprctl --batch "keyword general:gaps_out 0;keyword general:gaps_in 0"
 
       #--------------------------------------#
       # Move focus with mainMod + arrow keys #
@@ -166,8 +166,7 @@
       bind = $super, j, movefocus, d
 
       #----------------------------------------#
-      # Switch workspaces with mainMod + [0-9] #
-      #----------------------------------------#
+      # Switch workspaces with mainMod + [0-9] # #----------------------------------------#
       bind = $mainMod, 1, workspace, 1
       bind = $mainMod, 2, workspace, 2
       bind = $mainMod, 3, workspace, 3
@@ -258,7 +257,7 @@
       #---------------#
       # waybar toggle #
       # --------------#
-      bind=$mainMod,O,exec,killall -SIGUSR1 .waybar-wrapped
+      # bind=$mainMod,O,exec,killall -SIGUSR1 .waybar-wrapped
 
       #---------------#
       # resize window #

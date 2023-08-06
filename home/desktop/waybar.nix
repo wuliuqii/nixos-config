@@ -257,7 +257,7 @@ in
           "backlight"
           "memory"
           "cpu"
-          "network"
+          # "network"
           "battery"
           "custom/powermenu"
           "tray"

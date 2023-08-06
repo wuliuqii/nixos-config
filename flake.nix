@@ -33,6 +33,7 @@
           nixpkgs.overlays = [
             inputs.fenix.overlays.default
             inputs.go-musicfox.overlays.default
+            inputs.emacs-overlay.overlay
           ];
         }
       ];
@@ -79,6 +80,11 @@
 
     go-musicfox = {
       url = "github:go-musicfox/go-musicfox";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

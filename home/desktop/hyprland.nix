@@ -23,8 +23,7 @@
     systemdIntegration = true;
     recommendedEnvironment = true;
     extraConfig = ''
-      $mainMod = ALT
-      $super = SUPER
+      $mainMod = SUPER
 
       # monitor=,preferred,auto,1 
       monitor=DP-1, 3840x2160, 0x0, 2
@@ -160,10 +159,10 @@
       #--------------------------------------#
       # Move focus with mainMod + arrow keys #
       #--------------------------------------#
-      bind = $super, h, movefocus, l
-      bind = $super, l, movefocus, r
-      bind = $super, k, movefocus, u
-      bind = $super, j, movefocus, d
+      bind = $mainMod, h, movefocus, l
+      bind = $mainMod, l, movefocus, r
+      bind = $mainMod, k, movefocus, u
+      bind = $mainMod, j, movefocus, d
 
       #----------------------------------------#
       # Switch workspaces with mainMod + [0-9] # #----------------------------------------#
@@ -238,8 +237,8 @@
       #------------------------# 
       bind=$mainMod, M, exec, kitty --class="musicfox" --hold sh -c "musicfox"
       bind=$mainMod, P, exec, myswaylock
-      bind=SUPER, Space, exec, pkill rofi || ~/.config/rofi/launcher.sh
-      bind=$mainMod, Super_L, exec, bash ~/.config/rofi/powermenu.sh
+      bind=$mainMod, Space, exec, pkill rofi || ~/.config/rofi/launcher.sh
+      bind=$mainMod, ALT, exec, bash ~/.config/rofi/powermenu.sh
 
       #-----------------------------------------#
       # control volume,brightness,media players-#

@@ -17,5 +17,5 @@
 (setq frame-inhibit-implied-resize t)
 
 (provide 'early-init)
-;;; early-init.el ends here:w
+;;; early-init.el ends here
 

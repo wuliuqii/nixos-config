@@ -13,5 +13,13 @@
 ;; --debug-init implies `debug-on-error`.
 (setq debug-on-error init-file-debug)
 
+(let ((lispDir (locate-user-emacs-file "lisp")))
+  (add-to-list 'load-path (file-name-as-directory lispDir)))
+
+(use-package doom-themes
+  :ensure t)
+
+(require 'init-package)
+
 (provide 'init)
 ;;; init.el ends here

@@ -8,7 +8,7 @@
       gc-cons-percentage 0.6)
 
 ;; Increase how much is read from processes in a single chunk (default is 4kb).
-(setq rad-process-output-max (* 4 1024 1024))
+(setq read-process-output-max (* 4 1024 1024))
 
 ;; --debug-init implies `debug-on-error`.
 (setq debug-on-error init-file-debug)
@@ -23,6 +23,7 @@
 (require 'init-tools)
 (require 'init-lsp)
 (require 'init-dev)
+(require 'init-evil)
 
 (provide 'init)
 

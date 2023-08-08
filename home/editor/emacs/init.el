@@ -24,6 +24,7 @@
 (require 'init-lsp)
 (require 'init-dev)
 (require 'init-evil)
+(require 'init-git)
 
 (provide 'init)
 

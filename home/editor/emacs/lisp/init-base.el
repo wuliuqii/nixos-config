@@ -74,7 +74,7 @@
 ;; Sane defaults
 (setq use-short-answers t)
 
-;; Inhibit switching out from `y-or-n-p` and `read-char-choice`
+;; Inhibit switching out from `y-or-n-p' and `read-char-choice'
 (setq y-or-n-p-use-read-key t
       confirm-kill-emacs 'yes-or-no-p
       read-char-choice-use-read-key t)
@@ -103,11 +103,11 @@
   (save-interprogram-paste-before-kill nil)
   ;; eliminate duplicates
   (kill-do-not-save-duplicates t)
-  ;; include `\n` when point starts at the beginning-of-line
+  ;; include `\n' when point starts at the beginning-of-line
   (kill-whole-line t)
-  ;; show cwd when `shell-command` and `async-shell-command`
+  ;; show cwd when `shell-command' and `async-shell-command'
   (shell-command-prompt-show-cwd t)
-  ;; show the name of character in `what-cursor-position`
+  ;; show the name of character in `what-cursor-position'
   (what-cursor-show-names t)
   ;; list only applicable command
   (read-extended-command-predicate #'command-completion-default-include-p))
@@ -132,7 +132,7 @@
   :when (display-graphic-p)
   :hook (after-init . global-hl-line-mode))
 
-;;Enable `repeat-mode` to reduce key sequence length
+;;Enable `repeat-mode' to reduce key sequence length
 (use-package repeat
   :ensure nil
   :custom
@@ -214,7 +214,7 @@
           (comment-dwin nil)
 	      (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
   :custom
-  ;; `auto-fill` inside comments
+  ;; `auto-fill' inside comments
   (comment-auto-fill-only-comments t))
 
 ;; Better abbrev expansion

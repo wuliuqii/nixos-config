@@ -29,6 +29,7 @@
 (require 'init-dired)
 (require 'init-text)
 (require 'init-org)
+(require 'init-spell)
 
 (provide 'init)
 

@@ -27,6 +27,8 @@
 (require 'init-git)
 (require 'init-minibuffer)
 (require 'init-dired)
+(require 'init-text)
+(require 'init-org)
 
 (provide 'init)
 

@@ -242,6 +242,10 @@
 (use-package imenu
   :hook (imenu-after-jump . recenter))
 
+(use-package nerd-icons-ibuffer
+  :ensure t
+  :hook (ibuffer-mode . nerd-icons-ibuffer-mode))
+
 ;; Buffer manager
 (use-package ibuffer
   :ensure nil
@@ -264,6 +268,17 @@
 		  (name . "\\*info\\*")
 		  (mode . Man-mode)
 		  (mode . woman-mode)))
+            ("Text" (and (derived-mode . text-mode)
+                   (not (starred-name))))
+      ("Magit" (or (mode . magit-repolist-mode)
+                   (mode . magit-submodule-list-mode)
+                   (mode . git-rebase-mode)
+                   (derived-mode . magit-section-mode)
+                   (mode . vc-annotate-mode)))
+      ("VC" (or (mode . diff-mode)
+                (derived-mode . log-view-mode)))
+      ("Prog" (and (derived-mode . prog-mode)
+                   (not (starred-name))))
       ("Dired" (mode . dired-mode))))))
 
 ;; Notifications

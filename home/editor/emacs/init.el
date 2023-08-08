@@ -25,6 +25,8 @@
 (require 'init-dev)
 (require 'init-evil)
 (require 'init-git)
+(require 'init-minibuffer)
+(require 'init-dired)
 
 (provide 'init)
 

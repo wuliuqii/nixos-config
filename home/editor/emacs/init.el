@@ -19,6 +19,7 @@
 (require 'init-package)
 (require 'init-base)
 (require 'init-ui)
+(require 'init-tools)
 
 (provide 'init)
 

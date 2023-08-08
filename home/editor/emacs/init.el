@@ -16,10 +16,10 @@
 (let ((lispDir (locate-user-emacs-file "lisp")))
   (add-to-list 'load-path (file-name-as-directory lispDir)))
 
-(use-package doom-themes
-  :ensure t)
-
 (require 'init-package)
+(require 'init-base)
+(require 'init-ui)
 
 (provide 'init)
+
 ;;; init.el ends here

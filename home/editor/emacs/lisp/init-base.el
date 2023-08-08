@@ -22,6 +22,10 @@
 (setq bidi-inhibit-bpa t)
 
 ;; No backup files
+(setq make-backup-files nil
+      auto-save-default nil)
+
+;; No lock files
 (setq create-lockfiles nil)
 
 ;; Always load the newest file

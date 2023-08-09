@@ -52,6 +52,9 @@
   (consult-async-input-throttle 0.2)
   (consult-async-input-debounce 0.1))
 
+(use-package consult-eglot
+  :after (consult eglot))
+
 ;; Consult users will also want the embark-consult package.
 (use-package embark-consult
   :ensure t

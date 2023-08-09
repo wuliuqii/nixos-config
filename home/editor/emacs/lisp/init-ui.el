@@ -7,22 +7,38 @@
 
 ;; Set theme
 (use-package doom-themes
-  :ensure t
+  :disabled
+  ;; :ensure t
   :config
   (load-theme 'doom-nord t)
   (doom-themes-org-config))
+
+(use-package nord-theme
+  :ensure t
+  :config
+  (load-theme 'nord t))
 
 ;; Modeline
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode)
+  :init
+  (display-time-mode)
   :custom
+  (doom-modeline-icon t)
+  (doom-modeline-hub t)
+  (doom-modeline--buffer-state-icon t)
+  (doom-modeline-time t)
+  (doom-modeline-lsp t)
+  (doom-modeline-modal t)
+  (doom-modeline-modal-icon t)
+  (doom-modeline-buffer-file-name-style 'file-name)
+  (doom-modeline-env-version nil)
   (doom-modeline-gnus nil)
   (doom-modeline-github nil)
   (doom-modeline-persp-name nil)
   (doom-modeline-unicode-fallback t)
-  (doom-modeline-buffer-file-name-style 'truncate-except-project)
-  (doom-modeline-enable-word-count nil))
+  (doom-modeline-enable-word-count t))
 
 ;; Customize popwin behavior
 (use-package shackle
@@ -43,7 +59,7 @@
                    ;; See also `help-window-select'
                    (apropos-mode         :select nil :align t :size 0.4)
                    (help-mode            :select nil :align t :size 0.4)
-                   ("*Flycheck errors*"         :select t   :align t :size 10)
+                   ("*Flymake errors*"         :select t   :align t :size 10)
                    ("*Backtrace*"               :select t   :align t :size 15)
                    ("*Shell Command Output*"    :select nil :align t :size 0.4)
                    ("*Async Shell Command*"     :select nil :align t :size 0.4)

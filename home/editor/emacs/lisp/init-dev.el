@@ -54,6 +54,7 @@
 
 ;; Lint tool
 (use-package flycheck
+  :disabled
   :ensure t
   :hook (prog-mode . flycheck-mode)
   :custom
@@ -61,6 +62,15 @@
   (flycheck-check-syntax-automatically '(save mode-enabled))
   (flycheck-emacs-lisp-load-path 'inherit)
   (flycheck-indication-mode 'right-fringe))
+
+(use-package flymake
+  :ensure nil
+  :config
+  (setq help-at-pt-display-when-idle t))
+
+(use-package flymake-collection
+  :ensure t
+  :hook (after-init . flymake-collection-hook-setup))
 
 ;; xref
 (use-package xref

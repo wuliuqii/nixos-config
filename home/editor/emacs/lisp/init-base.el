@@ -198,23 +198,31 @@
   (tab-bar-tab-name-function 'tab-bar-tab-name-all)
   (tab-bar-format '(tab-bar-format-tabs tab-bar-separator)))
 
-;; Better comment line or region
 (use-package newcomment
   :ensure nil
-  :bind ([remap comment-dwin] . comment-or-uncomment)
+  :bind ([remap comment-dwim] . comment-or-uncomment)
   :config
   (defun comment-or-uncomment ()
-    "Comment or uncomment the current line or region."
+    "Comment or uncomment the current line or region.
+
+If the region is active and `transient-mark-mode' is on, call
+`comment-or-uncomment-region'.
+Else, if the current line is empty, insert a comment and indent
+it.
+Else, call `comment-or-uncomment-region' on the current line."
     (interactive)
     (if (region-active-p)
         (comment-or-uncomment-region (region-beginning) (region-end))
       (if (save-excursion
             (beginning-of-line)
             (looking-at "\\s-*$"))
-          (comment-dwin nil)
-	      (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
+          (comment-dwim nil)
+        (comment-or-uncomment-region (line-beginning-position) (line-end-position)))))
   :custom
-  ;; `auto-fill' inside comments
+  ;; `auto-fill' inside comments.
+  ;;
+  ;; The quoted text in `message-mode' are identified as comments, so only
+  ;; quoted text can be `auto-fill'ed.
   (comment-auto-fill-only-comments t))
 
 ;; Better abbrev expansion

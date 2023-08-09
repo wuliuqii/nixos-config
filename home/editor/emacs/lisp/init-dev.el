@@ -155,6 +155,11 @@
   :custom
   (hs-set-up-overlay #'hideshow-folded-overlay-fn))
 
+;; Auto-format
+(use-package apheleia
+  :ensure t
+  :hook (prog-mode . apheleia-global-mode))
+
 (require 'init-nix)
 (require 'init-go)
 (require 'init-rust)

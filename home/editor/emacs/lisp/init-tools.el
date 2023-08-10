@@ -138,6 +138,29 @@
   (defun background-opacity-get-alpha-str ()
     (format "Alpha %s%%" (background-opacity-get-alpha))))
 
+;; smartparens
+(use-package smartparens
+  :ensure t
+  :hook (after-init . smartparens-global-mode)
+  :config
+  (require 'smartparens-config)
+  ;; https://github.com/doomemacs/doomemacs/blob/a570ffe16c24aaaf6b4f8f1761bb037c992de877/modules/config/default/config.el#L108-L120
+  ;; Expand {|} => { | }
+  ;; Expand {|} => {
+  ;;   |
+  ;; }
+  (dolist (brace '("(" "{" "["))
+    (sp-pair brace nil
+             :post-handlers '(("||\n[i]" "RET") ("| " "SPC"))
+             :unless '(sp-point-before-word-p sp-point-before-same-p)))
+  ;; do not highlight new block when pressing enter after creating set of new parens
+  ;; https://stackoverflow.com/a/26708910
+  (setq sp-highlight-pair-overlay nil
+        sp-highlight-wrap-overlay nil
+        sp-highlight-wrap-tag-overlay nil
+        show-paren-delay 0) ;; no delay for showing matching parens
+  )
+
 (provide 'init-tools)
 
 ;;; init-tools.el ends here

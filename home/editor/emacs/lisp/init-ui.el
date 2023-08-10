@@ -26,8 +26,7 @@
   (display-time-mode)
   :custom
   (doom-modeline-icon t)
-  (doom-modeline-hub t)
-  (doom-modeline--buffer-state-icon t)
+  (doom-modeline-buffer-file-state-icon t)
   (doom-modeline-time t)
   (doom-modeline-lsp t)
   (doom-modeline-modal t)
@@ -69,11 +68,12 @@
                    ("*Occur*"                   :select t   :align t)
                    ("\\*eldoc\\( for \\)?.*\\*" :select nil :align t :size 15 :regexp t))))
 
-(use-package help
-  :ensure nil
-  :custom
-  (help-window-select t)
-  (help-enable-variable-value-editing t))
+(use-package helpful
+  :ensure t
+  :commands (helpful-callable
+             helpful-variable
+             helpful-symbol
+             helpful-key))
 
 (use-package tabspaces
   :ensure t

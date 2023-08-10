@@ -49,7 +49,14 @@
   :hook ((prog-mode . (lambda ()
                         (unless (derived-mode-p 'emacs-lisp-mode 'list-mode 'makefile-mode 'snippet-moe)
                           (eglot-ensure))))
-         ((markdown-mode yaml-mode yaml-ts-mode) . eglot-ensure))
+         ((markdown-mode yaml-mode yaml-ts-mode) . eglot-ensure)
+         (eglot--managed-mode . (lambda ()
+                                  ;; Show flymake diagnostics first.
+                                  (setq eldoc-documentation-functions
+                                        (cons #'flymake-eldoc-function
+                                              (remove #'flymake-eldoc-function eldoc-documentation-functions)))
+                                  ;; Show all eldoc feedback
+                                  (setq eldoc-documentation-strategy #'eldoc-documentation-compose))))
   :bind (:map eglot-mode-map
          ("C-c f" . eglot-format)
          ("C-c d" . eldoc-doc-buffer)
@@ -90,6 +97,13 @@
   (eglot-events-buffer-size 0)
   (eglot-ignored-server-capabilities '(:documentLinkProvider
                                        :documentOnTypeFormattingProvider)))
+
+;; Don't show the doc in the minibuffer
+(use-package eldoc-box
+  :ensure t
+  :commands
+  eldoc-box-hover-mode
+  eldoc-box-help-at-point)
 
 (provide 'init-lsp)
 

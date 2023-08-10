@@ -30,6 +30,7 @@
 (require 'init-text)
 (require 'init-org)
 (require 'init-spell)
+(require 'init-keybindings)
 
 (provide 'init)
 

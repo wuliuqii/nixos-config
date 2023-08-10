@@ -52,17 +52,6 @@
   (quickrun-focus-p nil)
   (quickrun-input-file-extension ".qr"))
 
-;; Lint tool
-(use-package flycheck
-  :disabled
-  :ensure t
-  :hook (prog-mode . flycheck-mode)
-  :custom
-  (flycheck-temp-prefix ".flycheck")
-  (flycheck-check-syntax-automatically '(save mode-enabled))
-  (flycheck-emacs-lisp-load-path 'inherit)
-  (flycheck-indication-mode 'right-fringe))
-
 (use-package flymake
   :ensure nil
   :config
@@ -97,21 +86,6 @@
   (dumb-jump-quiet t)
   (dumb-jump-aggressive t)
   (dumb-jump-selector 'completing-read))
-
-;; A fancy ctags frontend
-(use-package citre
-  :ensure t
-  :init
-  ;; Load the prelude.
-  (require 'citre-config)
-  :bind (("C-c c j" . citre-jump)
-         ("C-c c J" . citre-jump-back)
-         ("C-c c p" . citre-peek)
-         ("C-c c a" . citre-ace-peek)
-         ("C-c c u" . citre-update-this-tags-file))
-  :custom
-  (citre-auto-enable-citre-mode-modes '(prog-mode))
-  (citre-prompt-language-for-ctags-command t))
 
 ;; Browse devdocs.io
 (use-package devdocs

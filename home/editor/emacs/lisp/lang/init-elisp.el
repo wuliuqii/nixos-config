@@ -21,10 +21,6 @@
         (forward-line 1)
         (insert eval-as-comment-prefix)))))
 
-(use-package ielm
-  :ensure nil
-  :hook (ielm-mode . company-mode))
-
 (provide 'init-elisp)
 
 ;;; init-elisp.el ends here

@@ -75,12 +75,20 @@
   (help-window-select t)
   (help-enable-variable-value-editing t))
 
-;; Windows layout recorder
-(use-package tab-bar
-  :ensure nil
-  :hook (after-init . tab-bar-history-mode)
+(use-package tabspaces
+  :ensure t
+  :hook (after-init . tabspaces-mode) ;; use this only if you want the minor-mode loaded at startup. 
+  :commands (tabspaces-switch-or-create-workspace
+             tabspaces-open-or-create-project-and-workspace)
   :custom
-  (tab-bar-history-buttons-show nil))
+  (tab-bar-show nil)
+  (tabspaces-use-filtered-buffers-as-default t)
+  (tabspaces-default-tab "Default")
+  (tabspaces-remove-to-default t)
+  (tabspaces-include-buffers '("*scratch*"))
+  ;; sessions
+  (tabspaces-session t)
+  (tabspaces-session-auto-restore t))
 
 (use-package nerd-icons
   :ensure t
@@ -109,6 +117,14 @@
   (dashboard-projects-backend 'project-el)
   (dashboard-items '((recents   . 10)
                      (projects  . 7))))
+
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package highlight-numbers
+  :ensure t
+  :hook (prog-mode . highlight-numbers-mode))
 
 (provide 'init-ui)
 

@@ -187,17 +187,6 @@
   (completion-max-height 13)
   (completions-detailed t))
 
-;; Window layout manager
-(use-package tab-bar
-  :ensure nil
-  :hook (after-init . tab-bar-mode)
-  :custom
-  (tab-bar-show nil)
-  (tab-bar-tab-hints t)
-  (tab-bar-close-button-show nil)
-  (tab-bar-tab-name-function 'tab-bar-tab-name-all)
-  (tab-bar-format '(tab-bar-format-tabs tab-bar-separator)))
-
 (use-package newcomment
   :ensure nil
   :bind ([remap comment-dwim] . comment-or-uncomment)

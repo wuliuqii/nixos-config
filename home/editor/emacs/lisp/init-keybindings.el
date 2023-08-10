@@ -66,7 +66,9 @@
     "od" '(dired-jump :wk "Dired")
 
     ;; project
-    "p" '(project-prefix-map :wk "Project")
+    "p" '(:ignore t :wk "Project")
+    "pp" '(project-switch-project :wk "Project switch")
+    "pf" '(project-find-file :wk "Project find file")
 
     ;; help
     "h" '(:ignore t :wk "Help")
@@ -78,6 +80,18 @@
     "hF" '(describe-face :wk "Describe face")
     "hw" '(where-is :wk "Where is")
     "h." '(display-local-help :wk "Display local help")
+
+    ;; tabs
+    "t" '(:ignore t :wk "Tabs")
+    "t b" '(tabspaces-switch-to-buffer :wk "swith to buffer")
+    "t c" '(tabspaces-clear-buffers :wk "clear buffers")
+    "t d" '(tabspaces-close-workspace :wk "close workspace")
+    "t k" '(tabspaces-kill-buffers-close-workspace :wk "kill buffers and workspace")
+    "t o" '(tabspaces-open-or-create-project-and-workspace :wk "open or create project")
+    "t r" '(tabspaces-remove-current-buffer :wk "remove current buffer")
+    "t R" '(tabspaces-remove-selected-buffer :wk "remove selected buffer")
+    "t s" '(tabspaces-switch-or-create-workspace :wk "switch or create workspace")
+    "t t" '(tabspaces-switch-buffer-and-tab :wk "switch buffer and tab")
     ))
 
 (provide 'init-keybindings)

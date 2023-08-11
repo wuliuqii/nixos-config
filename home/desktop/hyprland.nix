@@ -235,10 +235,10 @@
       #------------------------#
       # quickly launch program #
       #------------------------# 
-      bind=$mainMod, M, exec, kitty --class="musicfox" --hold sh -c "musicfox"
-      bind=$mainMod, P, exec, myswaylock
+      bind=$mainMod, m, exec, kitty --class="musicfox" --hold sh -c "musicfox"
+      bind=$mainMod, p, exec, myswaylock
       bind=$mainMod, Space, exec, pkill rofi || ~/.config/rofi/launcher.sh
-      bind=$mainMod, ALT, exec, bash ~/.config/rofi/powermenu.sh
+      bind=$mainMod SHIFT, p, exec, bash ~/.config/rofi/powermenu.sh
 
       #-----------------------------------------#
       # control volume,brightness,media players-#
@@ -261,7 +261,7 @@
       #---------------#
       # resize window #
       #---------------#
-      bind=ALT,R,submap,resize
+      bind=$mainMod,R,submap,resize
       submap=resize
       binde=,right,resizeactive,15 0
       binde=,left,resizeactive,-15 0

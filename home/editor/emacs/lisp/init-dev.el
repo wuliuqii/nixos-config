@@ -148,6 +148,7 @@
 (require 'init-go)
 (require 'init-rust)
 (require 'init-elisp)
+(require 'init-lua)
 
 (provide 'init-dev)
 

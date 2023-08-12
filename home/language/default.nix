@@ -13,5 +13,8 @@
 
     # markdown
     marksman
+
+    # lua
+    lua-language-server
   ];
 }

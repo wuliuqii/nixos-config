@@ -10,6 +10,9 @@
 ;; Increase how much is read from processes in a single chunk (default is 4kb).
 (setq read-process-output-max (* 4 1024 1024))
 
+;; Ignore all the file local variables.
+(setq enable-local-variables nil)
+
 ;; --debug-init implies `debug-on-error`.
 (setq debug-on-error init-file-debug)
 

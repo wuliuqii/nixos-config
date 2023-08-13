@@ -250,7 +250,7 @@ in
           "temperature"
           # "idle_inhibitor"
           "mpd"
-          "custom/cava-internal"
+          # "custom/cava-internal"
         ];
         "modules-right" = [
           "pulseaudio"

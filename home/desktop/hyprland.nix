@@ -159,6 +159,10 @@
       #--------------------------------------#
       # Move focus with mainMod + arrow keys #
       #--------------------------------------#
+      bind = $mainMod, left, movefocus, l
+      bind = $mainMod, right, movefocus, r
+      bind = $mainMod, up, movefocus, u
+      bind = $mainMod, down, movefocus, d
       bind = $mainMod, h, movefocus, l
       bind = $mainMod, l, movefocus, r
       bind = $mainMod, k, movefocus, u
@@ -188,10 +192,14 @@
       #----------------------------------#
       # move window in current workspace #
       #----------------------------------#
-      bind = $mainMod SHIFT,h ,movewindow, l
-      bind = $mainMod SHIFT,l ,movewindow, r
-      bind = $mainMod SHIFT,k ,movewindow, u
-      bind = $mainMod SHIFT,j ,movewindow, d
+      bind = $mainMod SHIFT,left ,movewindow, l
+      bind = $mainMod SHIFT,right ,movewindow, r
+      bind = $mainMod SHIFT,up ,movewindow, u
+      bind = $mainMod SHIFT,down ,movewindow, d
+      bind = $mainMod SHIFT,h,movewindow, l
+      bind = $mainMod SHIFT,l,movewindow, r
+      bind = $mainMod SHIFT,k,movewindow, u
+      bind = $mainMod SHIFT,j,movewindow, d
 
       #---------------------------------------------------------------#
       # Move active window to a workspace with mainMod + ctrl + [0-9] #
@@ -220,7 +228,7 @@
       bind = $mainMod SHIFT, 9, movetoworkspacesilent, 9
       bind = $mainMod SHIFT, 0, movetoworkspacesilent, 10
       # Scroll through existing workspaces with mainMod + scroll
-      bind = $mainMod, mouse_down, workspace, e+1
+      bind = $mainMod, mouse_dow, workspace, e+1
       bind = $mainMod, mouse_up, workspace, e-1
 
       #-------------------------------------------#
@@ -274,10 +282,10 @@
       bind=,escape,submap,reset 
       submap=reset
 
-      bind=CTRL SHIFT, l, resizeactive, 15 0
-      bind=CTRL SHIFT, h, resizeactive,-15 0
-      bind=CTRL SHIFT, k, resizeactive, 0 -15
-      bind=CTRL SHIFT, j, resizeactive, 0 15
+      bind=CTRL SHIFT, left, resizeactive, 15 0
+      bind=CTRL SHIFT, right, resizeactive,-15 0
+      bind=CTRL SHIFT, up, resizeactive, 0 -15
+      bind=CTRL SHIFT, down, resizeactive, 0 15
 
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow

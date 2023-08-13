@@ -16,5 +16,6 @@
 
     # lua
     lua-language-server
+    stylua
   ];
 }

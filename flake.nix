@@ -34,6 +34,7 @@
             inputs.fenix.overlays.default
             inputs.go-musicfox.overlays.default
             inputs.emacs-overlay.overlay
+            inputs.neovim-nightly-overlay.overlay
           ];
         }
       ];
@@ -85,6 +86,11 @@
 
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

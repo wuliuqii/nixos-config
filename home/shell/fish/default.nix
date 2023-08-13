@@ -18,7 +18,7 @@
       ls = "exa";
       la = "exa -a";
       lla = "exa -la";
-      vim = "hx";
+      vim = "nvim";
       grep = "rg";
       c = "clear";
       top = "btop";

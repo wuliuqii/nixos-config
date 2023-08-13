@@ -56,7 +56,6 @@
       networkmanagerapplet
 
       git
-      neovim
       wget
       neofetch
       exa

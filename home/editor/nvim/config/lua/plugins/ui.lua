@@ -63,7 +63,7 @@ return {
           lualine_c = {
             "diagnostics",
             { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-            { "filename", path = 1 },
+            { "filename", path = 0 },
           },
           lualine_x = {
             -- stylua: ignore
@@ -230,6 +230,12 @@ return {
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true,
         },
+        progress = {
+          enabled = false,
+        },
+        signature = {
+          enabled = false,
+        },
       },
       routes = {
         {
@@ -249,6 +255,9 @@ return {
         command_palette = true,
         long_message_to_split = true,
         inc_rename = true,
+      },
+      messages = {
+        enabled = false,
       },
     },
     -- stylua: ignore
@@ -336,10 +345,15 @@ return {
     "j-hui/fidget.nvim",
     tag = "legacy",
     event = "LspAttach",
-    enabled = false,
     opts = {
       text = {
-        spinner = "dots_negative",
+        spinner = "moon",
+      },
+      align = {
+        bottom = true,
+      },
+      window = {
+        relative = "editor",
       },
     },
   },

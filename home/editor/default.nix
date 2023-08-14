@@ -5,9 +5,6 @@
     ./vscode.nix
 
     ./emacs
-  ];
-
-  home.packages = with pkgs; [
-    neovim-nightly
+    ./nvim
   ];
 }

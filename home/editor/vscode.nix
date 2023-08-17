@@ -82,6 +82,8 @@
 
       "rust-analyzer.check.command" = "clippy";
       "rust-analyzer.server.path" = "${pkgs.rust-analyzer-nightly}/bin/rust-analyzer";
+
+      "Codegeex.Privacy" = true;
     };
   };
 }

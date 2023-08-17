@@ -9,7 +9,6 @@
         Preferences = {
           "browser.toolbars.bookmarks.visibility" = "never";
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-          "media.ffmpeg.vaapi.enabled" = true;
         };
       };
     };

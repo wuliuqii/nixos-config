@@ -5,5 +5,5 @@
     package = pkgs.neovim-nightly;
   };
 
-  home.file.".config/nvim".source = ./config;
+  # home.file.".config/nvim".source = ./config;
 }

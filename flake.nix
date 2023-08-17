@@ -32,7 +32,6 @@
         {
           nixpkgs.overlays = [
             inputs.fenix.overlays.default
-            inputs.go-musicfox.overlays.default
             inputs.emacs-overlay.overlay
             inputs.neovim-nightly-overlay.overlay
           ];
@@ -76,11 +75,6 @@
 
     fenix = {
       url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    go-musicfox = {
-      url = "github:go-musicfox/go-musicfox";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

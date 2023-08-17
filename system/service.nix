@@ -21,16 +21,21 @@ in
 
     keyd = {
       enable = true;
-      settings = {
-        main = {
-          capslock = "overload(control, esc)";
-          rightalt = "layer(alt)";
-        };
-        alt = {
-          h = "left";
-          j = "down";
-          k = "up";
-          l = "right";
+      keyboards = {
+        default = {
+          ids = [ "*" ];
+          settings = {
+            main = {
+              capslock = "overload(control, esc)";
+              rightalt = "layer(alt)";
+            };
+            alt = {
+              h = "left";
+              j = "down";
+              k = "up";
+              l = "right";
+            };
+          };
         };
       };
     };

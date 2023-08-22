@@ -3,13 +3,14 @@ let
   user = "${config.machine.userName}";
 in
 {
-  imports = [
-    ./waybar.nix
-  ];
   home-manager.users.${user} = {
     imports = [
+      ./rofi
+
       ./hyprland.nix
-      { services.mako.enable = true; }
+      ./waybar.nix
+      ./mako.nix
+      ./swww.nix
     ];
   };
 
@@ -20,6 +21,17 @@ in
 
   hardware.opengl.enable = true;
 
+  services = {
+    tlp.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     wl-clipboard
     wlr-randr
@@ -28,6 +40,7 @@ in
     swayidle
     pamixer
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
+    xdg-desktop-portal-hyprland
   ];
 
   security.pam.services.swaylock = { };

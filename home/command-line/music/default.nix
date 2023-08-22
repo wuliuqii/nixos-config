@@ -6,7 +6,6 @@ in
 {
   home = {
     packages = with pkgs; [
-      cava
       mpc-cli
       mpd
       go-musicfox

@@ -13,6 +13,7 @@ in
     ./scripts
     ./shell
     ./terminal
+    ./fcitx5
   ];
 
   home = {
@@ -24,9 +25,9 @@ in
     ];
 
     sessionVariables = {
-      EDITOR = "hx";
+      EDITOR = "nvim";
       BROWSER = "firefox";
-      TERMINAL = "kitty";
+      TERMINAL = "foot";
       GTK_IM_MODULE = "fcitx5";
       QT_IM_MODULE = "fcitx5";
       XMODIFIERS = "@im=fcitx5";
@@ -38,6 +39,29 @@ in
     sessionPath = [
       "$HOME/go/bin"
     ];
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.nordzy-cursor-theme;
+    name = "Nordzy-Cursor";
+    size = 32;
+  };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Nordic";
+      package = pkgs.nordic;
+    };
+    iconTheme = {
+      name = "Nordzy-Icon";
+      package = pkgs.nordzy-icon-theme;
+    };
+
+    font = {
+      name = "JetBrainsMono Nerd Font";
+      # size = 16;
+    };
   };
 
   programs = {

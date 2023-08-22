@@ -1,8 +1,8 @@
 { ... }:
-
 {
   services.mako = {
-    font = "Iosevka Nerd Font 12";
+    enable = true;
+    font = "Iosevka Nerd Font 14";
     width = 256;
     height = 500;
     margin = "10";
@@ -13,7 +13,7 @@
     borderColor = "#c0caf5";
     progressColor = "over #3B4252";
     textColor = "#FAF4FC";
-    defaultTimeout = 5000;
+    defaultTimeout = 3000;
     extraConfig = ''
       text-alignment=center
       [urgency=high]

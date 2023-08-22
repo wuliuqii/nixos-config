@@ -81,7 +81,7 @@
   battery_display="off"
   disk_display="off"
   image_backend="chafa"
-  image_source="${./ign_duaAnime.png}"
+  #image_source="${./ign_duaAnime.png}"
   ascii_distro="auto"
   ascii_colors=(distro)
   ascii_bold="on"

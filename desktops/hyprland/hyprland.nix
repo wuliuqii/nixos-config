@@ -25,9 +25,9 @@
     extraConfig = ''
       $mainMod = SUPER
 
-      # monitor=,preferred,auto,1 
+      # monitor=,preferred,auto,1
       monitor=DP-1, 3840x2160, 0x0, 2
-      monitor=eDP-1, 2880x1800@60, 3820x0, 2
+      monitor=eDP-1, 2880x1800@120, 3820x0, 2
 
       input {
         kb_layout = us
@@ -41,7 +41,7 @@
         numlock_by_default = true
 
         touchpad {
-        natural_scroll = yes
+          natural_scroll = yes
         }
 
         sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
@@ -54,17 +54,17 @@
         col.active_border = rgb(ffc0cb)
         col.inactive_border = rgba(595959aa)
 
-        layout = dwindle # master|dwindle 
+        layout = dwindle # master|dwindle
       }
 
       dwindle {
         no_gaps_when_only = false
-        force_split = 0 
+        force_split = 0
         special_scale_factor = 0.8
-        split_width_multiplier = 1.0 
+        split_width_multiplier = 1.0
         use_active_for_splits = true
-        pseudotile = yes 
-        preserve_split = yes 
+        pseudotile = yes
+        preserve_split = yes
       }
 
       master {
@@ -81,33 +81,27 @@
         inactive_opacity = 1.0
         fullscreen_opacity = 1.0
         rounding = 0
-      # blur = yes 
-        # blur_size = 3
-        # blur_passes = 1
-        # blur_new_optimizations = true
-      # blur_xray = true
-
         drop_shadow = false
         shadow_range = 4
         shadow_render_power = 3
         shadow_ignore_window = true
-      # col.shadow = 
-      # col.shadow_inactive
-      # shadow_offset
         dim_inactive = false
-      # dim_strength = #0.0 ~ 1.0
-      # blur_ignore_opacity = false
         col.shadow = rgba(1a1a1aee)
+        blur {
+          enabled = true
+          size = 3
+          passes = 1
+        }
       }
 
       animations {
-        enabled=1
-        bezier = overshot, 0.13, 0.99, 0.29, 1.1
-        animation = windows, 1, 4, overshot, slide
+        enabled = true
+        bezier = myBezier, 0.13, 0.99, 0.29, 1.1
+        animation = windows, 1, 4, myBezier
         animation = windowsOut, 1, 5, default, popin 80%
         animation = border, 1, 5, default
         animation = fade, 1, 8, default
-        animation = workspaces, 1, 6, overshot, slidevert
+        animation = workspaces, 1, 6, default
       }
 
       gestures {
@@ -185,7 +179,7 @@
 
       #-------------------------------#
       # special workspace(scratchpad) #
-      #-------------------------------# 
+      #-------------------------------#
       bind = $mainMod, minus, movetoworkspace,special
       bind = $mainMod, equal, togglespecialworkspace
 
@@ -235,14 +229,14 @@
       # switch between current and last workspace #
       #-------------------------------------------#
       binds {
-           workspace_back_and_forth = 1 
+           workspace_back_and_forth = 1
            allow_workspace_cycles = 1
       }
       bind=$mainMod,slash,workspace,previous
 
       #------------------------#
       # quickly launch program #
-      #------------------------# 
+      #------------------------#
       bind=$mainMod, m, exec, kitty --class="musicfox" --hold sh -c "musicfox"
       bind=$mainMod, p, exec, myswaylock
       bind=$mainMod, Space, exec, pkill rofi || ~/.config/rofi/launcher.sh
@@ -257,8 +251,8 @@
       bind=,XF86AudioMicMute,exec, pamixer --default-source -t
       bind=,XF86MonBrightnessUp,exec, light -A 5
       bind=,XF86MonBrightnessDown, exec, light -U 5
-      bind=,XF86AudioPlay,exec, mpc -q toggle 
-      bind=,XF86AudioNext,exec, mpc -q next 
+      bind=,XF86AudioPlay,exec, mpc -q toggle
+      bind=,XF86AudioNext,exec, mpc -q next
       bind=,XF86AudioPrev,exec, mpc -q prev
 
       #---------------#
@@ -279,7 +273,7 @@
       binde=,h,resizeactive,-15 0
       binde=,k,resizeactive,0 -15
       binde=,j,resizeactive,0 15
-      bind=,escape,submap,reset 
+      bind=,escape,submap,reset
       submap=reset
 
       bind=CTRL SHIFT, left, resizeactive, 15 0
@@ -293,7 +287,7 @@
       #-----------------------#
       # wall(by swww service) #
       #-----------------------#
-      # exec-once = default_wall 
+      # exec-once = default_wall
 
       #------------#
       # auto start #

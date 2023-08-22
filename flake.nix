@@ -9,7 +9,6 @@
       commonModules = [
         ./system/configuration.nix
         inputs.sops-nix.nixosModules.sops
-        inputs.hyprland.nixosModules.default
         inputs.home-manager.nixosModules.home-manager
         ({ config, ... }: {
           home-manager = {
@@ -22,7 +21,6 @@
             users.${config.machine.userName} = {
               imports = [
                 ./home
-                ./modules/nord-theme/wayland
               ] ++ [
                 inputs.hyprland.homeManagerModules.default
               ];
@@ -46,8 +44,9 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./machines/gallon-mechrevo
-            ./home/desktop
             ./secrets
+
+            ./desktops/hyprland
           ] ++ (commonModules);
         };
       };

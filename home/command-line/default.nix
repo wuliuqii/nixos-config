@@ -13,6 +13,9 @@
 
     btop = {
       enable = true;
+      settings = {
+        color_theme = "nord";
+      };
     };
 
     fzf = {
@@ -107,9 +110,6 @@
 
       # image viewer
       imv
-
-      # lanucher
-      rofi-wayland
 
       # build
       gcc

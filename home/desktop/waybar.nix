@@ -3,11 +3,14 @@ let
   user = "${config.machine.userName}";
 in
 {
+  environment.systemPackages = with pkgs; [
+    waybar-hyprland
+  ];
+
   home-manager.users.${user} = {
     # Home-manager waybar config
     programs.waybar = {
       enable = true;
-      package = pkgs.waybar-hyprland;
       systemd = {
         enable = false;
         target = "graphical-session.target";

@@ -37,6 +37,16 @@ return {
         "regex",
         "vim",
         "vimdoc",
+
+        -- go
+        "go",
+        "gomod",
+        "gowork",
+        "gosum",
+
+        -- rust
+        "rust",
+        "toml",
       },
     },
     ---@param opts TSConfig

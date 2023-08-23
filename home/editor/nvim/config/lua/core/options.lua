@@ -70,3 +70,16 @@ vim.g.loader_python3_provider = 0
 vim.g.loader_perl_provider = 0
 vim.g.loader_ruby_provider = 0
 vim.g.loader_node_provider = 0
+
+vim.opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+vim.o.foldcolumn = "0"

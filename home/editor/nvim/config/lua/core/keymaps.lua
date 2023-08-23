@@ -1,3 +1,11 @@
+-- local function map(mode, lhs, rhs, opts)
+-- 	opts = opts or {}
+-- 	opts.silent = opts.silent ~= false
+-- 	if opts.remap then
+-- 		opts.remap = nil
+-- 	end
+-- 	vim.keymap.set(mode, lhs, rhs, opts)
+-- end
 local map = vim.keymap.set
 
 -- better up/down
@@ -17,8 +25,8 @@ map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window wi
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- Buffers
-map("n", "<leader>bn", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
-map("n", "<leader>bp", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
+map("n", "<S-h>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
+map("n", "<S-l>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
 map("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
 map("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
 map("n", "]b", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
@@ -30,10 +38,10 @@ map({ "i", "n" }, "<Esc>", "<Cmd>noh<Cr><Esc>", { desc = "Escape and clear hlsea
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
 map(
-  "n",
-  "<leader>ur",
-  "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
-  { desc = "Redraw / clear hlsearch / diff update" }
+	"n",
+	"<leader>ur",
+	"<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+	{ desc = "Redraw / clear hlsearch / diff update" }
 )
 
 map({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
@@ -54,6 +62,12 @@ map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 -- better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- quit all
+map("n", "<leader>qq","<cmd>qa<cr>", { desc = "Quit all"})
+
+-- editor config file
+map("n", "<leader>fc", "<cmd>edit $MYVIMRC<cr>", { desc = "Edit vimrc" })
 
 -- lazy
 map("n", "<leader>ol", "<cmd>Lazy<cr>", { desc = "Lazy" })
@@ -116,12 +130,23 @@ map("!", "<M-BS>", "<C-w>", { silent = true })
 map("i", "<C-BS>", "<C-w>", { silent = true })
 
 map("i", "<M-d>", function()
-  local col = vim.api.nvim_win_get_cursor(0)[2]
-  local line = vim.api.nvim_get_current_line()
+	local col = vim.api.nvim_win_get_cursor(0)[2]
+	local line = vim.api.nvim_get_current_line()
 
-  if #line <= col then
-    return "<Del><C-o>dw"
-  end
+	if #line <= col then
+		return "<Del><C-o>dw"
+	end
 
-  return "<C-o>dw"
+	return "<C-o>dw"
 end, { desc = "Kill word", expr = true })
+
+map("i", "<C-k>", function()
+	local col = vim.api.nvim_win_get_cursor(0)[2]
+	local line = vim.api.nvim_get_current_line()
+
+	if #line <= col then
+		return "<Del>"
+	end
+
+	return "<C-o>d$"
+end, { desc = "Kill line", expr = true })

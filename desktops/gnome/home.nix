@@ -31,6 +31,9 @@
         "vertical-workspaces@G-dH.github.com"
         "quake-mode@repsac-by.github.com"
         "widgets@aylur"
+        "horizontal-workspace-indicator@tty2.io"
+        # "pop-shell@system76.com"
+        # "paperwm@hedning:matrix.org"
         # "apps-menu@gnome-shell-extensions.gcampax.github.com"
         # "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
         # "native-window-placement@gnome-shell-extensions.gcampax.github.com"
@@ -39,7 +42,6 @@
         # "user-theme@gnome-shell-extensions.gcampax.github.com"
         # "window-list@gnome-shell-extensions.gcampax.github.com"
         # "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
-        # "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
       ];
     };
 
@@ -91,11 +93,35 @@
     "org/gnome/desktop/wm/preferences" = {
       theme = "Nordic";
     };
+
     "org/gnome/desktop/wm/keybindings" = {
-      activate-windows-menu = [ "<Shift><Alt>space" ];
+      cycle-group = "@as [ ]";
+      cycle-group-backward = "@as [ ]";
+      cycle-panels = "@as [ ]";
+      cycle-panels-backward = "@as [ ]";
+      cycle-windows = "@as [ ]";
+      cycle-windows-backward = "@as [ ]";
+
+      move-to-monitor-down = "@as [ ]";
+      move-to-monitor-left = "@as [ ]";
+      move-to-monitor-right = "@as [ ]";
+      move-to-monitor-up = "@as [ ]";
+
+      move-to-workspace-left = "@as [ ]";
+      move-to-workspace-right = "@as [ ]";
+      switch-applications = "@as [ ]";
+      switch-applications-backward = "@as [ ]";
+      switch-group = "@as [ ]";
+      switch-group-backward = "@as [ ]";
+      switch-input-source = "@as [ ]";
+      switch-input-source-backward = "@as [ ]";
+      switch-panels = "@as [ ]";
+      switch-panels-backward = "@as [ ]";
+
       close = [ "<Super>q" ];
       toggle-fullscreen = [ "<Super>f" ];
       toggle-maximized = [ "<Super>m" ];
+      show-desktop = [ "<Super>d" ];
       switch-to-workspace-1 = [ "<Alt>1" ];
       switch-to-workspace-2 = [ "<Alt>2" ];
       switch-to-workspace-3 = [ "<Alt>3" ];
@@ -106,8 +132,11 @@
       switch-to-workspace-8 = [ "<Alt>8" ];
       switch-to-workspace-9 = [ "<Alt>9" ];
       switch-to-workspace-10 = [ "<Alt>0" ];
-      show-desktop = [ "<Super>d" ];
+      switch-to-workspace-left = [ "<Alt>," ];
+      switch-to-workspace-right = ["<Alt>."];
     };
+
+
 
     "org/gnome/login-screen" = {
       enable-fingerprint-authentication = true;
@@ -117,7 +146,6 @@
 
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
-      overlay-key = "Super_L";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -330,6 +358,11 @@
     "com/github/repsac-by/quake-mode/apps" = {
       app-1 = "kitty.desktop";
     };
+
+    # "org/gnome/shell/extensions/pop-shell" = {
+    #   active-hint = true;
+    #   tile-by-default = true;
+    # };
   };
 
   home.packages = with pkgs; [
@@ -355,5 +388,7 @@
     gnomeExtensions.frequency-boost-switch
     gnomeExtensions.quake-mode
     gnomeExtensions.aylurs-widgets
+    gnomeExtensions.paperwm
+    gnomeExtensions.pop-shell
   ];
 }

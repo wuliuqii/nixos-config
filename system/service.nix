@@ -20,12 +20,6 @@ in
               capslock = "overload(control, esc)";
               rightalt = "layer(alt)";
             };
-            alt = {
-              h = "left";
-              j = "down";
-              k = "up";
-              l = "right";
-            };
           };
         };
       };

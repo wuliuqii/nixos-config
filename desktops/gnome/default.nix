@@ -52,6 +52,8 @@ in
   ]);
 
   environment.systemPackages = with pkgs; [
+    wl-clipboard
+
     gnome.dconf-editor
     gnome.gnome-tweaks
     gnome.adwaita-icon-theme

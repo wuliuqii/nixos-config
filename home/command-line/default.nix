@@ -125,7 +125,6 @@
       thefuck
       killall
       lazygit
-      patchelf
     ];
   };
 }

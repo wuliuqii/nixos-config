@@ -31,7 +31,9 @@
         "vertical-workspaces@G-dH.github.com"
         "quake-mode@repsac-by.github.com"
         "widgets@aylur"
+        "runcat@kolesnikov.se"
         "horizontal-workspace-indicator@tty2.io"
+        # "tophat@fflewddur.github.io"
         # "pop-shell@system76.com"
         # "paperwm@hedning:matrix.org"
         # "apps-menu@gnome-shell-extensions.gcampax.github.com"
@@ -390,5 +392,7 @@
     gnomeExtensions.aylurs-widgets
     gnomeExtensions.paperwm
     gnomeExtensions.pop-shell
+    gnomeExtensions.runcat
+    gnomeExtensions.tophat
   ];
 }

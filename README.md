@@ -1,24 +1,29 @@
 # My personal NixOS config
 
+## Screen Previews
+
+### Gnome (In Use)
+
+https://github.com/wuliuqii/nixos-config/assets/34090258/0dc7ceba-4309-4e72-91ed-16f32548ed33
+
+<details><summary>Hyprland</summary>
+<p>
+
 https://github.com/wuliuqii/nixos-config/assets/34090258/9f6683e7-4ce2-4182-aff8-378d12da167a
 
-## System Componets
+</p>
+</details>
 
-- Window Manager: Hyprland
-- Status Bar: Waybar
-- Screen Locker: Swaylock Effects
-- Screenshots: Grimblast
-- Idle Management Daemon: Swayidle
+## Common Componets
+
 - Shell: Fish using Starship
-- Terminal: Kitty & Foot
+- Terminal: Kitty & Zellij
 - Notification Daemon: Mako
-- Application Launcher: Rofi
-- File Manager: Joshuto
 - Image Viewer: Imv
-- Editor: Vscode & Helix
+- Editor: [Nvim (Main)](https://github.com/wuliuqii/nvim), Helix, Emacs, Vscode
 - Web Browser: Firefox
 - PDF Viewer: Zathura
 - Input Method Framework: Fictx5
 - Music Player: Mpd
-- Icons: Papirus
+- Theme: Nordic
 - Fonts: Jetbrains Mono Nerd

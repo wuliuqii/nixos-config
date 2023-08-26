@@ -3,10 +3,11 @@
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = [
-        # "firefox.desktop"
-        # "kitty.desktop"
-        # "code.desktop"
-        # "com.obsproject.Studio.desktop"
+        "firefox.desktop"
+        "kitty.desktop"
+        "code.desktop"
+        "emacs.desktop"
+        "com.obsproject.Studio.desktop"
       ];
       disable-user-extensions = false;
       enabled-extensions = [
@@ -124,20 +125,20 @@
       toggle-fullscreen = [ "<Super>f" ];
       toggle-maximized = [ "<Super>m" ];
       show-desktop = [ "<Super>d" ];
-      switch-to-workspace-1 = [ "<Super>1" ];
-      switch-to-workspace-2 = [ "<Super>2" ];
-      switch-to-workspace-3 = [ "<Super>3" ];
-      switch-to-workspace-4 = [ "<Super>4" ];
-      switch-to-workspace-5 = [ "<Super>5" ];
-      switch-to-workspace-6 = [ "<Super>6" ];
-      switch-to-workspace-7 = [ "<Super>7" ];
-      switch-to-workspace-8 = [ "<Super>8" ];
-      switch-to-workspace-9 = [ "<Super>9" ];
-      switch-to-workspace-10 = [ "<Super>0" ];
-      switch-to-workspace-left = [ "<Super>," ];
-      switch-to-workspace-right = ["<Super>."];
-      switch-to-workspace-up = [ "<Super>-" ];
-      switch-to-workspace-down = ["<Super>="];
+      switch-to-workspace-1 = [ "<Alt>1" ];
+      switch-to-workspace-2 = [ "<Alt>2" ];
+      switch-to-workspace-3 = [ "<Alt>3" ];
+      switch-to-workspace-4 = [ "<Alt>4" ];
+      switch-to-workspace-5 = [ "<Alt>5" ];
+      switch-to-workspace-6 = [ "<Alt>6" ];
+      switch-to-workspace-7 = [ "<Alt>7" ];
+      switch-to-workspace-8 = [ "<Alt>8" ];
+      switch-to-workspace-9 = [ "<Alt>9" ];
+      switch-to-workspace-10 = [ "<Alt>0" ];
+      switch-to-workspace-left = [ "<Alt>," ];
+      switch-to-workspace-right = [ "<Alt>." ];
+      switch-to-workspace-up = [ "<Alt>-" ];
+      switch-to-workspace-down = [ "<Alt>=" ];
     };
 
 
@@ -150,6 +151,8 @@
 
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
+      edge-tiling = true;
+      workspaces-only-on-primary = true;
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {

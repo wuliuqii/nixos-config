@@ -122,7 +122,6 @@
 
       # misc
       showmethekey
-      thefuck
       killall
       lazygit
     ];

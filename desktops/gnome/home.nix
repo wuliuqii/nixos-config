@@ -228,7 +228,7 @@
     };
 
     "org/gnome/shell/extensions/freq-boost-switch" = {
-      boost = true;
+      boost = false;
     };
 
 

@@ -14,5 +14,7 @@
     impl
     go-tools
     delve
+    golines
+    golangci-lint
   ];
 }

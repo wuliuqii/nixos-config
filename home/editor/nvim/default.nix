@@ -22,6 +22,9 @@ in
   programs.neovim = {
     enable = true;
     package = pkgs.neovim-nightly;
+    extraLuaPackages = ps: [
+      ps.magick
+    ];
   };
 
   home.packages = with pkgs; [

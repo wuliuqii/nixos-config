@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ./command-line
+    ./cli
     ./editor
     ./firefox
     ./language
@@ -14,6 +14,7 @@ in
     ./shell
     ./terminal
     ./fcitx5
+    ./music
   ];
 
   home = {

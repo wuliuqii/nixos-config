@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ./music
     ./neofetch
   ];
 

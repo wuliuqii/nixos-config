@@ -32,6 +32,7 @@
             inputs.fenix.overlays.default
             inputs.emacs-overlay.overlay
             inputs.neovim-nightly-overlay.overlay
+            inputs.go-musicfox.overlays.default
           ];
         }
       ];
@@ -46,8 +47,8 @@
             ./machines/gallon-mechrevo
             ./secrets
 
-            ./desktops/hyprland
-            # ./desktops/gnome
+            # ./desktops/hyprland
+            ./desktops/gnome
           ] ++ (commonModules);
         };
       };
@@ -90,6 +91,11 @@
 
     helix = {
       url = "github:helix-editor/helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    go-musicfox = {
+      url = "github:go-musicfox/go-musicfox";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

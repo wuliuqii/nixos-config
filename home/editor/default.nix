@@ -4,7 +4,7 @@
     ./helix.nix
     ./vscode.nix
 
-    ./emacs
+    # ./emacs
     ./nvim
   ];
 }

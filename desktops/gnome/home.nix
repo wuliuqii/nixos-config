@@ -6,7 +6,6 @@
         "firefox.desktop"
         "kitty.desktop"
         "code.desktop"
-        "emacs.desktop"
         "com.obsproject.Studio.desktop"
       ];
       disable-user-extensions = false;

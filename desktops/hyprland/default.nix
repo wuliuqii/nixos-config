@@ -11,12 +11,14 @@ in
       ./waybar.nix
       ./mako.nix
       ./swww.nix
+      ./kdeconnect.nix
     ];
   };
 
   programs = {
     dconf.enable = true;
     light.enable = true;
+    # kdeconnect.enable = true;
   };
 
   hardware.opengl.enable = true;

@@ -46,8 +46,8 @@
             ./machines/gallon-mechrevo
             ./secrets
 
-            # ./desktops/hyprland
-            ./desktops/gnome
+            ./desktops/hyprland
+            # ./desktops/gnome
           ] ++ (commonModules);
         };
       };

@@ -24,6 +24,7 @@
     recommendedEnvironment = true;
     extraConfig = ''
       $mainMod = SUPER
+      $altMod = ALT
 
       # monitor=,preferred,auto,1
       monitor=DP-1, 3840x2160, 0x0, 2
@@ -136,13 +137,11 @@
       bind = $mainMod SHIFT, Return, exec, kitty --class="termfloat"
       bind = $mainMod, Q, killactive,
       bind = $mainMod SHIFT, Space, togglefloating,
-      bind = $mainMod,F,fullscreen
-      bind = $mainMod,Y,pin
-      bind = $mainMod, V, exec, code
-      bind = $mainMod, W, exec, firefox
-      bind = $mainMod, E, exec, emacs
+      bind = $mainMod, F, fullscreen
+      bind = $mainMod, Y, pin
+      bind = $mainMod, B, exec, firefox
       bind = $mainMod, Z, exec, grimblast --notify --cursor copy area
-      bind = $mainMod CTRL, Z, exec, grimblast --notify --cursor copysave area ~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
+      bind = $altMod CTRL, Z, exec, grimblast --notify --cursor copysave area ~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
 
       #------------#
       # change gap #
@@ -153,77 +152,74 @@
       #--------------------------------------#
       # Move focus with mainMod + arrow keys #
       #--------------------------------------#
-      bind = $mainMod, left, movefocus, l
-      bind = $mainMod, right, movefocus, r
-      bind = $mainMod, up, movefocus, u
-      bind = $mainMod, down, movefocus, d
-      bind = $mainMod, h, movefocus, l
-      bind = $mainMod, l, movefocus, r
-      bind = $mainMod, k, movefocus, u
-      bind = $mainMod, j, movefocus, d
+      bind = $altMod, left, movefocus, l
+      bind = $altMod, right, movefocus, r
+      bind = $altMod, up, movefocus, u
+      bind = $altMod, down, movefocus, d
+      bind = $altMod, h, movefocus, l
+      bind = $altMod, l, movefocus, r
+      bind = $altMod, k, movefocus, u
+      bind = $altMod, j, movefocus, d
 
       #----------------------------------------#
       # Switch workspaces with mainMod + [0-9] # #----------------------------------------#
-      bind = $mainMod, 1, workspace, 1
-      bind = $mainMod, 2, workspace, 2
-      bind = $mainMod, 3, workspace, 3
-      bind = $mainMod, 4, workspace, 4
-      bind = $mainMod, 5, workspace, 5
-      bind = $mainMod, 6, workspace, 6
-      bind = $mainMod, 7, workspace, 7
-      bind = $mainMod, 8, workspace, 8
-      bind = $mainMod, 9, workspace, 9
-      bind = $mainMod, 0, workspace, 10
-      bind = $mainMod, period, workspace, e+1
-      bind = $mainMod, comma, workspace,e-1
+      bind = $altMod, 1, workspace, 1
+      bind = $altMod, 2, workspace, 2
+      bind = $altMod, 3, workspace, 3
+      bind = $altMod, 4, workspace, 4
+      bind = $altMod, 5, workspace, 5
+      bind = $altMod, 6, workspace, 6
+      bind = $altMod, 7, workspace, 7
+      bind = $altMod, 8, workspace, 8
+      bind = $altMod, 9, workspace, 9
+      bind = $altMod, 0, workspace, 10
+      bind = $altMod, period, workspace, e+1
+      bind = $altMod, comma, workspace,e-1
 
       #-------------------------------#
       # special workspace(scratchpad) #
       #-------------------------------#
-      bind = $mainMod, minus, movetoworkspace,special
-      bind = $mainMod, equal, togglespecialworkspace
+      bind = $altMod, minus, movetoworkspace,special
+      bind = $altMod, equal, togglespecialworkspace
 
       #----------------------------------#
       # move window in current workspace #
       #----------------------------------#
-      bind = $mainMod SHIFT,left ,movewindow, l
-      bind = $mainMod SHIFT,right ,movewindow, r
-      bind = $mainMod SHIFT,up ,movewindow, u
-      bind = $mainMod SHIFT,down ,movewindow, d
-      bind = $mainMod SHIFT,h,movewindow, l
-      bind = $mainMod SHIFT,l,movewindow, r
-      bind = $mainMod SHIFT,k,movewindow, u
-      bind = $mainMod SHIFT,j,movewindow, d
+      bind = $altMod SHIFT,left ,movewindow, l
+      bind = $altMod SHIFT,right ,movewindow, r
+      bind = $altMod SHIFT,up ,movewindow, u
+      bind = $altMod SHIFT,down ,movewindow, d
+      bind = $altMod SHIFT,h,movewindow, l
+      bind = $altMod SHIFT,l,movewindow, r
+      bind = $altMod SHIFT,k,movewindow, u
+      bind = $altMod SHIFT,j,movewindow, d
 
       #---------------------------------------------------------------#
       # Move active window to a workspace with mainMod + ctrl + [0-9] #
       #---------------------------------------------------------------#
-      bind = $mainMod CTRL, 1, movetoworkspace, 1
-      bind = $mainMod CTRL, 2, movetoworkspace, 2
-      bind = $mainMod CTRL, 3, movetoworkspace, 3
-      bind = $mainMod CTRL, 4, movetoworkspace, 4
-      bind = $mainMod CTRL, 5, movetoworkspace, 5
-      bind = $mainMod CTRL, 6, movetoworkspace, 6
-      bind = $mainMod CTRL, 7, movetoworkspace, 7
-      bind = $mainMod CTRL, 8, movetoworkspace, 8
-      bind = $mainMod CTRL, 9, movetoworkspace, 9
-      bind = $mainMod CTRL, 0, movetoworkspace, 10
-      bind = $mainMod CTRL, left, movetoworkspace, -1
-      bind = $mainMod CTRL, right, movetoworkspace, +1
+      bind = $altMod CTRL, 1, movetoworkspace, 1
+      bind = $altMod CTRL, 2, movetoworkspace, 2
+      bind = $altMod CTRL, 3, movetoworkspace, 3
+      bind = $altMod CTRL, 4, movetoworkspace, 4
+      bind = $altMod CTRL, 5, movetoworkspace, 5
+      bind = $altMod CTRL, 6, movetoworkspace, 6
+      bind = $altMod CTRL, 7, movetoworkspace, 7
+      bind = $altMod CTRL, 8, movetoworkspace, 8
+      bind = $altMod CTRL, 9, movetoworkspace, 9
+      bind = $altMod CTRL, 0, movetoworkspace, 10
+      bind = $altMod CTRL, left, movetoworkspace, -1
+      bind = $altMod CTRL, right, movetoworkspace, +1
       # same as above, but doesnt switch to the workspace
-      bind = $mainMod SHIFT, 1, movetoworkspacesilent, 1
-      bind = $mainMod SHIFT, 2, movetoworkspacesilent, 2
-      bind = $mainMod SHIFT, 3, movetoworkspacesilent, 3
-      bind = $mainMod SHIFT, 4, movetoworkspacesilent, 4
-      bind = $mainMod SHIFT, 5, movetoworkspacesilent, 5
-      bind = $mainMod SHIFT, 6, movetoworkspacesilent, 6
-      bind = $mainMod SHIFT, 7, movetoworkspacesilent, 7
-      bind = $mainMod SHIFT, 8, movetoworkspacesilent, 8
-      bind = $mainMod SHIFT, 9, movetoworkspacesilent, 9
-      bind = $mainMod SHIFT, 0, movetoworkspacesilent, 10
-      # Scroll through existing workspaces with mainMod + scroll
-      bind = $mainMod, mouse_dow, workspace, e+1
-      bind = $mainMod, mouse_up, workspace, e-1
+      bind = $altMod SHIFT, 1, movetoworkspacesilent, 1
+      bind = $altMod SHIFT, 2, movetoworkspacesilent, 2
+      bind = $altMod SHIFT, 3, movetoworkspacesilent, 3
+      bind = $altMod SHIFT, 4, movetoworkspacesilent, 4
+      bind = $altMod SHIFT, 5, movetoworkspacesilent, 5
+      bind = $altMod SHIFT, 6, movetoworkspacesilent, 6
+      bind = $altMod SHIFT, 7, movetoworkspacesilent, 7
+      bind = $altMod SHIFT, 8, movetoworkspacesilent, 8
+      bind = $altMod SHIFT, 9, movetoworkspacesilent, 9
+      bind = $altMod SHIFT, 0, movetoworkspacesilent, 10
 
       #-------------------------------------------#
       # switch between current and last workspace #
@@ -232,15 +228,15 @@
            workspace_back_and_forth = 1
            allow_workspace_cycles = 1
       }
-      bind=$mainMod,slash,workspace,previous
+      bind=$altMod,slash,workspace,previous
 
       #------------------------#
       # quickly launch program #
       #------------------------#
       bind=$mainMod, m, exec, kitty --class="musicfox" --hold sh -c "musicfox"
-      bind=$mainMod, p, exec, myswaylock
+      bind=$mainMod, l, exec, myswaylock
       bind=$mainMod, Space, exec, pkill rofi || ~/.config/rofi/launcher.sh
-      bind=$mainMod SHIFT, p, exec, bash ~/.config/rofi/powermenu.sh
+      bind=$mainMod, p, exec, bash ~/.config/rofi/powermenu.sh
 
       #-----------------------------------------#
       # control volume,brightness,media players-#
@@ -263,7 +259,7 @@
       #---------------#
       # resize window #
       #---------------#
-      bind=$mainMod,R,submap,resize
+      bind=$altMod,R,submap,resize
       submap=resize
       binde=,right,resizeactive,15 0
       binde=,left,resizeactive,-15 0
@@ -280,9 +276,6 @@
       bind=CTRL SHIFT, right, resizeactive,-15 0
       bind=CTRL SHIFT, up, resizeactive, 0 -15
       bind=CTRL SHIFT, down, resizeactive, 0 15
-
-      bindm = $mainMod, mouse:272, movewindow
-      bindm = $mainMod, mouse:273, resizewindow
 
       #-----------------------#
       # wall(by swww service) #

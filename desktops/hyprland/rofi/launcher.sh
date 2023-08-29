@@ -35,5 +35,5 @@ cat > $dir/colors.rasi <<- EOF
 	}
 EOF
 
-rofi -no-lazy-grab -show drun -modi drun -theme $dir/"$theme"
+rofi -no-lazy-grab -show combi -combi-modes "window,drun" -modes combi -theme $dir/"$theme"
 

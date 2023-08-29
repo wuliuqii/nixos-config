@@ -5,8 +5,8 @@ let
       name = "codeium";
       src = pkgs.fetchurl {
         url =
-          "https://github.com/Exafunction/codeium/releases/download/language-server-v1.2.66/language_server_linux_x64";
-        sha256 = "QYQLPHFMnX5JH2o75VCxSebWml7OHM5dRsXkvT86jpE=";
+          "https://github.com/Exafunction/codeium/releases/download/language-server-v1.2.77/language_server_linux_x64";
+        sha256 = "1hq67vqn7p3bfpli66j49piav9by4cc7nbzb306yv87imvlcfdsk";
       };
       nativeBuildInputs = [ pkgs.autoPatchelfHook ];
       unpackPhase = "true";
@@ -34,7 +34,7 @@ in
   home = {
     file = {
       codeium-ls = {
-        target = ".local/share/.codeium/bin/1d8674ba02bba15c9ec356998ccb83b2eaae67d3/language_server_linux_x64";
+        target = ".local/share/.codeium/bin/nix/language_server_linux_x64";
         source = "${codeium-ls}/bin/language_server_linux_x64";
       };
     };

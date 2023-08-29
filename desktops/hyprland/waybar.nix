@@ -231,7 +231,7 @@
         "backlight"
         "memory"
         "cpu"
-        # "network"
+        "network"
         "battery"
         "custom/powermenu"
         "tray"
@@ -255,7 +255,12 @@
         "format-linked" = "󰖪 {essid} (No IP)";
         "format-wifi" = "󰖩 {essid}";
         "interval" = 1;
-        "tooltip" = false;
+        "tooltip-format" = ''
+          {ifname}
+          {ipaddr}/{cidr}
+          Up: {bandwidthUpBits}
+          Down: {bandwidthDownBits}
+        '';
       };
       "position" = "top";
       "pulseaudio" = {

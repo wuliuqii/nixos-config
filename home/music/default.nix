@@ -9,6 +9,8 @@ in
       mpc-cli
       mpd
       go-musicfox
+      yesplaymusic
+      youtube-dl
     ];
   };
 

@@ -1,12 +1,13 @@
 { pkgs, ... }:
 let
+  version = "1.2.78";
   codeium-ls = pkgs.stdenv.mkDerivation
     {
       name = "codeium";
       src = pkgs.fetchurl {
         url =
-          "https://github.com/Exafunction/codeium/releases/download/language-server-v1.2.77/language_server_linux_x64";
-        sha256 = "1hq67vqn7p3bfpli66j49piav9by4cc7nbzb306yv87imvlcfdsk";
+          "https://github.com/Exafunction/codeium/releases/download/language-server-v${version}/language_server_linux_x64";
+        sha256 = "kIegct5+ilTm+q7rlM0CwJXwywKZavwNGnuG82CUkLk=";
       };
       nativeBuildInputs = [ pkgs.autoPatchelfHook ];
       unpackPhase = "true";
@@ -29,12 +30,14 @@ in
 
   home.packages = with pkgs; [
     deno
+
+    neovide
   ];
 
   home = {
     file = {
       codeium-ls = {
-        target = ".local/share/.codeium/bin/nix/language_server_linux_x64";
+        target = ".local/share/.codeium/bin/${version}/language_server_linux_x64";
         source = "${codeium-ls}/bin/language_server_linux_x64";
       };
     };

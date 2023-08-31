@@ -9,6 +9,10 @@
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
+      noto-fonts-extra
+      open-sans
+      source-han-mono
+      source-han-sans
       nerdfonts
       twemoji-color-font
     ];

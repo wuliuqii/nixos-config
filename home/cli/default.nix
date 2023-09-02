@@ -124,6 +124,7 @@
       killall
       lazygit
       cloc
+      tokei
     ];
   };
 }

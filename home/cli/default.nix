@@ -123,6 +123,7 @@
       showmethekey
       killall
       lazygit
+      cloc
     ];
   };
 }

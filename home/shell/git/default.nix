@@ -12,6 +12,9 @@
         feature = {
           manyFiles = true;
         };
+        index = {
+          skipHash = false;
+        };
       };
     };
   };

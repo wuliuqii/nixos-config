@@ -125,6 +125,7 @@
       lazygit
       cloc
       tokei
+      tree
     ];
   };
 }

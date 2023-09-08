@@ -1,10 +1,6 @@
-{ config, ... }:
-let
-  user = "${config.machine.userName}";
-in
+{ ... }:
 {
   services = {
-    getty.autologinUser = "${user}";
     blueman.enable = true;
     dbus.enable = true;
     v2raya.enable = true;

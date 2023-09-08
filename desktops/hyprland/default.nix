@@ -24,6 +24,7 @@ in
   hardware.opengl.enable = true;
 
   services = {
+    getty.autologinUser = "${user}";
     tlp.enable = true;
     pipewire = {
       enable = true;

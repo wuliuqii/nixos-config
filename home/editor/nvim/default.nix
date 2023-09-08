@@ -1,13 +1,13 @@
 { pkgs, ... }:
 let
-  version = "1.2.78";
+  version = "1.2.85";
   codeium-ls = pkgs.stdenv.mkDerivation
     {
       name = "codeium";
       src = pkgs.fetchurl {
         url =
           "https://github.com/Exafunction/codeium/releases/download/language-server-v${version}/language_server_linux_x64";
-        sha256 = "kIegct5+ilTm+q7rlM0CwJXwywKZavwNGnuG82CUkLk=";
+        sha256 = "RNIF+Ie/xOO06SQEZcnMi8+6uTZEtWsmdO52PL5N0F0=";
       };
       nativeBuildInputs = [ pkgs.autoPatchelfHook ];
       unpackPhase = "true";

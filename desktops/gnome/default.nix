@@ -61,5 +61,4 @@ in
     # nordzy-icon-theme
     nordzy-cursor-theme
   ];
-
 }

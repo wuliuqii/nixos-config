@@ -6,7 +6,7 @@ in
   imports = [
     ./cli
     ./editor
-    ./firefox
+    ./browser
     ./language
     ./mpv
     ./obs-studio

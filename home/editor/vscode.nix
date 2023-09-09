@@ -4,18 +4,18 @@
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode;
+    package = pkgs.vscode-fhs;
 
     keybindings = [
       {
         command = "selectNextSuggestion";
-        key = "tab";
+        key = "cltr+n";
         when =
           "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible";
       }
       {
         command = "selectPrevSuggestion";
-        key = "shift+tab";
+        key = "cltr+p";
         when =
           "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible";
       }

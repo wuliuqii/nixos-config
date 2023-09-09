@@ -2,7 +2,7 @@
 {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar-hyprland;
+    # package = pkgs.waybar-hyprland;
     systemd = {
       enable = false;
       target = "graphical-session.target";

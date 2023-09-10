@@ -16,7 +16,8 @@
       settings = {
         "browser.startup.homepage" = "file://${./homepage.html}";
       };
-      userChrome = import ./userChrome.nix;
     };
   };
+
+  home.file.".mozilla/firefox/default/chrome/".source = ./chrome;
 }

@@ -1,10 +1,9 @@
 ''
-  # vim: ft=dosini
   [Metadata]
-  Name=Nord-Light
+  Name=Nord-Dark
   Version=0.1
-  Author=MiraculousMoon
-  Description=Nord Color Theme (Light)
+  Author=tonyfettes
+  Description=Nord Color Theme (Dark)
   ScaleWithDPI=True
 
   [InputPanel]
@@ -13,11 +12,11 @@
   # 非选中候选字颜色
   NormalColor=#81a1c1
   # 选中候选字颜色
-  HighlightCandidateColor=#5e81ac
+  HighlightCandidateColor=#88c0d0
   # 高亮前景颜色(输入字符颜色)
-  HighlightColor=#5e81ac
+  HighlightColor=#88c0d0
   # 输入字符背景颜色
-  HighlightBackgroundColor=#eceff4
+  HighlightBackgroundColor=#434c5e
   # 
   Spacing=3
 
@@ -32,7 +31,7 @@
   Bottom=6
 
   [InputPanel/Background]
-  Color=#e5e9f0
+  Color=#434c5e
 
   [InputPanel/Background/Margin]
   Left=2
@@ -41,7 +40,7 @@
   Bottom=2
 
   [InputPanel/Highlight]
-  Color=#d8dee9
+  Color=#4c566a
 
   [InputPanel/Highlight/Margin]
   # 高亮区域左边距
@@ -55,12 +54,12 @@
 
   [Menu]
   Font=Sans 10
-  NormalColor=#2e3440
+  NormalColor=#eceff4
   #HighlightColor=#4c566a
   Spacing=3
 
   [Menu/Background]
-  Color=#d8dee9
+  Color=#434c5e
 
   [Menu/Background/Margin]
   Left=2
@@ -91,6 +90,7 @@
 
   [Menu/SubMenu]
   Image="${./arrow.png}"
+
 
   [Menu/TextMargin]
   Left=5

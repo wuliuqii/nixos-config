@@ -6,6 +6,7 @@
         "firefox.desktop"
         "kitty.desktop"
         "code.desktop"
+        "yesplaymusic.desktop"
         "com.obsproject.Studio.desktop"
       ];
       disable-user-extensions = false;

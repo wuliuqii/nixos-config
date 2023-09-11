@@ -6,6 +6,7 @@
   outputs =
     inputs @ { nixpkgs, home-manager, ... }:
     let
+      selfPkgs = import ./pkgs;
       commonModules = [
         ./system/configuration.nix
         inputs.sops-nix.nixosModules.sops
@@ -33,6 +34,7 @@
             inputs.emacs-overlay.overlay
             inputs.neovim-nightly-overlay.overlay
             inputs.go-musicfox.overlays.default
+            selfPkgs.overlay
           ];
         }
       ];
@@ -47,8 +49,8 @@
             ./machines/gallon-mechrevo
             ./secrets
 
-            # ./desktops/hyprland
-            ./desktops/gnome
+            ./desktops/hyprland
+            # ./desktops/gnome
             # ./desktops/kde
           ] ++ (commonModules);
         };

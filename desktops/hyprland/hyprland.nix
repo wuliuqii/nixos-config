@@ -1,7 +1,6 @@
 { ... }:
 
 {
-
   programs = {
     bash = {
       initExtra = ''
@@ -233,7 +232,8 @@
       #------------------------#
       # quickly launch program #
       #------------------------#
-      bind=$mainMod, m, exec, kitty --class="musicfox" --hold sh -c "musicfox"
+      # bind=$mainMod, m, exec, kitty --class="musicfox" --hold sh -c "musicfox"
+      bind=$mainMod, m, exec, yesplaymusic
       bind=$mainMod, l, exec, myswaylock
       bind=$mainMod, Space, exec, pkill rofi || ~/.config/rofi/launcher.sh
       bind=$mainMod, p, exec, bash ~/.config/rofi/powermenu.sh
@@ -297,9 +297,6 @@
       # windows rules #
       #---------------#
       #`hyprctl clients` get class、title...
-      windowrule=float,title:^(Picture-in-Picture)$
-      windowrule=size 960 540,title:^(Picture-in-Picture)$
-      windowrule=move 25%-,title:^(Picture-in-Picture)$
       windowrule=float,imv
       windowrule=move 25%-,imv
       windowrule=size 960 540,imv
@@ -315,7 +312,7 @@
       windowrule=move 25%-,ncmpcpp
       windowrule=size 960 540,ncmpcpp
       windowrule=noblur,^(firefox)$
-      windowrule=workspace name:Music, musicfox
+      windowrule=workspace name:Music, yesplaymusic
 
       #-----------------#
       # workspace rules #

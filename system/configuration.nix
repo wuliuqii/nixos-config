@@ -22,7 +22,22 @@
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [ fcitx5-chinese-addons fcitx5-table-extra ];
+    fcitx5.addons = with pkgs; [
+      (fcitx5-rime.override {
+        librime = (pkgs.librime.overrideAttrs (old: {
+          buildInputs = old.buildInputs ++ [ lua5_4 ];
+        })).override {
+          plugins = with pkgs; [ librime-lua ];
+        };
+        rimeDataPkgs = [
+          (rime-ice.override {
+            enableUnihan = true;
+          })
+          fcitx5-pinyin-moegirl
+          fcitx5-pinyin-zhwiki
+        ];
+      })
+    ];
   };
 
   sops.age.keyFile = "/home/${config.machine.userName}/.config/sops/age/keys.txt";

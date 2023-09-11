@@ -14,3 +14,6 @@ gc:
 	@sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 2d
 
 	@sudo nix store gc --debug
+
+archive:
+  @nix flake archive

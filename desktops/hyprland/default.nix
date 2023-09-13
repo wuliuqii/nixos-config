@@ -11,14 +11,14 @@ in
       ./waybar.nix
       ./mako.nix
       ./swww.nix
-      ./kdeconnect.nix
+      ./gtk.nix
     ];
   };
 
   programs = {
     dconf.enable = true;
     light.enable = true;
-    # kdeconnect.enable = true;
+    kdeconnect.enable = true;
   };
 
   hardware.opengl.enable = true;
@@ -33,17 +33,20 @@ in
       pulse.enable = true;
       jack.enable = true;
     };
+    udisks2.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
     wl-clipboard
+    cliphist
     wlr-randr
-
     swaylock-effects
     swayidle
     pamixer
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     xdg-desktop-portal-hyprland
+    gnome.nautilus
+    udiskie
   ];
 
   security.pam.services.swaylock = { };
@@ -51,5 +54,4 @@ in
     enable = true;
     wlr.enable = true;
   };
-
 }

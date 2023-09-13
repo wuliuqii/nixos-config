@@ -43,8 +43,4 @@ in
       };
     };
   };
-
-  home.file.".config/github-copilot/hosts.json".text = ''
-    {"github.com":{"user":"cocopilot","oauth_token":"ghu_ThisIsARealFreeCopilotKeyByCoCopilot","dev_override":{"copilot_token_url":"https://api.cocopilot.org/copilot_internal/v2/token"}}}
-  '';
 }

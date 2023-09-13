@@ -22,6 +22,28 @@
     systemdIntegration = true;
     recommendedEnvironment = true;
     extraConfig = ''
+      # Theme
+      # env = GTK_THEME,Nordic
+      # env = XCURSOR_THEME,Nordzy-cursors
+      # env = XCURSOR_SIZE,22
+
+      # Toolkit Backend
+      env = GDK_BACKEND,wayland,x11
+      env = QT_QPA_PLATFORM,wayland;xcb
+      env = CLUTTER_BACKEND,wayland
+      env = SDL_VIDEODRIVER,wayland
+
+      # QT
+      env = QT_QPA_PLATFORMTHEME,qt5ct
+      env = QT_AUTO_SCREEN_SCALE_FACTOR,1
+      env = AT_QPA_PLATFORM,wayland;xcb
+      env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+
+      # XDG
+      env = XDG_CURRENT_DESKTOP,Hyprland
+      env = XDG_SESSION_DESKTOP,Hyprland
+      env = XDG_SESSION_TYPE,wayland
+
       $mainMod = SUPER
       $altMod = ALT
 
@@ -119,10 +141,10 @@
         disable_hyprland_logo = true
         always_follow_on_dnd = true
         layers_hog_keyboard_focus = true
-        animate_manual_resizes = false
+        animate_manual_resizes = true
         enable_swallow = true
-        swallow_regex =
-        focus_on_activate = true
+        swallow_regex = ^(kitty)$
+        focus_on_activate = false
       }
 
       device:epic mouse V1 {
@@ -141,6 +163,17 @@
       bind = $mainMod, B, exec, firefox
       bind = $mainMod, Z, exec, grimblast --notify --cursor copy area
       bind = $altMod CTRL, Z, exec, grimblast --notify --cursor copysave area ~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
+      bind = $mainMod, M, exec, yesplaymusic
+      bind = $mainMod, E, exec, nautilus
+
+      #------------------------#
+      # quickly launch program #
+      #------------------------#
+      bind = $mainMod, L, exec, myswaylock
+      bind = $mainMod, Space, exec, pkill rofi || ~/.config/rofi/launcher.sh
+      bind = $mainMod, p, exec, bash ~/.config/rofi/powermenu.sh
+      bind = $altMod, V, exec, cliphist list | rofi -dmenu -theme ~/.config/rofi/launcher_theme | cliphist decode | wl-copy
+      bind = $altMod SHIFT, v, exec, rm ~/.cache/cliphist/db
 
       #------------#
       # change gap #
@@ -224,19 +257,11 @@
       # switch between current and last workspace #
       #-------------------------------------------#
       binds {
-           workspace_back_and_forth = 1
-           allow_workspace_cycles = 1
+            workspace_back_and_forth = 1
+            allow_workspace_cycles = 1
       }
       bind=$altMod,slash,workspace,previous
 
-      #------------------------#
-      # quickly launch program #
-      #------------------------#
-      # bind=$mainMod, m, exec, kitty --class="musicfox" --hold sh -c "musicfox"
-      bind=$mainMod, m, exec, yesplaymusic
-      bind=$mainMod, l, exec, myswaylock
-      bind=$mainMod, Space, exec, pkill rofi || ~/.config/rofi/launcher.sh
-      bind=$mainMod, p, exec, bash ~/.config/rofi/powermenu.sh
 
       #-----------------------------------------#
       # control volume,brightness,media players-#
@@ -254,7 +279,7 @@
       #---------------#
       # waybar toggle #
       # --------------#
-      # bind=$mainMod,O,exec,killall -SIGUSR1 .waybar-wrapped
+      bind=$mainMod,O,exec,killall -SIGUSR1 .waybar-wrapped
 
       #---------------#
       # resize window #
@@ -280,7 +305,7 @@
       #-----------------------#
       # wall(by swww service) #
       #-----------------------#
-      # exec-once = default_wall
+      exec-once = default_wall
 
       #------------#
       # auto start #
@@ -292,6 +317,8 @@
       exec-once = border_color &
       exec-once = nm-applet --indicator &
       # exec-once = swayidle timeout 300 'myswaylock' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'myswaylock'
+      exec-once = wl-paste --watch cliphist store
+      exec-once = udiskie &
 
       #---------------#
       # windows rules #
@@ -307,12 +334,12 @@
       windowrule=move 25%-,termfloat
       windowrule=size 960 540,termfloat
       windowrule=rounding 5,termfloat
-      windowrule=animation slide right,kitty
+      windowrule=animation slide left, kitty
       windowrule=float,ncmpcpp
       windowrule=move 25%-,ncmpcpp
       windowrule=size 960 540,ncmpcpp
       windowrule=noblur,^(firefox)$
-      windowrule=workspace name:Music, yesplaymusic
+      windowrule=workspace name:󰝚, yesplaymusic
 
       #-----------------#
       # workspace rules #

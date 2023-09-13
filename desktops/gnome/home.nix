@@ -1,4 +1,28 @@
 { pkgs, ... }:
+let
+  extensions = with pkgs.gnomeExtensions; [
+    auto-move-windows
+    transparent-top-bar
+    color-app-menu-icon-for-gnome-40
+    coverflow-alt-tab
+    battery-time-2
+    removable-drive-menu
+    just-perfection
+    blur-my-shell
+    clipboard-indicator-2
+    bluetooth-quick-connect
+    transparent-window-moving
+    gsconnect
+    space-bar
+    disable-workspace-switch-animation-for-gnome-40
+    vertical-workspaces
+    pip-on-top
+    fuzzy-app-search
+    frequency-boost-switch
+    pop-shell
+    runcat
+  ];
+in
 {
   dconf.settings = {
     "org/gnome/shell" = {
@@ -10,42 +34,18 @@
         "com.obsproject.Studio.desktop"
       ];
       disable-user-extensions = false;
-      enabled-extensions = [
-        "bluetooth-quick-connect@bjarosze.gmail.com"
-        "blur-my-shell@aunetx"
-        "drive-menu@gnome-shell-extensions.gcampax.github.com"
-        "gsconnect@andyholmes.github.io"
-        "just-perfection-desktop@just-perfection"
-        "pip-on-top@rafostar.github.com"
-        "CoverflowAltTab@palatis.blogspot.com"
-        "appmenu-color-icon@arahiko-ayami.github.com"
-        "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
-        "batterytime@typeof.pw"
-        "clipboard-indicator@Dieg0Js.github.io"
-        "freq-boost-switch@metal03326"
-        "gnome-fuzzy-app-search@gnome-shell-extensions.Czarlie.gitlab.com"
-        "instantworkspaceswitcher@amalantony.net"
-        "just-another-search-bar@xelad0m"
-        "space-bar@luchrioh"
-        "transparent-top-bar@zhanghai.me"
-        "transparent-window-moving@noobsai.github.com"
-        "vertical-workspaces@G-dH.github.com"
-        "quake-mode@repsac-by.github.com"
-        "widgets@aylur"
-        "runcat@kolesnikov.se"
-        "horizontal-workspace-indicator@tty2.io"
-        # "tophat@fflewddur.github.io"
-        # "pop-shell@system76.com"
-        # "paperwm@hedning:matrix.org"
-        # "apps-menu@gnome-shell-extensions.gcampax.github.com"
-        # "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
-        # "native-window-placement@gnome-shell-extensions.gcampax.github.com"
-        # "places-menu@gnome-shell-extensions.gcampax.github.com"
-        "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
-        # "user-theme@gnome-shell-extensions.gcampax.github.com"
-        # "window-list@gnome-shell-extensions.gcampax.github.com"
-        # "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
-      ];
+      enabled-extensions =
+        (builtins.map (extension: extension.extensionUuid) extensions) ++ [
+          "drive-menu@gnome-shell-extensions.gcampax.github.com"
+          # "apps-menu@gnome-shell-extensions.gcampax.github.com"
+          "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
+          # "native-window-placement@gnome-shell-extensions.gcampax.github.com"
+          # "places-menu@gnome-shell-extensions.gcampax.github.com"
+          "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
+          # "user-theme@gnome-shell-extensions.gcampax.github.com"
+          # "window-list@gnome-shell-extensions.gcampax.github.com"
+          # "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
+        ];
     };
 
     "org/gnome/desktop/interface" = {
@@ -69,8 +69,8 @@
       # primary-color = "#3071AE";
       # secondary-color = "#000000";
 
-      picture-uri = "file://${../../wallpaper/nordic-wall.jpg}";
-      picture-uri-dark = "file://${../../wallpaper/nordic-wall.jpg}";
+      picture-uri = "file://${../../wallpaper/nord_lake.png}";
+      picture-uri-dark = "file://${../../wallpaper/nord_lake.png}";
     };
     "org/gnome/desktop/screensaver" = {
       color-shading-type = "solid";
@@ -141,8 +141,6 @@
       switch-to-workspace-down = [ "<Alt>=" ];
     };
 
-
-
     "org/gnome/login-screen" = {
       enable-fingerprint-authentication = true;
       enable-password-authentication = true;
@@ -163,7 +161,7 @@
       ];
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Super>Return";
+      binding = "<Super>t";
       command = "kitty";
       name = "open-terminal";
     };
@@ -176,25 +174,6 @@
       binding = "<Super>e";
       command = "nautilus";
       name = "open-file-browser";
-    };
-
-    "org/gnome/shell/extensions/aylurs-widgets" = {
-      background-clock = false;
-      background-clock-x-offset = 130;
-      background-clock-y-offset = 105;
-      battery-bar = false;
-      dash-board = false;
-      dash-links-names = [ "chatgpt" "youtube" "gmail" "claude" "github" ];
-      dash-links-urls = [ "https://chat.openai.com/" "https://www.youtube.com/" "https://www.gmail.com/" "https://claude.ai/" "https://www.github.com/" ];
-      date-menu-tweaks = false;
-      dynamic-panel = true;
-      media-player = false;
-      notification-indicator = false;
-      power-menu = false;
-      quick-settings-tweaks = false;
-      stylish-osd = false;
-      window-headerbar = false;
-      workspace-indicator = false;
     };
 
     "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
@@ -229,16 +208,6 @@
 
     "org/gnome/shell/extensions/freq-boost-switch" = {
       boost = false;
-    };
-
-
-    "org/gnome/shell/extensions/just-another-search-bar" = {
-      command-delimiters = [ "+" "+" "+" ];
-      command-id = 3;
-      command-names = [ "google" "yandex" "bing" ];
-      command-templates = [ "xdg-open https://www.google.com/search?q=#" "xdg-open https://yandex.ru/search/?text=#" "xdg-open https://cn.bing.com/search?q=#" ];
-      command-wildcards = [ "#" "#" "#" ];
-      open-search-bar-key = [ "<Alt><Super>f" ];
     };
 
     "org/gnome/shell/extensions/just-perfection" = {
@@ -346,58 +315,17 @@
       stick = true;
     };
 
-    "com/github/repsac-by/quake-mode" = {
-      quake-mode-always-on-top = true;
-      quake-mode-animation-time = 0.10;
-      quake-mode-focusout = false;
-      quake-mode-halign = "right";
-      quake-mode-height = 70;
-      quake-mode-hide-from-overview = false;
-      quake-mode-tray = false;
-      quake-mode-valign = "bottom";
-      quake-mode-width = 60;
+    "org/gnome/shell/extensions/pop-shell" = {
+      active-hint = true;
+      active-hint-border-radius = 13;
+      gap-inner = 3;
+      gap-outer = 3;
+      show-title = false;
+      hint-color-rgba = "rgb(255, 192, 203)";
+      tile-by-default = true;
+      tile-enter = "@as [ ]";
     };
-
-    "com/github/repsac-by/quake-mode/accelerators" = {
-      quake-mode-accelerator-1 = [ "<Super>k" ];
-    };
-
-    "com/github/repsac-by/quake-mode/apps" = {
-      app-1 = "kitty.desktop";
-    };
-
-    # "org/gnome/shell/extensions/pop-shell" = {
-    #   active-hint = true;
-    #   tile-by-default = true;
-    # };
   };
 
-  home.packages = with pkgs; [
-    gnomeExtensions.auto-move-windows
-    gnomeExtensions.transparent-top-bar
-    gnomeExtensions.color-app-menu-icon-for-gnome-40
-    gnomeExtensions.just-another-search-bar
-    gnomeExtensions.coverflow-alt-tab
-    gnomeExtensions.battery-time-2
-    gnomeExtensions.removable-drive-menu
-    gnomeExtensions.just-perfection
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.clipboard-indicator-2
-    gnomeExtensions.workspace-indicator-2
-    gnomeExtensions.bluetooth-quick-connect
-    gnomeExtensions.transparent-window-moving
-    gnomeExtensions.gsconnect
-    gnomeExtensions.space-bar
-    gnomeExtensions.disable-workspace-switch-animation-for-gnome-40
-    gnomeExtensions.vertical-workspaces
-    gnomeExtensions.pip-on-top
-    gnomeExtensions.fuzzy-app-search
-    gnomeExtensions.frequency-boost-switch
-    gnomeExtensions.quake-mode
-    gnomeExtensions.aylurs-widgets
-    gnomeExtensions.paperwm
-    gnomeExtensions.pop-shell
-    gnomeExtensions.runcat
-    gnomeExtensions.tophat
-  ];
+  home.packages = extensions;
 }

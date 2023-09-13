@@ -4,7 +4,7 @@
     gtk.enable = true;
     package = pkgs.nordzy-cursor-theme;
     name = "Nordzy-cursors";
-    size = 32;
+    size = 24;
   };
   gtk = {
     enable = true;
@@ -12,10 +12,10 @@
       name = "Nordic";
       package = pkgs.nordic;
     };
-    iconTheme = {
-      name = "Nordzy";
-      package = pkgs.nordzy-icon-theme;
-    };
+    # iconTheme = {
+    #   name = "Nordzy";
+    #   package = pkgs.nordzy-icon-theme;
+    # };
 
     font = {
       name = "JetBrainsMono Nerd Font";

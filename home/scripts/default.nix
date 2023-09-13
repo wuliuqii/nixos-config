@@ -18,7 +18,7 @@ let
            --fade-in 0.3
   '';
   default_wall = pkgs.writeShellScriptBin "default_wall" ''
-    swww img "${../../wallpaper/default.png}" --transition-type random
+    swww img "${../../wallpaper/nord_mountains.png}" --transition-type random
   '';
   border_color = pkgs.writeShellScriptBin "border_color" ''
     function border_color {

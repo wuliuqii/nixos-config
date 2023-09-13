@@ -21,8 +21,8 @@
       keys.normal = {
         C-s = ":w";
         C-q = ":q";
-        tab = ":buffer-next";
-        S-tab = ":buffer-previous";
+        L = ":bn";
+        H = ":bp";
         C-x = ":bc";
         C-l = ":fmt";
       };

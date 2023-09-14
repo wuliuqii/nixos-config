@@ -8,32 +8,10 @@
 
     keybindings = [
       {
-        command = "selectNextSuggestion";
-        key = "cltr+n";
-        when =
-          "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible";
-      }
-      {
-        command = "selectPrevSuggestion";
-        key = "cltr+p";
-        when =
-          "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible";
-      }
-      {
         command = "-rust-analyzer.onEnter";
         key = "enter";
         when =
           "editorTextFocus && !suggestWidgetVisible && editorLangId == 'rust'";
-      }
-      {
-        key = "ctrl+]";
-        command = "workbench.action.terminal.focusNext";
-        when = "terminalFocus";
-      }
-      {
-        key = "ctrl+[";
-        command = "workbench.action.terminal.focusPrevious";
-        when = "terminalFocus";
       }
     ];
     userSettings = {

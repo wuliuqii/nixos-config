@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./helix.nix
@@ -6,5 +6,9 @@
 
     ./emacs
     ./nvim
+  ];
+
+  home.packages = with pkgs; [
+    # jetbrains-toolbox
   ];
 }

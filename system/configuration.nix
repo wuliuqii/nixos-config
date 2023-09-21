@@ -13,9 +13,17 @@
   networking = {
     hostName = "Mechrevo";
     networkmanager.enable = true;
+    nameservers = [
+      "119.29.29.29"
+      "114.114.114.114"
+      "223.5.5.5"
+      "1.1.1.1"
+    ];
+    proxy = {
+      default = "http://localhost:20172";
+      noProxy = "127.0.0.1,localhost";
+    };
   };
-  networking.proxy.default = "http://localhost:20172";
-  networking.proxy.noProxy = "127.0.0.1,localhost";
 
   time.timeZone = "Asia/Shanghai";
 
@@ -73,7 +81,7 @@
       git
       wget
       neofetch
-      exa
+      eza
       xdg-utils
       pciutils
     ];
@@ -101,9 +109,18 @@
   nix = {
     settings = {
       substituters = [
-        #   "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+        "https://mirrors.cernet.edu.cn/nix-channels/store"
         "https://cache.nixos.org/"
+        "https://hyprland.cachix.org/"
+        "https://helix.cachix.org/"
+        "https://nix-community.cachix.org"
       ];
+      trusted-public-keys =
+        [
+          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+          "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        ];
       auto-optimise-store = true; # Optimise syslinks
     };
     gc = {

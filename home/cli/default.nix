@@ -26,6 +26,10 @@
       enableFishIntegration = true;
     };
 
+    yazi = {
+      enable = true;
+    };
+
     zathura = {
       enable = true;
       extraConfig = ''

@@ -14,10 +14,10 @@
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd .././..";
-      l = "exa";
-      ls = "exa";
-      la = "exa -a";
-      lla = "exa -la";
+      l = "eza";
+      ls = "eza";
+      la = "eza -a";
+      lla = "eza -la";
       vim = "nvim";
       grep = "rg";
       c = "clear";

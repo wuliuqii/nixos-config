@@ -18,6 +18,6 @@
     lua-language-server
     stylua
 
-    prettierd
+    nodePackages.prettier
   ];
 }

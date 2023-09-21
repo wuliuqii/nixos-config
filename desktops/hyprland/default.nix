@@ -6,9 +6,9 @@ in
   home-manager.users.${user} = {
     imports = [
       ./rofi
+      ./waybar
 
       ./hyprland.nix
-      ./waybar.nix
       ./mako.nix
       ./swww.nix
       ./gtk.nix

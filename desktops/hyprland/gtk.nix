@@ -2,8 +2,8 @@
 {
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.nordzy-cursor-theme;
-    name = "Nordzy-cursors";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
     size = 24;
   };
   gtk = {
@@ -12,10 +12,14 @@
       name = "Nordic";
       package = pkgs.nordic;
     };
-    # iconTheme = {
-    #   name = "Nordzy";
-    #   package = pkgs.nordzy-icon-theme;
-    # };
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+    };
+    iconTheme = {
+      name = "Tela-dracula";
+      package = pkgs.tela-icon-theme;
+    };
 
     font = {
       name = "JetBrainsMono Nerd Font";

@@ -71,7 +71,9 @@
         "format": "  {}",
         "separate-outputs": true,
         "rewrite": {
-            "(.*) - Kitty": "$1 ",
+            "(.*) - kitty": "Kitty ",
+            "(.*)kitty": "$1 ",
+            "(.*) — Mozilla Firefox": "$1 󰈹",
             "(.*) — Mozilla Firefox": "$1 󰈹",
             "(.*)Mozilla Firefox": "Firefox 󰈹",
             "(.*) - Visual Studio Code": "$1 󰨞",

@@ -4,6 +4,7 @@ let
 in
 {
   imports = [
+    ./theme
     ./cli
     ./editor
     ./browser

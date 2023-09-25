@@ -12,6 +12,7 @@ in
       ./mako.nix
       ./swww.nix
       ./gtk.nix
+      ./qt.nix
     ];
   };
 
@@ -34,6 +35,13 @@ in
       jack.enable = true;
     };
     udisks2.enable = true;
+    # xserver = {
+    #   enable = true;
+    #   displayManager.sddm = {
+    #     enable = true;
+    #     theme = "${pkgs.catppuccin-sddm-corners}";
+    #   };
+    # };
   };
 
   environment.systemPackages = with pkgs; [
@@ -47,11 +55,15 @@ in
     xdg-desktop-portal-hyprland
     gnome.nautilus
     udiskie
+    libsForQt5.dolphin
+    glib
+    libsForQt5.qtstyleplugin-kvantum
   ];
 
   security.pam.services.swaylock = { };
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 }

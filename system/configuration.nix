@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports =
@@ -70,6 +70,12 @@
     initrd.verbose = false;
   };
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+
   programs.fish.enable = true;
   environment = {
     shells = with pkgs; [ fish ];
@@ -105,11 +111,16 @@
 
   nixpkgs.system = "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-run"
+  ];
 
   nix = {
     settings = {
       substituters = [
-        "https://mirrors.cernet.edu.cn/nix-channels/store"
+        "https://mirror.sjtu.edu.cn/nix-channels/store"
         "https://cache.nixos.org/"
         "https://hyprland.cachix.org/"
         "https://helix.cachix.org/"

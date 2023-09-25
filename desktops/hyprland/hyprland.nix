@@ -51,7 +51,6 @@
       # Execute your favorite apps at launch
 
       exec-once = swww init
-      exec-once = default_wall
       exec-once = fcitx5
       exec-once = waybar
       exec-once = mako
@@ -171,7 +170,7 @@
           gaps_in = 3
           gaps_out = 8
           border_size = 2
-          col.active_border = rgba(ca9ee6ff) rgba(f2d5cfff) 45deg
+          col.active_border = rgba(6f616aff) rgba(b48eadff) 45deg
           col.inactive_border = rgba(b4befecc) rgba(6c7086cc) 45deg
           col.group_border_active = rgba(ca9ee6ff) rgba(f2d5cfff) 45deg
           col.group_border = rgba(b4befecc) rgba(6c7086cc) 45deg
@@ -223,6 +222,7 @@
       bind = $altMod CTRL, Z, exec, grimblast --notify --cursor copysave area ~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
       bind = $mainMod, M, exec, yesplaymusic
       bind = $mainMod, E, exec, nautilus
+      bind = $mainMod, C, exec, code
 
       #------------------------#
       # quickly launch program #
@@ -231,7 +231,7 @@
       bind = $mainMod, Space, exec, pkill rofi || ~/.config/rofi/launcher.sh
       bind = $mainMod, p, exec, bash ~/.config/rofi/powermenu.sh
       bind = $mainMod, V, exec, cliphist list | rofi -dmenu -theme ~/.config/rofi/launcher_theme | cliphist decode | wl-copy
-      bind = $altMod SHIFT, v, exec, rm ~/.cache/cliphist/db
+      bind = $mainMod SHIFT, v, exec, rm ~/.cache/cliphist/db
 
 
       #--------------------------------------#

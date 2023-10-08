@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./helix.nix
+    # ./helix.nix
     ./vscode.nix
 
     ./emacs
@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
-    # jetbrains-toolbox
+    jetbrains.goland
+    jetbrains.rust-rover
   ];
 }

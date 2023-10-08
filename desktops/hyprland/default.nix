@@ -51,7 +51,7 @@ in
     swaylock-effects
     swayidle
     pamixer
-    inputs.hypr-contrib.packages.${pkgs.system}.grimblast
+    grimblast
     xdg-desktop-portal-hyprland
     gnome.nautilus
     udiskie

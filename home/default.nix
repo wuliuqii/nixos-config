@@ -7,7 +7,7 @@ in
     ./theme
     ./cli
     ./editor
-    ./browser
+    ./firefox
     ./language
     ./mpv
     ./obs-studio

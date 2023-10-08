@@ -63,10 +63,6 @@
       url = "github:hyprwm/Hyprland";
     };
 
-    hypr-contrib = {
-      url = "github:hyprwm/contrib";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
     };

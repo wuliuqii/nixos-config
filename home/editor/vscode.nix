@@ -1,19 +1,18 @@
 { pkgs
+, inputs
 , ...
 }:
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode-fhs;
+    # lock vscode to 1.81.1 because native titlebar causes vscode to crash
+    # https://github.com/microsoft/vscode/issues/184124#issuecomment-1717959995
+    package =
+      (import inputs.nixpkgs-vscode {
+        system = pkgs.system;
+        config.allowUnfree = true;
+      }).vscode-fhs;
 
-    keybindings = [
-      {
-        command = "-rust-analyzer.onEnter";
-        key = "enter";
-        when =
-          "editorTextFocus && !suggestWidgetVisible && editorLangId == 'rust'";
-      }
-    ];
     userSettings = {
       "security.workspace.trust.enabled" = false;
 
@@ -59,8 +58,6 @@
       };
 
       "rust-analyzer.check.command" = "clippy";
-
-      "Codegeex.Privacy" = true;
     };
   };
 }

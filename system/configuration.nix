@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -31,6 +31,8 @@
   i18n.inputMethod = {
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [
+      fcitx5-catppuccin
+      fcitx5-nord
       (fcitx5-rime.override {
         rimeDataPkgs = [
           (rime-ice.override {

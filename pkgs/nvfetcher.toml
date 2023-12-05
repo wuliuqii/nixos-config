@@ -10,3 +10,7 @@ fetch.url = "https://github.com/outloudvi/mw2fcitx/releases/download/$ver/moegir
 [rime-ice]
 src.git = "https://github.com/iDvel/rime-ice"
 fetch.github = "iDvel/rime-ice"
+
+[fcitx5-catppuccin]
+src.git = "https://github.com/catppuccin/fcitx5"
+fetch.github = "catppuccin/fcitx5"

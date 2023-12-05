@@ -29,7 +29,6 @@ in
       EDITOR = "hx";
       BROWSER = "firefox";
       TERMINAL = "foot";
-      GTK_IM_MODULE = "fcitx5";
       QT_IM_MODULE = "fcitx5";
       XMODIFIERS = "@im=fcitx5";
       XDG_CONFIG_HOME = "\${HOME}/.config";

@@ -130,6 +130,7 @@
       cloc
       tokei
       tree
+      nvfetcher
     ];
   };
 }

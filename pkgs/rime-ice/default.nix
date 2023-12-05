@@ -1,19 +1,7 @@
-{ lib
-, stdenvNoCC
-, fetchFromGitHub
-, enableUnihan ? false
-}:
+{ source, lib, stdenvNoCC, enableUnihan ? false }:
 
-stdenvNoCC.mkDerivation rec {
-  pname = "rime-ice";
-  version = "unstable-2023-08-27";
-
-  src = fetchFromGitHub {
-    owner = "iDvel";
-    repo = pname;
-    rev = "c9e4f7a77a3cb5cc70672e93d2943bb77d9a1157";
-    hash = "sha256-vQjTs5D/n2A4Py5/A/YVnV2XwASCDxGN7zrjnk7HF1c=";
-  };
+stdenvNoCC.mkDerivation {
+  inherit (source) pname version src;
 
   installPhase = ''
     mkdir -p $out/share/rime-data

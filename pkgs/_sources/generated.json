@@ -1,0 +1,52 @@
+{
+    "fcitx5-pinyin-moegirl": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "fcitx5-pinyin-moegirl",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-x+XkATiNMNbcSiN87MkRRvKiNuzvpmkDrtGkwdnIsYM=",
+            "type": "url",
+            "url": "https://github.com/outloudvi/mw2fcitx/releases/download/20231114/moegirl.dict"
+        },
+        "version": "20231114"
+    },
+    "fcitx5-pinyin-zhwiki": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "fcitx5-pinyin-zhwiki",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-crMmSqQ7QgmjgEG8QpvBgQYfvttCUsKYo8gHZGXIZmc=",
+            "type": "url",
+            "url": "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20231205.dict"
+        },
+        "version": "20231205"
+    },
+    "rime-ice": {
+        "cargoLocks": null,
+        "date": "2023-12-03",
+        "extract": null,
+        "name": "rime-ice",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "iDvel",
+            "repo": "rime-ice",
+            "rev": "8f98f0d1c9176ce005ad76043db7f55096583675",
+            "sha256": "sha256-ye4neNSmar42XYMKqZ9vqOR8hZjXYR/eSUkwQ7eScR4=",
+            "type": "github"
+        },
+        "version": "8f98f0d1c9176ce005ad76043db7f55096583675"
+    }
+}

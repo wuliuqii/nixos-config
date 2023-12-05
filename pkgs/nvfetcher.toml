@@ -1,0 +1,12 @@
+[fcitx5-pinyin-zhwiki]
+src.archpkg = "fcitx5-pinyin-zhwiki"
+src.prefix = "0.2.4."
+fetch.url = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-$ver.dict"
+
+[fcitx5-pinyin-moegirl]
+src.github = "outloudvi/mw2fcitx"
+fetch.url = "https://github.com/outloudvi/mw2fcitx/releases/download/$ver/moegirl.dict"
+
+[rime-ice]
+src.git = "https://github.com/iDvel/rime-ice"
+fetch.github = "iDvel/rime-ice"

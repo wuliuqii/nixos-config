@@ -47,8 +47,6 @@
             ./secrets
 
             ./desktops/hyprland
-            # ./desktops/gnome
-            # ./desktops/kde
           ] ++ (commonModules);
         };
       };

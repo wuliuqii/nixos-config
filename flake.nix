@@ -31,8 +31,6 @@
         {
           nixpkgs.overlays = [
             inputs.fenix.overlays.default
-            inputs.emacs-overlay.overlay
-            inputs.neovim-nightly-overlay.overlay
             selfPkgs.overlay
           ];
         }
@@ -73,14 +71,6 @@
 
     fenix = {
       url = "github:nix-community/fenix";
-    };
-
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-    };
-
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
     };
 
     helix = {

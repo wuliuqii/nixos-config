@@ -172,10 +172,6 @@
           border_size = 2
           col.active_border = rgba(6f616aff) rgba(b48eadff) 45deg
           col.inactive_border = rgba(b4befecc) rgba(6c7086cc) 45deg
-          col.group_border_active = rgba(ca9ee6ff) rgba(f2d5cfff) 45deg
-          col.group_border = rgba(b4befecc) rgba(6c7086cc) 45deg
-          col.group_border_locked_active = rgba(ca9ee6ff) rgba(f2d5cfff) 45deg
-          col.group_border_locked = rgba(b4befecc) rgba(6c7086cc) 45deg
           layout = dwindle
           resize_on_border = true
       }
@@ -211,7 +207,6 @@
 
 
       bind = $mainMod, Return, exec, kitty
-      bind = $mainMod SHIFT, Return, exec, kitty --class="termfloat"
       bind = $mainMod, Q, killactive,
       bind = $mainMod SHIFT, Space, togglefloating,
       bind = $mainMod, F, fullscreen
@@ -358,13 +353,6 @@
 
       # █░█░█ █ █▄░█ █▀▄ █▀█ █░█░█   █▀█ █░█ █░░ █▀▀ █▀
       # ▀▄▀▄▀ █ █░▀█ █▄▀ █▄█ ▀▄▀▄▀   █▀▄ █▄█ █▄▄ ██▄ ▄█
-
-
-      # Example windowrule v1
-      # windowrule = float, ^(kitty)$
-      # Example windowrule v2
-      # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-      # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
 
       windowrule=float,imv

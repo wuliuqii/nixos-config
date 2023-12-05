@@ -11,7 +11,7 @@
     ];
 
   networking = {
-    hostName = "Mechrevo";
+    hostName = "nixos";
     networkmanager.enable = true;
     nameservers = [
       "119.29.29.29"
@@ -139,9 +139,9 @@
 
   system = {
     autoUpgrade = {
-      enable = false;
+      enable = true;
       channel = "https://nixos.org/channels/nixos-unstable";
     };
-    stateVersion = "23.05";
+    stateVersion = "24.05";
   };
 }

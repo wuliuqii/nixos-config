@@ -11,7 +11,7 @@ in
       go-musicfox
       yesplaymusic
       youtube-dl
-    ];
+   ];
   };
 
   programs = {

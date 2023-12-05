@@ -1,15 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
-    # ./helix.nix
+    ./helix.nix
     ./vscode.nix
 
-    ./emacs
-    ./nvim
-  ];
-
-  home.packages = with pkgs; [
-    jetbrains.goland
-    jetbrains.rust-rover
+    # ./emacs
+    # ./nvim
   ];
 }

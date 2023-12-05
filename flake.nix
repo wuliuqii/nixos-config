@@ -41,11 +41,11 @@
     {
       packages.x86_64-linux.default = inputs.fenix.packages.x86_64-linux.minimal.toolchain;
       nixosConfigurations = {
-        gallon-mechrevo = nixpkgs.lib.nixosSystem {
+        laptop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-            ./machines/gallon-mechrevo
+            ./machines/laptop
             ./secrets
 
             ./desktops/hyprland

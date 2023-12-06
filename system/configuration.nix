@@ -33,7 +33,13 @@
     fcitx5.addons = with pkgs; [
       fcitx5-catppuccin
       fcitx5-nord
+      # https://github.com/iDvel/rime-ice/issues/554
       (fcitx5-rime.override {
+        librime = (pkgs.librime.overrideAttrs (old: {
+          buildInputs = old.buildInputs ++ [ lua5_4 ];
+        })).override {
+          plugins = with pkgs; [ librime-lua ];
+        };
         rimeDataPkgs = [
           (rime-ice.override {
             enableUnihan = true;

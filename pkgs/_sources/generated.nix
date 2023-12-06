@@ -29,6 +29,18 @@
       sha256 = "sha256-crMmSqQ7QgmjgEG8QpvBgQYfvttCUsKYo8gHZGXIZmc=";
     };
   };
+  librime-lua = {
+    pname = "librime-lua";
+    version = "7c297e4d2e08fcdd3e9b2dcae2a42317b9a217ff";
+    src = fetchFromGitHub {
+      owner = "hchunhui";
+      repo = "librime-lua";
+      rev = "7c297e4d2e08fcdd3e9b2dcae2a42317b9a217ff";
+      fetchSubmodules = false;
+      sha256 = "sha256-GVfr2fzaQYyfNnjN20YcNfBVB144gZKVEunbX10Mgeg=";
+    };
+    date = "2023-10-29";
+  };
   rime-ice = {
     pname = "rime-ice";
     version = "1b626ad165fc19d5a4533ee40e998f9d95cb9277";

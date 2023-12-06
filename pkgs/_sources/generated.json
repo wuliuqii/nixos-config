@@ -49,6 +49,26 @@
         },
         "version": "20231205"
     },
+    "librime-lua": {
+        "cargoLocks": null,
+        "date": "2023-10-29",
+        "extract": null,
+        "name": "librime-lua",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "hchunhui",
+            "repo": "librime-lua",
+            "rev": "7c297e4d2e08fcdd3e9b2dcae2a42317b9a217ff",
+            "sha256": "sha256-GVfr2fzaQYyfNnjN20YcNfBVB144gZKVEunbX10Mgeg=",
+            "type": "github"
+        },
+        "version": "7c297e4d2e08fcdd3e9b2dcae2a42317b9a217ff"
+    },
     "rime-ice": {
         "cargoLocks": null,
         "date": "2023-12-05",

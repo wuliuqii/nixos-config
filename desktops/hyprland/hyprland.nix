@@ -40,7 +40,7 @@
 
       # monitor = ,preferred,auto,2
       monitor=DP-1, 3840x2160, 0x0, 2
-      monitor=eDP-1, 2880x1800@120, 3820x0, 2
+      monitor=eDP-1, 2880x1800@90, 3820x0, 2
 
 
 
@@ -216,7 +216,7 @@
       bind = $altMod CTRL, Z, exec, grimblast --notify --cursor copysave area ~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png
       bind = $mainMod, M, exec, yesplaymusic
       bind = $mainMod, E, exec, nautilus
-      bind = $mainMod, C, exec, code
+      bind = $mainMod, C, exec, code --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime
 
       #------------------------#
       # quickly launch program #

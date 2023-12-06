@@ -9,5 +9,4 @@
     obs-studio-plugins.wlrobs
     obs-studio-plugins.input-overlay
   ];
-  home.file.".config/obs-studio/themes".source = ./themes;
 }

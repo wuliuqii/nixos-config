@@ -11,7 +11,7 @@
       (import inputs.nixpkgs-vscode {
         system = pkgs.system;
         config.allowUnfree = true;
-      }).vscode-fhs;
+      }).vscode;
 
     userSettings = {
       "security.workspace.trust.enabled" = false;
@@ -37,6 +37,8 @@
 
       "workbench.colorTheme" = "Nord";
       "workbench.iconTheme" = "eq-material-theme-icons";
+      "workbench.startupEditor" = "none";
+      "git.confirmSync" = false;
 
       "explorer.confirmDelete" = false;
       "explorer.confirmDragAndDrop" = false;

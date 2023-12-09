@@ -84,6 +84,7 @@
       nitch
       eza
       pciutils
+      xdg-utils
     ];
   };
 

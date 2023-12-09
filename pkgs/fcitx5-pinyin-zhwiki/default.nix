@@ -1,5 +1,5 @@
-{ source, stdenv, lib, ... }:
-stdenv.mkDerivation {
+{ source, stdenvNoCC, lib, ... }:
+stdenvNoCC.mkDerivation {
   inherit (source) pname version src;
 
   dontUnpack = true;
@@ -7,7 +7,7 @@ stdenv.mkDerivation {
   dontConfigure = true;
 
   installPhase = ''
-    install -Dm644 $src $out/share/fcitx5/pinyin/dictionaries/zhwiki.dict
+    install -Dm444 $src $out/share/fcitx5/pinyin/dictionaries/zhwiki.dict
   '';
 
   meta = with lib; {

@@ -7,7 +7,7 @@ stdenv.mkDerivation {
   dontConfigure = true;
 
   installPhase = ''
-    install -Dm644 $src $out/share/fcitx5/pinyin/dictionaries/moegirl.dict
+    install -Dm444 $src $out/share/fcitx5/pinyin/dictionaries/moegirl.dict
   '';
 
   meta = with lib; {

@@ -8,7 +8,7 @@
     };
     interactiveShellInit = ''
       set fish_greeting
-      # neofetch
+      fish_config theme choose "Catppuccin Macchiato"
     '';
     shellAliases = {
       ".." = "cd ..";
@@ -37,6 +37,8 @@
     ];
   };
 
-  home.file.".config/fish/conf.d/nord.fish".text = import ./conf.d/nord_theme.nix;
-  home.file.".config/fish/functions/f.fish".text = import ./functions/f.nix;
+  xdg.configFile = {
+    "fish/functions/f.fish".text = import ./functions/f.nix;
+    "fish/themes/Catppuccin Macchiato.theme".source = "${pkgs.catppuccin-fish}/share/fish/tools/web_config/themes/Catppuccin Macchiato.theme";
+  };
 }

@@ -1,9 +1,9 @@
 {
-    "fcitx5-catppuccin": {
+    "catppuccin-fcitx5": {
         "cargoLocks": null,
         "date": "2022-10-05",
         "extract": null,
-        "name": "fcitx5-catppuccin",
+        "name": "catppuccin-fcitx5",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -18,6 +18,26 @@
             "type": "github"
         },
         "version": "ce244cfdf43a648d984719fdfd1d60aab09f5c97"
+    },
+    "catppuccin-fish": {
+        "cargoLocks": null,
+        "date": "2023-11-02",
+        "extract": null,
+        "name": "catppuccin-fish",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catppuccin",
+            "repo": "fish",
+            "rev": "0ce27b518e8ead555dec34dd8be3df5bd75cff8e",
+            "sha256": "sha256-Dc/zdxfzAUM5NX8PxzfljRbYvO9f9syuLO8yBr+R3qg=",
+            "type": "github"
+        },
+        "version": "0ce27b518e8ead555dec34dd8be3df5bd75cff8e"
     },
     "fcitx5-pinyin-moegirl": {
         "cargoLocks": null,
@@ -71,7 +91,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2023-12-05",
+        "date": "2023-12-08",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -83,10 +103,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "1b626ad165fc19d5a4533ee40e998f9d95cb9277",
-            "sha256": "sha256-BhYt6KIiU0CBOH6Vcxpybp04hAjF1NPLnZPysVZllEs=",
+            "rev": "6aa9ea6b6ecee925148d2ac49d67fdb088d5d054",
+            "sha256": "sha256-+vXJcxEkn7oSuepcm38iWYSAmY1nnn4xTa1/54bXK+k=",
             "type": "github"
         },
-        "version": "1b626ad165fc19d5a4533ee40e998f9d95cb9277"
+        "version": "6aa9ea6b6ecee925148d2ac49d67fdb088d5d054"
     }
 }

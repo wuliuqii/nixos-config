@@ -1,5 +1,5 @@
-{ source, pkgs, lib, ... }:
-pkgs.stdenv.mkDerivation {
+{ source, stdenvNoCC, lib, ... }:
+stdenvNoCC.mkDerivation {
   inherit (source) pname version src;
 
   dontBuild = true;

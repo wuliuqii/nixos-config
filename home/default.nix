@@ -28,7 +28,7 @@ in
     sessionVariables = {
       EDITOR = "hx";
       BROWSER = "firefox";
-      TERMINAL = "foot";
+      TERMINAL = "kitty";
       GTK_IM_MODULE = "";
       QT_IM_MODULE = "";
       XDG_CONFIG_HOME = "\${HOME}/.config";

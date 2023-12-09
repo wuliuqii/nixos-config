@@ -25,6 +25,8 @@
         index = "https://rsproxy.cn/crates.io-index"
         [net]
         git-fetch-with-cli = true
+        [build]
+        rustflags = ["-Z", "threads=8"]
       '';
       target = ".cargo/config.toml";
     };

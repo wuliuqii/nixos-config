@@ -31,7 +31,7 @@
   i18n.inputMethod = {
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [
-      fcitx5-catppuccin
+      catppuccin-fcitx5
       fcitx5-nord
       # https://github.com/iDvel/rime-ice/issues/554
       (fcitx5-rime.override {
@@ -82,9 +82,8 @@
 
       git
       wget
-      neofetch
+      nitch
       eza
-      xdg-utils
       pciutils
     ];
   };

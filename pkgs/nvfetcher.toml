@@ -11,10 +11,14 @@ fetch.url = "https://github.com/outloudvi/mw2fcitx/releases/download/$ver/moegir
 src.git = "https://github.com/iDvel/rime-ice"
 fetch.github = "iDvel/rime-ice"
 
-[fcitx5-catppuccin]
+[catppuccin-fcitx5]
 src.git = "https://github.com/catppuccin/fcitx5"
 fetch.github = "catppuccin/fcitx5"
 
 [librime-lua]
 src.git = "https://github.com/hchunhui/librime-lua"
 fetch.github = "hchunhui/librime-lua"
+
+[catppuccin-fish]
+src.git = "https://github.com/catppuccin/fish"
+fetch.github = "catppuccin/fish"

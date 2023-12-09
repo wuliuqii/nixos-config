@@ -207,8 +207,9 @@
 
 
       bind = $mainMod, Return, exec, kitty
-      bind = $mainMod, Q, killactive,
-      bind = $mainMod SHIFT, Space, togglefloating,
+      bind = $mainMod SHIFT, Return, exec, kitty --class="termfloat"
+      bind = $mainMod, Q, killactive
+      bind = $mainMod SHIFT, Space, togglefloating
       bind = $mainMod, F, fullscreen
       bind = $mainMod, Y, pin
       bind = $mainMod, B, exec, firefox

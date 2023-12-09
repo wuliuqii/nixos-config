@@ -4,8 +4,6 @@
 
 ![desktop](.asserts/desktop.png)
 
-![screenshot](.asserts/screenshot.png)
-
 ## Common Componets
 
 - Shell: Fish using Starship

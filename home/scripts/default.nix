@@ -3,7 +3,7 @@
 let
   myswaylock = pkgs.writeShellScriptBin "myswaylock" ''
     swaylock  \
-           --image "${../../wallpaper/nord_mountains.png}" \
+           --image "${../../wallpaper/catppuccin/windows-error.jpg}" \
            --clock \
            --indicator \
            --indicator-radius 100 \
@@ -18,7 +18,7 @@ let
            --fade-in 0.3
   '';
   default_wall = pkgs.writeShellScriptBin "default_wall" ''
-    swww img "${../../wallpaper/nord_mountains.png}" --transition-type random
+    swww img "${../../wallpaper/catppuccin/windows-error.jpg}" --transition-type random
   '';
   border_color = pkgs.writeShellScriptBin "border_color" ''
     function border_color {

@@ -35,8 +35,8 @@
       "window.newWindowDimensions" = "inherit";
       "window.zoomLevel" = 1;
 
-      "workbench.colorTheme" = "Nord";
-      "workbench.iconTheme" = "eq-material-theme-icons";
+      "workbench.colorTheme" = "Catppuccin Macchiato";
+      "workbench.iconTheme" = "catppuccin-macchiato";
       "workbench.startupEditor" = "none";
       "git.confirmSync" = false;
 

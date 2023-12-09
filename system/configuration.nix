@@ -32,7 +32,6 @@
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [
       catppuccin-fcitx5
-      fcitx5-nord
       # https://github.com/iDvel/rime-ice/issues/554
       (fcitx5-rime.override {
         librime = (pkgs.librime.overrideAttrs (old: {

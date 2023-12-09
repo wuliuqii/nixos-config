@@ -4,7 +4,7 @@
     enable = true;
     package = inputs.helix.packages."${pkgs.system}".helix;
     settings = {
-      theme = "nord";
+      theme = "catppuccin_macchiato";
 
       editor = {
         line-number = "relative";

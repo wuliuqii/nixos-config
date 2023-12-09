@@ -9,8 +9,13 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Nordic";
-      package = pkgs.nordic;
+      name = "Catppuccin-Macchiato-Standard-Pink";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "pink" ];
+        size = "standard";
+        tweaks = [ "normal" "black" ];
+        variant = "macchiato";
+      };
     };
     cursorTheme = {
       name = "Bibata-Modern-Ice";

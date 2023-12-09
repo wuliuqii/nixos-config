@@ -10,13 +10,6 @@
       nix-direnv.enable = true;
     };
 
-    btop = {
-      enable = true;
-      settings = {
-        color_theme = "nord";
-      };
-    };
-
     fzf = {
       enable = true;
     };

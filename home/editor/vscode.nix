@@ -38,7 +38,10 @@
       "workbench.colorTheme" = "Catppuccin Macchiato";
       "workbench.iconTheme" = "catppuccin-macchiato";
       "workbench.startupEditor" = "none";
+
       "git.confirmSync" = false;
+
+      "update.mode" = "none";
 
       "explorer.confirmDelete" = false;
       "explorer.confirmDragAndDrop" = false;

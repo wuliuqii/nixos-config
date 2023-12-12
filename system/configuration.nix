@@ -8,6 +8,7 @@
       ./security.nix
       ./service.nix
       ./virtualisation.nix
+      ./hyprland.nix
     ];
 
   networking = {

@@ -4,6 +4,4 @@
     ./foot.nix
     ./kitty.nix
   ];
-
-
 }

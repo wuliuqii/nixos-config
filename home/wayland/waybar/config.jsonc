@@ -83,15 +83,8 @@
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
     },
     "hyprland/workspaces": {
-        "format": "{icon} {windows}",
-        "all-outputs": true,
-        "show-special": true,
-        "window-rewrite-default": "",
-        "window-rewrite": {
-            "firefox": "",
-            "kitty": "",
-            "code": "󰨞"
-        }
+        "format": "{icon}",
+        "show-special": true
     },
     "hyprland/window": {
         "format": " {}",

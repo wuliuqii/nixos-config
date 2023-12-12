@@ -15,6 +15,7 @@ in
     ./terminal
     ./fcitx5
     ./music
+    ./wayland
   ];
 
   home = {

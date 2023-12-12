@@ -45,8 +45,6 @@
           modules = [
             ./machines/laptop
             ./secrets
-
-            ./desktops/hyprland
           ] ++ (commonModules);
         };
       };

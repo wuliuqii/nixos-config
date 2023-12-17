@@ -24,6 +24,8 @@
                 ./home
               ] ++ [
                 inputs.hyprland.homeManagerModules.default
+                inputs.anyrun.homeManagerModules.default
+                inputs.ags.homeManagerModules.default
               ];
             };
           };
@@ -52,25 +54,15 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     nixpkgs-vscode.url = "github:nixos/nixpkgs/db9208ab987cdeeedf78ad9b4cf3c55f5ebd269b";
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-    };
-
+    home-manager.url = "github:nix-community/home-manager";
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprpaper.url = "github:hyprwm/hyprpaper";
     sops-nix.url = "github:Mic92/sops-nix";
-
-    fenix = {
-      url = "github:nix-community/fenix";
-    };
-
-    helix = {
-      url = "github:helix-editor/helix";
-    };
+    fenix.url = "github:nix-community/fenix";
+    helix.url = "github:helix-editor/helix";
+    anyrun.url = "github:Kirottu/anyrun";
+    ags.url = "github:Aylur/ags";
   };
 }

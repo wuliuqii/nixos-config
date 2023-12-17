@@ -17,4 +17,8 @@
     golines
     golangci-lint
   ];
+
+  home.sessionPath = [
+    "$HOME/go/bin"
+  ];
 }

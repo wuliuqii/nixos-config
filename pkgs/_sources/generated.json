@@ -89,9 +89,31 @@
         },
         "version": "7c297e4d2e08fcdd3e9b2dcae2a42317b9a217ff"
     },
+    "overskride": {
+        "cargoLocks": null,
+        "date": "2023-11-20",
+        "extract": {
+            "Cargo.lock": "./overskride-73806b9949400fc3fb8e818c0341a560a4168f4d/Cargo.lock"
+        },
+        "name": "overskride",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "kaii-lb",
+            "repo": "overskride",
+            "rev": "73806b9949400fc3fb8e818c0341a560a4168f4d",
+            "sha256": "sha256-rYM5zdqrJd8FaPfV9Nn6TDQW9y16HSM4eIRi+JtuYFo=",
+            "type": "github"
+        },
+        "version": "73806b9949400fc3fb8e818c0341a560a4168f4d"
+    },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2023-12-08",
+        "date": "2023-12-13",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -103,10 +125,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "6aa9ea6b6ecee925148d2ac49d67fdb088d5d054",
-            "sha256": "sha256-+vXJcxEkn7oSuepcm38iWYSAmY1nnn4xTa1/54bXK+k=",
+            "rev": "c9555ed3c09b3224eb7162047b92ffe744c902b8",
+            "sha256": "sha256-y2md5i9TJX1BmtQJCB5/HAyLKiViRjJ9mS2onrhEXI8=",
             "type": "github"
         },
-        "version": "6aa9ea6b6ecee925148d2ac49d67fdb088d5d054"
+        "version": "c9555ed3c09b3224eb7162047b92ffe744c902b8"
     }
 }

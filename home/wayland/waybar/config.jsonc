@@ -185,7 +185,7 @@
     "custom/power": {
         "format": "{}",
         "exec": "echo ; echo  logout",
-        "on-click": "pkill rofi || ~/.config/rofi/powermenu.sh",
+        "on-click": "wlogout -p layer-shell",
         "interval": 86400, // once every day
         "tooltip": true
     },

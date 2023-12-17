@@ -10,15 +10,19 @@ in
       mpd
       go-musicfox
       yesplaymusic
-      youtube-dl
-   ];
+      playerctl
+    ];
   };
 
   programs = {
-    ncmpcpp = {
+    mpv = {
       enable = true;
+      defaultProfiles = [ "gpu-hq" ];
+      scripts = [ pkgs.mpvScripts.mpris ];
     };
   };
+
+  services.playerctld.enable = true;
 
   home.file = {
     ".config/mpd/mpd.conf".text = ''

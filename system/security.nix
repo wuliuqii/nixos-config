@@ -9,8 +9,15 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" ];
   };
-  security.sudo.wheelNeedsPassword = false;
-  security.polkit.enable = true;
-  security.rtkit.enable = true;
 
+  security = {
+    sudo.wheelNeedsPassword = false;
+    # allow wayland lockers to unlock the screen
+    pam.services.swaylock.text = "auth include login";
+
+    # userland niceness
+    rtkit.enable = true;
+
+    polkit.enable = true;
+  };
 }

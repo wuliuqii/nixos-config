@@ -1,23 +1,32 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services.mako = {
     enable = true;
-    font = "Iosevka Nerd Font 14";
-    width = 256;
-    height = 500;
-    margin = "10";
-    padding = "5";
-    borderSize = 3;
-    borderRadius = 3;
-    backgroundColor = "#3A4353";
-    borderColor = "#c0caf5";
-    progressColor = "over #3B4252";
-    textColor = "#FAF4FC";
-    defaultTimeout = 3000;
+    layer = "top";
+    markup = true;
+    anchor = "top-right";
+    width = 450;
+    height = 200;
+    margin = "20,20,0";
+    padding = "15,15,15";
+    borderSize = 2;
+    borderRadius = 15;
+    maxIconSize = 96;
+    icons = true;
+    iconPath = "${pkgs.catppuccin-papirus-folders}/share/icons/Papirus";
+    backgroundColor = "#1E1E28";
+    borderColor = "#a4b9ef";
+    progressColor = "over #332E41";
+    textColor = "#DADAE8";
+    defaultTimeout = 10000;
+    format = ''<span font="Iosevka Nerd Font weight=325 Italic" size="12288">%s</span>\n<span font="JetBrainsMono Nerd Font weight=325" size="12288">%b</span>'';
+    groupBy = "summary";
     extraConfig = ''
-      text-alignment=center
-      [urgency=high]
-      border-color=#B45C65
+      [grouped]
+      format=<span font="Iosevka Nerd Font weight=325 Italic" size="12288">%s</span>\n<span font="JetBrainsMono Nerd Font weight=325" size="12288">%b</span>
+
+      [mode=do-not-disturb]
+      invisible=1
     '';
   };
 }

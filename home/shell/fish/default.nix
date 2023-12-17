@@ -21,9 +21,8 @@
       vim = "nvim";
       grep = "rg";
       c = "clear";
-      top = "btop";
       lg = "lazygit";
-      n = "neofetch";
+      n = "nitch";
     };
     plugins = [
       {

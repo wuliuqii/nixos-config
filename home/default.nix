@@ -4,17 +4,10 @@ let
 in
 {
   imports = [
-    ./cli
     ./editor
-    ./firefox
-    ./language
-    ./mpv
-    ./obs-studio
-    ./scripts
+    ./programs
     ./shell
     ./terminal
-    ./fcitx5
-    ./music
     ./wayland
   ];
 
@@ -22,24 +15,11 @@ in
     username = "${user}";
     homeDirectory = "/home/${user}";
 
-    packages = with pkgs; [
-      libsForQt5.kdenlive
-    ];
-
     sessionVariables = {
       EDITOR = "hx";
       BROWSER = "firefox";
-      TERMINAL = "kitty";
-      GTK_IM_MODULE = "";
-      QT_IM_MODULE = "";
-      XDG_CONFIG_HOME = "\${HOME}/.config";
-      XDG_CACHE_HOME = "\${HOME}/.cache";
-      XDG_BIN_HOME = "\${HOME}/.local/bin";
-      XDG_DATA_HOME = "\${HOME}/.local/share";
+      TERMINAL = "foot";
     };
-    sessionPath = [
-      "$HOME/go/bin"
-    ];
   };
 
   programs = {

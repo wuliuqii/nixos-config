@@ -13,12 +13,9 @@
         bold_italic_font = "auto";
         mouse_hide_wait = 2;
         cursor_shape = "block";
-        # url_color = "#0087bd";
-        # url_style = "dotted";
         confirm_os_window_close = 0;
-        # background_opacity = "0.90";
+        background_opacity = "0.8";
         hide_window_decorations = "yes";
-        enabled_layouts = "splits:split_axis=horizontal";
       };
       theme = "Catppuccin-Macchiato";
     };

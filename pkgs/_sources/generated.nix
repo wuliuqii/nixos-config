@@ -53,16 +53,29 @@
     };
     date = "2023-10-29";
   };
+  overskride = {
+    pname = "overskride";
+    version = "73806b9949400fc3fb8e818c0341a560a4168f4d";
+    src = fetchFromGitHub {
+      owner = "kaii-lb";
+      repo = "overskride";
+      rev = "73806b9949400fc3fb8e818c0341a560a4168f4d";
+      fetchSubmodules = false;
+      sha256 = "sha256-rYM5zdqrJd8FaPfV9Nn6TDQW9y16HSM4eIRi+JtuYFo=";
+    };
+    "Cargo.lock" = builtins.readFile ./overskride-73806b9949400fc3fb8e818c0341a560a4168f4d/Cargo.lock;
+    date = "2023-11-20";
+  };
   rime-ice = {
     pname = "rime-ice";
-    version = "6aa9ea6b6ecee925148d2ac49d67fdb088d5d054";
+    version = "c9555ed3c09b3224eb7162047b92ffe744c902b8";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "6aa9ea6b6ecee925148d2ac49d67fdb088d5d054";
+      rev = "c9555ed3c09b3224eb7162047b92ffe744c902b8";
       fetchSubmodules = false;
-      sha256 = "sha256-+vXJcxEkn7oSuepcm38iWYSAmY1nnn4xTa1/54bXK+k=";
+      sha256 = "sha256-y2md5i9TJX1BmtQJCB5/HAyLKiViRjJ9mS2onrhEXI8=";
     };
-    date = "2023-12-08";
+    date = "2023-12-13";
   };
 }

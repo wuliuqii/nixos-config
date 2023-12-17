@@ -1,8 +1,9 @@
 {
   imports = [
     ./fish
-    ./git
-    ./bash
-    ./starship
+
+    ./git.nix
+    ./bash.nix
+    ./starship.nix
   ];
 }

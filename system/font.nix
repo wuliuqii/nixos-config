@@ -12,6 +12,7 @@
       lxgw-neoxihei
       source-han-sans
       jetbrains-mono
+      inter
       nerdfonts
     ];
 
@@ -22,5 +23,4 @@
       emoji = [ "Noto Color Emoji" ];
     };
   };
-
 }

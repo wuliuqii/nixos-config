@@ -22,3 +22,8 @@ fetch.github = "hchunhui/librime-lua"
 [catppuccin-fish]
 src.git = "https://github.com/catppuccin/fish"
 fetch.github = "catppuccin/fish"
+
+[overskride]
+src.git = "https://github.com/kaii-lb/overskride"
+fetch.github = "kaii-lb/overskride"
+extract = ["Cargo.lock"]

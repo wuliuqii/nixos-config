@@ -9,7 +9,6 @@
     ./kdeconnect.nix
     ./zathura.nix
     ./cli.nix
-    ./minelist.nix
   ];
 
   programs = {

@@ -18,6 +18,4 @@
       };
     };
   };
-
-  home.file.".mozilla/firefox/default/chrome/".source = ./chrome;
 }

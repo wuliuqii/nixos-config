@@ -22,10 +22,10 @@
     };
   };
 
-  home.sessionVariables = {
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-  };
+  # home.sessionVariables = {
+  #   XDG_CURRENT_DESKTOP = "Hyprland";
+  #   XDG_SESSION_DESKTOP = "Hyprland";
+  # };
 
   # start swayidle as part of hyprland, not sway
   systemd.user.services.swayidle.Install.WantedBy = lib.mkForce [ "hyprland-session.target" ];

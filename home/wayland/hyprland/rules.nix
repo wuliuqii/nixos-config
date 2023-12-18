@@ -17,7 +17,7 @@
     # use `hyprctl clients` to find out the class and title of a window
     windowrulev2 =
       let
-        float-center-apps = "^(org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv|termfloat)$";
+        float-center-apps = "^(io.github.kaii_lb.Overskride|org.gnome.Settings|code|org.kde.dolphin|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv|termfloat)$";
       in
       [
         # telegram media viewer
@@ -41,11 +41,11 @@
 
         "dimaround, class:^(gcr-prompter)$"
 
-        "opacity 0.80 0.80 class:^(firefox|code-url-handler|kitty|foot|yesplaymusic|org.kde.dolphin|com.obsproject.Studio)$"
+        "opacity 0.80 0.80 class:^(firefox|code-url-handler|org.wezfurlong.wezterm|kitty|foot|yesplaymusic|com.obsproject.Studio)$"
         "opacity 0.80 0.70 class:${float-center-apps}"
         "float, class:${float-center-apps}"
-        "move 25%-, class:${float-center-apps}"
-        "size 960 540, class:${float-center-apps}"
+        "center, class:${float-center-apps}"
+        "size 60% 60%, class:${float-center-apps}"
       ];
   };
 }

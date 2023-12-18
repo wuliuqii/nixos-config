@@ -16,6 +16,8 @@
   };
 
   home.packages = with pkgs; [
+    xdg-utils
+
     obs-studio-plugins.wlrobs
     obs-studio-plugins.input-overlay
     libsForQt5.kdenlive

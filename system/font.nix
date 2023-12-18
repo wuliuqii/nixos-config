@@ -8,11 +8,10 @@
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-emoji
-      lxgw-wenkai
-      lxgw-neoxihei
       source-han-sans
       jetbrains-mono
-      inter
+      roboto
+      (google-fonts.override {fonts = ["Inter"];})
       nerdfonts
     ];
 

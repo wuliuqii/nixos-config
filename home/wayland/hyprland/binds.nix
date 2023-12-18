@@ -51,8 +51,8 @@ in
 
         # utility
         # terminal
-        "$mainMod, Return, exec, kitty"
-        "$mainMod SHIFT, Return, exec, kitty --class=termfloat"
+        "$mainMod, Return, exec, wezterm"
+        "$mainMod SHIFT, Return, exec, wezterm start --class termfloat"
         # launcher
         "$mainMod, Space, exec, anyrun"
         # browser

@@ -130,5 +130,27 @@
             "type": "github"
         },
         "version": "c9555ed3c09b3224eb7162047b92ffe744c902b8"
+    },
+    "wezterm": {
+        "cargoLocks": null,
+        "date": "2023-12-03",
+        "extract": {
+            "Cargo.lock": "./wezterm-e3cd2e93d0ee5f3af7f3fe0af86ffad0cf8c7ea8/Cargo.lock"
+        },
+        "name": "wezterm",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "wez",
+            "repo": "wezterm",
+            "rev": "e3cd2e93d0ee5f3af7f3fe0af86ffad0cf8c7ea8",
+            "sha256": "sha256-sj3S1fWC6j9Q/Yc+4IpLbKC3lttUWFk65ROyCdQt+Zc=",
+            "type": "github"
+        },
+        "version": "e3cd2e93d0ee5f3af7f3fe0af86ffad0cf8c7ea8"
     }
 }

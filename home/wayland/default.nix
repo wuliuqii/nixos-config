@@ -17,6 +17,7 @@ in
     ./waybar
     ./hyprland
 
+    ./ags.nix
     ./mako.nix
     ./hyprpaper.nix
     ./swayidle.nix

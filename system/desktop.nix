@@ -45,11 +45,14 @@ in
 
   xdg.portal = {
     enable = true;
-    xdgOpenUsePortal = true;
+    # xdgOpenUsePortal = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
     ];
-    config.common.default = [ "gtk" ];
+    config = {
+      common.default = [ "gtk" ];
+      hyprland.default = [ "hyprland" "gtk" ];
+    };
   };
 
   systemd = {

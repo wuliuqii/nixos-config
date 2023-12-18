@@ -18,6 +18,8 @@
     yazi = {
       enable = true;
     };
+
+    eza.enable = true;
   };
 
   home = {
@@ -33,11 +35,6 @@
       # build
       gcc
       just
-      nix-output-monitor
-
-      # encryption
-      age
-      sops
 
       # misc
       showmethekey
@@ -46,7 +43,6 @@
       cloc
       tokei
       tree
-      nvfetcher
       jaq
     ];
   };

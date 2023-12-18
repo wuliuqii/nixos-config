@@ -5,8 +5,8 @@
 {
   programs.vscode = {
     enable = true;
-    # lock vscode to 1.81.1 because native titlebar causes vscode to crash
-    # TODO: https://github.com/microsoft/vscode/issues/184124#issuecomment-1717959995
+    # use unstale update after this pr is merged
+    # TODO: https://github.com/NixOS/nixpkgs/pull/274499
     package =
       (import inputs.nixpkgs-vscode {
         system = pkgs.system;

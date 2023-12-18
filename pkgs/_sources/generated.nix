@@ -78,4 +78,17 @@
     };
     date = "2023-12-13";
   };
+  wezterm = {
+    pname = "wezterm";
+    version = "e3cd2e93d0ee5f3af7f3fe0af86ffad0cf8c7ea8";
+    src = fetchFromGitHub {
+      owner = "wez";
+      repo = "wezterm";
+      rev = "e3cd2e93d0ee5f3af7f3fe0af86ffad0cf8c7ea8";
+      fetchSubmodules = true;
+      sha256 = "sha256-sj3S1fWC6j9Q/Yc+4IpLbKC3lttUWFk65ROyCdQt+Zc=";
+    };
+    "Cargo.lock" = builtins.readFile ./wezterm-e3cd2e93d0ee5f3af7f3fe0af86ffad0cf8c7ea8/Cargo.lock;
+    date = "2023-12-03";
+  };
 }

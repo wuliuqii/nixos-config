@@ -19,11 +19,4 @@ in
     owner = "${user}";
     path = "${home}/.ssh/config";
   };
-
-  sops.secrets.github-copilot = {
-    format = "binary";
-    sopsFile = ./copilot;
-    owner = "${user}";
-    path = "${home}/.config/github-copilot/hosts.json";
-  };
 }

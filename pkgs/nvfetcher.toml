@@ -27,3 +27,9 @@ fetch.github = "catppuccin/fish"
 src.git = "https://github.com/kaii-lb/overskride"
 fetch.github = "kaii-lb/overskride"
 extract = ["Cargo.lock"]
+
+[wezterm]
+src.git = "https://github.com/wez/wezterm"
+fetch.github = "wez/wezterm"
+git.fetchSubmodules = true
+extract = ["Cargo.lock"]

@@ -88,6 +88,8 @@
       };
 
       devShells.${system}.default = pkgs.mkShell {
+        inherit (self.checks.${system}.pre-commit) shellHook;
+
         packages = with pkgs; [
           just
           nix-output-monitor
@@ -95,10 +97,6 @@
           sops
           nvfetcher
         ];
-
-        shellHook = ''
-          ${self.checks.${system}.pre-commit}"
-        '';
       };
     };
 }

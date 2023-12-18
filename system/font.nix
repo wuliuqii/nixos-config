@@ -11,7 +11,7 @@
       source-han-sans
       jetbrains-mono
       roboto
-      (google-fonts.override {fonts = ["Inter"];})
+      (google-fonts.override { fonts = [ "Inter" ]; })
       nerdfonts
     ];
 

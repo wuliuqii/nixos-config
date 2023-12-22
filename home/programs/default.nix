@@ -6,7 +6,6 @@
 
     ./media.nix
     ./gtk.nix
-    ./kdeconnect.nix
     ./zathura.nix
     ./cli.nix
   ];

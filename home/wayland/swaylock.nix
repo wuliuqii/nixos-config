@@ -1,9 +1,9 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
     settings = {
-      image = "${../../wallpaper/catppuccin/windows-error.jpg}";
+      image = "${toString config.machine.lockImage}";
       font = "Inter";
       ignore-empty-password = true;
       disable-caps-lock-text = true;

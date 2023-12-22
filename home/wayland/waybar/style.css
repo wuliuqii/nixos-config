@@ -7,19 +7,17 @@
     min-height: 14px;
 }
 
-@define-color bar-bg rgba(0, 0, 0, 0);
+@define-color main-bg #24273a;
+@define-color main-fg #cad3f5;
 
-@define-color main-bg #11111b;
-@define-color main-fg #cdd6f4;
-
-@define-color wb-act-bg #a6adc8;
+@define-color wb-act-bg #f0c6c6;
 @define-color wb-act-fg #313244;
 
-@define-color wb-hvr-bg #f5c2e7;
-@define-color wb-hvr-fg #313244;
+@define-color wb-hvr-bg #f5bde6;
+@define-color wb-hvr-fg #363a4f;
 
 window#waybar {
-    background: @bar-bg;
+    background: transparent;
 }
 
 tooltip {
@@ -31,7 +29,7 @@ tooltip {
 
 #workspaces button {
     box-shadow: none;
-	text-shadow: none;
+    text-shadow: none;
     padding: 0px;
     border-radius: 8px;
     margin-top: 2px;
@@ -40,7 +38,7 @@ tooltip {
     padding-right: 2px;
     color: @main-fg;
     animation: gradient_f 20s ease-in infinite;
-    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
 #workspaces button.active {
@@ -51,7 +49,7 @@ tooltip {
     padding-right: 11px;
     margin-right: 2px;
     animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
 #workspaces button:hover {
@@ -60,49 +58,14 @@ tooltip {
     padding-left: 2px;
     padding-right: 2px;
     animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#taskbar button {
-    box-shadow: none;
-	text-shadow: none;
-    padding: 0px;
-    border-radius: 8px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    padding-left: 2px;
-    padding-right: 2px;
-    color: @wb-color;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#taskbar button.active {
-    background: @wb-act-bg;
-    color: @wb-act-color;
-    margin-left: 2px;
-    padding-left: 11px;
-    padding-right: 11px;
-    margin-right: 2px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#taskbar button:hover {
-    background: @wb-hvr-bg;
-    color: @wb-hvr-color;
-    padding-left: 2px;
-    padding-right: 2px;
-    animation: gradient_f 20s ease-in infinite;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
 #battery,
 #bluetooth,
-#custom-cliphist,
 #clock,
 #cpu,
-#custom-gpuinfo,
+#backlight,
 #idle_inhibitor,
 #memory,
 #custom-mode,
@@ -110,12 +73,8 @@ tooltip {
 #network,
 #custom-power,
 #pulseaudio,
-#custom-spotify,
 #taskbar,
 #tray,
-#custom-updates,
-#custom-wallchange,
-#custom-wbar,
 #window,
 #workspaces,
 #custom-l_end,

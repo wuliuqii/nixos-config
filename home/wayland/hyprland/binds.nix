@@ -1,7 +1,7 @@
-{ ... }:
+{ config, ... }:
 let
   screenshotsave = ''~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png'';
-  screenshotarea = "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copysave area; hyprctl keyword animation 'fadeOut,1,4,default'";
+  screenshotarea = "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copysave area ${screenshotsave}; hyprctl keyword animation 'fadeOut,1,4,default'";
 
   workspaces = builtins.concatLists (builtins.genList
     (
@@ -24,8 +24,8 @@ in
   wayland.windowManager.hyprland.settings = {
     # mouse movements
     bindm = [
-      "$altMod, mouse:272, movewindow"
-      "$mainMod, mouse:272, resizewindow"
+      "$mainMod, mouse:272, movewindow"
+      "$mainMod, mouse:273, resizewindow"
     ];
 
     # binds
@@ -49,18 +49,20 @@ in
         # toggle "monocle" (no_gaps_when_only)
         "$mainMod SHIFT, M, exec, hyprctl keyword ${monocle} $(($(hyprctl getoption ${monocle} -j | jaq -r '.int') ^ 1))"
 
-        # utility
         # terminal
-        "$mainMod, Return, exec, wezterm"
-        "$mainMod SHIFT, Return, exec, wezterm start --class termfloat"
+        "$mainMod, Return, exec, ${config.machine.terminal}"
+        ''${if config.machine.terminal == "wezterm"
+        then  "$mainMod SHIFT, Return, exec, wezterm start --class termfloat"
+        else ""}''
+
         # launcher
         "$mainMod, Space, exec, anyrun"
         # browser
         "$mainMod, B, exec, firefox"
         # vscode
-        "$mainMod, C, exec, code --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime"
+        "$mainMod, C, exec, code"
         # music
-        "$mainMod, M, exec, yesplaymusic --force-device-scale-factor=2"
+        "$mainMod, M, exec, yesplaymusic"
         # file manager
         "$mainMod, E, exec, dolphin"
         # logout menu
@@ -70,7 +72,6 @@ in
         # select area to perform OCR on
         "$mainMod, O, exec, run-as-service wl-ocr"
         # cliphist
-        "$mainMod, V, exec, cliphist list | rofi -dmenu -theme ~/.config/rofi/launcher_theme | cliphist decode | wl-copy"
         "$mainMod SHIFT, V, exec, rm ~/.cache/cliphist/db"
         # screenshot
         # stop animations while screenshotting; makes black border go away

@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-vscode.url = "github:nixos/nixpkgs/db9208ab987cdeeedf78ad9b4cf3c55f5ebd269b";
 
     home-manager.url = "github:nix-community/home-manager";
     fenix.url = "github:nix-community/fenix";
@@ -24,6 +23,11 @@
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    anyrun-plugins = {
+      url = "github:wuliuqii/anyrun-plugins";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

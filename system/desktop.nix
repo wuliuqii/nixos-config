@@ -1,7 +1,5 @@
-{ inputs, config, pkgs, ... }:
-let
-  user = "${config.machine.userName}";
-in
+{ inputs, pkgs, ... }:
+
 {
   programs = {
     dconf.enable = true;
@@ -14,28 +12,8 @@ in
     };
   };
 
-  hardware = {
-    # smooth backlight control
-    brillo.enable = true;
-
-    opengl.enable = true;
-  };
-
   # enable location service
   location.provider = "geoclue2";
-
-  services = {
-    getty.autologinUser = "${user}";
-    tlp.enable = true;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      jack.enable = true;
-    };
-    udisks2.enable = true;
-  };
 
   qt = {
     enable = true;

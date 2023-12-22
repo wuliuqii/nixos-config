@@ -13,14 +13,11 @@ let
 in
 {
   imports = [
-    ./rofi
     ./waybar
     ./hyprland
 
     ./ags.nix
     ./mako.nix
-    ./hyprpaper.nix
-    ./swayidle.nix
     ./swaylock.nix
     ./anyrun.nix
     ./wlogout.nix
@@ -33,6 +30,7 @@ in
     grimblast
     slurp
     udiskie
+    networkmanagerapplet
     wlogout
     ocrScript
     brillo

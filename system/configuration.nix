@@ -3,30 +3,15 @@ let
   user = config.machine.userName;
 in
 {
-  imports =
-    [
-      ./font.nix
-      ./hardware.nix
-      ./security.nix
-      ./service.nix
-      ./virtualisation.nix
-      ./desktop.nix
-    ];
-
-  networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
-    nameservers = [
-      "119.29.29.29"
-      "114.114.114.114"
-      "223.5.5.5"
-      "1.1.1.1"
-    ];
-    proxy = {
-      default = "http://localhost:20172";
-      noProxy = "127.0.0.1,localhost";
-    };
-  };
+  imports = [
+    ./font.nix
+    ./hardware.nix
+    ./security.nix
+    ./services.nix
+    ./virtualisation.nix
+    ./desktop.nix
+    ./network.nix
+  ];
 
   time.timeZone = "Asia/Shanghai";
 
@@ -80,8 +65,6 @@ in
     shells = with pkgs; [ fish ];
 
     systemPackages = with pkgs; [
-      networkmanagerapplet
-
       git
       wget
       nitch

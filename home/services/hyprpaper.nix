@@ -1,10 +1,11 @@
 { pkgs
 , inputs
 , lib
+, config
 , ...
 }:
 let
-  wallpaper = "${../../wallpaper/catppuccin/evening-sky.png}";
+  wallpaper = "${toString config.machine.wallpaper}";
 in
 {
   xdg.configFile."hypr/hyprpaper.conf".text = ''

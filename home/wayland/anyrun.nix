@@ -17,17 +17,17 @@ in
         shell
         websearch
         translate
-        dictionary
         stdin
+        inputs.anyrun-plugins.packages.${pkgs.system}.cliphist
       ];
 
       width.fraction = 0.3;
       y.absolute = 15;
       closeOnClick = true;
-      hideIcons = false;
       ignoreExclusiveZones = false;
       layer = "overlay";
       hidePluginInfo = true;
+      hideIcons = false;
     };
 
     extraCss = ''

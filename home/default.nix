@@ -4,21 +4,22 @@ let
 in
 {
   imports = [
-    ./editor
+    ./editors
     ./programs
     ./shell
-    ./terminal
+    ./terminals
     ./wayland
+    ./services
   ];
 
   home = {
     username = "${user}";
-    homeDirectory = "/home/${user}";
+    homeDirectory = "/home/${config.machine.userName}";
 
     sessionVariables = {
       EDITOR = "hx";
-      BROWSER = "firefox";
-      TERMINAL = "foot";
+      BROWSER = "${config.machine.browser}";
+      TERMINAL = "${config.machine.terminal}";
     };
   };
 

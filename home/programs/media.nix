@@ -11,6 +11,7 @@ in
       go-musicfox
       yesplaymusic
       playerctl
+      pavucontrol
     ];
   };
 

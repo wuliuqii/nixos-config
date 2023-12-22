@@ -22,40 +22,47 @@
     ];
 
     general = {
-      gaps_in = 5;
-      gaps_out = 5;
-      border_size = 1;
-      "col.active_border" = "rgba(88888888)";
-      "col.inactive_border" = "rgba(00000088)";
+      gaps_in = 3;
+      gaps_out = 8;
+      border_size = 2;
+      "col.active_border" = "0xfff5bde6";
+      "col.inactive_border" = "0xff24273a";
+      layout = "dwindle";
+      resize_on_border = true;
     };
 
     decoration = {
-      rounding = 16;
+      rounding = 10;
+      drop_shadow = false;
+
       blur = {
         enabled = true;
-        brightness = 1.0;
-        contrast = 1.0;
-        noise = 0.02;
-
         passes = 3;
-        size = 10;
+        size = 6;
+        new_optimizations = "on";
+        ignore_opacity = "on";
+        xray = false;
       };
-
-      drop_shadow = true;
-      shadow_ignore_window = true;
-      shadow_offset = "0 2";
-      shadow_range = 20;
-      shadow_render_power = 3;
-      "col.shadow" = "rgba(00000055)";
     };
 
     animations = {
       enabled = true;
+      bezier = [
+        "wind, 0.05, 0.9, 0.1, 1.05"
+        "winIn, 0.1, 1.1, 0.1, 1.1"
+        "winOut, 0.3, -0.3, 0, 1"
+        "liner, 1, 1, 1, 1"
+      ];
+
       animation = [
-        "border, 1, 2, default"
-        "fade, 1, 4, default"
-        "windows, 1, 3, default, popin 80%"
-        "workspaces, 1, 2, default, slide"
+        "border, 1, 1, liner"
+        "borderangle, 1, 30, liner, loop"
+        "fade, 1, 10, default"
+        "windows, 1, 6, wind, slide"
+        "windowsIn, 1, 6, winIn, slide"
+        "windowsOut, 1, 5, winOut, slide"
+        "windowsMove, 1, 5, wind, slide"
+        "workspaces, 1, 5, wind"
       ];
     };
 

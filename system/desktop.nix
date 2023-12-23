@@ -13,7 +13,8 @@
   };
 
   # use Wayland where possible (electron)
-  environment.variables.NIXOS_OZONE_WL = "1";
+  # vscode startup crash
+  # environment.variables.NIXOS_OZONE_WL = "1";
 
   # enable location service
   location.provider = "geoclue2";

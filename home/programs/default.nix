@@ -16,6 +16,7 @@
 
   home.packages = with pkgs; [
     xdg-utils
+    kooha
 
     obs-studio-plugins.wlrobs
     obs-studio-plugins.input-overlay

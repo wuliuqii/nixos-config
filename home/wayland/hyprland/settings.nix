@@ -4,18 +4,11 @@
     "$mainMod" = "SUPER";
     "$altMod" = "ALT";
 
-    monitor = [
-      "DP-3, preferred, -3840x0, 2"
-      "eDP-1, preferred, auto, auto"
-    ];
-
     exec-once = [
       "systemctl --user start clight"
       "fcitx5"
       "waybar"
       "mako"
-      "blueman-applet"
-      "nm-applet --indicator"
       "udiskie"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"

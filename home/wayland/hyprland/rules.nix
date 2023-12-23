@@ -47,5 +47,9 @@
         "center, class:${float-center-apps}"
         "size 60% 60%, class:${float-center-apps}"
       ];
+
+    workspace = [
+      "eDP-1, 10"
+    ];
   };
 }

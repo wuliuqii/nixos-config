@@ -1,7 +1,7 @@
 { config, ... }:
 let
   screenshotsave = ''~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png'';
-  screenshotarea = "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copysave area ${screenshotsave}; hyprctl keyword animation 'fadeOut,1,4,default'";
+  screenshotarea = "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copy area; hyprctl keyword animation 'fadeOut,1,4,default'";
 
   workspaces = builtins.concatLists (builtins.genList
     (
@@ -22,6 +22,11 @@ let
 in
 {
   wayland.windowManager.hyprland.settings = {
+    monitor = [
+      "DP-3, preferred, -3840x0, 2"
+      "eDP-1, preferred, auto, auto"
+    ];
+
     # mouse movements
     bindm = [
       "$mainMod, mouse:272, movewindow"
@@ -71,14 +76,16 @@ in
         "$mainMod, L, exec, loginctl lock-session"
         # select area to perform OCR on
         "$mainMod, O, exec, run-as-service wl-ocr"
-        # cliphist
-        "$mainMod SHIFT, V, exec, rm ~/.cache/cliphist/db"
+        # clear cliphist database
+        "$mainMod SHIFT, V, exec, cliphist wipe"
         # screenshot
-        # stop animations while screenshotting; makes black border go away
-        "$altMod, Z, exec, ${screenshotarea}"
-        "$altMod CTRL, Z, exec, grimblast --notify --cursor copysave area ${screenshotsave}"
-        "$mainMod, Z, exec, grimblast --notify --cursor copysave screen ${screenshotsave}"
+        # stop animations while screenshotting; makes black border go away 
+        "$altMod CTRL, Z, exec, ${screenshotarea}"
+        "$altMod, Z, exec, grimblast --notify --cursor copysave area ${screenshotsave}"
+        "$mainMod, Z, exec, grimblast --notify --cursor copysave active ${screenshotsave}"
         "$mainMod SHIFT, Z, exec, grimblast --notify --cursor copysave output ${screenshotsave}"
+        # record
+        "$mainMod, R, exec, kooha"
 
         # move focus
         "$altMod, left, movefocus, l"
@@ -105,12 +112,12 @@ in
         "$altMod, equal, togglespecialworkspace"
 
         # cycle workspaces
-        "$altMod, period, workspace, m-1"
-        "$altMod, comma, workspace, m+1"
+        "$altMod, period, workspace, m+1"
+        "$altMod, comma, workspace, m-1"
 
         # cycle monitors
-        "$altMod SHIFT, period, focusmonitor, l"
-        "$altMod SHIFT, comma, focusmonitor, r"
+        "$altMod SHIFT, comma, focusmonitor, eDP-1"
+        "$altMod SHIFT, period, focusmonitor, DP-3"
 
 
       ]

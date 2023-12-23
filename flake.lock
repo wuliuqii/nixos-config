@@ -45,11 +45,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1703064348,
-        "narHash": "sha256-4T2yidqgjuZZgPbPaUKQbdCCVFywgxNTtl6FpzCe9B4=",
+        "lastModified": 1703237983,
+        "narHash": "sha256-n7kBLZiJX03BFmY3xkMhUsUyQmeqAyrroCs+wAXbjeA=",
         "owner": "wuliuqii",
         "repo": "anyrun-plugins",
-        "rev": "1331e6d4bd26b7f65dfd5a79200bb70aa77d6f60",
+        "rev": "0f34cb0dc08dab0a6b18aa8b11ee6753ed83e1d6",
         "type": "github"
       },
       "original": {

@@ -68,10 +68,11 @@ tooltip {
 #backlight,
 #idle_inhibitor,
 #memory,
-#custom-mode,
 #mpris,
+#temperature,
 #network,
 #custom-power,
+#custom-logo,
 #pulseaudio,
 #taskbar,
 #tray,
@@ -89,6 +90,10 @@ tooltip {
     margin: 3px 0px 3px 0px;
     padding-left: 4px;
     padding-right: 4px;
+}
+
+#battery.critical:not(.charging) {
+    color: rgb(242, 143, 173);
 }
 
 #workspaces,

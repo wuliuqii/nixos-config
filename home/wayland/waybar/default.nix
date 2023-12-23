@@ -18,7 +18,18 @@
         modules-left = [
           "custom/padd"
           "custom/l_end"
+          "custom/logo"
+          "custom/r_end"
+          "custom/l_end"
           "clock"
+          "custom/r_end"
+          "custom/l_end"
+          "cpu"
+          "memory"
+          # "temperature"
+          "custom/r_end"
+          "custom/l_end"
+          "mpris"
           "custom/r_end"
           "custom/padd"
         ];
@@ -26,6 +37,9 @@
           "custom/padd"
           "custom/l_end"
           "network"
+          "bluetooth"
+          "custom/r_end"
+          "custom/l_end"
           "pulseaudio"
           "pulseaudio#microphone"
           "backlight"
@@ -46,9 +60,18 @@
           format = "{icon}";
         };
 
+        cpu = {
+          format = " {usage}%";
+        };
+        memory = {
+          "format" = " {}%";
+        };
+        temperature = {
+          "format" = " {temperatureC}°C";
+        };
+
         pulseaudio = {
           format = "{icon} {volume}%";
-          format-bluetooth = "{volume}% {icon}";
           format-muted = "󰖁";
           on-click = "pavucontrol -t 3";
           on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
@@ -56,9 +79,6 @@
           tooltip-format = "{icon} {desc} // {volume}%";
           scroll-step = 1;
           format-icons = {
-            headphone = "";
-            hands-free = "";
-            headset = "";
             default = [ "" "" "" ];
           };
         };
@@ -80,8 +100,18 @@
           tooltip-format = "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}";
           format-linked = "󱘖 {ifname} (No IP)";
           format-disconnected = " Disconnected";
-          format-alt = "󰤨 {essid}";
-          interval = 5;
+          on-click = "nm-connection-editor";
+        };
+
+        bluetooth = {
+          format = " {status}";
+          format-disabled = "";
+          format-connected = " {num_connections}";
+          tooltip-format = "{controller_alias}\t{controller_address}";
+          tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
+          tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+          on-click = "overskride";
         };
 
         backlight = {
@@ -90,8 +120,7 @@
           format-icons = [ "" "" "" "" "" "" "" "" "" ];
           on-scroll-down = "brillo -q -u 300000 -A 5";
           on-scroll-up = "brillo -q -u 300000 -U 5";
-          tooltip = true;
-          tooltip-format = "{percent}%";
+          tooltip = false;
         };
 
         battery = {
@@ -100,10 +129,36 @@
             critical = 15;
           };
           format = "{icon} {capacity}%";
-          format-charging = " {capacity}%";
-          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-          tooltip = true;
-          tooltip-format = "{capacity}%";
+          format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+          format-full = "{icon} {capacity}%";
+          format-charging = "󰂄 {capacity}%";
+          tooltip = false;
+        };
+
+        clock = {
+          format = "{: %R}";
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        };
+
+        mpris = {
+          format = "{player_icon} {status_icon} {dynamic}";
+          player-icons = {
+            default = "";
+            mpv = "🎵";
+          };
+          status-icons = {
+            paused = "⏸";
+            playing = "󰐊";
+          };
+          dynamic-priority = [ "length" "position" "album" ];
+          dynamic-len = 1;
+          max-length = 999;
+          ignored-players = [ "firefox" ];
+        };
+
+        tray = {
+          icon-size = 16;
+          spacing = 5;
         };
 
         "custom/power" = {
@@ -112,14 +167,9 @@
           format = "";
         };
 
-        clock = {
-          format = "{: %R   %d/%m}";
-          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        };
-
-        tray = {
-          icon-size = 16;
-          spacing = 5;
+        "custom/logo" = {
+          format = " ";
+          tooltip = false;
         };
 
         #  modules for padding //

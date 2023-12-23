@@ -5,7 +5,6 @@ in
 {
   services = {
     getty.autologinUser = "${user}";
-    blueman.enable = true;
     v2raya.enable = true;
     # battery info & stuff
     upower.enable = true;

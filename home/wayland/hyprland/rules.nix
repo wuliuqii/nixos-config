@@ -18,7 +18,7 @@
     windowrulev2 =
       let
         float-center-apps = "^(pavucontrol|io.github.kaii_lb.Overskride|org.gnome.Settings|org.kde.dolphin|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv|termfloat)$";
-        messenger-apps = "^(thunderbird|Slack|org.telegram.desktop|cinny|discord)$";
+        messenger-apps = "^(QQ|thunderbird|Slack|org.telegram.desktop|cinny|discord)$";
       in
       [
         # telegram media viewer

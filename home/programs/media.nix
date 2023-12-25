@@ -3,6 +3,7 @@
   home = {
     packages = with pkgs; [
       mpc-cli
+      g4music
       go-musicfox
       yesplaymusic
       playerctl

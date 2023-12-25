@@ -17,10 +17,13 @@
   home.packages = with pkgs; [
     xdg-utils
     kooha
+
+    # Social Apps
     telegram-desktop
     discord
     cinny-desktop
     slack
+    qq
     thunderbird
 
     obs-studio-plugins.wlrobs

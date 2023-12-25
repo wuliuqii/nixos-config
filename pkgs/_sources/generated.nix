@@ -53,42 +53,16 @@
     };
     date = "2023-10-29";
   };
-  overskride = {
-    pname = "overskride";
-    version = "73806b9949400fc3fb8e818c0341a560a4168f4d";
-    src = fetchFromGitHub {
-      owner = "kaii-lb";
-      repo = "overskride";
-      rev = "73806b9949400fc3fb8e818c0341a560a4168f4d";
-      fetchSubmodules = false;
-      sha256 = "sha256-rYM5zdqrJd8FaPfV9Nn6TDQW9y16HSM4eIRi+JtuYFo=";
-    };
-    "Cargo.lock" = builtins.readFile ./overskride-73806b9949400fc3fb8e818c0341a560a4168f4d/Cargo.lock;
-    date = "2023-11-20";
-  };
   rime-ice = {
     pname = "rime-ice";
-    version = "c9555ed3c09b3224eb7162047b92ffe744c902b8";
+    version = "9d6c8fda32f552e6f09de8a1ffd87b8cb80b76de";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "c9555ed3c09b3224eb7162047b92ffe744c902b8";
+      rev = "9d6c8fda32f552e6f09de8a1ffd87b8cb80b76de";
       fetchSubmodules = false;
-      sha256 = "sha256-y2md5i9TJX1BmtQJCB5/HAyLKiViRjJ9mS2onrhEXI8=";
+      sha256 = "sha256-2tHCJEZCsG6WI+cUq3oY7AMe+mY+R0b/sKGbq0pOHVw=";
     };
-    date = "2023-12-13";
-  };
-  wezterm = {
-    pname = "wezterm";
-    version = "e3cd2e93d0ee5f3af7f3fe0af86ffad0cf8c7ea8";
-    src = fetchFromGitHub {
-      owner = "wez";
-      repo = "wezterm";
-      rev = "e3cd2e93d0ee5f3af7f3fe0af86ffad0cf8c7ea8";
-      fetchSubmodules = true;
-      sha256 = "sha256-sj3S1fWC6j9Q/Yc+4IpLbKC3lttUWFk65ROyCdQt+Zc=";
-    };
-    "Cargo.lock" = builtins.readFile ./wezterm-e3cd2e93d0ee5f3af7f3fe0af86ffad0cf8c7ea8/Cargo.lock;
-    date = "2023-12-03";
+    date = "2023-12-24";
   };
 }

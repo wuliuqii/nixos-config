@@ -6,6 +6,7 @@ in
   services = {
     getty.autologinUser = "${user}";
     v2raya.enable = true;
+    blueman.enable = true;
     # battery info & stuff
     upower.enable = true;
     power-profiles-daemon.enable = true;

@@ -7,6 +7,7 @@
       yesplaymusic
       playerctl
       pavucontrol
+      cava
     ];
   };
 

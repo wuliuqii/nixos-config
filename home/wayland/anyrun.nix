@@ -4,21 +4,20 @@
 }:
 let
   anyrunPkgs = inputs.anyrun.packages.${pkgs.system};
+  myAnyrunPkgs = inputs.anyrun-plugins.packages.${pkgs.system};
 in
 {
   programs.anyrun = {
     enable = true;
 
     config = {
-      plugins = with anyrunPkgs; [
-        applications
-        randr
-        rink
-        shell
-        websearch
-        translate
-        stdin
-        inputs.anyrun-plugins.packages.${pkgs.system}.cliphist
+      plugins = [
+        anyrunPkgs.websearch
+        anyrunPkgs.translate
+        myAnyrunPkgs.cliphist
+        myAnyrunPkgs.hyprwin
+        myAnyrunPkgs.applications
+        myAnyrunPkgs.symbols
       ];
 
       width.fraction = 0.3;

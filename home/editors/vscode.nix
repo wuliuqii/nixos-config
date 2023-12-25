@@ -34,6 +34,7 @@
       "explorer.confirmDelete" = false;
       "explorer.confirmDragAndDrop" = false;
 
+      "nixEnvSelector.suggestion" = false;
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nil";
       "nix.serverSettings" = {

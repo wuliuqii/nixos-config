@@ -30,6 +30,7 @@
           "custom/r_end"
           "custom/l_end"
           "mpris"
+          "cava"
           "custom/r_end"
           "custom/padd"
         ];
@@ -74,10 +75,10 @@
           format = "{icon} {volume}%";
           format-muted = "󰖁";
           on-click = "pavucontrol -t 3";
-          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
-          on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+          on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
           tooltip-format = "{icon} {desc} // {volume}%";
-          scroll-step = 1;
+          scroll-step = 5;
           format-icons = {
             default = [ "" "" "" ];
           };
@@ -88,9 +89,9 @@
           format-source = " {volume}%";
           format-source-muted = "";
           on-click = "pavucontrol -t 4";
-          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
-          on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
-          scroll-step = 1;
+          on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+          scroll-step = 5;
           tooltip-format = "{format_source} {source_desc} // {source_volume}%";
         };
 
@@ -104,14 +105,14 @@
         };
 
         bluetooth = {
-          format = " {status}";
+          format = " {status}";
           format-disabled = "";
-          format-connected = " {num_connections}";
+          format-connected = " {num_connections}";
           tooltip-format = "{controller_alias}\t{controller_address}";
           tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
           tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
-          on-click = "overskride";
+          on-click = "blueman-manager";
         };
 
         backlight = {
@@ -131,7 +132,8 @@
           format = "{icon} {capacity}%";
           format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
           format-full = "{icon} {capacity}%";
-          format-charging = "󰂄 {capacity}%";
+          format-charging = " {capacity}%";
+          format-plugged = " {capacity}%";
           tooltip = false;
         };
 
@@ -141,19 +143,36 @@
         };
 
         mpris = {
-          format = "{player_icon} {status_icon} {dynamic}";
-          player-icons = {
-            default = "";
-            mpv = "🎵";
-          };
-          status-icons = {
-            paused = "⏸";
-            playing = "󰐊";
-          };
+          format-playing = "▶";
+          format-paused = "⏸";
+          format-stopped = "";
           dynamic-priority = [ "length" "position" "album" ];
           dynamic-len = 1;
           max-length = 999;
           ignored-players = [ "firefox" ];
+          tooltip = true;
+          tooltip-format = "{player} ({status})\n{dynamic}";
+        };
+
+        cava = {
+          framerate = 30;
+          autosens = 1;
+          bars = 12;
+          # hide_on_silence = true;
+          sleep_timer = 1;
+          method = "pipewire";
+          source = "auto";
+          stereo = true;
+          reverse = false;
+          bar_delimiter = 0;
+          monstercat = false;
+          waves = false;
+          noise_reduction = 0.77;
+          input_delay = 0.1;
+          format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+          actions = {
+            on-click-right = "mode";
+          };
         };
 
         tray = {

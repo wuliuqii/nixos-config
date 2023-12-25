@@ -1,5 +1,6 @@
 { ... }:
 {
+  # TODO: crash on startup, waiting for next release
   programs.wezterm = {
     enable = true;
 
@@ -12,6 +13,7 @@
         font_size = 16.0,
         hide_tab_bar_if_only_one_tab = true,
         scrollback_lines = 10000,
+        enable_kitty_keyboard = true,
       }
     '';
   };

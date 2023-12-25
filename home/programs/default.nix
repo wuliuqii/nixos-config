@@ -17,11 +17,16 @@
   home.packages = with pkgs; [
     xdg-utils
     kooha
+    telegram-desktop
+    discord
+    cinny-desktop
+    slack
+    thunderbird
 
     obs-studio-plugins.wlrobs
     obs-studio-plugins.input-overlay
-    libsForQt5.kdenlive
 
+    libsForQt5.kdenlive
     libsForQt5.dolphin
     libsForQt5.dolphin-plugins
     libsForQt5.kio-extras

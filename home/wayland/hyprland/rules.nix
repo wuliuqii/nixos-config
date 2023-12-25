@@ -18,6 +18,7 @@
     windowrulev2 =
       let
         float-center-apps = "^(pavucontrol|io.github.kaii_lb.Overskride|org.gnome.Settings|org.kde.dolphin|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv|termfloat)$";
+        messenger-apps = "^(thunderbird|Slack|org.telegram.desktop|cinny|discord)$";
       in
       [
         # telegram media viewer
@@ -46,6 +47,10 @@
         "float, class:${float-center-apps}"
         "center, class:${float-center-apps}"
         "size 60% 60%, class:${float-center-apps}"
+        "opacity 0.80 0.70 class:${messenger-apps}"
+        "float, class:${messenger-apps}"
+        "center, class:${messenger-apps}"
+        "size 90% 90%, class:${messenger-apps}"
       ];
 
     workspace = [

@@ -53,7 +53,22 @@
         "size 90% 90%, class:${messenger-apps}"
       ];
 
-    workspace = [
+    workspace = builtins.concatLists
+      (builtins.genList
+        (
+          x:
+          let
+            ws =
+              let
+                c = (x + 1) / 10;
+              in
+              builtins.toString (x + 1 - (c * 10));
+          in
+          [
+            "DP-3, ${ws}"
+          ]
+        )
+        9) ++ [
       "eDP-1, 10"
     ];
   };

@@ -11,6 +11,7 @@ in
     upower.enable = true;
     power-profiles-daemon.enable = true;
     gnome.gnome-keyring.enable = true;
+    gvfs.enable = true;
     # needed for GNOME services outside of GNOME Desktop
     dbus.packages = [ pkgs.gcr ];
     udisks2.enable = true;
@@ -34,18 +35,6 @@ in
             };
           };
         };
-      };
-    };
-
-    clight = {
-      enable = true;
-      settings = {
-        verbose = true;
-        backlight.disabled = true;
-        dpms.timeouts = [ 900 300 ];
-        dimmer.timeouts = [ 870 270 ];
-        gamma.long_transition = true;
-        screen.disabled = true;
       };
     };
   };

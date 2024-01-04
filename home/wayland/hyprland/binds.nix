@@ -37,6 +37,7 @@ in
     bind =
       let
         monocle = "dwindle:no_gaps_when_only";
+        e = "exec, ags -b hypr";
       in
       [
         # compositor commands
@@ -63,7 +64,7 @@ in
         else ""}''
 
         # launcher
-        "$mainMod, Space, exec, anyrun"
+        "$mainMod, Space, ${e} -t applauncher"
         # browser
         "$mainMod, B, exec, firefox"
         # vscode
@@ -73,7 +74,11 @@ in
         # file manager
         "$mainMod, E, exec, dolphin"
         # logout menu
-        "$mainMod, Escape, exec, wlogout -p layer-shell"
+        "$mainMod, Escape, ${e} -t powermenu"
+        # overview
+        "$mainMod, Tab, ${e} -t overview"
+        # restart ags
+        "CTRL SHIFT, R, ${e} quit; ags -b hypr"
         # lock screen
         "$mainMod, L, exec, loginctl lock-session"
         # select area to perform OCR on
@@ -86,8 +91,6 @@ in
         "$altMod, Z, exec, grimblast --notify --cursor copysave area ${screenshotsave}"
         "$mainMod, Z, exec, grimblast --notify --cursor copysave active ${screenshotsave}"
         "$mainMod SHIFT, Z, exec, grimblast --notify --cursor copysave output ${screenshotsave}"
-        # record
-        "$mainMod, R, exec, kooha"
 
         # move focus
         "$altMod, left, movefocus, l"

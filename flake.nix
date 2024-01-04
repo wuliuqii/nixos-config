@@ -6,13 +6,11 @@
       "https://hyprland.cachix.org/"
       "https://helix.cachix.org/"
       "https://nix-community.cachix.org"
-      "https://anyrun.cachix.org"
     ];
     extra-trusted-public-keys = [
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
     ];
   };
 
@@ -27,8 +25,6 @@
 
     helix.url = "github:helix-editor/helix";
 
-    anyrun.url = "github:Kirottu/anyrun";
-
     ags.url = "github:Aylur/ags";
 
     pre-commit-hooks = {
@@ -38,11 +34,6 @@
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    anyrun-plugins = {
-      url = "github:wuliuqii/anyrun-plugins";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -81,7 +72,6 @@
                     ./home
                   ] ++ [
                     inputs.hyprland.homeManagerModules.default
-                    inputs.anyrun.homeManagerModules.default
                     inputs.ags.homeManagerModules.default
                   ];
                 };

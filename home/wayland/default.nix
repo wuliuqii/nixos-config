@@ -13,14 +13,10 @@ let
 in
 {
   imports = [
-    ./waybar
     ./hyprland
 
     ./ags.nix
-    ./mako.nix
     ./swaylock.nix
-    ./anyrun.nix
-    ./wlogout.nix
   ];
 
   home.packages = with pkgs; [
@@ -31,7 +27,6 @@ in
     slurp
     udiskie
     networkmanagerapplet
-    wlogout
     ocrScript
     brillo
     swww

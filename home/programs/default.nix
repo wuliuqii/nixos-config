@@ -16,7 +16,6 @@
 
   home.packages = with pkgs; [
     xdg-utils
-    kooha
 
     # Social Apps
     telegram-desktop

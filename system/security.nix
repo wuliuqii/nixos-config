@@ -18,6 +18,21 @@
     # userland niceness
     rtkit.enable = true;
 
-    polkit.enable = true;
+    polkit = {
+      enable = true;
+
+      extraConfig = ''
+        polkit.addRule(function(action, subject) {
+          if (action.id == "org.freedesktop.systemd1.manage-units") {
+            if (action.lookup("unit") == "v2raya.service") {
+              var verb = action.lookup("verb");
+              if (verb == "start" || verb == "stop" || verb == "restart") {
+                return polkit.Result.YES;
+              }
+            }
+          }
+        })
+      '';
+    };
   };
 }

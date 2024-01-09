@@ -21,6 +21,12 @@ in
         event = "lock";
         command = "${pkgs.swaylock-effects}/bin/swaylock";
       }
+      {
+        # after sleep, v2raya will be not working,
+        # so we need to restart it
+        event = "after-resume";
+        command = "${pkgs.systemd}/bin/systemctl restart v2raya.service";
+      }
     ];
     timeouts = [
       {

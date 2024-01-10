@@ -14,7 +14,7 @@
     # use `hyprctl clients` to find out the class and title of a window
     windowrulev2 =
       let
-        float-center-apps = "^(pavucontrol|org.gnome.Settings|org.kde.dolphin|org.kde.kdeconnect-indicator|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv|termfloat)$";
+        float-center-apps = "^(one.alynx.showmethekey|pavucontrol|org.gnome.Settings|org.kde.dolphin|org.kde.kdeconnect-indicator|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv|termfloat)$";
         messenger-apps = "^(YouTube Music|yesplaymusic|QQ|thunderbird|Slack|org.telegram.desktop|cinny|discord)$";
       in
       [
@@ -36,15 +36,19 @@
 
         "dimaround, class:^(gcr-prompter)$"
 
-        "opacity 0.70 class:^(Code|firefox|org.wezfurlong.wezterm|kitty|foot|yesplaymusic|com.obsproject.Studio)$"
-        "opacity 0.80 0.70 class:${float-center-apps}"
+        "opacity 0.70, class:^(Code|firefox|org.wezfurlong.wezterm|kitty|foot|yesplaymusic|com.obsproject.Studio)$"
+        "opacity 0.80 0.70, class:${float-center-apps}"
         "float, class:${float-center-apps}"
         "center, class:${float-center-apps}"
         "size 60% 60%, class:${float-center-apps}"
-        "opacity 0.80 0.70 class:${messenger-apps}"
+        "opacity 0.80 0.70, class:${messenger-apps}"
         "float, class:${messenger-apps}"
         "center, class:${messenger-apps}"
         "size 90% 90%, class:${messenger-apps}"
+        "float, class:^(showmethekey-gtk)$"
+        "pin, class:^(showmethekey-gtk)$"
+        "opacity 0.50, class:^(showmethekey-gtk)$"
+        "move 50% 85%, class:^(showmethekey-gtk)$"
       ];
 
     workspace = builtins.concatLists

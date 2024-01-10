@@ -37,6 +37,7 @@ in
       })
     ];
   };
+  environment.pathsToLink = [ "/share/fcitx5" ];
 
   sops.age.keyFile = "/home/${config.machine.userName}/.config/sops/age/keys.txt";
 

@@ -11,12 +11,4 @@ in
     ".local/share/fcitx5/rime/default.custom.yaml".source =
       ./default.custom.yaml;
   };
-
-  home.sessionVariables = {
-    # TODO: https://github.com/NixOS/nixpkgs/issues/270432
-    QT_IM_MODULE = "";
-    GTK_IM_MODULE = "";
-    SDL_IM_MODULE = "fcitx";
-    XMODIFIERS = "@im=fcitx";
-  };
 }

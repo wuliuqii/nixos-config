@@ -57,6 +57,8 @@
       "github.copilot.enable" = {
         "markdown" = "true";
       };
+
+      "javascript.updateImportsOnFileMove.enabled" = "always";
     };
   };
 }

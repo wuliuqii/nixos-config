@@ -9,6 +9,7 @@
       playerctl
       pavucontrol
       cava
+      youtube-music
     ];
   };
 

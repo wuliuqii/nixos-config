@@ -23,8 +23,8 @@ in
 {
   wayland.windowManager.hyprland.settings = {
     monitor = [
-      "DP-3, preferred, -3840x0, 2"
-      "eDP-1, preferred, auto, auto"
+      "DP-3, preferred, 0x0, 2"
+      "eDP-1, preferred, 3840x0, auto"
     ];
 
     # mouse movements
@@ -78,7 +78,7 @@ in
         # overview
         "$mainMod, Tab, ${e} -t overview"
         # restart ags
-        "CTRL SHIFT, R, ${e} quit; ags -b hypr"
+        "$mainMod, R, ${e} quit; ags -b hypr"
         # lock screen
         "$mainMod, L, exec, loginctl lock-session"
         # select area to perform OCR on
@@ -91,6 +91,7 @@ in
         "$altMod, Z, exec, grimblast --notify --cursor copysave area ${screenshotsave}"
         "$mainMod, Z, exec, grimblast --notify --cursor copysave active ${screenshotsave}"
         "$mainMod SHIFT, Z, exec, grimblast --notify --cursor copysave output ${screenshotsave}"
+        "$altMod, R, ${e} -r 'recorder.start()'"
 
         # move focus
         "$altMod, left, movefocus, l"

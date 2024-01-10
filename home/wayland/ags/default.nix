@@ -1,19 +1,23 @@
 # in home.nix
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
-    config.wayland.windowManager.hyprland.package
-    bash
-    coreutils
-    gawk
     imagemagick
-    procps
-    ripgrep
     sassc
-    wlogout
     glib
     brightnessctl
     inotify-tools
+    libnotify
+    wf-recorder
+    swappy
+    wayshot
+    hyprpicker
+    swww
+    wl-clipboard
+    cliphist
+    wlr-randr
+    grimblast
+    slurp
   ];
 
   programs.ags = {

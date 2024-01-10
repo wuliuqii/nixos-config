@@ -5,21 +5,14 @@
     "$altMod" = "ALT";
 
     exec-once = [
-      "systemctl --user start clight"
       "fcitx5"
-      "waybar"
-      "mako"
+      "ags -b hypr"
       "udiskie"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
     ];
 
     general = {
-      gaps_in = 3;
-      gaps_out = 8;
-      border_size = 2;
-      "col.active_border" = "0xfff5bde6";
-      "col.inactive_border" = "0xff24273a";
       layout = "dwindle";
       resize_on_border = true;
     };
@@ -91,7 +84,5 @@
     xwayland.force_zero_scaling = true;
 
     debug.disable_logs = false;
-
-    blurls = "waybar";
   };
 }

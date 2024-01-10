@@ -14,22 +14,16 @@ in
 {
   imports = [
     ./hyprland
+    ./ags
 
-    ./ags.nix
     ./swaylock.nix
   ];
 
   home.packages = with pkgs; [
-    wl-clipboard
-    cliphist
-    wlr-randr
-    grimblast
-    slurp
     udiskie
     networkmanagerapplet
     ocrScript
     brillo
-    swww
     qt6.qtwayland
     libsForQt5.qt5.qtwayland
   ];

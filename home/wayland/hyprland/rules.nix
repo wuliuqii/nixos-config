@@ -4,21 +4,18 @@
     # layer rules
     layerrule =
       let
-        layers = "^(system-menu|anyrun|gtk-layer-shell|osd[0-9])$";
+        layers = "^(bar[0-9]|dock[0-9]|notifications[0-9]|quicksettings|powermenu|dashboard|applauncher)$";
       in
       [
         "blur, ${layers}"
-        "xray 1, ^(bar|gtk-layer-shell)$"
-        "ignorealpha 0.2, ${layers}"
-        "ignorealpha 0.5, ^(system-menu|anyrun)$"
       ];
 
     # window rules
     # use `hyprctl clients` to find out the class and title of a window
     windowrulev2 =
       let
-        float-center-apps = "^(pavucontrol|io.github.kaii_lb.Overskride|org.gnome.Settings|org.kde.dolphin|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv|termfloat)$";
-        messenger-apps = "^(QQ|thunderbird|Slack|org.telegram.desktop|cinny|discord)$";
+        float-center-apps = "^(pavucontrol|org.gnome.Settings|org.kde.dolphin|org.kde.kdeconnect-indicator|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv|termfloat)$";
+        messenger-apps = "^(YouTube Music|yesplaymusic|QQ|thunderbird|Slack|org.telegram.desktop|cinny|discord)$";
       in
       [
         # telegram media viewer
@@ -31,9 +28,6 @@
         # throw sharing indicators away
         "workspace special silent, title:^(Firefox — Sharing Indicator)$"
         "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
-
-        # start yesplaymusic in ws10
-        "workspace 10 silent, class:^(yesplaymusic)$"
 
         # idle inhibit while watching videos
         "idleinhibit focus, class:^(mpv|.+exe)$"
@@ -68,8 +62,8 @@
             "DP-3, ${ws}"
           ]
         )
-        9) ++ [
-      "eDP-1, 10"
+        5) ++ [
+      "eDP-1, 6"
     ];
   };
 }

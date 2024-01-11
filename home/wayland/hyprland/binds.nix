@@ -68,7 +68,7 @@ in
         # vscode
         "$mainMod, C, exec, code"
         # music
-        "$mainMod, M, exec, yesplaymusic"
+        "$mainMod, M, exec, g4music"
         # file manager
         "$mainMod, E, exec, dolphin"
         # logout menu

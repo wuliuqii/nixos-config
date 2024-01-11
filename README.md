@@ -13,7 +13,9 @@ My personal nixos configuration.
 
 Hyprland with ags widgets.
 
-![desktop](https://github.com/wuliuqii/nixos-config/assets/34090258/074909e2-7130-4bde-bc7e-62ca83a9e26e)
+![desktop](https://github.com/wuliuqii/nixos-config/assets/34090258/193822d0-825c-4d22-af2f-4724fec142c5)
+
+![neofetch](https://github.com/wuliuqii/nixos-config/assets/34090258/03dd3462-603e-4df1-90d5-df7ad08faaa2)
 
 ## Inspirations
 

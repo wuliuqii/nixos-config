@@ -16,7 +16,6 @@
     wl-clipboard
     cliphist
     wlr-randr
-    grimblast
     slurp
   ];
 

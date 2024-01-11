@@ -1,7 +1,6 @@
 { config, ... }:
 let
-  screenshotsave = ''~/Pictures/screenshots/$(date "+%Y-%m-%d"T"%H:%M:%S").png'';
-  screenshotarea = "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copy area; hyprctl keyword animation 'fadeOut,1,4,default'";
+  e = "exec, ags -b hypr";
 
   workspaces = builtins.concatLists (builtins.genList
     (
@@ -37,7 +36,6 @@ in
     bind =
       let
         monocle = "dwindle:no_gaps_when_only";
-        e = "exec, ags -b hypr";
       in
       [
         # compositor commands
@@ -81,17 +79,13 @@ in
         "$mainMod, R, ${e} quit; ags -b hypr"
         # lock screen
         "$mainMod, L, exec, loginctl lock-session"
-        # select area to perform OCR on
-        "$mainMod, O, exec, run-as-service wl-ocr"
         # clear cliphist database
         "$mainMod SHIFT, V, exec, cliphist wipe"
         # screenshot
-        # stop animations while screenshotting; makes black border go away 
-        "$altMod CTRL, Z, exec, ${screenshotarea}"
-        "$altMod, Z, exec, grimblast --notify --cursor copysave area ${screenshotsave}"
-        "$mainMod, Z, exec, grimblast --notify --cursor copysave active ${screenshotsave}"
-        "$mainMod SHIFT, Z, exec, grimblast --notify --cursor copysave output ${screenshotsave}"
         "$altMod, R, ${e} -r 'recorder.start()'"
+        "$altMod CTRL, Z, ${e} -r 'recorder.screenshot()'"
+        "$altMod, Z, ${e} -r 'recorder.screenshot(true)'"
+
 
         # move focus
         "$altMod, left, movefocus, l"
@@ -124,30 +118,27 @@ in
         # cycle monitors
         "$altMod SHIFT, comma, focusmonitor, eDP-1"
         "$altMod SHIFT, period, focusmonitor, DP-3"
-
-
       ]
       ++ workspaces;
 
     bindl = [
       # media controls
-      ", XF86AudioPlay, exec, playerctl play-pause"
-      ", XF86AudioPrev, exec, playerctl previous"
-      ", XF86AudioNext, exec, playerctl next"
-
-      # volume
-      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+      ", XF86AudioPlay, ${e} -r 'mpris?.playPause()"
+      ", XF86AudioStop, ${e} -r 'mpris?.stop()"
+      ", XF86AudioPause, ${e} -r 'mpris?.pause()"
+      ", XF86AudioNext, ${e} -r 'mpris?.next()"
+      ", XF86AudioPrev, ${e} -r 'mpris?.previous()"
+      ", XF86AudioMicMute, ${e} -r 'audio.microphone.isMuted = !aduio.microphone.isMuted'"
     ];
 
     bindle = [
       # volume
-      ", XF86AudioRaiseVolume, exec, wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"
-      ", XF86AudioLowerVolume, exec, wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"
+      ", XF86AudioRaiseVolume, ${e} -r 'audio.speaker.volume += 0.05; indicator.speaker()'"
+      ", XF86AudioLowerVolume, ${e} -r 'audio.speaker.volume -= 0.05; indicator.speaker()'"
 
       # backlight
-      ", XF86MonBrightnessUp, exec, brillo -q -u 300000 -A 5"
-      ", XF86MonBrightnessDown, exec, brillo -q -u 300000 -U 5"
+      ", XF86MonBrightnessUp, ${e} -r 'brightness.screen += 0.05; indicator.display()'"
+      ", XF86MonBrightnessDown, ${e} -r 'brightness.screen -= 0.05; indicator.display()'"
     ];
   };
 }

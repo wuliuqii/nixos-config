@@ -2,14 +2,12 @@
 {
   home = {
     packages = with pkgs; [
-      mpc-cli
       g4music
+      youtube-music
       go-musicfox
       yesplaymusic
-      playerctl
       pavucontrol
       cava
-      youtube-music
     ];
   };
 
@@ -20,6 +18,4 @@
       scripts = [ pkgs.mpvScripts.mpris ];
     };
   };
-
-  services.playerctld.enable = true;
 }

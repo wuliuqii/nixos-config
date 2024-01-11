@@ -1,16 +1,4 @@
-{ pkgs, lib, ... }:
-let
-  # use OCR and copy to clipboard
-  ocrScript =
-    let
-      inherit (pkgs) grim libnotify slurp tesseract5 wl-clipboard;
-      _ = lib.getExe;
-    in
-    pkgs.writeShellScriptBin "wl-ocr" ''
-      ${_ grim} -g "$(${_ slurp})" -t ppm - | ${_ tesseract5} - - | ${wl-clipboard}/bin/wl-copy
-      ${_ libnotify} "$(${wl-clipboard}/bin/wl-paste)"
-    '';
-in
+{ pkgs, ... }:
 {
   imports = [
     ./hyprland
@@ -22,8 +10,6 @@ in
   home.packages = with pkgs; [
     udiskie
     networkmanagerapplet
-    ocrScript
-    brillo
     qt6.qtwayland
     libsForQt5.qt5.qtwayland
   ];

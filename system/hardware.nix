@@ -6,9 +6,6 @@
       package = pkgs.bluez5-experimental;
     };
 
-    # smooth backlight control
-    brillo.enable = true;
-
     opengl.enable = true;
   };
 }

@@ -12,7 +12,14 @@
   ];
 
   programs = {
-    obs-studio.enable = true;
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        input-overlay
+        obs-pipewire-audio-capture
+      ];
+    };
   };
 
   home.packages = with pkgs; [
@@ -25,9 +32,6 @@
     slack
     qq
     thunderbird
-
-    obs-studio-plugins.wlrobs
-    obs-studio-plugins.input-overlay
 
     libsForQt5.kdenlive
     libsForQt5.dolphin

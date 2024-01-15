@@ -22,8 +22,8 @@ in
 {
   wayland.windowManager.hyprland.settings = {
     monitor = [
-      "DP-3, preferred, 0x0, 2"
-      "eDP-1, preferred, 3840x0, auto"
+      "DP-3, preferred, auto, 2"
+      "eDP-1, preferred, 0x0, auto"
     ];
 
     # mouse movements
@@ -45,7 +45,7 @@ in
         "$mainMod, G, togglegroup,"
         "$mainMod SHIFT, N, changegroupactive, f"
         "$mainMod SHIFT, P, changegroupactive, b"
-        "$mainMod, R, togglesplit,"
+        "$mainMod SHIFT, R, togglesplit,"
         "$mainMod, T, togglefloating,"
         "$mainMod, P, pseudo,"
         "$mainMod ALT, ,resizeactive,"

@@ -7,7 +7,6 @@ import { reloadScss, scssWatcher } from './scss.js';
 import { wallpaper } from './wallpaper.js';
 import { hyprlandInit, setupHyprland } from './hyprland.js';
 import { globals } from './globals.js';
-import { showAbout } from '../about/about.js';
 import Gtk from 'gi://Gtk';
 
 export function init() {
@@ -23,7 +22,6 @@ export function init() {
     hyprlandInit();
     setupHyprland();
     wallpaper();
-    showAbout();
 }
 
 function dependandOptions() {

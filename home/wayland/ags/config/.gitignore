@@ -3,3 +3,4 @@ types
 
 setup.sh
 tsconfig.json
+flake.lock

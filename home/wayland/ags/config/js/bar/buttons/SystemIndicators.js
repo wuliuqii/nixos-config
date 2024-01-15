@@ -89,6 +89,7 @@ export default () => PanelButton({
         children: [
             // ProfileIndicator(),
             DNDIndicator(),
+            BluetoothDevicesIndicator(),
             BluetoothIndicator(),
             NetworkIndicator(),
             AudioIndicator(),

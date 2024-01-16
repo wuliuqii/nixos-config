@@ -225,7 +225,7 @@ export default {
             pinned_apps: Option([
                 'firefox',
                 'kitty',
-                'YouTube Music',
+                'g4music',
                 "yesplaymusic",
                 'org.kde.dolphin',
                 'discord',
@@ -272,7 +272,7 @@ export default {
             ['', 'preferences-desktop-display-symbolic'],
         ],
         titles: [
-            ['com.github.Aylur.ags', 'AGS'],
+            [' ', 'AGS'],
             ['com.obsproject.Studio', 'OBS'],
             ['firefox', 'Firefox'],
             ['org.kde.dolphin', 'Files'],

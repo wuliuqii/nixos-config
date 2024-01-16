@@ -3,4 +3,4 @@ import { timeout } from 'resource:///com/github/Aylur/ags/utils.js';
 
 timeout(1000, () => JSON.stringify(App));
 
-export default (await import('./js/main.js')).default;
+export default (await import('./modules/main.js')).default;

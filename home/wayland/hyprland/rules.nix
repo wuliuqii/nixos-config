@@ -49,6 +49,7 @@
         "opacity 0.80 0.70, floating:1"
         "size 50% 50%, class:^(kitty)$, floating:1"
         "float, class:^(termfloat)$"
+        "float, class:^(com.github.Aylur.ags)$"
       ];
 
     workspace = builtins.concatLists

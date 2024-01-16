@@ -1,4 +1,6 @@
-.vscode/
+.vscode
+node_modules
+types
 
 .direnv
 .pre-commit-config.yaml

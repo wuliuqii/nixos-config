@@ -49,7 +49,7 @@ export async function openSettings() {
         return settingsDialog.present();
 
     try {
-        settingsDialog = (await import('./SettingsDialog.js')).default;
+        settingsDialog = (await import('./settingsDialog.js')).default;
         settingsDialog.present();
     } catch (error) {
         if (error instanceof Error)

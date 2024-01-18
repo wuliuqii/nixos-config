@@ -252,7 +252,7 @@ export default {
             'title': 'List of blacklisted mpris players',
             'note': 'filters for bus-name, name, identity, entry',
         }),
-        preferred: Option('YouTube Music', {
+        preferred: Option('G4Music', {
             'category': 'Bar',
             'title': 'Preferred player',
         }),

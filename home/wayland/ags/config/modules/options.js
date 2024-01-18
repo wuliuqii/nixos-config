@@ -226,7 +226,7 @@ export default {
                 'firefox',
                 'kitty',
                 'g4music',
-                "yesplaymusic",
+                'yesplaymusic',
                 'org.kde.dolphin',
                 'discord',
             ], { 'scss': 'exclude' }),

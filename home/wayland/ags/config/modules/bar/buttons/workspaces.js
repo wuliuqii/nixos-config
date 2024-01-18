@@ -19,14 +19,13 @@ const Workspaces = () => {
                 vpack: 'center',
             }),
             setup: self => {
-                let monitorNum = Hyprland.monitors.length;
+                const monitorNum = Hyprland.monitors.length;
                 let monitorId = Hyprland.getWorkspace(i)?.monitorID || 0;
                 if (monitorNum > 1) {
-                    if (monitorId == 0) {
+                    if (monitorId == 0)
                         monitorId = 1;
-                    } else {
+                    else
                         monitorId = 0;
-                    }
                 }
                 self.hook(Hyprland, () => {
                     self.toggleClassName('active', Hyprland.active.workspace.id === i);

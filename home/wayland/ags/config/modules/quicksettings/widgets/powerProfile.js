@@ -13,8 +13,8 @@ export const ProfileToggle = () => ArrowToggleButton({
         label: PowerProfiles.bind('active_profile'),
     }),
     connection: [PowerProfiles, () => PowerProfiles.active_profile !== 'balanced'],
-    activate: () => { PowerProfiles.active_profile = 'performance' },
-    deactivate: () => { PowerProfiles.active_profile = 'power-saver' },
+    activate: () => { PowerProfiles.active_profile = 'performance'; },
+    deactivate: () => { PowerProfiles.active_profile = 'power-saver'; },
     activateOnArrow: false,
 });
 
@@ -31,8 +31,8 @@ export const ProfileSelector = () => Menu({
             children: [
                 Widget.Box({
                     vertical: true,
-                    children: ["power-saver", "balanced", "performance"].map(prof => Widget.Button({
-                        on_clicked: () => { PowerProfiles.active_profile = prof },
+                    children: ['power-saver', 'balanced', 'performance'].map(prof => Widget.Button({
+                        on_clicked: () => { PowerProfiles.active_profile = prof; },
                         child: Widget.Box({
                             children: [
                                 Widget.Icon(icons.power.profile[prof]),

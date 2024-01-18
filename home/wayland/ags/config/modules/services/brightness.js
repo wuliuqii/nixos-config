@@ -34,9 +34,8 @@ class Brightness extends Service {
     constructor() {
         super();
 
-        if (dependencies(['brightnessctl'])) {
+        if (dependencies(['brightnessctl']))
             this.#screen = Number(Utils.exec('brightnessctl g')) / Number(Utils.exec('brightnessctl m'));
-        }
     }
 }
 

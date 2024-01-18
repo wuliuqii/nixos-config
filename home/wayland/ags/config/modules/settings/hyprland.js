@@ -3,7 +3,7 @@ import Hyprland from 'resource:///com/github/Aylur/ags/service/hyprland.js';
 import options from '../options.js';
 import { readFile, writeFile } from 'resource:///com/github/Aylur/ags/utils.js';
 
-const noIgnorealpha = ['verification', 'powermenu',];
+const noIgnorealpha = ['verification', 'powermenu'];
 
 /** @param {Array<string>} batch */
 function sendBatch(batch) {

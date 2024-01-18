@@ -29,7 +29,7 @@ const EnumSetter = opt => {
                 ? opt.enums[0] : opt.enums[i + dir]
             : i + dir < 0
                 ? opt.enums[opt.enums.length - 1] : opt.enums[i + dir],
-            true,
+        true,
         );
     };
     const next = Widget.Button({

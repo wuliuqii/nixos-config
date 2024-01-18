@@ -22,7 +22,7 @@ class PowerMenu extends Service {
             'reboot': ['systemctl reboot', 'Reboot'],
             'logout': ['pkill Hyprland', 'Log Out'],
             'shutdown': ['shutdown now', 'Shutdown'],
-            'lock': ['loginctl lock-session', "Lock Screen"],
+            'lock': ['loginctl lock-session', 'Lock Screen'],
         }[action];
 
         this.notify('cmd');

@@ -160,7 +160,7 @@ export default {
         }),
     },
 
-    applauncher: {
+    launcher: {
         width: Option(500),
         height: Option(500),
         icon_size: Option(52),
@@ -225,6 +225,7 @@ export default {
             pinned_apps: Option([
                 'firefox',
                 'kitty',
+                'code',
                 'g4music',
                 'yesplaymusic',
                 'org.kde.dolphin',
@@ -274,6 +275,7 @@ export default {
         titles: [
             [' ', 'AGS'],
             ['com.obsproject.Studio', 'OBS'],
+            ['com.github.neithern.g4music', 'G4Music'],
             ['firefox', 'Firefox'],
             ['org.kde.dolphin', 'Files'],
             ['', 'Desktop'],

@@ -1,4 +1,4 @@
-import Applauncher from './applauncher/applauncher.js';
+import Applauncher from './applauncher/launcher.js';
 import Dashboard from './dashboard/dashboard.js';
 import FloatingDock from './dock/floatingDock.js';
 import Notifications from './notifications/notifications.js';

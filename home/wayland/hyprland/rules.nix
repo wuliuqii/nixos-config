@@ -4,7 +4,7 @@
     # layer rules
     layerrule =
       let
-        layers = "^(bar[0-9]|dock[0-9]|notifications[0-9]|quicksettings|powermenu|dashboard|applauncher)$";
+        layers = "^(bar[0-9]|dock[0-9]|notifications[0-9]|quicksettings|powermenu|dashboard|launcher)$";
       in
       [
         "blur, ${layers}"

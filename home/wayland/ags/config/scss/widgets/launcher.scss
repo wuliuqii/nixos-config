@@ -1,4 +1,4 @@
-window#applauncher .window-content {
+window#launcher .window-content {
     @include floating_widget;
 
     entry {
@@ -6,7 +6,8 @@ window#applauncher .window-content {
         padding: $padding;
         margin-bottom: $spacing;
 
-        label, image {
+        label,
+        image {
             color: $fg-color;
         }
     }
@@ -18,13 +19,17 @@ window#applauncher .window-content {
 
     scrolledwindow {
         @include scrollable;
-        min-width: $applauncher-width;
-        min-height: $applauncher-height;
+        min-width: $launcher-width;
+        min-height: $launcher-height;
     }
 
     button.app-item {
         @include button($flat: true, $reactive: false);
-        > box { @include spacing(0.5); }
+
+        >box {
+            @include spacing(0.5);
+        }
+
         transition: $transition;
         padding: $padding;
 
@@ -44,7 +49,8 @@ window#applauncher .window-content {
             transition: $transition;
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             .title {
                 color: $accent;
             }

@@ -2,6 +2,7 @@ import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import options from '../options.js';
 import { lookUpIcon } from 'resource:///com/github/Aylur/ags/utils.js';
+import { WINDOW_NAME } from './launcher.js';
 
 /** @param {import('resource:///com/github/Aylur/ags/service/applications.js').Application} app */
 export default app => {
@@ -24,7 +25,7 @@ export default app => {
 
     const icon = Widget.Icon({
         icon: lookUpIcon(app.icon_name || '') ? app.icon_name || '' : '',
-        size: options.applauncher.icon_size.bind('value'),
+        size: options.launcher.icon_size.bind('value'),
     });
 
     const textBox = Widget.Box({
@@ -35,12 +36,12 @@ export default app => {
 
     return Widget.Button({
         class_name: 'app-item',
-        attribute: app,
+        attribute: { "app": app },
         child: Widget.Box({
             children: [icon, textBox],
         }),
         on_clicked: () => {
-            App.closeWindow('applauncher');
+            App.closeWindow(WINDOW_NAME);
             app.launch();
         },
     });

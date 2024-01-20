@@ -62,7 +62,7 @@ in
         else ""}''
 
         # launcher
-        "$mainMod, Space, ${e} -t applauncher"
+        "$mainMod, Space, ${e} -t launcher"
         # browser
         "$mainMod, B, exec, firefox"
         # vscode

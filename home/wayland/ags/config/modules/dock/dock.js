@@ -103,7 +103,7 @@ export default () => {
         class_name: 'launcher nonrunning',
         icon: icons.apps.apps,
         tooltip_text: 'Applications',
-        on_clicked: () => App.toggleWindow('applauncher'),
+        on_clicked: () => App.toggleWindow('launcher'),
     });
     const separator = Widget.Separator({
         vpack: 'center',

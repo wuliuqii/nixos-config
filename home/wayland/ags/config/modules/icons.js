@@ -87,6 +87,7 @@ export default {
         next: "media-skip-forward-symbolic",
     },
     ui: {
+        colorpicker: 'color-select-symbolic',
         close: 'window-close-symbolic',
         info: 'info-symbolic',
         menu: 'open-menu-symbolic',

@@ -14,7 +14,7 @@
     # use `hyprctl clients` to find out the class and title of a window
     windowrulev2 =
       let
-        float-center-apps = "^(one.alynx.showmethekey|pavucontrol|org.gnome.Settings|org.kde.dolphin|org.kde.kdeconnect.daemon|org.kde.kdeconnect-indicator|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv)$";
+        float-center-apps = "^(one.alynx.showmethekey|pavucontrol|org.gnome.Loupe|org.gnome.Nautilus|org.kde.kdeconnect.daemon|org.kde.kdeconnect-indicator|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv)$";
         media-apps = "^(swappy|com.github.neithern.g4music|YouTube Music|yesplaymusic|QQ|thunderbird|Slack|org.telegram.desktop|cinny|discord)$";
       in
       [
@@ -36,7 +36,8 @@
 
         "dimaround, class:^(xdg-desktop-portal-gtk|polkit-gnome-authentication-agent-1)$"
 
-        "opacity 0.80, class:^(Code|firefox|org.wezfurlong.wezterm|kitty|foot|yesplaymusic|com.obsproject.Studio)$"
+        "opacity 0.80, class:^(Code|firefox|kitty|foot|com.obsproject.Studio)$"
+        "opacity 0.80 0.70, class:${float-center-apps}"
         "float, class:${float-center-apps}"
         "center, class:${float-center-apps}"
         "size 60% 60%, class:${float-center-apps}"

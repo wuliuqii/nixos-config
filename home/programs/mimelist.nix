@@ -1,7 +1,7 @@
 let
   browser = "firefox.desktop";
-  file-manager = "org.kde.dolphin.desktop";
-  image-viewer = "imv";
+  file-manager = "org.gnome.Nautilus.desktop";
+  image-viewer = "org.gnome.Loupe.desktop";
   pdf-viewer = "org.pwmt.zathura.desktop";
   tg = "org.telegram.desktop.desktop";
   mail = "thunderbird.desktop";

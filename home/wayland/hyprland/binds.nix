@@ -70,7 +70,7 @@ in
         # music
         "$mainMod, M, exec, g4music"
         # file manager
-        "$mainMod, E, exec, dolphin"
+        "$mainMod, E, exec, nautilus"
         # logout menu
         "$mainMod, Escape, ${e} -t powermenu"
         # overview

@@ -4,21 +4,13 @@
     enable = true;
 
     theme = {
-      name = "Catppuccin-Macchiato-Standard-Mauve-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
-        size = "standard";
-        tweaks = [ "normal" "black" ];
-        variant = "macchiato";
-      };
+      name = "Materia-dark-compact";
+      package = pkgs.materia-theme;
     };
 
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        accent = "mauve";
-        flavor = "macchiato";
-      };
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
     };
 
     font = {
@@ -27,6 +19,17 @@
     };
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+    style = {
+      name = "gtk2";
+      package = config.gtk.theme.package;
+    };
   };
 
   home = {

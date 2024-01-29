@@ -19,12 +19,6 @@
   # enable location service
   location.provider = "geoclue2";
 
-  qt = {
-    enable = true;
-    platformTheme = "gtk2";
-    style = "gtk2";
-  };
-
   xdg.portal = {
     enable = true;
     # xdgOpenUsePortal = true;

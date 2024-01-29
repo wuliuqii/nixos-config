@@ -30,7 +30,7 @@ in
     ];
     timeouts = [
       {
-        timeout = 300;
+        timeout = 600;
         command = suspendScript.outPath;
       }
     ];

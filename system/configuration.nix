@@ -93,7 +93,7 @@ in
     package = pkgs.nixVersions.unstable;
     registry.nixpkgs.flake = inputs.nixpkgs;
     extraOptions = ''
-      experimental-features = nix-command flakes configurable-impure-env auto-allocate-uids
+      experimental-features = nix-command flakes auto-allocate-uids
       accept-flake-config   = true
       keep-outputs          = true
       keep-derivations      = true

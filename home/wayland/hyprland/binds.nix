@@ -116,12 +116,12 @@ in
         "$altMod, comma, workspace, m-1"
 
         # send focused workspace to left/right monitors
-        "$mainMod SHIFT, period, movecurrentworkspacetomonitor, l"
-        "$mainMod SHIFT, comma, movecurrentworkspacetomonitor, r"
+        "$mainMod SHIFT, comma, movecurrentworkspacetomonitor, l"
+        "$mainMod SHIFT, period, movecurrentworkspacetomonitor, r"
 
         # cycle monitors
-        "$altMod SHIFT, comma, focusmonitor, eDP-1"
-        "$altMod SHIFT, period, focusmonitor, DP-3"
+        "$altMod SHIFT, comma, focusmonitor, l"
+        "$altMod SHIFT, period, focusmonitor, r"
       ]
       ++ workspaces;
 

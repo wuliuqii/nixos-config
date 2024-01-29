@@ -139,10 +139,10 @@ export const ShuffleButton = player => PlayerButton({
     player,
     items: [
         ['true', Widget.Icon(
-            icons.mpris.shuffle.enabled
+            icons.mpris.shuffle.enabled,
         )],
         ['false', Widget.Icon(
-            icons.mpris.shuffle.disabled
+            icons.mpris.shuffle.disabled,
         )],
     ],
     onClick: 'shuffle',
@@ -156,13 +156,13 @@ export const LoopButton = player => PlayerButton({
     player,
     items: [
         ['None', Widget.Icon(
-            icons.mpris.loop.none
+            icons.mpris.loop.none,
         )],
         ['Track', Widget.Icon(
-            icons.mpris.loop.track
+            icons.mpris.loop.track,
         )],
         ['Playlist', Widget.Icon(
-            icons.mpris.loop.playlist
+            icons.mpris.loop.playlist,
         )],
     ],
     onClick: 'loop',
@@ -176,13 +176,13 @@ export const PlayPauseButton = player => PlayerButton({
     player,
     items: [
         ['Playing', Widget.Icon(
-            icons.mpris.playing
+            icons.mpris.playing,
         )],
         ['Paused', Widget.Icon(
-            icons.mpris.paused
+            icons.mpris.paused,
         )],
         ['Stopped', Widget.Icon(
-            icons.mpris.stopped
+            icons.mpris.stopped,
         )],
     ],
     onClick: 'playPause',
@@ -196,7 +196,7 @@ export const PreviousButton = player => PlayerButton({
     player,
     items: [
         ['true', Widget.Icon(
-            icons.mpris.prev
+            icons.mpris.prev,
         )],
     ],
     onClick: 'previous',
@@ -210,7 +210,7 @@ export const NextButton = player => PlayerButton({
     player,
     items: [
         ['true', Widget.Icon(
-            icons.mpris.next
+            icons.mpris.next,
         )],
     ],
     onClick: 'next',

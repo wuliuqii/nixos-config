@@ -31,26 +31,6 @@ function dependandOptions() {
     });
 }
 
-function tmux() {
-    if (!Utils.exec('which tmux'))
-        return;
-
-    /** @param {string} scss */
-    function getColor(scss) {
-        if (scss.includes('#'))
-            return scss;
-
-        if (scss.includes('$')) {
-            const opt = options.list().find(opt => opt.scss === scss.replace('$', ''));
-            return opt?.value;
-        }
-    }
-
-    options.theme.accent.accent.connect('changed', ({ value }) => Utils
-        .execAsync(`tmux set @main_accent ${getColor(value)}`)
-        .catch(err => console.error(err.message)));
-}
-
 function gsettigsColorScheme() {
     if (!Utils.exec('which gsettings'))
         return;

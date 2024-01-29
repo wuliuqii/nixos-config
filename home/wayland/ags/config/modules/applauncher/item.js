@@ -36,7 +36,7 @@ export default app => {
 
     return Widget.Button({
         class_name: 'app-item',
-        attribute: { "app": app },
+        attribute: { 'app': app },
         child: Widget.Box({
             children: [icon, textBox],
         }),

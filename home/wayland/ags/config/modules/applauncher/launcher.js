@@ -1,9 +1,9 @@
 import PopupWindow from '../misc/popupWindow.js';
-import Applications from "resource:///com/github/Aylur/ags/service/applications.js";
-import App from "resource:///com/github/Aylur/ags/app.js";
-import Widget from "resource:///com/github/Aylur/ags/widget.js";
-import { Fzf } from "../../node_modules/fzf/dist/fzf.es.js";
-import AppItem from "./item.js";
+import Applications from 'resource:///com/github/Aylur/ags/service/applications.js';
+import App from 'resource:///com/github/Aylur/ags/app.js';
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import { Fzf } from '../../node_modules/fzf/dist/fzf.es.js';
+import AppItem from './item.js';
 import icons from '../icons.js';
 
 export const WINDOW_NAME = 'launcher';
@@ -16,7 +16,7 @@ export const WINDOW_NAME = 'launcher';
 
 const items = [
     ...Applications.list.flatMap(app => Widget.Box({
-        attribute: { "app": app },
+        attribute: { 'app': app },
         child: Widget.Box({
             vertical: true,
             children: [
@@ -36,8 +36,8 @@ const fzf = new Fzf(items, {
      * @param {import('types/widgets/box').default} item
      * @returns {string}
      */
-    selector: (item) => item.attribute.app.name,
-    tiebreakers: [/** @param {FzfResultAppButton} a, @param {FzfResultAppButton} b*/(a, b) => b.item.attribute.app.frequency - a.item.attribute.app.frequency]
+    selector: item => item.attribute.app.name,
+    tiebreakers: [/** @param {FzfResultAppButton} a, @param {FzfResultAppButton} b*/(a, b) => b.item.attribute.app.frequency - a.item.attribute.app.frequency],
 });
 
 /**
@@ -59,17 +59,18 @@ const SearchBox = () => {
         hexpand: true,
         primary_icon_name: icons.apps.search,
     })
-        .on("notify::text", (entry) => searchApps(entry.text || "", results))
-        .on("activate", () => {
+        .on('notify::text', entry => searchApps(entry.text || '', results))
+        .on('activate', () => {
             // @ts-ignore
             results.children[0]?.attribute.app.launch();
             App.closeWindow(WINDOW_NAME);
         })
         .hook(App, (_, name, visible) => {
-            if (name !== WINDOW_NAME || !visible) return;
-            entry.text = "";
+            if (name !== WINDOW_NAME || !visible)
+                return;
+            entry.text = '';
             entry.grab_focus();
-        }, "window-toggled");
+        }, 'window-toggled');
 
     return Widget.Box({
         vertical: true,
@@ -77,9 +78,9 @@ const SearchBox = () => {
             entry,
             Widget.Scrollable({
                 hscroll: 'never',
-                child: results
-            })
-        ]
+                child: results,
+            }),
+        ],
     });
 };
 

@@ -59,6 +59,10 @@
       };
 
       "javascript.updateImportsOnFileMove.enabled" = "always";
+
+      "extensions.experimental.affinity" = {
+        "jasew.vscode-helix-emulation" = 1;
+      };
     };
   };
 }

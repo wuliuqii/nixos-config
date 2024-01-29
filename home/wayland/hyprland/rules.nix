@@ -4,7 +4,7 @@
     # layer rules
     layerrule =
       let
-        layers = "^(bar[0-9]|dock[0-9]|notifications[0-9]|quicksettings|powermenu|dashboard|launcher)$";
+        layers = "^(bar[0-9]|dock[0-9]|notifications[0-9]|quicksettings|powermenu|dashboard|launcher|verfication)$";
       in
       [
         "blur, ${layers}"
@@ -34,7 +34,7 @@
         "idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$"
         "idleinhibit fullscreen, class:^(firefox)$"
 
-        "dimaround, class:^(gcr-prompter)$"
+        "dimaround, class:^(xdg-desktop-portal-gtk|polkit-gnome-authentication-agent-1)$"
 
         "opacity 0.80, class:^(Code|firefox|org.wezfurlong.wezterm|kitty|foot|yesplaymusic|com.obsproject.Studio)$"
         "float, class:${float-center-apps}"

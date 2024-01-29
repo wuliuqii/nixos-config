@@ -18,7 +18,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
-    fenix.url = "github:nix-community/fenix";
+
+    rust-overlay.url = "github:oxalica/rust-overlay";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
@@ -47,7 +48,6 @@
       };
     in
     {
-      packages.${system}.default = inputs.fenix.packages.${system}.minimal.toolchain;
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
@@ -80,7 +80,7 @@
 
             {
               nixpkgs.overlays = [
-                inputs.fenix.overlays.default
+                inputs.rust-overlay.overlays.default
                 selfPkgs.overlay
               ];
             }

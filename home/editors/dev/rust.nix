@@ -1,14 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    (fenix.complete.withComponents [
-      "rustc"
-      "cargo"
-      "rustfmt"
-      "rust-src"
-      "clippy"
-    ])
-    rust-analyzer-nightly
+    (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default))
+
     taplo
   ];
 

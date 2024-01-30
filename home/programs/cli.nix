@@ -43,8 +43,10 @@
       imv
 
       # build
-      gcc
+      # gcc
       just
+      clang
+      gnumake
 
       # misc
       showmethekey

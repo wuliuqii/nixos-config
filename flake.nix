@@ -18,6 +18,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
     rust-overlay.url = "github:oxalica/rust-overlay";
 
@@ -81,6 +82,7 @@
             {
               nixpkgs.overlays = [
                 inputs.rust-overlay.overlays.default
+                inputs.neovim-nightly.overlay
                 selfPkgs.overlay
               ];
             }

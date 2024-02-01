@@ -2,8 +2,11 @@
 {
   home.packages = with pkgs; [
     (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default))
+    rust-analyzer
+    cargo-nextest
 
     taplo
+    vscode-extensions.vadimcn.vscode-lldb.adapter
   ];
 
   home.file = {

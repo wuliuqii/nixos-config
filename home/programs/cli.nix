@@ -56,6 +56,7 @@
       tokei
       tree
       jaq
+      github-copilot-cli
     ];
   };
 }

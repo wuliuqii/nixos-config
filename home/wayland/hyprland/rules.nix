@@ -51,6 +51,7 @@
         "size 50% 50%, class:^(kitty)$, floating:1"
         "float, class:^(termfloat)$"
         "float, class:^(com.github.Aylur.ags)$"
+        "float, class:^(org.rgs.*)$"
       ];
 
     workspace = builtins.concatLists

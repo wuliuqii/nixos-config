@@ -10,7 +10,7 @@ const ws = options.workspaces;
 
 /** @param {import('types/widgets/box').default} box */
 const update = box => {
-    if (App.windows.has('overview') && !App.getWindow('overview')?.visible)
+    if (!App.getWindow('overview')?.visible)
         return;
 
     Hyprland.sendMessage('j/clients')

@@ -22,7 +22,6 @@
       cat = "bat";
       c = "clear";
       lg = "lazygit";
-      n = "nitch";
     };
     plugins = [
       {

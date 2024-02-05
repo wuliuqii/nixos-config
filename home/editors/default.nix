@@ -3,8 +3,8 @@
   imports = [
     ./helix.nix
     ./vscode.nix
-    ./nvim.nix
 
+    ./nvim
     ./dev
   ];
 

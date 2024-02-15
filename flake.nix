@@ -39,6 +39,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-index-database = {
+      url = "github:Mic92/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
@@ -68,6 +73,7 @@
                 extraSpecialArgs = { inherit inputs; };
                 sharedModules = [
                   (./. + "/machines/${config.machine.userName}.nix")
+                  inputs.nix-index-database.hmModules.nix-index
                 ];
                 users.${config.machine.userName} = {
                   imports = [

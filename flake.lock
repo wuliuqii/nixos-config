@@ -419,6 +419,26 @@
         "type": "github"
       }
     },
+    "nix-index-database": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1707620986,
+        "narHash": "sha256-XE0tCSkSVBeJDWhjFwusNInwAhrnp+TloUNUpvnTiLw=",
+        "owner": "Mic92",
+        "repo": "nix-index-database",
+        "rev": "0cb4345704123492e6d1f1068629069413c80de0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "nix-index-database",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1705496572,
@@ -627,6 +647,7 @@
         "hyprland": "hyprland",
         "hyprpaper": "hyprpaper",
         "neovim-nightly": "neovim-nightly",
+        "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_8",
         "pre-commit-hooks": "pre-commit-hooks",
         "rust-overlay": "rust-overlay_2",

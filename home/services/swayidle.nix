@@ -28,11 +28,11 @@ in
         command = "${pkgs.systemd}/bin/systemctl restart v2raya.service";
       }
     ];
-    timeouts = [
-      {
-        timeout = 600;
-        command = suspendScript.outPath;
-      }
-    ];
+    # timeouts = [
+    #   {
+    #     timeout = 600;
+    #     command = suspendScript.outPath;
+    #   }
+    # ];
   };
 }

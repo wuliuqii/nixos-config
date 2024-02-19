@@ -15,6 +15,11 @@
     general = {
       layout = "dwindle";
       resize_on_border = true;
+      border_size = 2;
+      gaps_out = 6;
+      gaps_in = 3;
+      "col.active_border" = "0xfff5bde6";
+      "col.inactive_border" = "0xff24273a";
     };
 
     decoration = {

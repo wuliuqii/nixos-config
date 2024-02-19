@@ -1,6 +1,6 @@
-{ source, stdenvNoCC, lib, ... }:
+{ sources, stdenvNoCC, lib, ... }:
 stdenvNoCC.mkDerivation {
-  inherit (source) pname version src;
+  inherit (sources.catppuccin-fcitx5) pname version src;
 
   dontBuild = true;
   dontConfigure = true;

@@ -1,6 +1,6 @@
-{ source, lib, stdenvNoCC, }:
+{ sources, lib, stdenvNoCC, }:
 stdenvNoCC.mkDerivation {
-  inherit (source) pname version src;
+  inherit (sources.catppuccin-fish) pname version src;
 
   installPhase = "
     install -Dvm444 -t $out/share/fish/tools/web_config/themes $src/themes/*

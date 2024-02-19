@@ -15,9 +15,23 @@ fetch.github = "iDvel/rime-ice"
 src.git = "https://github.com/catppuccin/fcitx5"
 fetch.github = "catppuccin/fcitx5"
 
+[librime-charcode]
+src.git = "https://github.com/rime/librime-charcode.git"
+fetch.github = "rime/librime-charcode"
+
 [librime-lua]
-src.git = "https://github.com/hchunhui/librime-lua"
+src.manual = "a29897dc3dd47b2849d5ed59c81261449842bd53"
+# src.git = "https://github.com/hchunhui/librime-lua"
 fetch.github = "hchunhui/librime-lua"
+
+[librime-octagram]
+# src.git = "https://github.com/lotem/librime-octagram.git"
+src.manual = "a6ced5a1d623afed17284fbaa395dd3a8b019a14"
+fetch.github = "lotem/librime-octagram"
+
+[librime-proto]
+src.git = "https://github.com/lotem/librime-proto.git"
+fetch.github = "lotem/librime-proto"
 
 [catppuccin-fish]
 src.git = "https://github.com/catppuccin/fish"

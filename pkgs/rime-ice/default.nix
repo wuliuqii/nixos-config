@@ -1,7 +1,11 @@
-{ source, lib, stdenvNoCC, ... }:
+{ sources, lib, stdenvNoCC, ... }:
 
 stdenvNoCC.mkDerivation {
-  inherit (source) pname version src;
+  inherit (sources.rime-ice) pname version src;
+
+  buildPhase = ''
+    mv default.yaml rime_ice_suggestion.yaml
+  '';
 
   installPhase = ''
     mkdir -p $out/share/rime-data

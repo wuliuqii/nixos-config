@@ -1,6 +1,6 @@
-{ source, stdenvNoCC, lib, ... }:
+{ sources, stdenvNoCC, lib, ... }:
 stdenvNoCC.mkDerivation {
-  inherit (source) pname version src;
+  inherit (sources.fcitx5-pinyin-zhwiki) pname version src;
 
   dontUnpack = true;
   dontBuild = true;

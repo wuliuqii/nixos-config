@@ -21,20 +21,25 @@ in
     fcitx5.addons = with pkgs; [
       catppuccin-fcitx5
       # https://github.com/iDvel/rime-ice/issues/554
-      (fcitx5-rime.override {
-        librime = (pkgs.librime.overrideAttrs (old: {
-          buildInputs = old.buildInputs ++ [ lua5_4 ];
-        })).override {
-          plugins = with pkgs; [ librime-lua ];
-        };
+      ((fcitx5-rime.override {
+        librime = librime-with-plugins;
         rimeDataPkgs = [
-          (rime-ice.override {
-            enableUnihan = true;
-          })
+          rime-ice
           fcitx5-pinyin-moegirl
           fcitx5-pinyin-zhwiki
         ];
-      })
+      }).overrideAttrs (old: {
+        # Prebuild schema data
+        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ pkgs.parallel ];
+        postInstall =
+          (old.postInstall or "")
+          + ''
+            for F in $out/share/rime-data/*.schema.yaml; do
+              echo "rime_deployer --compile "$F" $out/share/rime-data $out/share/rime-data $out/share/rime-data/build" >> parallel.lst
+            done
+            parallel -j$(nproc) < parallel.lst || true
+          '';
+      }))
     ];
   };
   environment.pathsToLink = [ "/share/fcitx5" ];

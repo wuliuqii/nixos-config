@@ -35,34 +35,68 @@
   };
   fcitx5-pinyin-zhwiki = {
     pname = "fcitx5-pinyin-zhwiki";
-    version = "20231205";
+    version = "20240210";
     src = fetchurl {
-      url = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20231205.dict";
-      sha256 = "sha256-crMmSqQ7QgmjgEG8QpvBgQYfvttCUsKYo8gHZGXIZmc=";
+      url = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20240210.dict";
+      sha256 = "sha256-vNHS5n3TqSwpUx2wG26w7rK6jSqrvLANeG2n0vA4iYk=";
     };
+  };
+  librime-charcode = {
+    pname = "librime-charcode";
+    version = "3709ca7a39a7c14f9e02fa00489a9850fd5a907b";
+    src = fetchFromGitHub {
+      owner = "rime";
+      repo = "librime-charcode";
+      rev = "3709ca7a39a7c14f9e02fa00489a9850fd5a907b";
+      fetchSubmodules = false;
+      sha256 = "sha256-KfKkpph+2ChQpkkGKubmpg/18uPX9qUHTqJT1PSGorI=";
+    };
+    date = "2024-02-10";
   };
   librime-lua = {
     pname = "librime-lua";
-    version = "265e1cca0ecb52a26f95e4a539b51714721617a4";
+    version = "a29897dc3dd47b2849d5ed59c81261449842bd53";
     src = fetchFromGitHub {
       owner = "hchunhui";
       repo = "librime-lua";
-      rev = "265e1cca0ecb52a26f95e4a539b51714721617a4";
+      rev = "a29897dc3dd47b2849d5ed59c81261449842bd53";
       fetchSubmodules = false;
-      sha256 = "sha256-lsz5CYqzT6LLjS3CXYnwmDnZch1eGHxqk1/3scHzU1c=";
+      sha256 = "sha256-4hpLzPxt+LX7zFuA0w4KySQ7MRcchZ3vZwqsdhzxSjw=";
     };
-    date = "2024-01-30";
+  };
+  librime-octagram = {
+    pname = "librime-octagram";
+    version = "a6ced5a1d623afed17284fbaa395dd3a8b019a14";
+    src = fetchFromGitHub {
+      owner = "lotem";
+      repo = "librime-octagram";
+      rev = "a6ced5a1d623afed17284fbaa395dd3a8b019a14";
+      fetchSubmodules = false;
+      sha256 = "sha256-6HVRrEM0XG3F5hCOvP+lHwUbYA38KmEMiDa2JtofFHI=";
+    };
+  };
+  librime-proto = {
+    pname = "librime-proto";
+    version = "657a923cd4c333e681dc943e6894e6f6d42d25b4";
+    src = fetchFromGitHub {
+      owner = "lotem";
+      repo = "librime-proto";
+      rev = "657a923cd4c333e681dc943e6894e6f6d42d25b4";
+      fetchSubmodules = false;
+      sha256 = "sha256-HdypebfmzreSdEQBwbvRG6sJZPASP+e8Tew+GrMnpOQ=";
+    };
+    date = "2023-10-17";
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "86ebf99f4f1be5246d93f28e65f504fc6e0697e9";
+    version = "6d438fb8f4de5e54e0fb2e1daf0635d729277493";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "86ebf99f4f1be5246d93f28e65f504fc6e0697e9";
+      rev = "6d438fb8f4de5e54e0fb2e1daf0635d729277493";
       fetchSubmodules = false;
-      sha256 = "sha256-wYvHjZVbrttxor88ZaTIkueNpo8JuhDBqpKKBdckAxc=";
+      sha256 = "sha256-bKwzulM6Xl3+Xr0Nk9jNKXKfbDJyPr8u90jHceCVwo8=";
     };
-    date = "2024-02-01";
+    date = "2024-02-18";
   };
 }

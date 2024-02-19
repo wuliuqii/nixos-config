@@ -64,6 +64,7 @@
       tree
       jaq
       github-copilot-cli
+      act
     ];
   };
 }

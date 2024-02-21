@@ -4,13 +4,13 @@
     enable = true;
 
     theme = {
-      name = "Materia-dark-compact";
-      package = pkgs.materia-theme;
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
 
     iconTheme = {
-      name = "Papirus";
-      package = pkgs.papirus-icon-theme;
+      name = "Adwaita";
+      package = pkgs.gnome.adwaita-icon-theme;
     };
 
     font = {
@@ -18,9 +18,22 @@
       # size = 11;
     };
 
+    gtk3.extraCss = ''
+      headerbar, .titlebar,
+      .csd:not(.popup):not(tooltip):not(messagedialog) decoration{
+        border-radius: 0;
+      }
+    '';
+
+    gtk4.extraCss = ''
+      window.messagedialog .response-area > button,
+      window.dialog.message .dialog-action-area > button,
+      .background.csd{
+        border-radius: 0;
+      }
+    '';
+
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
-    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
   qt = {
@@ -33,11 +46,17 @@
   };
 
   home = {
+    # pointerCursor = {
+    #   package = pkgs.bibata-cursors;
+    #   name = "Bibata-Modern-Ice";
+    #   size = 24;
+    #   x11.enable = true;
+    #   gtk.enable = true;
+    # };
     pointerCursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      package = pkgs.qogir-icon-theme;
+      name = "Qogir";
       size = 24;
-      x11.enable = true;
       gtk.enable = true;
     };
   };

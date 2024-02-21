@@ -3,11 +3,10 @@ stdenvNoCC.mkDerivation {
   inherit (sources.fcitx5-pinyin-zhwiki) pname version src;
 
   dontUnpack = true;
-  dontBuild = true;
-  dontConfigure = true;
 
   installPhase = ''
-    install -Dm444 $src $out/share/fcitx5/pinyin/dictionaries/zhwiki.dict
+    mkdir -p $out/share/rime-data
+    cp $src $out/share/rime-data/zhwiki.dict.yaml
   '';
 
   meta = with lib; {

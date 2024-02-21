@@ -3,11 +3,10 @@ stdenv.mkDerivation {
   inherit (sources.fcitx5-pinyin-moegirl) pname version src;
 
   dontUnpack = true;
-  dontBuild = true;
-  dontConfigure = true;
 
   installPhase = ''
-    install -Dm444 $src $out/share/fcitx5/pinyin/dictionaries/moegirl.dict
+    mkdir -p $out/share/rime-data
+    cp $src $out/share/rime-data/moegirl.dict.yaml
   '';
 
   meta = with lib; {

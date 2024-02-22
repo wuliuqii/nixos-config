@@ -19,6 +19,9 @@ with lib;
     terminal = mkOption {
       type = types.str;
     };
+    editor = mkOption {
+      type = types.str;
+    };
     wallpaper = mkOption {
       type = types.path;
     };

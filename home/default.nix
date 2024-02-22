@@ -1,6 +1,7 @@
 { config, ... }:
 let
   user = config.machine.userName;
+  editor = config.machine.editor;
 in
 {
   imports = [
@@ -17,7 +18,7 @@ in
     homeDirectory = "/home/${config.machine.userName}";
 
     sessionVariables = {
-      EDITOR = "hx";
+      EDITOR = "${editor}";
       BROWSER = "${config.machine.browser}";
       TERMINAL = "${config.machine.terminal}";
     };

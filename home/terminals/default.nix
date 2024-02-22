@@ -1,8 +1,8 @@
 { ... }:
 {
   imports = [
-    # ./foot.nix
+    ./foot.nix
     ./kitty.nix
-    # ./wezterm.nix
+    ./wezterm.nix
   ];
 }

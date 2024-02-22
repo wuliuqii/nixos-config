@@ -47,7 +47,8 @@
       ripgrep
 
       # image viewer
-      imv
+      # TODO: uncomment after https://github.com/NixOS/nixpkgs/pull/290398
+      # imv
 
       # build
       # gcc

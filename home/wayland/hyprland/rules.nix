@@ -1,13 +1,32 @@
-{ ... }:
+{ lib, ... }:
 {
   wayland.windowManager.hyprland.settings = {
     # layer rules
     layerrule =
       let
-        layers = "^(bar[0-9]|dock[0-9]|notifications[0-9]|quicksettings|powermenu|dashboard|launcher|verfication)$";
+        toRegex = list:
+          let
+            elements = lib.concatStringsSep "|" list;
+          in
+          "^(${elements})$";
+
+        ignorealpha = [
+          # ags
+          "dock[0-9]"
+          "notifications[0-9]"
+          "quicksettings"
+          "dashboard"
+
+          "anyrun"
+        ];
+
+        layers = ignorealpha ++ [ "bar[0-9]" "gtk-layer-shell" ];
       in
       [
-        "blur, ${layers}"
+        "blur, ${toRegex layers}"
+        "xray 1, ${toRegex ["bar[0-9]" "gtk-layer-shell"]}"
+        "ignorealpha 0.2, ${toRegex ["bar[0-9]" "gtk-layer-shell"]}"
+        "ignorealpha 0.5, ${toRegex ["anyrun"]}"
       ];
 
     # window rules
@@ -74,3 +93,4 @@
     ];
   };
 }
+

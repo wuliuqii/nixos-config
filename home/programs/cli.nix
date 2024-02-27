@@ -47,8 +47,7 @@
       ripgrep
 
       # image viewer
-      # TODO: uncomment after https://github.com/NixOS/nixpkgs/pull/290398
-      # imv
+      imv
 
       # build
       # gcc
@@ -66,6 +65,7 @@
       jaq
       github-copilot-cli
       act
+      git-ignore
     ];
   };
 }

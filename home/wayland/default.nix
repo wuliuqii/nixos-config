@@ -4,11 +4,12 @@
     ./hyprland
     ./ags
 
-    ./swaylock.nix
+    ./hyprlock.nix
+    ./wlogout.nix
+    ./anyrun.nix
   ];
 
   home.packages = with pkgs; [
-    udiskie
     networkmanagerapplet
     qt6.qtwayland
     libsForQt5.qt5.qtwayland

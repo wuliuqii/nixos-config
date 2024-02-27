@@ -6,11 +6,13 @@
       "https://hyprland.cachix.org/"
       "https://helix.cachix.org/"
       "https://nix-community.cachix.org"
+      "https://anyrun.cachix.org"
     ];
     extra-trusted-public-keys = [
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
     ];
     allow-import-from-derivation = true;
   };
@@ -25,10 +27,24 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     helix.url = "github:helix-editor/helix";
 
     ags.url = "github:Aylur/ags";
+
+    anyrun.url = "github:Kirottu/anyrun";
+    anyrun-plugins = {
+      url = "github:wuliuqii/anyrun-plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
@@ -81,6 +97,9 @@
                   ] ++ [
                     inputs.hyprland.homeManagerModules.default
                     inputs.ags.homeManagerModules.default
+                    inputs.hypridle.homeManagerModules.default
+                    inputs.hyprlock.homeManagerModules.default
+                    inputs.anyrun.homeManagerModules.default
                   ];
                 };
               };

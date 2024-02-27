@@ -62,7 +62,7 @@ in
         else ""}''
 
         # launcher
-        "$mainMod, Space, ${e} -t launcher"
+        "$mainMod, Space, exec, anyrun"
         # browser
         "$mainMod, B, exec, firefox"
         # vscode
@@ -72,13 +72,11 @@ in
         # file manager
         "$mainMod, E, exec, nautilus"
         # logout menu
-        "$mainMod, Escape, ${e} -t powermenu"
-        # overview
-        "$mainMod, Tab, ${e} -t overview"
+        "$mainMod, Escape, exec, wlogout"
         # restart ags
         "$mainMod, R, ${e} quit; ags -b hypr"
         # lock screen
-        "$mainMod, L, exec, loginctl lock-session"
+        "$mainMod, L, exec, hyprlock"
         # clear cliphist database
         "$mainMod SHIFT, V, exec, cliphist wipe"
         # screenshot

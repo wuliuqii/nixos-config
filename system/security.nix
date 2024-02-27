@@ -13,7 +13,10 @@
   security = {
     sudo.wheelNeedsPassword = false;
     # allow wayland lockers to unlock the screen
-    pam.services.swaylock.text = "auth include login";
+    pam.services = {
+      hyprlock.text = "auth include login";
+      greetd.enableGnomeKeyring = true;
+    };
 
     # userland niceness
     rtkit.enable = true;

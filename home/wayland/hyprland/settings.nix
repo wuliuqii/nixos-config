@@ -7,9 +7,9 @@
     exec-once = [
       "fcitx5"
       "ags -b hypr"
-      "udiskie"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
+      "hyprlock"
     ];
 
     general = {

@@ -12,7 +12,6 @@
     swappy
     wayshot
     hyprpicker
-    swww
     wl-clipboard
     cliphist
     wlr-randr

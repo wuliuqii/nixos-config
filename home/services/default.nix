@@ -2,7 +2,9 @@
 {
   imports = [
     # ./kdeconnect.nix
-    ./swayidle.nix
     ./polkit-agent.nix
+    ./hyprpaper.nix
+    ./hypridle.nix
+    ./udiskie.nix
   ];
 }

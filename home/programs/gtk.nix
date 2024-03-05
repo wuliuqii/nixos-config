@@ -9,9 +9,13 @@
     };
 
     iconTheme = {
-      name = "Adwaita";
-      package = pkgs.gnome.adwaita-icon-theme;
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
     };
+    # iconTheme = {
+    #   name = "MoreWaita";
+    #   package = pkgs.morewaita-icon-theme;
+    # };
 
     font = {
       name = "JetBrainsMono Nerd Font";

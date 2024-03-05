@@ -19,11 +19,11 @@ in
     beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
     lockCmd = lib.getExe config.programs.hyprlock.package;
 
-    listeners = [
-      {
-        timeout = 330;
-        onTimeout = suspendScript.outPath;
-      }
-    ];
+    # listeners = [
+    #   {
+    #     timeout = 330;
+    #     onTimeout = suspendScript.outPath;
+    #   }
+    # ];
   };
 }

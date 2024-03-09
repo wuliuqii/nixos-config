@@ -16,6 +16,9 @@
         true-color = true;
         color-modes = true;
         lsp.display-messages = true;
+        cursor-shape = {
+          insert = "bar";
+        };
       };
 
       keys.normal = {

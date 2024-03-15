@@ -31,6 +31,7 @@
     cinny-desktop
     slack
     qq
+    wechat-uos
     thunderbird
 
     gnome.nautilus

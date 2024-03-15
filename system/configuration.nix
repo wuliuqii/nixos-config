@@ -69,8 +69,12 @@ in
     ];
   };
 
-  nixpkgs.system = "x86_64-linux";
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "openssl-1.1.1w"
+    ];
+  };
 
   nix = {
     settings = {

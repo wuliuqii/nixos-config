@@ -35,3 +35,9 @@ fetch.github = "lotem/librime-proto"
 src.git = "https://github.com/catppuccin/fish"
 fetch.github = "catppuccin/fish"
 
+[wechat-uos]
+src.webpage = "https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=wechat-universal-bwrap"
+src.regex = "\"Version\":\"([^\"]+)\""
+src.from_pattern = "(.+):(.+)-(.+)"
+src.to_pattern = "\\2"
+fetch.url = "https://pro-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.wechat/com.tencent.wechat_$ver_amd64.deb"

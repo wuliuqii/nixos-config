@@ -27,10 +27,10 @@
   };
   fcitx5-pinyin-moegirl = {
     pname = "fcitx5-pinyin-moegirl";
-    version = "20231114";
+    version = "20240309";
     src = fetchurl {
-      url = "https://github.com/outloudvi/mw2fcitx/releases/download/20231114/moegirl.dict";
-      sha256 = "sha256-x+XkATiNMNbcSiN87MkRRvKiNuzvpmkDrtGkwdnIsYM=";
+      url = "https://github.com/outloudvi/mw2fcitx/releases/download/20240309/moegirl.dict";
+      sha256 = "sha256-ir9WQA2cz8VLL46/GaLTFAnL/H5vKWq3sbywHTcAKb8=";
     };
   };
   fcitx5-pinyin-zhwiki = {
@@ -43,27 +43,27 @@
   };
   librime-charcode = {
     pname = "librime-charcode";
-    version = "3709ca7a39a7c14f9e02fa00489a9850fd5a907b";
+    version = "c202c85eaa45a2f836a3cf79223897096336aa9e";
     src = fetchFromGitHub {
       owner = "rime";
       repo = "librime-charcode";
-      rev = "3709ca7a39a7c14f9e02fa00489a9850fd5a907b";
+      rev = "c202c85eaa45a2f836a3cf79223897096336aa9e";
       fetchSubmodules = false;
-      sha256 = "sha256-KfKkpph+2ChQpkkGKubmpg/18uPX9qUHTqJT1PSGorI=";
+      sha256 = "sha256-UXZzJ6HbwOJ/8ckkALkoeWaAL+lUyVc3lEP1RJPhoLM=";
     };
-    date = "2024-02-10";
+    date = "2024-03-15";
   };
   librime-lua = {
     pname = "librime-lua";
-    version = "0f69bfa2f2724c513987855cad71611f8759c703";
+    version = "20ddea907e0b0c9c60d1dcb6b102bee38697cb5c";
     src = fetchFromGitHub {
       owner = "hchunhui";
       repo = "librime-lua";
-      rev = "0f69bfa2f2724c513987855cad71611f8759c703";
+      rev = "20ddea907e0b0c9c60d1dcb6b102bee38697cb5c";
       fetchSubmodules = false;
-      sha256 = "sha256-GDQRAQ/eyaBh+qEssAPqd2+6FuCdvQWC2Q6s4w8A2HA=";
+      sha256 = "sha256-kU3pceqQoIM4pypPg2nLLnnyrgQSUEWZW9VLmmPJltU=";
     };
-    date = "2024-02-27";
+    date = "2024-03-08";
   };
   librime-octagram = {
     pname = "librime-octagram";
@@ -91,14 +91,22 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "c2e02af730d64e7b73b1c1102e0a4bd2eef073f5";
+    version = "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "c2e02af730d64e7b73b1c1102e0a4bd2eef073f5";
+      rev = "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0";
       fetchSubmodules = false;
-      sha256 = "sha256-TlxalXNEkDyh7Ir8W7zLSzOsrgaQMEB2OTEkhP+McKA=";
+      sha256 = "sha256-Io0+4xlzAa1Albp6rSAMlCvRfkRl2pfKVrplzWUC4lM=";
     };
-    date = "2024-02-28";
+    date = "2024-03-12";
+  };
+  wechat-uos = {
+    pname = "wechat-uos";
+    version = "1.0.0.238-10";
+    src = fetchurl {
+      url = "https://pro-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.wechat/com.tencent.wechat_1.0.0.238-10_amd64.deb";
+      sha256 = "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=";
+    };
   };
 }

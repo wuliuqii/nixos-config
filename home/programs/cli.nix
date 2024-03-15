@@ -63,9 +63,10 @@
       tokei
       tree
       jaq
-      github-copilot-cli
+      # github-copilot-cli
       act
-      git-ignore
+      # git-ignore
+      gitu
     ];
   };
 }

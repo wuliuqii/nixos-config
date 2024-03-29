@@ -1,13 +1,7 @@
-{ pkgs, inputs, config, ... }:
-let
-  github_copilot = builtins.fromJSON (builtins.readFile
-    "${config.xdg.configHome}/github-copilot/hosts.json");
-in
+{ pkgs, ... }:
 {
   programs.helix = {
     enable = true;
-    # TODO: https://github.com/helix-editor/helix/pull/9867
-    # package = inputs.helix.packages."${pkgs.system}".helix;
     settings = {
       theme = "catppuccin_macchiato";
 
@@ -61,15 +55,15 @@ in
       ];
 
       language-server = with pkgs; {
-        copilot = {
-          command = "${helix-gpt}/bin/helix-gpt";
-          args = [
-            "--handler"
-            "copilot"
-            "--copilotApiKey"
-            "${github_copilot."github.com"."oauth_token"}"
-          ];
-        };
+        # copilot = {
+        #   command = "${helix-gpt}/bin/helix-gpt";
+        #   args = [
+        #     "--handler"
+        #     "copilot"
+        #     "--copilotApiKey"
+        #     "${github_copilot."github.com"."oauth_token"}"
+        #   ];
+        # };
         codeium = {
           command = "${helix-gpt}/bin/helix-gpt";
           args = [ "--handler" "codeium" ];

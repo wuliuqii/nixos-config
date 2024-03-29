@@ -28,13 +28,6 @@
       ];
     };
 
-    nix-index = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-
-    nix-index-database.comma.enable = true;
-
     yazi.enable = true;
     btop.enable = true;
     eza.enable = true;

@@ -1,5 +1,5 @@
 switch:
-	@sudo nixos-rebuild switch --flake .#laptop --impure |& nom
+	@sudo nixos-rebuild switch --flake .#laptop |& nom
 
 check:
 	@nix flake check

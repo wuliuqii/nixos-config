@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    # ./helix.nix
+    ./helix.nix
     ./vscode.nix
 
     ./nvim
@@ -9,7 +9,7 @@
   ];
 
   home.packages = with pkgs.jetbrains; [
-    # rust-rover
+    rust-rover
     # goland
   ];
 }

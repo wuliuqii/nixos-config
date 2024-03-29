@@ -71,7 +71,7 @@
     },
     "librime-charcode": {
         "cargoLocks": null,
-        "date": "2024-03-15",
+        "date": "2024-03-19",
         "extract": null,
         "name": "librime-charcode",
         "passthru": null,
@@ -83,11 +83,11 @@
             "name": null,
             "owner": "rime",
             "repo": "librime-charcode",
-            "rev": "c202c85eaa45a2f836a3cf79223897096336aa9e",
-            "sha256": "sha256-UXZzJ6HbwOJ/8ckkALkoeWaAL+lUyVc3lEP1RJPhoLM=",
+            "rev": "55e7f563e999802d41a13ba02657c1be4b2011b4",
+            "sha256": "sha256-KfKkpph+2ChQpkkGKubmpg/18uPX9qUHTqJT1PSGorI=",
             "type": "github"
         },
-        "version": "c202c85eaa45a2f836a3cf79223897096336aa9e"
+        "version": "55e7f563e999802d41a13ba02657c1be4b2011b4"
     },
     "librime-lua": {
         "cargoLocks": null,
@@ -151,7 +151,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-03-12",
+        "date": "2024-03-24",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -163,11 +163,11 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0",
-            "sha256": "sha256-Io0+4xlzAa1Albp6rSAMlCvRfkRl2pfKVrplzWUC4lM=",
+            "rev": "ab648212584a5e54bf72583ba729e9d82c7f4888",
+            "sha256": "sha256-n/89Os25hAJRjIwqfgmUCHigIWDOQ4V6DPIlv6xYBzk=",
             "type": "github"
         },
-        "version": "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0"
+        "version": "ab648212584a5e54bf72583ba729e9d82c7f4888"
     },
     "wechat-uos": {
         "cargoLocks": null,
@@ -180,8 +180,8 @@
             "name": null,
             "sha256": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
             "type": "url",
-            "url": "https://pro-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.wechat/com.tencent.wechat_1.0.0.238-10_amd64.deb"
+            "url": "https://pro-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.wechat/com.tencent.wechat_1.0.0.238-15_amd64.deb"
         },
-        "version": "1.0.0.238-10"
+        "version": "1.0.0.238-15"
     }
 }

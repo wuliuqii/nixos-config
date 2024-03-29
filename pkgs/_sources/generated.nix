@@ -43,15 +43,15 @@
   };
   librime-charcode = {
     pname = "librime-charcode";
-    version = "c202c85eaa45a2f836a3cf79223897096336aa9e";
+    version = "55e7f563e999802d41a13ba02657c1be4b2011b4";
     src = fetchFromGitHub {
       owner = "rime";
       repo = "librime-charcode";
-      rev = "c202c85eaa45a2f836a3cf79223897096336aa9e";
+      rev = "55e7f563e999802d41a13ba02657c1be4b2011b4";
       fetchSubmodules = false;
-      sha256 = "sha256-UXZzJ6HbwOJ/8ckkALkoeWaAL+lUyVc3lEP1RJPhoLM=";
+      sha256 = "sha256-KfKkpph+2ChQpkkGKubmpg/18uPX9qUHTqJT1PSGorI=";
     };
-    date = "2024-03-15";
+    date = "2024-03-19";
   };
   librime-lua = {
     pname = "librime-lua";
@@ -91,21 +91,21 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0";
+    version = "ab648212584a5e54bf72583ba729e9d82c7f4888";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "a33bd8d204c3f8a47507fa8f71ccfc93fa44d1e0";
+      rev = "ab648212584a5e54bf72583ba729e9d82c7f4888";
       fetchSubmodules = false;
-      sha256 = "sha256-Io0+4xlzAa1Albp6rSAMlCvRfkRl2pfKVrplzWUC4lM=";
+      sha256 = "sha256-n/89Os25hAJRjIwqfgmUCHigIWDOQ4V6DPIlv6xYBzk=";
     };
-    date = "2024-03-12";
+    date = "2024-03-24";
   };
   wechat-uos = {
     pname = "wechat-uos";
-    version = "1.0.0.238-10";
+    version = "1.0.0.238-15";
     src = fetchurl {
-      url = "https://pro-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.wechat/com.tencent.wechat_1.0.0.238-10_amd64.deb";
+      url = "https://pro-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.wechat/com.tencent.wechat_1.0.0.238-15_amd64.deb";
       sha256 = "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=";
     };
   };

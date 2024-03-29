@@ -4,13 +4,11 @@
   nixConfig = {
     extra-substituters = [
       "https://hyprland.cachix.org/"
-      "https://helix.cachix.org/"
       "https://nix-community.cachix.org"
       "https://anyrun.cachix.org"
     ];
     extra-trusted-public-keys = [
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
     ];
@@ -55,11 +53,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-index-database = {
-      url = "github:Mic92/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs @ { self, nixpkgs, home-manager, ... }:
@@ -89,7 +82,6 @@
                 extraSpecialArgs = { inherit inputs; };
                 sharedModules = [
                   (./. + "/machines/${config.machine.userName}.nix")
-                  inputs.nix-index-database.hmModules.nix-index
                 ];
                 users.${config.machine.userName} = {
                   imports = [

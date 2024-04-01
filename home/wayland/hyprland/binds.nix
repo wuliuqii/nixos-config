@@ -55,11 +55,6 @@ in
 
         # terminal
         "$mainMod, Return, exec, ${config.machine.terminal}"
-        ''${if config.machine.terminal == "wezterm" then 
-          "$mainMod SHIFT, Return, exec, wezterm start --class termfloat"
-        else if config.machine.terminal == "kitty" then
-          "$mainMod SHIFT, Return, exec, kitty --class=termfloat"
-        else ""}''
 
         # launcher
         "$mainMod, Space, exec, anyrun"

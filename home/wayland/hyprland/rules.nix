@@ -55,6 +55,13 @@
 
         "dimaround, class:^(xdg-desktop-portal-gtk|polkit-gnome-authentication-agent-1)$"
 
+        "rounding 0, xwayland:1"
+        "center, class:^(jetbrains-rustrover)$, title:^(Confirm Exit|Open File or Project|Settings|splash)$"
+        "size 80% 80%, class:^(jetbrains-rustrover)$, title:^(splash|Open File or Project|Settings)$"
+
+        "center, class:^(Code)$, title:^(Open Folder|Open File)$"
+        "size 60% 60%, class:^(Code)$, title:^(Open Folder|Open File)$"
+
         "opacity 0.80, class:^(Code|firefox|kitty|foot|com.obsproject.Studio)$"
         "opacity 0.80 0.70, class:${float-center-apps}"
         "float, class:${float-center-apps}"
@@ -67,8 +74,6 @@
         "pin, class:^(showmethekey-gtk)$"
         "move 50% 85%, class:^(showmethekey-gtk)$"
         "opacity 0.80 0.70, floating:1"
-        "size 50% 50%, class:^(kitty)$, floating:1"
-        "float, class:^(termfloat)$"
         "float, class:^(com.github.Aylur.ags)$"
         "float, class:^(org.rgs.*)$"
       ];

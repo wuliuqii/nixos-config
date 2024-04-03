@@ -12,14 +12,18 @@
       "hyprlock"
     ];
 
+    source = [
+      "~/.config/hypr/macchiato.conf"
+    ];
+
     general = {
       layout = "dwindle";
       resize_on_border = true;
       border_size = 2;
       gaps_out = 6;
       gaps_in = 3;
-      "col.active_border" = "0xfff5bde6";
-      "col.inactive_border" = "0xff24273a";
+      "col.active_border" = "$pink";
+      "col.inactive_border" = "$surface0";
     };
 
     decoration = {
@@ -55,6 +59,20 @@
         "windowsMove, 1, 5, wind, slide"
         "workspaces, 1, 5, wind"
       ];
+    };
+
+    group = {
+      groupbar = {
+        # font_size = 16;
+        # gradients = true;
+        render_titles = false;
+        height = 1;
+        "col.active" = "$mauve";
+        "col.inactive" = "$mauveAlpha";
+      };
+
+      "col.border_active" = "$flamingo";
+      "col.border_inactive" = "$surface0";
     };
 
     input = {

@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   imports = [
     ./binds.nix
@@ -14,5 +14,9 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+  };
+
+  xdg.configFile = {
+    "hypr/macchiato.conf".source = "${pkgs.catppuccin-hyprland}/macchiato.conf";
   };
 }

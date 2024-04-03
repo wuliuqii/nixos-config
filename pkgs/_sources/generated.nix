@@ -25,6 +25,18 @@
     };
     date = "2023-11-02";
   };
+  catppuccin-hyprland = {
+    pname = "catppuccin-hyprland";
+    version = "13d7b4e3db178bb01520eb68e16e4cf4e11da6ab";
+    src = fetchFromGitHub {
+      owner = "catppuccin";
+      repo = "hyprland";
+      rev = "13d7b4e3db178bb01520eb68e16e4cf4e11da6ab";
+      fetchSubmodules = false;
+      sha256 = "sha256-jkk021LLjCLpWOaInzO4Klg6UOR4Sh5IcKdUxIn7Dis=";
+    };
+    date = "2024-03-31";
+  };
   fcitx5-pinyin-moegirl = {
     pname = "fcitx5-pinyin-moegirl";
     version = "20240309";
@@ -100,13 +112,5 @@
       sha256 = "sha256-n/89Os25hAJRjIwqfgmUCHigIWDOQ4V6DPIlv6xYBzk=";
     };
     date = "2024-03-24";
-  };
-  wechat-uos = {
-    pname = "wechat-uos";
-    version = "1.0.0.238-15";
-    src = fetchurl {
-      url = "https://pro-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.wechat/com.tencent.wechat_1.0.0.238-15_amd64.deb";
-      sha256 = "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=";
-    };
   };
 }

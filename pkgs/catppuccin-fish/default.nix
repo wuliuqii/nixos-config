@@ -2,6 +2,9 @@
 stdenvNoCC.mkDerivation {
   inherit (sources.catppuccin-fish) pname version src;
 
+  dontBuild = true;
+  dontConfigure = true;
+
   installPhase = "
     install -Dvm444 -t $out/share/fish/tools/web_config/themes $src/themes/*
   ";

@@ -3,8 +3,6 @@
   home = {
     packages = with pkgs; [
       g4music
-      youtube-music
-      go-musicfox
       yesplaymusic
       pavucontrol
       cava

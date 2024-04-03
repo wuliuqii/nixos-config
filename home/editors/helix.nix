@@ -46,11 +46,11 @@
           formatter = {
             command = "nixpkgs-fmt";
           };
-          language-servers = [ "nil" "copilot" ];
+          language-servers = [ "nil" "codeium" ];
         }
         {
           name = "rust";
-          language-servers = [ "rust-analyzer" "copilot" ];
+          language-servers = [ "rust-analyzer" "codeium" ];
         }
       ];
 

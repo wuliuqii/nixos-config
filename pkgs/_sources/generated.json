@@ -39,6 +39,26 @@
         },
         "version": "0ce27b518e8ead555dec34dd8be3df5bd75cff8e"
     },
+    "catppuccin-hyprland": {
+        "cargoLocks": null,
+        "date": "2024-03-31",
+        "extract": null,
+        "name": "catppuccin-hyprland",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catppuccin",
+            "repo": "hyprland",
+            "rev": "13d7b4e3db178bb01520eb68e16e4cf4e11da6ab",
+            "sha256": "sha256-jkk021LLjCLpWOaInzO4Klg6UOR4Sh5IcKdUxIn7Dis=",
+            "type": "github"
+        },
+        "version": "13d7b4e3db178bb01520eb68e16e4cf4e11da6ab"
+    },
     "fcitx5-pinyin-moegirl": {
         "cargoLocks": null,
         "date": null,
@@ -168,20 +188,5 @@
             "type": "github"
         },
         "version": "ab648212584a5e54bf72583ba729e9d82c7f4888"
-    },
-    "wechat-uos": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "wechat-uos",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
-            "type": "url",
-            "url": "https://pro-store-packages.uniontech.com/appstore/pool/appstore/c/com.tencent.wechat/com.tencent.wechat_1.0.0.238-15_amd64.deb"
-        },
-        "version": "1.0.0.238-15"
     }
 }

@@ -43,11 +43,10 @@ in
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen,"
         "$mainMod, G, togglegroup,"
-        "$mainMod SHIFT, N, changegroupactive, f"
-        "$mainMod SHIFT, P, changegroupactive, b"
+        "$mainMod, N, changegroupactive, f"
+        "$mainMod, P, changegroupactive, b"
         "$mainMod SHIFT, R, togglesplit,"
         "$mainMod, T, togglefloating,"
-        "$mainMod, P, pseudo,"
         "$mainMod ALT, ,resizeactive,"
 
         # toggle "monocle" (no_gaps_when_only)

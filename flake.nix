@@ -16,7 +16,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
@@ -35,7 +35,7 @@
     anyrun.url = "github:Kirottu/anyrun";
     anyrun-plugins = {
       url = "github:wuliuqii/anyrun-plugins";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     pre-commit-hooks = {

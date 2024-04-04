@@ -71,8 +71,6 @@ in
         "$mainMod, R, ${e} quit; ags -b hypr"
         # lock screen
         "$mainMod, L, exec, hyprlock"
-        # clear cliphist database
-        "$mainMod SHIFT, V, exec, cliphist wipe"
         # screenshot
         "$altMod, R, ${e} -r 'recorder.start()'"
         "$altMod CTRL, Z, ${e} -r 'recorder.screenshot()'"

@@ -3,7 +3,6 @@
   imports = [
     ./go.nix
     ./rust.nix
-    ./ts.nix
   ];
 
   home.packages = with pkgs; [

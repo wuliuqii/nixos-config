@@ -28,7 +28,6 @@
       ];
     };
 
-    yazi.enable = true;
     btop.enable = true;
     eza.enable = true;
   };
@@ -42,23 +41,12 @@
       # image viewer
       imv
 
-      # build
-      # gcc
-      just
-      clang
-      gnumake
-
       # misc
-      showmethekey
       killall
       lazygit
-      cloc
       tokei
       tree
       jaq
-      # github-copilot-cli
-      # act
-      # git-ignore
       gitu
     ];
   };

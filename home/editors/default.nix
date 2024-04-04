@@ -9,7 +9,7 @@
   ];
 
   home.packages = with pkgs.jetbrains; [
-    rust-rover
+    # rust-rover
     # goland
   ];
 }

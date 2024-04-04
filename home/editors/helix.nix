@@ -10,7 +10,7 @@
         bufferline = "multiple";
         gutters = [ "diff" "diagnostics" "line-numbers" "spacer" ];
         idle-timeout = 100;
-        auto-save = true;
+        auto-save = false;
         mouse = false;
         indent-guides.render = true;
         cursorline = true;

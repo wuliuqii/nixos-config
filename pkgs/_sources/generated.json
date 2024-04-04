@@ -41,7 +41,7 @@
     },
     "catppuccin-hyprland": {
         "cargoLocks": null,
-        "date": "2024-03-31",
+        "date": "2024-04-03",
         "extract": null,
         "name": "catppuccin-hyprland",
         "passthru": null,
@@ -53,11 +53,11 @@
             "name": null,
             "owner": "catppuccin",
             "repo": "hyprland",
-            "rev": "13d7b4e3db178bb01520eb68e16e4cf4e11da6ab",
-            "sha256": "sha256-jkk021LLjCLpWOaInzO4Klg6UOR4Sh5IcKdUxIn7Dis=",
+            "rev": "b57375545f5da1f7790341905d1049b1873a8bb3",
+            "sha256": "sha256-XTqpmucOeHUgSpXQ0XzbggBFW+ZloRD/3mFhI+Tq4O8=",
             "type": "github"
         },
-        "version": "13d7b4e3db178bb01520eb68e16e4cf4e11da6ab"
+        "version": "b57375545f5da1f7790341905d1049b1873a8bb3"
     },
     "fcitx5-pinyin-moegirl": {
         "cargoLocks": null,

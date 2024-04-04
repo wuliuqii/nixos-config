@@ -3,6 +3,7 @@
   imports = [
     ./hyprland
     ./ags
+    ./walker
 
     ./hyprlock.nix
     ./wlogout.nix

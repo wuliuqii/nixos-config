@@ -27,15 +27,15 @@
   };
   catppuccin-hyprland = {
     pname = "catppuccin-hyprland";
-    version = "13d7b4e3db178bb01520eb68e16e4cf4e11da6ab";
+    version = "b57375545f5da1f7790341905d1049b1873a8bb3";
     src = fetchFromGitHub {
       owner = "catppuccin";
       repo = "hyprland";
-      rev = "13d7b4e3db178bb01520eb68e16e4cf4e11da6ab";
+      rev = "b57375545f5da1f7790341905d1049b1873a8bb3";
       fetchSubmodules = false;
-      sha256 = "sha256-jkk021LLjCLpWOaInzO4Klg6UOR4Sh5IcKdUxIn7Dis=";
+      sha256 = "sha256-XTqpmucOeHUgSpXQ0XzbggBFW+ZloRD/3mFhI+Tq4O8=";
     };
-    date = "2024-03-31";
+    date = "2024-04-03";
   };
   fcitx5-pinyin-moegirl = {
     pname = "fcitx5-pinyin-moegirl";

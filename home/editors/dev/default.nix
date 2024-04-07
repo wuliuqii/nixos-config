@@ -18,6 +18,11 @@
     lua-language-server
     stylua
 
+    # zig
+    zig
+    zls
+
+    nodejs
     nodePackages.prettier
   ];
 }

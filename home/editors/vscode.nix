@@ -26,6 +26,9 @@
       "workbench.colorTheme" = "Catppuccin Macchiato";
       "workbench.iconTheme" = "catppuccin-macchiato";
       "workbench.startupEditor" = "none";
+      "workbench.editorAssociations" = {
+        "*.wasm" = "hexEditor.hexedit";
+      };
 
       "git.confirmSync" = false;
 

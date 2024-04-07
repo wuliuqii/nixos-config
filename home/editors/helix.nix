@@ -52,6 +52,10 @@
           name = "rust";
           language-servers = [ "rust-analyzer" "codeium" ];
         }
+        {
+          name = "zig";
+          language-servers = [ "zls" "codeium" ];
+        }
       ];
 
       language-server = with pkgs; {

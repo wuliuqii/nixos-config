@@ -897,11 +897,11 @@
         "nixpkgs": "nixpkgs_12"
       },
       "locked": {
-        "lastModified": 1712160744,
-        "narHash": "sha256-hPQeB7UHHNMBKN9HOo6BUjK6LxoulIn3ZkJxUDI8+LE=",
+        "lastModified": 1712492145,
+        "narHash": "sha256-XcWWiybIKKf+8NF68+NjuTs/UvAKjmUsvvtVeJ3meRo=",
         "owner": "abenz1267",
         "repo": "walker",
-        "rev": "0e901bfd334284b63459104c6cde95be8efc9c07",
+        "rev": "c839a66d2bc0a374fb1516cc759ec8b2369adb2d",
         "type": "github"
       },
       "original": {

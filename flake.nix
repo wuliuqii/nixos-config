@@ -80,7 +80,7 @@
                     inputs.hypridle.homeManagerModules.default
                     inputs.hyprlock.homeManagerModules.default
                     inputs.anyrun.homeManagerModules.default
-                    inputs.walker.homeManagerModules.walker
+                    inputs.walker.homeManagerModules.default
                   ];
                 };
               };

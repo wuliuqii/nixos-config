@@ -43,11 +43,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1703433698,
-        "narHash": "sha256-kfiVVPdx9DSvzY1WAhtsD/fVE/pCfDFEKEZdnPLDrZ8=",
+        "lastModified": 1712545524,
+        "narHash": "sha256-t96UpZFs//aHPy1m6ZwxolgvIuf6u5xwi8o9hbLiM1M=",
         "owner": "wuliuqii",
         "repo": "anyrun-plugins",
-        "rev": "333e7f74082418a968cbba3de0ea1ecf7cc06738",
+        "rev": "cf8e8e9eedf5af51c6182b96533c4a0e1933c4d3",
         "type": "github"
       },
       "original": {

@@ -3,7 +3,6 @@
 , ...
 }:
 let
-  anyrunPkgs = inputs.anyrun.packages.${pkgs.system};
   myAnyrunPkgs = inputs.anyrun-plugins.packages.${pkgs.system};
 in
 {
@@ -12,12 +11,9 @@ in
 
     config = {
       plugins = [
-        anyrunPkgs.websearch
-        anyrunPkgs.translate
         myAnyrunPkgs.cliphist
         myAnyrunPkgs.hyprwin
         myAnyrunPkgs.applications
-        myAnyrunPkgs.symbols
       ];
 
       width.fraction = 0.3;

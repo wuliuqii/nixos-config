@@ -111,7 +111,7 @@
     },
     "librime-lua": {
         "cargoLocks": null,
-        "date": "2024-03-08",
+        "date": "2024-04-13",
         "extract": null,
         "name": "librime-lua",
         "passthru": null,
@@ -123,11 +123,11 @@
             "name": null,
             "owner": "hchunhui",
             "repo": "librime-lua",
-            "rev": "20ddea907e0b0c9c60d1dcb6b102bee38697cb5c",
-            "sha256": "sha256-kU3pceqQoIM4pypPg2nLLnnyrgQSUEWZW9VLmmPJltU=",
+            "rev": "7c1b93965962b7c480d4d7f1a947e4712a9f0c5f",
+            "sha256": "sha256-H/ufyHIfYjAjF/Dt3CilL4x9uAXGcF1BkdAgzIbSGA8=",
             "type": "github"
         },
-        "version": "20ddea907e0b0c9c60d1dcb6b102bee38697cb5c"
+        "version": "7c1b93965962b7c480d4d7f1a947e4712a9f0c5f"
     },
     "librime-octagram": {
         "cargoLocks": null,
@@ -171,7 +171,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-03-24",
+        "date": "2024-04-16",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -183,10 +183,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "ab648212584a5e54bf72583ba729e9d82c7f4888",
-            "sha256": "sha256-n/89Os25hAJRjIwqfgmUCHigIWDOQ4V6DPIlv6xYBzk=",
+            "rev": "91101b20b097fffa224d0dc906d14556b13315b9",
+            "sha256": "sha256-W+0oV/3N75/j1SBlrSrEBNby+Df+oQXboOeswzJVQLo=",
             "type": "github"
         },
-        "version": "ab648212584a5e54bf72583ba729e9d82c7f4888"
+        "version": "91101b20b097fffa224d0dc906d14556b13315b9"
     }
 }

@@ -12,14 +12,15 @@
       jetbrains-mono
       roboto
       (google-fonts.override { fonts = [ "Inter" ]; })
-      nerdfonts
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 
-    fontconfig.defaultFonts = pkgs.lib.mkForce {
-      serif = [ "Noto Serif" "Noto Serif CJK SC" ];
-      sansSerif = [ "Noto Sans" "Noto Sans CJK SC" ];
-      monospace = [ "JetBrains Mono" ];
-      emoji = [ "Noto Color Emoji" ];
-    };
+    fontconfig.defaultFonts = pkgs.lib.mkForce
+      {
+        serif = [ "Noto Serif" "Noto Serif CJK SC" ];
+        sansSerif = [ "Noto Sans" "Noto Sans CJK SC" ];
+        monospace = [ "JetBrainsMono Nerd Font Mono" ];
+        emoji = [ "Noto Color Emoji" ];
+      };
   };
 }

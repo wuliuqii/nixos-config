@@ -5,14 +5,14 @@
     viAlias = true;
     vimAlias = true;
     withRuby = false;
+    withPython3 = false;
     # copilot chat dependency
-    withPython3 = true;
-    extraPython3Packages = (ps: with ps; [
-      pynvim
-      prompt-toolkit
-      requests
-      python-dotenv
-      tiktoken
-    ]);
+    extraLuaPackages = luaPkgs: with luaPkgs; [
+      tiktoken_core
+    ];
   };
+
+  home.packages = with pkgs; [
+    neovide
+  ];
 }

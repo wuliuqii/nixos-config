@@ -3,7 +3,9 @@
   home = {
     packages = with pkgs; [
       g4music
-      yesplaymusic
+      music-player
+      netease-cloud-music-gtk
+      termusic
       pavucontrol
       cava
     ];

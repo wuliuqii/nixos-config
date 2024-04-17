@@ -61,6 +61,8 @@ in
         "$mainMod, B, exec, firefox"
         # vscode
         "$mainMod, C, exec, code"
+        # neovide
+        "$mainMod, V, exec, neovide"
         # music
         "$mainMod, M, exec, g4music"
         # file manager

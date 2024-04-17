@@ -8,8 +8,7 @@
     ./dev
   ];
 
-  home.packages = with pkgs.jetbrains; [
-    # rust-rover
-    # goland
+  home.packages = with pkgs; [
+    zed-editor
   ];
 }

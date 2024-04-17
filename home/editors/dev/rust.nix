@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    rustc
-    cargo
-    rust-analyzer
+    # rustc
+    # cargo
+    # rust-analyzer
+    rustup
     cargo-nextest
 
     taplo
@@ -26,5 +27,10 @@
       '';
       target = ".cargo/config.toml";
     };
+  };
+
+  home.sessionVariables = {
+    RUSTUP_DIST_SERVER = "https://rsproxy.cn";
+    RUSTUP_UPDATE_ROOT = "https://rsproxy.cn/rustup";
   };
 }

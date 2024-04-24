@@ -19,7 +19,6 @@
 
     home-manager.url = "github:nix-community/home-manager";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpaper.url = "github:hyprwm/hyprpaper";
@@ -85,7 +84,6 @@
             {
               nixpkgs.overlays = [
                 inputs.neovim-nightly.overlay
-                inputs.emacs-overlay.overlay
                 selfPkgs.overlay
               ];
             }

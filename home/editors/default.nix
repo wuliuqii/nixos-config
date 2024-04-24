@@ -3,6 +3,7 @@
   imports = [
     ./helix.nix
     ./vscode.nix
+    ./emacs.nix
 
     ./nvim
     ./dev

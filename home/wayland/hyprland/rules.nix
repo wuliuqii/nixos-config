@@ -20,7 +20,7 @@
           "anyrun"
         ];
 
-        layers = ignorealpha ++ [ "bar[0-9]" "gtk-layer-shell" ];
+        layers = ignorealpha ++ [ "bar[0-9]" "gtk-layer-shell" "logout_dialog" ];
       in
       [
         "blur, ${toRegex layers}"

@@ -2,7 +2,7 @@
   programs.zathura = {
     enable = true;
     options = {
-      font = "jetbrains mono 24";
+      font = "jetbrains mono 16";
 
       default-fg = "#CDD6F4";
       default-bg = "rgba(30, 30, 46, 0.8)";
@@ -25,7 +25,7 @@
       notification-error-fg = "#F38BA8";
       notification-warning-bg = "#313244";
       notification-warning-fg = "#FAE3B0";
-      selection-notification = true;
+      selection-notification = false;
 
       inputbar-fg = "#CDD6F4";
       inputbar-bg = "rgba(30, 30, 46, 0.8)";
@@ -54,7 +54,7 @@
       scroll-step = "100";
       smooth-scroll = true;
       zoom-min = "10";
-      guioptions = "none";
+      # guioptions = "none";
     };
   };
 }

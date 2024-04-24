@@ -2,8 +2,8 @@
   programs.neovim = {
     enable = true;
     package = pkgs.neovim-nightly;
-    # viAlias = true;
-    # vimAlias = true;
+    viAlias = true;
+    vimAlias = true;
     withRuby = false;
     withPython3 = false;
     # copilot chat dependency
@@ -11,8 +11,4 @@
       tiktoken_core
     ];
   };
-
-  home.packages = with pkgs; [
-    neovide
-  ];
 }

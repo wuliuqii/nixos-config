@@ -22,8 +22,6 @@
       cat = "bat";
       c = "clear";
       lg = "lazygit";
-      vi = "neovide";
-      vim = "neovide";
     };
     plugins = [
       {

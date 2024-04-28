@@ -47,10 +47,10 @@
   };
   fcitx5-pinyin-zhwiki = {
     pname = "fcitx5-pinyin-zhwiki";
-    version = "20240210";
+    version = "20240426";
     src = fetchurl {
-      url = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20240210.dict";
-      sha256 = "sha256-vNHS5n3TqSwpUx2wG26w7rK6jSqrvLANeG2n0vA4iYk=";
+      url = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20240426.dict";
+      sha256 = "sha256-SiiF4kvQpgjAFd3122WYy0ReJkVLUc93JVeFHIqc+jg=";
     };
   };
   librime-charcode = {
@@ -103,14 +103,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "f57c6b9d65aee5262308a264cae58879ed3306fe";
+    version = "b0c91af4c37f252e8a77264d0a365642e9c8ec71";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "f57c6b9d65aee5262308a264cae58879ed3306fe";
+      rev = "b0c91af4c37f252e8a77264d0a365642e9c8ec71";
       fetchSubmodules = false;
-      sha256 = "sha256-a85UBonp+TnLkjr5x1WooHJGAeVGw25/la1tOEG9zD8=";
+      sha256 = "sha256-hK8+H9oQH8hvYWBLDLoPUkw8yEiEPFLPKFe06CSSU9w=";
     };
-    date = "2024-04-24";
+    date = "2024-04-26";
   };
 }

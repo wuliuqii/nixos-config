@@ -83,11 +83,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-vNHS5n3TqSwpUx2wG26w7rK6jSqrvLANeG2n0vA4iYk=",
+            "sha256": "sha256-SiiF4kvQpgjAFd3122WYy0ReJkVLUc93JVeFHIqc+jg=",
             "type": "url",
-            "url": "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20240210.dict"
+            "url": "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20240426.dict"
         },
-        "version": "20240210"
+        "version": "20240426"
     },
     "librime-charcode": {
         "cargoLocks": null,
@@ -171,7 +171,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-04-24",
+        "date": "2024-04-26",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -183,10 +183,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "f57c6b9d65aee5262308a264cae58879ed3306fe",
-            "sha256": "sha256-a85UBonp+TnLkjr5x1WooHJGAeVGw25/la1tOEG9zD8=",
+            "rev": "b0c91af4c37f252e8a77264d0a365642e9c8ec71",
+            "sha256": "sha256-hK8+H9oQH8hvYWBLDLoPUkw8yEiEPFLPKFe06CSSU9w=",
             "type": "github"
         },
-        "version": "f57c6b9d65aee5262308a264cae58879ed3306fe"
+        "version": "b0c91af4c37f252e8a77264d0a365642e9c8ec71"
     }
 }

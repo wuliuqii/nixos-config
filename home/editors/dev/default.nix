@@ -22,6 +22,11 @@
     zig
     zls
 
+    # typst
+    typst-preview
+    typstfmt
+    tinymist
+
     nodejs
     nodePackages.prettier
   ];

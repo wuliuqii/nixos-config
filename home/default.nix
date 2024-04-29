@@ -9,8 +9,6 @@ in
     ./programs
     ./shell
     ./terminals
-    ./wayland
-    ./services
   ];
 
   home = {

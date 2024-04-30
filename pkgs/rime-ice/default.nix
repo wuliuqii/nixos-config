@@ -3,9 +3,9 @@
 stdenvNoCC.mkDerivation {
   inherit (sources.rime-ice) pname version src;
 
-  buildPhase = ''
-    mv default.yaml rime_ice_suggestion.yaml
-  '';
+  # buildPhase = ''
+  #   mv default.yaml rime_ice_suggestion.yaml
+  # '';
 
   installPhase = ''
     mkdir -p $out/share/rime-data

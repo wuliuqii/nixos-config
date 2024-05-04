@@ -38,6 +38,7 @@
       };
     })
     thunderbird
+    rnote
 
     gnome.nautilus
     gnome.sushi

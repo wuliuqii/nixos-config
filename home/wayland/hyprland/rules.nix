@@ -33,8 +33,10 @@
     # use `hyprctl clients` to find out the class and title of a window
     windowrulev2 =
       let
-        float-center-apps = "^(one.alynx.showmethekey|pavucontrol|org.gnome.Loupe|org.gnome.Nautilus|org.kde.kdeconnect.daemon|org.kde.kdeconnect-indicator|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv)$";
-        media-apps = "^(swappy|com.github.neithern.g4music|com.gitee.gmg137.NeteaseCloudMusicGtk4|QQ|thunderbird|Slack|org.telegram.desktop|cinny|discord)$";
+        float-center-apps =
+          "^(one.alynx.showmethekey|pavucontrol|org.gnome.Loupe|org.gnome.Nautilus|org.kde.kdeconnect.daemon|org.kde.kdeconnect-indicator|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv)$";
+        media-apps =
+          "^(swappy|com.github.neithern.g4music|com.gitee.gmg137.NeteaseCloudMusicGtk4|QQ|thunderbird|Slack|org.telegram.desktop|cinny|discord|wechat)$";
       in
       [
         # telegram media viewer

@@ -91,7 +91,7 @@ in
       dates = "weekly";
       options = "--delete-older-than 2d";
     };
-    package = pkgs.nixVersions.unstable;
+    package = pkgs.nixVersions.git;
     registry.nixpkgs.flake = inputs.nixpkgs;
     extraOptions = ''
       experimental-features = nix-command flakes auto-allocate-uids

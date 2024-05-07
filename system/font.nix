@@ -14,12 +14,16 @@
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 
-    fontconfig.defaultFonts = pkgs.lib.mkForce
-      {
+
+    fontconfig.defaultFonts =
+      let
+        addAll = builtins.mapAttrs (k: v: [ "Symbols Nerd Font" ] ++ v ++ [ "Noto Color Emoji" ]);
+      in
+      addAll {
         serif = [ "Noto Serif" "Noto Serif CJK SC" ];
         sansSerif = [ "Noto Sans" "Noto Sans CJK SC" ];
-        monospace = [ "JetBrainsMono Nerd Font Mono" ];
-        emoji = [ "Noto Color Emoji" ];
+        monospace = [ "JetBrains Mono" ];
+        emoji = [ ];
       };
   };
 }

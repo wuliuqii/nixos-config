@@ -72,7 +72,7 @@ in
 
         position = {
           x = 0;
-          y = 16;
+          y = 60;
         };
 
         valign = "center";
@@ -88,7 +88,7 @@ in
         color = "$overlay0";
         position = {
           x = 0;
-          y = -16;
+          y = 0;
         };
         valign = "center";
         halign = "center";

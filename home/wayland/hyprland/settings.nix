@@ -6,7 +6,7 @@
 
     exec-once = [
       "fcitx5"
-      "ags -b hypr"
+      "ags"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
       "hyprlock"

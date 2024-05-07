@@ -4,6 +4,7 @@
 }:
 let
   myAnyrunPkgs = inputs.anyrun-plugins.packages.${pkgs.system};
+  anyrunPkgs = inputs.anyrun.packages.${pkgs.system};
 in
 {
   programs.anyrun = {
@@ -11,9 +12,10 @@ in
 
     config = {
       plugins = [
-        myAnyrunPkgs.cliphist
-        myAnyrunPkgs.hyprwin
-        myAnyrunPkgs.applications
+        # myAnyrunPkgs.cliphist
+        # myAnyrunPkgs.hyprwin
+        # myAnyrunPkgs.applications
+        anyrunPkgs.applications
       ];
 
       width.fraction = 0.3;

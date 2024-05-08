@@ -2,16 +2,24 @@
 
 {
   fonts = {
-    enableDefaultPackages = false;
+    enableDefaultPackages = true;
+    fontDir.enable = true;
+
     packages = with pkgs; [
+      # icon fonts
+      material-symbols
+
+      # Sans(Serif) fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-emoji
-      source-han-sans
-      jetbrains-mono
       roboto
-      (google-fonts.override { fonts = [ "Inter" ]; })
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+
+      # monospace fonts
+      jetbrains-mono
+
+      # nerdfonts
+      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     ];
 
 

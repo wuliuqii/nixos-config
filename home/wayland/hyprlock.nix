@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  font_family = "JetBrains Mono Nerd Font 10";
+  font_family = "JetBrains Mono 10";
 in
 {
   programs.hyprlock = {
@@ -99,7 +99,7 @@ in
       {
         monitor = "";
         text = "Hey $USER";
-        font_family = "Inter Display Medium";
+        font_family = "Roboto";
         font_size = 18;
         color = "$overlay0";
         position = {

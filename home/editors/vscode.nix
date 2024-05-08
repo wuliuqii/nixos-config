@@ -8,14 +8,14 @@
       "security.workspace.trust.enabled" = false;
 
       "editor.formatOnSave" = true;
-      "editor.fontFamily" = "'JetBrainsMono Nerd Font'";
+      "editor.fontFamily" = "'JetBrains Mono'";
       "editor.fontSize" = 16;
       "editor.fontLigatures" = true;
       "editor.inlineSuggest.enabled" = true;
       "editor.lineNumbers" = "relative";
 
       "terminal.integrated.commandsToSkipShell" = [ "-workbench.action.quickOpen" ];
-      "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font'";
+      "terminal.integrated.fontFamily" = "'JetBrains Mono'";
       "terminal.integrated.fontSize" = 16;
       "terminal.integrated.shellIntegration.enabled" = true;
 

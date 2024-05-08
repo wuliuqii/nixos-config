@@ -31,7 +31,7 @@
     # };
 
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "JetBrains Mono";
       # size = 11;
     };
 

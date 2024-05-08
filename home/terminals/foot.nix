@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=16";
+        font = "JetBrains Mono:size=16";
         box-drawings-uses-font-glyphs = "yes";
         pad = "0x0 center";
         notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";

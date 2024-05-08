@@ -57,6 +57,9 @@
       "rust-analyzer.check.command" = "clippy";
       "rust-analyzer.typing.autoClosingAngleBrackets.enable" = true;
 
+      "zig.path" = "${pkgs.zig}/bin/zig";
+      "zig.zls.path" = "${pkgs.zls}/bin/zls";
+
       "github.copilot.enable" = {
         "markdown" = "true";
       };

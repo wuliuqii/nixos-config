@@ -6,7 +6,6 @@
   ];
 
   home.packages = with pkgs; [
-    # lsp
     # nil
     nixpkgs-fmt
     nil
@@ -27,7 +26,11 @@
     typstfmt
     tinymist
 
+    # node
     nodejs
     nodePackages.prettier
+
+    # build tools
+    gcc
   ];
 }

@@ -68,7 +68,7 @@ in
         # logout menu
         "$mainMod, Escape, exec, wlogout"
         # restart ags
-        "$mainMod, R, ${e} quit; ags -b hypr"
+        "$mainMod, R, ${e} quit; ags"
         # lock screen
         "$mainMod, L, exec, hyprlock"
         # screenshot

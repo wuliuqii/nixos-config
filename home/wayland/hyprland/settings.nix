@@ -79,6 +79,7 @@
       kb_layout = "us";
 
       follow_mouse = 1;
+      mouse_refocus = false;
       accel_profile = "flat";
       sensitivity = 0;
 

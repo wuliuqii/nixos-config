@@ -18,7 +18,7 @@
         color-modes = true;
         soft-wrap.enable = true;
         lsp = {
-          # display-inlay-hints = true;
+          display-inlay-hints = true;
           display-messages = true;
         };
         cursor-shape = {
@@ -50,7 +50,7 @@
         }
         {
           name = "rust";
-          language-servers = [ "rust-analyzer" "codeium" ];
+          language-servers = [ "rust-analyzer" ];
         }
         {
           name = "zig";
@@ -72,8 +72,29 @@
           command = "${helix-gpt}/bin/helix-gpt";
           args = [ "--handler" "codeium" ];
         };
-        rust-analyzer.config.check = {
-          command = "clippy";
+        rust-analyzer.config = {
+          imports = {
+            granularity = {
+              group = "module";
+            };
+            prefix = "self";
+          };
+          cargo = {
+            allReatures = true;
+            targetDir = true;
+            buildScripts = {
+              enable = true;
+            };
+            loadOutDirsFromCheck = true;
+            runBuildScripts = true;
+          };
+          check = {
+            command = "clippy";
+            allTargets = false;
+          };
+          procMacro = {
+            enable = true;
+          };
         };
       };
     };

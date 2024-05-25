@@ -32,5 +32,8 @@
 
     # build tools
     gcc
+    gnumake
+
+    sqlite
   ];
 }

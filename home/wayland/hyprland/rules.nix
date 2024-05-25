@@ -58,8 +58,9 @@
         "dimaround, class:^(xdg-desktop-portal-gtk|polkit-gnome-authentication-agent-1)$"
 
         "rounding 0, xwayland:1"
-        "center, class:^(jetbrains-rustrover)$, title:^(Confirm Exit|Open File or Project|Settings|splash)$"
-        "size 80% 80%, class:^(jetbrains-rustrover)$, title:^(splash|Open File or Project|Settings)$"
+        # "center, class:^(jetbrains-rustrover)$, title:^(Confirm Exit|Open File or Project|Settings|splash)$"
+        # "size 80% 80%, class:^(jetbrains-rustrover)$, title:^(splash|Open File or Project|Settings)$"
+        "noinitialfocus, class:^jetbrains-(?|toolbox), floating:1"
 
         "center, class:^(Code)$, title:^(Open Folder|Open File)$"
         "size 60% 60%, class:^(Code)$, title:^(Open Folder|Open File)$"

@@ -7,7 +7,7 @@
   users.users.${config.machine.userName} = {
     inherit (config.machine) hashedPassword shell;
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" ];
+    extraGroups = [ "wheel" "video" "audio" "minecraft" ];
   };
 
   security = {

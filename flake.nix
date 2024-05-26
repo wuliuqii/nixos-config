@@ -31,6 +31,11 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,6 +62,7 @@
 
             inputs.sops-nix.nixosModules.sops
             inputs.home-manager.nixosModules.home-manager
+            inputs.nix-minecraft.nixosModules.minecraft-servers
             ({ config, ... }: {
               home-manager = {
                 useGlobalPkgs = true;
@@ -80,6 +86,7 @@
             {
               nixpkgs.overlays = [
                 inputs.neovim-nightly.overlay
+                inputs.nix-minecraft.overlay
                 selfPkgs.overlay
               ];
             }

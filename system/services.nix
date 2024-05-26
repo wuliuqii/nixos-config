@@ -14,11 +14,21 @@ in
     gvfs.enable = true;
     # needed for GNOME services outside of GNOME Desktop
     dbus.packages = [ pkgs.gcr ];
+    # Accept EULA for all minecraft servers
     pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+    };
+
+    minecraft-servers = {
+      enable = false;
+      eula = true;
+      # dataDir = $HOME/Documents/minecraft;
+      servers.survival = {
+        enable = true;
+      };
     };
 
     keyd = {

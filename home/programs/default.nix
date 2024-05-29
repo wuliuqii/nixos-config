@@ -39,6 +39,7 @@
     })
     thunderbird
     rnote
+    (pkgs.prismlauncher.override { withWaylandGLFW = true; })
 
     gnome.nautilus
     gnome.sushi

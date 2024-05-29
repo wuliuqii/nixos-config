@@ -42,6 +42,11 @@
         # telegram media viewer
         "float, title:^(Media viewer)$"
 
+        # prismlauncher
+        "workspace 5,class:^(org.prismlauncher.PrismLauncher)"
+        "float,class:^(org.prismlauncher.PrismLauncher)"
+        "fullscreen,class:^(Minecraft.*)"
+
         # make Firefox PiP window floating and sticky
         "float, title:^(Picture-in-Picture)$"
         "pin, title:^(Picture-in-Picture)$"

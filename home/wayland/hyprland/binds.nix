@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  e = "exec, ags -b hypr";
+  e = "exec, ags";
 
   workspaces = builtins.concatLists (builtins.genList
     (

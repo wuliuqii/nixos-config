@@ -1,7 +1,7 @@
 [fcitx5-pinyin-zhwiki]
-src.archpkg = "fcitx5-pinyin-zhwiki"
-src.prefix = "0.2.4."
-fetch.url = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-$ver.dict"
+src.webpage = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/expanded_assets/0.2.4"
+src.regex = "zhwiki-([0-9]{8})\\.dict\\.yaml"
+fetch.url = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-$ver.dict.yaml"
 
 [fcitx5-pinyin-moegirl]
 src.github = "outloudvi/mw2fcitx"

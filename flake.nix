@@ -85,7 +85,6 @@
 
             {
               nixpkgs.overlays = [
-                inputs.neovim-nightly.overlay
                 inputs.nix-minecraft.overlay
                 selfPkgs.overlay
               ];

@@ -15,15 +15,15 @@
   };
   catppuccin-fish = {
     pname = "catppuccin-fish";
-    version = "0ce27b518e8ead555dec34dd8be3df5bd75cff8e";
+    version = "a3b9eb5eaf2171ba1359fe98f20d226c016568cf";
     src = fetchFromGitHub {
       owner = "catppuccin";
       repo = "fish";
-      rev = "0ce27b518e8ead555dec34dd8be3df5bd75cff8e";
+      rev = "a3b9eb5eaf2171ba1359fe98f20d226c016568cf";
       fetchSubmodules = false;
-      sha256 = "sha256-Dc/zdxfzAUM5NX8PxzfljRbYvO9f9syuLO8yBr+R3qg=";
+      sha256 = "sha256-shQxlyoauXJACoZWtRUbRMxmm10R8vOigXwjxBhG8ng=";
     };
-    date = "2023-11-02";
+    date = "2024-05-14";
   };
   catppuccin-hyprland = {
     pname = "catppuccin-hyprland";
@@ -39,18 +39,18 @@
   };
   fcitx5-pinyin-moegirl = {
     pname = "fcitx5-pinyin-moegirl";
-    version = "20240309";
+    version = "20240509";
     src = fetchurl {
-      url = "https://github.com/outloudvi/mw2fcitx/releases/download/20240309/moegirl.dict";
-      sha256 = "sha256-ir9WQA2cz8VLL46/GaLTFAnL/H5vKWq3sbywHTcAKb8=";
+      url = "https://github.com/outloudvi/mw2fcitx/releases/download/20240509/moegirl.dict";
+      sha256 = "sha256-JIhIfH7QzF2v99aqW17wc/K+AcmujUejud8r694wNjc=";
     };
   };
   fcitx5-pinyin-zhwiki = {
     pname = "fcitx5-pinyin-zhwiki";
     version = "20240426";
     src = fetchurl {
-      url = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20240426.dict";
-      sha256 = "sha256-SiiF4kvQpgjAFd3122WYy0ReJkVLUc93JVeFHIqc+jg=";
+      url = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20240426.dict.yaml";
+      sha256 = "sha256-CcXyC/vnplJleDlhpgiYhwcA4hHjzqt5K1FMDjmamqc=";
     };
   };
   librime-charcode = {
@@ -67,15 +67,15 @@
   };
   librime-lua = {
     pname = "librime-lua";
-    version = "43229d766f1e0f3198f61dc9d2e38bc1f921387f";
+    version = "7be6974b6d81c116bba39f6707dc640f6636fa4e";
     src = fetchFromGitHub {
       owner = "hchunhui";
       repo = "librime-lua";
-      rev = "43229d766f1e0f3198f61dc9d2e38bc1f921387f";
+      rev = "7be6974b6d81c116bba39f6707dc640f6636fa4e";
       fetchSubmodules = false;
-      sha256 = "sha256-JdT47lb3+HrDq3xbcm2nNHfL4/wg7h+ei+MMF6SbsGg=";
+      sha256 = "sha256-jsrnAFE99d0U0LdddTL7G1p416qJfSNR935TZFH3Swk=";
     };
-    date = "2024-05-03";
+    date = "2024-05-19";
   };
   librime-octagram = {
     pname = "librime-octagram";
@@ -103,14 +103,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "e9a730f7f464d5fc38b6f69c68598763017afa09";
+    version = "af2480ba1b147a6a54c0c21e2997ef451c34e036";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "e9a730f7f464d5fc38b6f69c68598763017afa09";
+      rev = "af2480ba1b147a6a54c0c21e2997ef451c34e036";
       fetchSubmodules = false;
-      sha256 = "sha256-yulh2p5gynaRNsCHrKqZPEbUFVvyF4bJwsegb6rJkcU=";
+      sha256 = "sha256-3KfuCHGFFcEzgprvJzJiyot8HqYWHvDhIu4Qo6Tu6Ys=";
     };
-    date = "2024-05-02";
+    date = "2024-06-04";
   };
 }

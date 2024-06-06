@@ -9,6 +9,7 @@
     interactiveShellInit = ''
       set fish_greeting
       fish_config theme choose "Catppuccin Macchiato"
+      set PATH $PATH ~/.cargo/bin
     '';
     shellAliases = {
       ".." = "cd ..";

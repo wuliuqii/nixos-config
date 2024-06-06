@@ -1,7 +1,7 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   programs.neovim = {
     enable = true;
-    package = pkgs.neovim-nightly;
+    package = inputs.neovim-nightly.packages.${pkgs.system}.default;
     viAlias = true;
     vimAlias = true;
     withRuby = false;

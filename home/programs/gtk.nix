@@ -1,5 +1,11 @@
 { config, pkgs, ... }:
 {
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
   gtk = {
     enable = true;
 
@@ -35,24 +41,7 @@
       # size = 11;
     };
 
-    gtk3.extraCss = ''
-      headerbar, .titlebar,
-      .csd:not(.popup):not(tooltip):not(messagedialog) decoration{
-        border-radius: 0;
-      }
-    '';
-
-    gtk4.extraCss = ''
-      window.messagedialog .response-area > button,
-      window.dialog.message .dialog-action-area > button,
-      .background.csd{
-        border-radius: 0;
-      }
-    '';
-
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
-    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
   qt = {

@@ -41,8 +41,8 @@
     rnote
     (pkgs.prismlauncher.override { withWaylandGLFW = true; })
 
-    gnome.nautilus
-    gnome.sushi
+    nautilus
+    sushi
     loupe
 
     libsForQt5.kdenlive

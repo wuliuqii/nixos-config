@@ -22,7 +22,6 @@
     zls
 
     # typst
-    typst-preview
     typstfmt
     tinymist
 

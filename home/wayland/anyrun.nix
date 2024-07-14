@@ -12,7 +12,7 @@ in
 
     config = {
       plugins = [
-        # myAnyrunPkgs.cliphist
+        myAnyrunPkgs.cliphist
         # myAnyrunPkgs.hyprwin
         # myAnyrunPkgs.applications
         anyrunPkgs.applications

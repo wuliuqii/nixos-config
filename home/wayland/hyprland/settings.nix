@@ -1,10 +1,21 @@
-{ ... }:
+{ config, ... }:
+let
+  pointer = config.home.pointerCursor;
+  cursorName = "HyprBibataModernClassicSVG";
+in
 {
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
     "$altMod" = "ALT";
 
+    env = [
+      "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+      "HYPRCURSOR_THEME,${cursorName}"
+      "HYPRCURSOR_SIZE,${toString pointer.size}"
+    ];
+
     exec-once = [
+      "hyprctl setcursor ${cursorName} ${toString pointer.size}"
       "fcitx5"
       "ags"
       "wl-paste --type text --watch cliphist store"

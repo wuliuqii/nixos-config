@@ -41,7 +41,7 @@
     },
     "catppuccin-hyprland": {
         "cargoLocks": null,
-        "date": "2024-04-03",
+        "date": "2024-06-19",
         "extract": null,
         "name": "catppuccin-hyprland",
         "passthru": null,
@@ -53,11 +53,11 @@
             "name": null,
             "owner": "catppuccin",
             "repo": "hyprland",
-            "rev": "b57375545f5da1f7790341905d1049b1873a8bb3",
-            "sha256": "sha256-XTqpmucOeHUgSpXQ0XzbggBFW+ZloRD/3mFhI+Tq4O8=",
+            "rev": "c388ac55563ddeea0afe9df79d4bfff0096b146b",
+            "sha256": "sha256-xSa/z0Pu+ioZ0gFH9qSo9P94NPkEMovstm1avJ7rvzM=",
             "type": "github"
         },
-        "version": "b57375545f5da1f7790341905d1049b1873a8bb3"
+        "version": "c388ac55563ddeea0afe9df79d4bfff0096b146b"
     },
     "fcitx5-pinyin-moegirl": {
         "cargoLocks": null,
@@ -68,11 +68,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-JIhIfH7QzF2v99aqW17wc/K+AcmujUejud8r694wNjc=",
+            "sha256": "sha256-1BNfyMM7T19glWsB9oOOMHEWc+SE/qrxx5rsAz386Os=",
             "type": "url",
-            "url": "https://github.com/outloudvi/mw2fcitx/releases/download/20240509/moegirl.dict"
+            "url": "https://github.com/outloudvi/mw2fcitx/releases/download/20240709/moegirl.dict"
         },
-        "version": "20240509"
+        "version": "20240709"
     },
     "fcitx5-pinyin-zhwiki": {
         "cargoLocks": null,
@@ -171,7 +171,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-06-04",
+        "date": "2024-07-03",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -183,10 +183,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "af2480ba1b147a6a54c0c21e2997ef451c34e036",
-            "sha256": "sha256-3KfuCHGFFcEzgprvJzJiyot8HqYWHvDhIu4Qo6Tu6Ys=",
+            "rev": "37ca416a9c755716d049c549b131276ddc440688",
+            "sha256": "sha256-uEE+KWkIjCvB/cuLNm94lFm7HLb9cCgFE7t6NCTVEoo=",
             "type": "github"
         },
-        "version": "af2480ba1b147a6a54c0c21e2997ef451c34e036"
+        "version": "37ca416a9c755716d049c549b131276ddc440688"
     }
 }

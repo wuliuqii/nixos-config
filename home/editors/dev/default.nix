@@ -29,6 +29,9 @@
     nodejs
     nodePackages.prettier
 
+    # json
+    vscode-langservers-extracted
+
     # build tools
     gcc
     gnumake

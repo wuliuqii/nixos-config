@@ -11,6 +11,7 @@ in
     ./terminals
     ./wayland
     ./services
+    ./secrets
   ];
 
   home = {

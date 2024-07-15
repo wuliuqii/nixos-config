@@ -34,8 +34,6 @@ in
     };
   };
 
-  sops.age.keyFile = "/home/${config.machine.userName}/.config/sops/age/keys.txt";
-
   boot = {
     loader = {
       systemd-boot = {

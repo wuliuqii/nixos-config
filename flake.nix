@@ -58,9 +58,7 @@
           modules = [
             ./system/configuration.nix
             ./machines/laptop
-            ./secrets
 
-            inputs.sops-nix.nixosModules.sops
             inputs.home-manager.nixosModules.home-manager
             inputs.nix-minecraft.nixosModules.minecraft-servers
             ({ config, ... }: {
@@ -78,6 +76,7 @@
                     inputs.hyprland.homeManagerModules.default
                     inputs.ags.homeManagerModules.default
                     inputs.anyrun.homeManagerModules.default
+                    inputs.sops-nix.homeManagerModules.sops
                   ];
                 };
               };

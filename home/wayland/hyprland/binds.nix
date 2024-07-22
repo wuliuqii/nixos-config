@@ -86,6 +86,7 @@ in
         "$altMod, l, movefocus, r"
         "$altMod, k, movefocus, u"
         "$altMod, j, movefocus, d"
+        "$altMod, s, layoutmsg, swapwithmaster master"
 
         # move window in current workspace
         "$altMod SHIFT,left ,movewindow, l"

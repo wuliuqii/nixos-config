@@ -17,7 +17,7 @@
     ];
 
     general = {
-      layout = "dwindle";
+      layout = "master";
       resize_on_border = true;
       border_size = 2;
       gaps_out = 6;
@@ -92,6 +92,10 @@
       # keep floating dimentions while tiling
       pseudotile = true;
       preserve_split = true;
+    };
+
+    master = {
+      new_on_top = true;
     };
 
     misc = {

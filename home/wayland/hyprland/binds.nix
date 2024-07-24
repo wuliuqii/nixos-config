@@ -54,6 +54,7 @@ in
 
         # terminal
         "$mainMod, Return, exec, ${config.machine.terminal}"
+        "$mainMod, d, exec, neovide"
 
         # launcher
         "$mainMod, Space, exec, anyrun"

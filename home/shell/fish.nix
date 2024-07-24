@@ -23,6 +23,7 @@
       cat = "bat";
       c = "clear";
       lg = "lazygit";
+      vd = "neovide";
     };
     plugins = [
       {

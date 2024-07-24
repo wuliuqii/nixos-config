@@ -11,4 +11,9 @@
       tiktoken_core
     ];
   };
+
+
+  home.packages = with pkgs; [
+    neovide
+  ];
 }

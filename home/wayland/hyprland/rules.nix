@@ -70,7 +70,7 @@
         "center, class:^(Code)$, title:^(Open Folder|Open File)$"
         "size 60% 60%, class:^(Code)$, title:^(Open Folder|Open File)$"
 
-        "opacity 0.80, class:^(Code|firefox|kitty|foot|com.obsproject.Studio)$"
+        "opacity 0.80, class:^(Code|firefox|kitty|neovide|foot|com.obsproject.Studio)$"
         "opacity 0.80 0.70, class:${float-center-apps}"
         "float, class:${float-center-apps}"
         "center, class:${float-center-apps}"

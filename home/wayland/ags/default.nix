@@ -13,6 +13,7 @@
     wayshot
     hyprpicker
     wl-clipboard
+    wl-screenrec
     cliphist
     wlr-randr
     slurp

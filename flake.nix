@@ -24,6 +24,8 @@
     hyprpaper.url = "github:hyprwm/hyprpaper";
     hyprlock.url = "github:hyprwm/hyprlock";
 
+    honkai-railway-grub-theme.url = "github:voidlhf/StarRailGrubThemes";
+
     ags.url = "github:Aylur/ags";
 
     anyrun.url = "github:Kirottu/anyrun";

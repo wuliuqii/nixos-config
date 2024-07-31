@@ -37,8 +37,13 @@ in
 
   boot = {
     loader = {
-      systemd-boot = {
+      grub = rec {
         enable = true;
+        device = "nodev";
+        theme = inputs.honkai-railway-grub-theme.packages.${pkgs.system}.aventurine-grub-theme;
+        splashImage = "${theme}/background.png";
+        efiSupport = true;
+        useOSProber = true;
         configurationLimit = 10;
       };
       efi = {
@@ -51,6 +56,8 @@ in
     kernelParams = [
       "quiet"
       "splash"
+      "systemd.show_status=auto"
+      "rd.udev.log_level=3"
     ];
     consoleLogLevel = 0;
     initrd.verbose = false;

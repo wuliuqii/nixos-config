@@ -10,23 +10,29 @@
           in
           "^(${elements})$";
 
-        ignorealpha = [
-          # ags
+        lowopacity = [
+          "bar[0-9]"
           "dock[0-9]"
+          "dashboard"
           "notifications[0-9]"
           "quicksettings"
-          "dashboard"
-
-          "anyrun"
         ];
 
-        layers = ignorealpha ++ [ "bar[0-9]" "gtk-layer-shell" "logout_dialog" ];
+        highopacity = [
+          "anyrun"
+          "logout_dialog"
+        ];
+
+        blurred = lib.concatLists [
+          lowopacity
+          highopacity
+        ];
       in
       [
-        "blur, ${toRegex layers}"
-        "xray 1, ${toRegex ["bar[0-9]" "gtk-layer-shell"]}"
-        "ignorealpha 0.2, ${toRegex ["bar[0-9]" "gtk-layer-shell"]}"
-        "ignorealpha 0.5, ${toRegex ["anyrun"]}"
+        "blur, ${toRegex blurred}"
+        "xray 1, ${toRegex ["bar"]}"
+        "ignorealpha 0.5, ${toRegex (highopacity)}"
+        "ignorealpha 0.2, ${toRegex lowopacity}"
       ];
 
     # window rules
@@ -63,9 +69,8 @@
         "dimaround, class:^(xdg-desktop-portal-gtk|polkit-gnome-authentication-agent-1)$"
 
         "rounding 0, xwayland:1"
-        # "center, class:^(jetbrains-rustrover)$, title:^(Confirm Exit|Open File or Project|Settings|splash)$"
-        # "size 80% 80%, class:^(jetbrains-rustrover)$, title:^(splash|Open File or Project|Settings)$"
-        "noinitialfocus, class:^jetbrains-(?|toolbox), floating:1"
+        "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
+        "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
 
         "center, class:^(Code)$, title:^(Open Folder|Open File)$"
         "size 60% 60%, class:^(Code)$, title:^(Open Folder|Open File)$"

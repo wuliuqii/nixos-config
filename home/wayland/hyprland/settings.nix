@@ -12,18 +12,14 @@
       "hyprlock"
     ];
 
-    source = [
-      "~/.config/hypr/macchiato.conf"
-    ];
-
     general = {
       layout = "master";
       resize_on_border = true;
       border_size = 2;
       gaps_out = 6;
       gaps_in = 3;
-      "col.active_border" = "$pink";
-      "col.inactive_border" = "$surface0";
+      "col.active_border" = "0xee$lavenderAlpha 0xee$accentAlpha 45deg";
+      "col.inactive_border" = "0xaa$overlay0Alpha 0xaa$mantleAlpha 45deg";
     };
 
     decoration = {
@@ -89,7 +85,7 @@
     };
 
     dwindle = {
-      # keep floating dimentions while tiling
+      # keep floating dimensions while tiling
       pseudotile = true;
       preserve_split = true;
     };
@@ -102,6 +98,8 @@
     misc = {
       vrr = 1;
       no_direct_scanout = false;
+      disable_hyprland_logo = true;
+      disable_splash_rendering = true;
     };
 
     # touchpad gestures

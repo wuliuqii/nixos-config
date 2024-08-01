@@ -19,46 +19,6 @@
         },
         "version": "ce244cfdf43a648d984719fdfd1d60aab09f5c97"
     },
-    "catppuccin-fish": {
-        "cargoLocks": null,
-        "date": "2024-05-14",
-        "extract": null,
-        "name": "catppuccin-fish",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "catppuccin",
-            "repo": "fish",
-            "rev": "a3b9eb5eaf2171ba1359fe98f20d226c016568cf",
-            "sha256": "sha256-shQxlyoauXJACoZWtRUbRMxmm10R8vOigXwjxBhG8ng=",
-            "type": "github"
-        },
-        "version": "a3b9eb5eaf2171ba1359fe98f20d226c016568cf"
-    },
-    "catppuccin-hyprland": {
-        "cargoLocks": null,
-        "date": "2024-06-19",
-        "extract": null,
-        "name": "catppuccin-hyprland",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "catppuccin",
-            "repo": "hyprland",
-            "rev": "c388ac55563ddeea0afe9df79d4bfff0096b146b",
-            "sha256": "sha256-xSa/z0Pu+ioZ0gFH9qSo9P94NPkEMovstm1avJ7rvzM=",
-            "type": "github"
-        },
-        "version": "c388ac55563ddeea0afe9df79d4bfff0096b146b"
-    },
     "fcitx5-pinyin-moegirl": {
         "cargoLocks": null,
         "date": null,
@@ -171,7 +131,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-07-28",
+        "date": "2024-08-01",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -183,10 +143,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "bf863a9edb8ffca653b13bc3c1c8e1ee71c9a051",
-            "sha256": "sha256-XlgzpwPnyUzPY7LuohYDTd/sDr/Zeu612CJtmRQsS7w=",
+            "rev": "fce588292f0b69ed967197a2b347708ace96dd7b",
+            "sha256": "sha256-7AljalOJWZ7Xvr7pZsXBaOX3/WWme/nN77bm21Dswsk=",
             "type": "github"
         },
-        "version": "bf863a9edb8ffca653b13bc3c1c8e1ee71c9a051"
+        "version": "fce588292f0b69ed967197a2b347708ace96dd7b"
     }
 }

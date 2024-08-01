@@ -14,9 +14,10 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    catppuccin.enable = true;
   };
 
-  xdg.configFile = {
-    "hypr/macchiato.conf".source = "${pkgs.catppuccin-hyprland}/macchiato.conf";
-  };
+  # xdg.configFile = {
+  #   "hypr/macchiato.conf".source = "${pkgs.catppuccin-hyprland}/macchiato.conf";
+  # };
 }

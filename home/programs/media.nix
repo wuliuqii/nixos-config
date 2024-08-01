@@ -7,15 +7,21 @@
       netease-cloud-music-gtk
       termusic
       pavucontrol
-      cava
     ];
   };
 
   programs = {
     mpv = {
       enable = true;
+      catppuccin.enable = true;
       defaultProfiles = [ "gpu-hq" ];
       scripts = [ pkgs.mpvScripts.mpris ];
+    };
+
+
+    cava = {
+      enable = true;
+      catppuccin.enable = true;
     };
   };
 }

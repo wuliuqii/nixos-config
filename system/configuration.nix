@@ -39,9 +39,10 @@ in
     loader = {
       grub = rec {
         enable = true;
+        catppuccin.enable = true;
         device = "nodev";
-        theme = inputs.honkai-railway-grub-theme.packages.${pkgs.system}.aventurine-grub-theme;
-        splashImage = "${theme}/background.png";
+        # theme = inputs.honkai-railway-grub-theme.packages.${pkgs.system}.aventurine-grub-theme;
+        # splashImage = "${theme}/background.png";
         efiSupport = true;
         useOSProber = true;
         configurationLimit = 10;

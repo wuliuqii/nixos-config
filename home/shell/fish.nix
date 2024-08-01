@@ -3,12 +3,12 @@
 {
   programs.fish = {
     enable = true;
+    catppuccin.enable = true;
     functions = {
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
     };
     interactiveShellInit = ''
       set fish_greeting
-      fish_config theme choose "Catppuccin Macchiato"
       set PATH $PATH ~/.cargo/bin
     '';
     shellAliases = {
@@ -35,9 +35,5 @@
         src = pkgs.fishPlugins.autopair.src;
       }
     ];
-  };
-
-  xdg.configFile = {
-    "fish/themes/Catppuccin Macchiato.theme".source = "${pkgs.catppuccin-fish}/share/fish/tools/web_config/themes/Catppuccin Macchiato.theme";
   };
 }

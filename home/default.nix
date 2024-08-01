@@ -12,6 +12,7 @@ in
     ./wayland
     ./services
     ./secrets
+    ./theme
   ];
 
   home = {

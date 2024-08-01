@@ -13,30 +13,6 @@
     };
     date = "2022-10-05";
   };
-  catppuccin-fish = {
-    pname = "catppuccin-fish";
-    version = "a3b9eb5eaf2171ba1359fe98f20d226c016568cf";
-    src = fetchFromGitHub {
-      owner = "catppuccin";
-      repo = "fish";
-      rev = "a3b9eb5eaf2171ba1359fe98f20d226c016568cf";
-      fetchSubmodules = false;
-      sha256 = "sha256-shQxlyoauXJACoZWtRUbRMxmm10R8vOigXwjxBhG8ng=";
-    };
-    date = "2024-05-14";
-  };
-  catppuccin-hyprland = {
-    pname = "catppuccin-hyprland";
-    version = "c388ac55563ddeea0afe9df79d4bfff0096b146b";
-    src = fetchFromGitHub {
-      owner = "catppuccin";
-      repo = "hyprland";
-      rev = "c388ac55563ddeea0afe9df79d4bfff0096b146b";
-      fetchSubmodules = false;
-      sha256 = "sha256-xSa/z0Pu+ioZ0gFH9qSo9P94NPkEMovstm1avJ7rvzM=";
-    };
-    date = "2024-06-19";
-  };
   fcitx5-pinyin-moegirl = {
     pname = "fcitx5-pinyin-moegirl";
     version = "20240709";
@@ -103,14 +79,14 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "bf863a9edb8ffca653b13bc3c1c8e1ee71c9a051";
+    version = "fce588292f0b69ed967197a2b347708ace96dd7b";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "bf863a9edb8ffca653b13bc3c1c8e1ee71c9a051";
+      rev = "fce588292f0b69ed967197a2b347708ace96dd7b";
       fetchSubmodules = false;
-      sha256 = "sha256-XlgzpwPnyUzPY7LuohYDTd/sDr/Zeu612CJtmRQsS7w=";
+      sha256 = "sha256-7AljalOJWZ7Xvr7pZsXBaOX3/WWme/nN77bm21Dswsk=";
     };
-    date = "2024-07-28";
+    date = "2024-08-01";
   };
 }

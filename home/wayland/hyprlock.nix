@@ -9,7 +9,7 @@ in
     package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
 
     settings = {
-      source = "~/.config/hypr/macchiato.conf";
+      source = [ (config.catppuccin.sources.hyprland + "/themes/${config.catppuccin.flavor}.conf") ];
 
       general = {
         # disable_loading_bar = true;

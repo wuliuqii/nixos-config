@@ -34,6 +34,8 @@
       # inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    catppuccin.url = "github:catppuccin/nix";
+
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -63,6 +65,7 @@
             ./machines/laptop
 
             inputs.home-manager.nixosModules.home-manager
+            inputs.catppuccin.nixosModules.catppuccin
             inputs.nix-minecraft.nixosModules.minecraft-servers
             ({ config, ... }: {
               home-manager = {
@@ -80,6 +83,7 @@
                     inputs.ags.homeManagerModules.default
                     inputs.anyrun.homeManagerModules.default
                     inputs.sops-nix.homeManagerModules.sops
+                    inputs.catppuccin.homeManagerModules.catppuccin
                   ];
                 };
               };

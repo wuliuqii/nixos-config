@@ -4,6 +4,7 @@
   programs = {
     kitty = {
       enable = true;
+      catppuccin.enable = true;
       environment = { };
       keybindings = { };
       font.name = "JetBrains Mono";
@@ -17,7 +18,6 @@
         background_opacity = "0.8";
         hide_window_decorations = "yes";
       };
-      theme = "Catppuccin-Macchiato";
     };
   };
 }

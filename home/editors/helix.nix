@@ -2,9 +2,8 @@
 {
   programs.helix = {
     enable = true;
+    catppuccin.enable = true;
     settings = {
-      theme = "catppuccin_macchiato";
-
       editor = {
         line-number = "relative";
         bufferline = "multiple";

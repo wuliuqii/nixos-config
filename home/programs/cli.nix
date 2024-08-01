@@ -13,6 +13,7 @@
 
     bat = {
       enable = true;
+      catppuccin.enable = true;
       config = {
         pager = "less -FR";
       };
@@ -20,6 +21,7 @@
 
     skim = {
       enable = true;
+      catppuccin.enable = true;
       enableFishIntegration = true;
       defaultCommand = "rg --files --hidden";
       changeDirWidgetOptions = [
@@ -30,12 +32,16 @@
 
     btop = {
       enable = true;
-
+      catppuccin.enable = true;
       settings = {
-        color_theme = "dracula";
         theme_background = false;
         update_ms = 500;
       };
+    };
+
+    imv = {
+      enable = true;
+      catppuccin.enable = true;
     };
 
     eza.enable = true;
@@ -47,16 +53,11 @@
       fd
       ripgrep
 
-      # image viewer
-      imv
-
       # misc
       killall
-      lazygit
       tokei
       tree
       jaq
-      gitu
     ];
   };
 }

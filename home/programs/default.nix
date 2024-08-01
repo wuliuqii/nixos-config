@@ -5,7 +5,6 @@
     ./firefox
 
     ./media.nix
-    ./gtk.nix
     ./zathura.nix
     ./cli.nix
     ./mimelist.nix

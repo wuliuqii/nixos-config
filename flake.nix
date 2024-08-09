@@ -24,8 +24,6 @@
     hyprpaper.url = "github:hyprwm/hyprpaper";
     hyprlock.url = "github:hyprwm/hyprlock";
 
-    honkai-railway-grub-theme.url = "github:voidlhf/StarRailGrubThemes";
-
     ags.url = "github:Aylur/ags";
 
     anyrun.url = "github:Kirottu/anyrun";
@@ -47,19 +45,25 @@
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
     let
       system = "x86_64-linux";
       selfPkgs = import ./pkgs;
-      pkgs = import nixpkgs {
-        inherit system;
-      };
+      pkgs = import nixpkgs { inherit system; };
     in
     {
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+          };
           modules = [
             ./system/configuration.nix
             ./machines/laptop
@@ -67,27 +71,30 @@
             inputs.home-manager.nixosModules.home-manager
             inputs.catppuccin.nixosModules.catppuccin
             inputs.nix-minecraft.nixosModules.minecraft-servers
-            ({ config, ... }: {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = { inherit inputs; };
-                sharedModules = [
-                  (./. + "/machines/${config.machine.userName}.nix")
-                ];
-                users.${config.machine.userName} = {
-                  imports = [
-                    ./home
-                  ] ++ [
-                    inputs.hyprland.homeManagerModules.default
-                    inputs.ags.homeManagerModules.default
-                    inputs.anyrun.homeManagerModules.default
-                    inputs.sops-nix.homeManagerModules.sops
-                    inputs.catppuccin.homeManagerModules.catppuccin
-                  ];
+            (
+              { config, ... }:
+              {
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  extraSpecialArgs = {
+                    inherit inputs;
+                  };
+                  sharedModules = [ (./. + "/machines/${config.machine.userName}.nix") ];
+                  users.${config.machine.userName} = {
+                    imports =
+                      [ ./home ]
+                      ++ [
+                        inputs.hyprland.homeManagerModules.default
+                        inputs.ags.homeManagerModules.default
+                        inputs.anyrun.homeManagerModules.default
+                        inputs.sops-nix.homeManagerModules.sops
+                        inputs.catppuccin.homeManagerModules.catppuccin
+                      ];
+                  };
                 };
-              };
-            })
+              }
+            )
 
             {
               nixpkgs.overlays = [

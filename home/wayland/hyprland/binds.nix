@@ -2,8 +2,8 @@
 let
   e = "exec, ags";
 
-  workspaces = builtins.concatLists (builtins.genList
-    (
+  workspaces = builtins.concatLists (
+    builtins.genList (
       x:
       let
         ws =
@@ -16,8 +16,8 @@ let
         "$altMod, ${ws}, workspace, ${toString (x + 1)}"
         "$altMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
       ]
-    )
-    10);
+    ) 10
+  );
 in
 {
   wayland.windowManager.hyprland.settings = {
@@ -76,7 +76,6 @@ in
         "$altMod, R, ${e} -r 'recorder.start()'"
         "$altMod CTRL, Z, ${e} -r 'recorder.screenshot()'"
         "$altMod, Z, ${e} -r 'recorder.screenshot(true)'"
-
 
         # move focus
         "$altMod, left, movefocus, l"
@@ -138,5 +137,3 @@ in
     ];
   };
 }
-
-

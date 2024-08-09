@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   programs.neovim = {
     enable = true;
     package = inputs.neovim-nightly.packages.${pkgs.system}.default;
@@ -7,13 +8,8 @@
     withRuby = false;
     withPython3 = false;
     # copilot chat dependency
-    extraLuaPackages = luaPkgs: with luaPkgs; [
-      tiktoken_core
-    ];
+    extraLuaPackages = luaPkgs: with luaPkgs; [ tiktoken_core ];
   };
 
-
-  home.packages = with pkgs; [
-    neovide
-  ];
+  home.packages = with pkgs; [ neovide ];
 }

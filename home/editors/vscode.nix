@@ -43,9 +43,7 @@
       "nix.serverSettings" = {
         "nil" = {
           "formatting" = {
-            "command" = [
-              "nixpkgs-fmt"
-            ];
+            "command" = [ "nixpkgs-fmt" ];
           };
         };
       };

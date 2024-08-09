@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   user = config.machine.userName;
 in
@@ -37,12 +42,10 @@ in
 
   boot = {
     loader = {
-      grub = rec {
+      grub = {
         enable = true;
         catppuccin.enable = true;
         device = "nodev";
-        # theme = inputs.honkai-railway-grub-theme.packages.${pkgs.system}.aventurine-grub-theme;
-        # splashImage = "${theme}/background.png";
         efiSupport = true;
         useOSProber = true;
         configurationLimit = 10;
@@ -53,7 +56,7 @@ in
       };
       timeout = 3;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
     kernelParams = [
       "quiet"
       "splash"
@@ -78,9 +81,7 @@ in
 
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [
-      "openssl-1.1.1w"
-    ];
+    permittedInsecurePackages = [ "openssl-1.1.1w" ];
   };
 
   nix = {

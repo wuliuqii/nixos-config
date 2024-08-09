@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     # nil
     nixpkgs-fmt
+    nixfmt-rfc-style
     nil
 
     # markdown

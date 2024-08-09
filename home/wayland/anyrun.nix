@@ -1,7 +1,4 @@
-{ inputs
-, pkgs
-, ...
-}:
+{ inputs, pkgs, ... }:
 let
   myAnyrunPkgs = inputs.anyrun-plugins.packages.${pkgs.system};
   anyrunPkgs = inputs.anyrun.packages.${pkgs.system};

@@ -97,7 +97,6 @@
 
     misc = {
       vrr = 1;
-      no_direct_scanout = false;
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
     };

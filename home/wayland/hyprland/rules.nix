@@ -4,7 +4,8 @@
     # layer rules
     layerrule =
       let
-        toRegex = list:
+        toRegex =
+          list:
           let
             elements = lib.concatStringsSep "|" list;
           in
@@ -30,7 +31,7 @@
       in
       [
         "blur, ${toRegex blurred}"
-        "xray 1, ${toRegex ["bar"]}"
+        "xray 1, ${toRegex [ "bar" ]}"
         "ignorealpha 0.5, ${toRegex (highopacity)}"
         "ignorealpha 0.2, ${toRegex lowopacity}"
       ];
@@ -39,10 +40,8 @@
     # use `hyprctl clients` to find out the class and title of a window
     windowrulev2 =
       let
-        float-center-apps =
-          "^(one.alynx.showmethekey|pavucontrol|org.gnome.Loupe|org.gnome.Nautilus|org.kde.kdeconnect.daemon|org.kde.kdeconnect-indicator|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv)$";
-        media-apps =
-          "^(swappy|com.github.neithern.g4music|com.gitee.gmg137.NeteaseCloudMusicGtk4|QQ|thunderbird|Slack|org.telegram.desktop|cinny|discord|wechat)$";
+        float-center-apps = "^(one.alynx.showmethekey|pavucontrol|org.gnome.Loupe|org.gnome.Nautilus|org.kde.kdeconnect.daemon|org.kde.kdeconnect-indicator|org.kde.kdeconnect.app|.blueman-manager-wrapped|nm-applet|nm-connection-editor|imv|mpv)$";
+        media-apps = "^(swappy|com.github.neithern.g4music|com.gitee.gmg137.NeteaseCloudMusicGtk4|QQ|thunderbird|Slack|org.telegram.desktop|cinny|discord|wechat)$";
       in
       [
         # telegram media viewer
@@ -75,7 +74,7 @@
         "center, class:^(Code)$, title:^(Open Folder|Open File)$"
         "size 60% 60%, class:^(Code)$, title:^(Open Folder|Open File)$"
 
-        "opacity 0.80, class:^(Code|firefox|kitty|neovide|foot|com.obsproject.Studio)$"
+        "opacity 0.80, class:^(Code|firefox|kitty|neovide|foot|footclient|com.obsproject.Studio)$"
         "opacity 0.80 0.70, class:${float-center-apps}"
         "float, class:${float-center-apps}"
         "center, class:${float-center-apps}"
@@ -88,9 +87,9 @@
         "float, class:^(org.rgs.*)$"
       ];
 
-    workspace = builtins.concatLists
-      (builtins.genList
-        (
+    workspace =
+      builtins.concatLists (
+        builtins.genList (
           x:
           let
             ws =
@@ -99,13 +98,9 @@
               in
               builtins.toString (x + 1 - (c * 10));
           in
-          [
-            "DP-3, ${ws}"
-          ]
-        )
-        5) ++ [
-      "eDP-1, 1"
-    ];
+          [ "DP-3, ${ws}" ]
+        ) 5
+      )
+      ++ [ "eDP-1, 1" ];
   };
 }
-

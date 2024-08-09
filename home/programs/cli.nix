@@ -19,17 +19,6 @@
       };
     };
 
-    skim = {
-      enable = true;
-      catppuccin.enable = true;
-      enableFishIntegration = true;
-      defaultCommand = "rg --files --hidden";
-      changeDirWidgetOptions = [
-        "--preview 'eza --icons --git --color always -T -L 3 {} | head -200'"
-        "--exact"
-      ];
-    };
-
     btop = {
       enable = true;
       package = pkgs.btop.override { rocmSupport = true; };
@@ -43,6 +32,17 @@
     imv = {
       enable = true;
       catppuccin.enable = true;
+    };
+
+    fzf = {
+      enable = true;
+      catppuccin.enable = true;
+      enableFishIntegration = true;
+      defaultCommand = "rg --files --hidden";
+      changeDirWidgetOptions = [
+        "--preview 'eza --icons --git --color always -T -L 3 {} | head -200'"
+        "--exact"
+      ];
     };
 
     eza.enable = true;

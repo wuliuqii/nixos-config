@@ -1,4 +1,9 @@
-{ sources, stdenvNoCC, lib, ... }:
+{
+  sources,
+  stdenvNoCC,
+  lib,
+  ...
+}:
 stdenvNoCC.mkDerivation {
   inherit (sources.fcitx5-pinyin-zhwiki) pname version src;
 

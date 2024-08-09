@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # KDEConnect user service
   systemd.user.services.kdeconnect = {
     Unit.Description = "KDEConnect Service";

@@ -7,7 +7,12 @@
       editor = {
         line-number = "relative";
         bufferline = "multiple";
-        gutters = [ "diff" "diagnostics" "line-numbers" "spacer" ];
+        gutters = [
+          "diff"
+          "diagnostics"
+          "line-numbers"
+          "spacer"
+        ];
         idle-timeout = 100;
         auto-save = false;
         mouse = false;
@@ -45,7 +50,10 @@
           formatter = {
             command = "nixpkgs-fmt";
           };
-          language-servers = [ "nil" "codeium" ];
+          language-servers = [
+            "nil"
+            "codeium"
+          ];
         }
         {
           name = "rust";
@@ -53,7 +61,10 @@
         }
         {
           name = "zig";
-          language-servers = [ "zls" "codeium" ];
+          language-servers = [
+            "zls"
+            "codeium"
+          ];
         }
       ];
 
@@ -69,7 +80,10 @@
         # };
         codeium = {
           command = "${helix-gpt}/bin/helix-gpt";
-          args = [ "--handler" "codeium" ];
+          args = [
+            "--handler"
+            "codeium"
+          ];
         };
         rust-analyzer.config = {
           imports = {
@@ -99,4 +113,3 @@
     };
   };
 }
-

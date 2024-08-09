@@ -32,6 +32,7 @@
 
     btop = {
       enable = true;
+      package = pkgs.btop.override { rocmSupport = true; };
       catppuccin.enable = true;
       settings = {
         theme_background = false;

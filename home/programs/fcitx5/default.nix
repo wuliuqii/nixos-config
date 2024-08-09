@@ -8,8 +8,7 @@ in
     "${fcitx5Home}/config".source = ./config;
     "${fcitx5Home}/conf/classicui.conf".source = ./classicui.conf;
     "${fcitx5Home}/conf/rime.conf".source = ./rime.conf;
-    ".local/share/fcitx5/rime/default.custom.yaml".source =
-      ./default.custom.yaml;
+    ".local/share/fcitx5/rime/default.custom.yaml".source = ./default.custom.yaml;
   };
 
   # i18n.inputMethod.fcitx5.catppuccin = {

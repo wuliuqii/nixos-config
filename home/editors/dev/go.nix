@@ -6,7 +6,6 @@
     goBin = "go/bin";
   };
 
-
   home.packages = with pkgs; [
     gopls
     gomodifytags
@@ -18,7 +17,5 @@
     golangci-lint
   ];
 
-  home.sessionPath = [
-    "$HOME/go/bin"
-  ];
+  home.sessionPath = [ "$HOME/go/bin" ];
 }

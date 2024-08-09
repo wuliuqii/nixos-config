@@ -18,7 +18,6 @@
       scripts = [ pkgs.mpvScripts.mpris ];
     };
 
-
     cava = {
       enable = true;
       catppuccin.enable = true;

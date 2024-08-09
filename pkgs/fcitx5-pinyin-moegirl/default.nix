@@ -1,4 +1,9 @@
-{ sources, stdenv, lib, ... }:
+{
+  sources,
+  stdenv,
+  lib,
+  ...
+}:
 stdenv.mkDerivation {
   inherit (sources.fcitx5-pinyin-moegirl) pname version src;
 

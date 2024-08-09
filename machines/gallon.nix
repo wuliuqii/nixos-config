@@ -8,7 +8,7 @@
     shell = pkgs.fish;
     editor = "nvim";
     browser = "firefox";
-    terminal = "foot";
+    terminal = "footclient";
     wallpaper = ../wallpaper/catppuccin/evening-sky.png;
     lockImage = ../wallpaper/catppuccin/windows-error.jpg;
   };

@@ -30,3 +30,7 @@ fetch.github = "lotem/librime-octagram"
 [librime-proto]
 src.git = "https://github.com/lotem/librime-proto.git"
 fetch.github = "lotem/librime-proto"
+
+[shyfox]
+src.git = "https://github.com/Naezr/ShyFox.git"
+fetch.github = "Naezr/ShyFox"

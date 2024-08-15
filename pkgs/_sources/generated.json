@@ -148,5 +148,25 @@
             "type": "github"
         },
         "version": "f37863cbc5073d4adfe305fe5a9f3af3ae67814d"
+    },
+    "shyfox": {
+        "cargoLocks": null,
+        "date": "2024-08-06",
+        "extract": null,
+        "name": "shyfox",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Naezr",
+            "repo": "ShyFox",
+            "rev": "73a25ebd70f5c02fe61dc96467550b8b8f146d3b",
+            "sha256": "sha256-lVE0NbModRylA8s2SlBI85pMMob9dvwv0MgnKrXGqHo=",
+            "type": "github"
+        },
+        "version": "73a25ebd70f5c02fe61dc96467550b8b8f146d3b"
     }
 }

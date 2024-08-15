@@ -89,4 +89,16 @@
     };
     date = "2024-08-13";
   };
+  shyfox = {
+    pname = "shyfox";
+    version = "73a25ebd70f5c02fe61dc96467550b8b8f146d3b";
+    src = fetchFromGitHub {
+      owner = "Naezr";
+      repo = "ShyFox";
+      rev = "73a25ebd70f5c02fe61dc96467550b8b8f146d3b";
+      fetchSubmodules = false;
+      sha256 = "sha256-lVE0NbModRylA8s2SlBI85pMMob9dvwv0MgnKrXGqHo=";
+    };
+    date = "2024-08-06";
+  };
 }

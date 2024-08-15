@@ -28,11 +28,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-1BNfyMM7T19glWsB9oOOMHEWc+SE/qrxx5rsAz386Os=",
+            "sha256": "sha256-2jSKzDgjxuz0/Agqefy4JrScmqM7SXnIuZlLMkqAGT0=",
             "type": "url",
-            "url": "https://github.com/outloudvi/mw2fcitx/releases/download/20240709/moegirl.dict"
+            "url": "https://github.com/outloudvi/mw2fcitx/releases/download/20240809/moegirl.dict"
         },
-        "version": "20240709"
+        "version": "20240809"
     },
     "fcitx5-pinyin-zhwiki": {
         "cargoLocks": null,
@@ -131,7 +131,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-08-01",
+        "date": "2024-08-13",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -143,10 +143,10 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "fce588292f0b69ed967197a2b347708ace96dd7b",
-            "sha256": "sha256-7AljalOJWZ7Xvr7pZsXBaOX3/WWme/nN77bm21Dswsk=",
+            "rev": "f37863cbc5073d4adfe305fe5a9f3af3ae67814d",
+            "sha256": "sha256-hTqvsiAf0rYMzMqfsfPOJU7Rtbx0gQlpsjiKxBY2Hc8=",
             "type": "github"
         },
-        "version": "fce588292f0b69ed967197a2b347708ace96dd7b"
+        "version": "f37863cbc5073d4adfe305fe5a9f3af3ae67814d"
     }
 }

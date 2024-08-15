@@ -27,7 +27,7 @@
     # Social Apps
     telegram-desktop
     discord
-    cinny-desktop
+    # cinny-desktop
     slack
     qq
     (wechat-uos.override {

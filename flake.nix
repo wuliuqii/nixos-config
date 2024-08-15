@@ -3,19 +3,21 @@
 
   nixConfig = {
     extra-substituters = [
-      "https://hyprland.cachix.org/"
       "https://nix-community.cachix.org"
-      "https://anyrun.cachix.org"
+      "https://cosmic.cachix.org/"
+      # "https://hyprland.cachix.org/"
+      # "https://anyrun.cachix.org"
     ];
     extra-trusted-public-keys = [
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+      "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+      # "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      # "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
     ];
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
@@ -34,7 +36,6 @@
       url = "github:wuliuqii/anyrun-plugins";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-
     catppuccin.url = "github:catppuccin/nix";
 
     nix-minecraft = {
@@ -44,6 +45,11 @@
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -68,7 +74,7 @@
             inherit inputs;
           };
           modules = [
-            ./system/configuration.nix
+            ./system
             ./machines/laptop
 
             inputs.home-manager.nixosModules.home-manager
@@ -88,9 +94,6 @@
                     imports =
                       [ ./home ]
                       ++ [
-                        inputs.hyprland.homeManagerModules.default
-                        inputs.ags.homeManagerModules.default
-                        inputs.anyrun.homeManagerModules.default
                         inputs.sops-nix.homeManagerModules.sops
                         inputs.catppuccin.homeManagerModules.catppuccin
                       ];

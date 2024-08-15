@@ -8,16 +8,6 @@ let
   user = config.machine.userName;
 in
 {
-  imports = [
-    ./font.nix
-    ./hardware.nix
-    ./security.nix
-    ./services.nix
-    ./virtualisation.nix
-    ./desktop.nix
-    ./network.nix
-  ];
-
   time.timeZone = "Asia/Shanghai";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -88,8 +78,8 @@ in
     settings = {
       substituters = [
         # "https://mirror.sjtu.edu.cn/nix-channels/store"
+        # "https://cache.nixos.org?priority=10"
         "https://mirrors.cernet.edu.cn/nix-channels/store"
-        # "https://cache.nixos.org/"
       ];
       trusted-users = [ "${user}" ];
       auto-optimise-store = true; # Optimise syslinks

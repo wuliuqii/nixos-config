@@ -1,16 +1,5 @@
+{ pkgs, ... }:
 {
-  pkgs,
-  config,
-  lib,
-  ...
-}:
-{
-  catppuccin = {
-    # enable = true;
-    accent = "mauve";
-    flavor = "macchiato";
-  };
-
   gtk = {
     enable = true;
     catppuccin.enable = true;

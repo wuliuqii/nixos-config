@@ -1,4 +1,4 @@
-{ config, ... }:
+{ lib, config, ... }:
 let
   user = config.machine.userName;
   editor = config.machine.editor;
@@ -9,10 +9,9 @@ in
     ./programs
     ./shell
     ./terminals
-    ./wayland
-    ./services
     ./secrets
-    ./theme
+
+    # ./hypr
   ];
 
   home = {
@@ -24,6 +23,13 @@ in
       BROWSER = "${config.machine.browser}";
       TERMINAL = "${config.machine.terminal}";
     };
+
+  };
+
+  catppuccin = {
+    # enable = true;
+    accent = "mauve";
+    flavor = "macchiato";
   };
 
   programs = {

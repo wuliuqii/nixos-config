@@ -1,7 +1,7 @@
-{ lib, config, ... }:
+{ config, ... }:
 let
-  user = config.machine.userName;
-  editor = config.machine.editor;
+  user = config.profile.userName;
+  editor = config.profile.editor;
 in
 {
   imports = [
@@ -16,12 +16,12 @@ in
 
   home = {
     username = "${user}";
-    homeDirectory = "/home/${config.machine.userName}";
+    homeDirectory = "/home/${config.profile.userName}";
 
     sessionVariables = {
       EDITOR = "${editor}";
-      BROWSER = "${config.machine.browser}";
-      TERMINAL = "${config.machine.terminal}";
+      BROWSER = "${config.profile.browser}";
+      TERMINAL = "${config.profile.terminal}";
     };
 
   };

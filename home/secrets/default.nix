@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  user = "${config.machine.userName}";
+  user = "${config.profile.userName}";
   home = "/home/${user}";
 in
 {
@@ -12,7 +12,7 @@ in
   };
 
   sops = {
-    age.keyFile = "/home/${config.machine.userName}/.config/sops/age/keys.txt";
+    age.keyFile = "/home/${config.profile.userName}/.config/sops/age/keys.txt";
     defaultSopsFile = ./secrets.yaml;
 
     secrets = {

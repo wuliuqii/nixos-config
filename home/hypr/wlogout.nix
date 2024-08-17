@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   bgImageSection = name: ''
     #${name} {
@@ -6,7 +11,8 @@ let
     }
   '';
 in
-{
+
+lib.mkIf config.optional.hypr {
   programs.wlogout = {
     enable = true;
 

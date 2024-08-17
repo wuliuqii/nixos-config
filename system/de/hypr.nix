@@ -5,10 +5,8 @@
   config,
   ...
 }:
-let
-  user = "${config.machine.userName}";
-in
-{
+
+lib.mkIf config.optional.hypr {
   programs = {
     dconf.enable = true;
     light.enable = true;
@@ -50,7 +48,7 @@ in
       let
         session = {
           command = "${lib.getExe config.programs.hyprland.package}";
-          user = user;
+          user = "${config.profile.userName}";
         };
       in
       {

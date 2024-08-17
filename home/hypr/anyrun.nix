@@ -1,9 +1,16 @@
-{ inputs, pkgs, ... }:
+{
+  lib,
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 let
   myAnyrunPkgs = inputs.anyrun-plugins.packages.${pkgs.system};
   anyrunPkgs = inputs.anyrun.packages.${pkgs.system};
 in
-{
+
+lib.mkIf config.optional.hypr {
   programs.anyrun = {
     enable = true;
 

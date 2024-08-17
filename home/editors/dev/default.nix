@@ -3,6 +3,8 @@
   imports = [
     ./go.nix
     ./rust.nix
+    ./zig.nix
+    ./node.nix
   ];
 
   home.packages = with pkgs; [
@@ -18,17 +20,9 @@
     lua-language-server
     stylua
 
-    # zig
-    zig
-    zls
-
     # typst
     typstfmt
     tinymist
-
-    # node
-    nodejs
-    nodePackages.prettier
 
     # json
     vscode-langservers-extracted
@@ -36,7 +30,5 @@
     # build tools
     gcc
     gnumake
-
-    sqlite
   ];
 }

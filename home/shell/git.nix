@@ -2,7 +2,7 @@
 {
   programs = {
     git = {
-      inherit (config.machine) userName userEmail;
+      inherit (config.profile) userName userEmail;
       enable = true;
 
       lfs.enable = true;

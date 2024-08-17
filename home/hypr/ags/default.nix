@@ -1,6 +1,11 @@
-# in home.nix
-{ pkgs, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+
+lib.mkIf config.optional.hypr {
   home.packages = with pkgs; [
     imagemagick
     sassc

@@ -5,7 +5,7 @@
   ...
 }:
 let
-  user = config.machine.userName;
+  user = config.profile.userName;
 in
 {
   time.timeZone = "Asia/Shanghai";

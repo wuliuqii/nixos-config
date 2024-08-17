@@ -6,9 +6,10 @@
   ...
 }:
 let
-  wallpaper = config.machine.wallpaper;
+  wallpaper = config.profile.wallpaper;
 in
-{
+
+lib.mkIf config.optional.hypr {
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ${wallpaper}
     wallpaper = , ${wallpaper}

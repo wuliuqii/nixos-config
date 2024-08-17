@@ -1,5 +1,11 @@
-{ pkgs, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+
+lib.mkIf config.optional.dev.helix {
   programs.helix = {
     enable = true;
     catppuccin.enable = true;

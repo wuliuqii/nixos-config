@@ -1,5 +1,11 @@
-{ pkgs, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+
+lib.mkIf config.optional.hypr {
   # KDEConnect user service
   systemd.user.services.kdeconnect = {
     Unit.Description = "KDEConnect Service";

@@ -1,4 +1,5 @@
 {
+  lib,
   inputs,
   config,
   pkgs,
@@ -7,7 +8,8 @@
 let
   font_family = "JetBrains Mono 10";
 in
-{
+
+lib.mkIf config.optional.hypr {
   programs.hyprlock = {
     enable = true;
 
@@ -26,7 +28,7 @@ in
       background = [
         {
           monitor = "";
-          path = "${config.machine.wallpaper}"; # Only png supported
+          path = "${config.profile.wallpaper}"; # Only png supported
           # path = "screenshot";
           blur_passes = 3; # 0 disables blur
           contrast = 0.8916;

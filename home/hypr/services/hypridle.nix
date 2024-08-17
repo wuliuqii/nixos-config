@@ -13,7 +13,8 @@ let
     fi
   '';
 in
-{
+
+lib.mkIf config.optional.hypr {
   # screen idle
   services.hypridle = {
     enable = true;

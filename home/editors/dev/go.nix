@@ -1,5 +1,11 @@
-{ pkgs, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+
+lib.mkIf config.optional.dev.go {
   programs.go = {
     enable = true;
     goPath = "go";

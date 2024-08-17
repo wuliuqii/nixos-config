@@ -1,4 +1,4 @@
-{ config, ... }:
+{ lib, config, ... }:
 let
   e = "exec, ags";
 
@@ -19,7 +19,8 @@ let
     ) 10
   );
 in
-{
+
+lib.mkIf config.optional.hypr {
   wayland.windowManager.hyprland.settings = {
     monitor = [
       "DP-3, preferred, auto, 2"
@@ -53,7 +54,7 @@ in
         "$mainMod SHIFT, M, exec, hyprctl keyword ${monocle} $(($(hyprctl getoption ${monocle} -j | jaq -r '.int') ^ 1))"
 
         # terminal
-        "$mainMod, Return, exec, ${config.machine.terminal}"
+        "$mainMod, Return, exec, ${config.profile.terminal}"
         "$mainMod, d, exec, neovide"
 
         # launcher

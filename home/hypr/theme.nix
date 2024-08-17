@@ -1,5 +1,11 @@
-{ pkgs, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+
+lib.mkIf config.optional.hypr {
   gtk = {
     enable = true;
     catppuccin.enable = true;

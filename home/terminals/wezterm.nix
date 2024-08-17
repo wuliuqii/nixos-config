@@ -1,5 +1,6 @@
-{ ... }:
-{
+{ lib, config, ... }:
+
+lib.mkIf config.optional.terminal.wezterm {
   programs.wezterm = {
     enable = true;
 

@@ -1,5 +1,11 @@
-{ pkgs, ... }:
 {
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+
+lib.mkIf config.optional.dev.rust {
   home.packages = with pkgs; [
     # rustc
     # cargo

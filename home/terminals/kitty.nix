@@ -1,6 +1,6 @@
-{ ... }:
+{ lib, config, ... }:
 
-{
+lib.mkIf config.optional.terminal.kitty {
   programs = {
     kitty = {
       enable = true;

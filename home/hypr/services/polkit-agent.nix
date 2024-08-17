@@ -1,5 +1,11 @@
-{ pkgs, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+
+lib.mkIf config.optional.hypr {
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
     Unit.Description = "polkit-gnome-authentication-agent-1";
 

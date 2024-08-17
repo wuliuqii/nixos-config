@@ -1,8 +1,8 @@
 { ... }:
 {
   imports = [
-    # ./de/hypr.nix
-    ./de/cosmic.nix
+    ./de/hypr.nix
+    # ./de/cosmic.nix
 
     ./configuration.nix
     ./font.nix

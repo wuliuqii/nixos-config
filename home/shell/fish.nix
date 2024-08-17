@@ -20,7 +20,6 @@
       la = "eza -a";
       lla = "eza -la";
       grep = "rg";
-      cat = "bat";
       c = "clear";
       lg = "lazygit";
       vd = "neovide";

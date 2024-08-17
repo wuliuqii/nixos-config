@@ -11,7 +11,7 @@ in
     ./terminals
     ./secrets
 
-    # ./hypr
+    ./hypr
   ];
 
   home = {

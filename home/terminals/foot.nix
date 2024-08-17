@@ -9,7 +9,6 @@
         font = "JetBrains Mono:size=16";
         box-drawings-uses-font-glyphs = "yes";
         pad = "0x0 center";
-        notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
         selection-target = "clipboard";
       };
 

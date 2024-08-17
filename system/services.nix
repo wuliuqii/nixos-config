@@ -2,8 +2,6 @@
 {
   services = {
     # getty.autologinUser = "${user}";
-    v2raya.enable = true;
-
     pipewire = {
       enable = true;
       alsa.enable = true;

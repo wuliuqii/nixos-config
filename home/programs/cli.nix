@@ -12,14 +12,6 @@
       enableFishIntegration = true;
     };
 
-    bat = {
-      enable = true;
-      catppuccin.enable = true;
-      config = {
-        pager = "less -FR";
-      };
-    };
-
     btop = {
       enable = true;
       package = pkgs.btop.override { rocmSupport = true; };

@@ -34,3 +34,7 @@ fetch.github = "lotem/librime-proto"
 [shyfox]
 src.git = "https://github.com/Naezr/ShyFox.git"
 fetch.github = "Naezr/ShyFox"
+
+[wallpaper]
+src.git = "https://github.com/wuliuqii/wallpaper.git"
+fetch.github = "wuliuqii/wallpaper"

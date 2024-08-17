@@ -28,8 +28,6 @@ with lib;
         type = types.str;
         default = "nvim";
       };
-      wallpaper = mkOption { type = types.path; };
-      lockImage = mkOption { type = types.path; };
       shell = mkOption {
         type = types.package;
         default = pkgs.fish;

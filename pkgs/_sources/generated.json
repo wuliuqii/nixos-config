@@ -168,5 +168,25 @@
             "type": "github"
         },
         "version": "73a25ebd70f5c02fe61dc96467550b8b8f146d3b"
+    },
+    "wallpaper": {
+        "cargoLocks": null,
+        "date": "2024-08-17",
+        "extract": null,
+        "name": "wallpaper",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "wuliuqii",
+            "repo": "wallpaper",
+            "rev": "6cc862c1d5e8bcd455179f20d32b6373a42c92ea",
+            "sha256": "sha256-D2ElvYY3DvLUxZeKBE+ks6OpMyhrUfNepQzcQQPnSGo=",
+            "type": "github"
+        },
+        "version": "6cc862c1d5e8bcd455179f20d32b6373a42c92ea"
     }
 }

@@ -6,7 +6,7 @@
   ...
 }:
 let
-  wallpaper = config.profile.wallpaper;
+  wallpaper = "${pkgs.wallpaper}/catppuccin/evening-sky.png";
 in
 
 lib.mkIf config.optional.hypr {

@@ -28,7 +28,7 @@ lib.mkIf config.optional.hypr {
       background = [
         {
           monitor = "";
-          path = "${config.profile.wallpaper}"; # Only png supported
+          path = "${pkgs.wallpaper}/catppuccin/evening-sky.png"; # Only png supported
           # path = "screenshot";
           blur_passes = 3; # 0 disables blur
           contrast = 0.8916;

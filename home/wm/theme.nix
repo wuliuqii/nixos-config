@@ -5,7 +5,7 @@
   ...
 }:
 
-lib.mkIf config.optional.hypr {
+lib.mkIf config.optional.wm {
   gtk = {
     enable = true;
     catppuccin.enable = true;

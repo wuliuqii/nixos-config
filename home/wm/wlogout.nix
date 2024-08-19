@@ -12,7 +12,7 @@ let
   '';
 in
 
-lib.mkIf config.optional.hypr {
+lib.mkIf config.optional.wm {
   programs.wlogout = {
     enable = true;
 

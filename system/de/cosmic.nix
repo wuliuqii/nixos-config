@@ -1,6 +1,14 @@
-{ lib, config, ... }:
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
+{
+  imports = [ inputs.nixos-cosmic.nixosModules.default ];
 
-lib.mkIf config.optional.cosmic {
-  services.desktopManager.cosmic.enable = true;
-  services.displayManager.cosmic-greeter.enable = true;
+  config = lib.mkIf config.optional.cosmic {
+    services.desktopManager.cosmic.enable = true;
+    services.displayManager.cosmic-greeter.enable = true;
+  };
 }

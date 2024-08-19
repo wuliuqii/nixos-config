@@ -2,5 +2,5 @@
 	path = home/editors/nvim/nvim-config
 	url = https://github.com/wuliuqii/nvim
 [submodule "home/wayland/ags/ags-config"]
-	path = home/hypr/ags/ags-config
+	path = home/wm/ags/ags-config
 	url = https://github.com/wuliuqii/ags-config

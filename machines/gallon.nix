@@ -8,7 +8,9 @@
 
   optional = {
     cosmic = false;
-    hypr = true;
+    wm = true;
+    hypr = false;
+    niri = true;
 
     podman = false;
 

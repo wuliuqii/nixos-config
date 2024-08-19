@@ -4,15 +4,13 @@
   imports = [
     ./hyprland
     ./ags
-    ./services
 
     ./hyprlock.nix
-    ./wlogout.nix
+    ./hypridle.nix
+    ./hyprpaper.nix
+    ./polkit-agent.nix
     ./anyrun.nix
-    ./theme.nix
 
     inputs.hyprland.homeManagerModules.default
-    inputs.ags.homeManagerModules.default
-    inputs.anyrun.homeManagerModules.default
   ];
 }

@@ -31,6 +31,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    niri.url = "github:sodiboo/niri-flake";
+
     ags.url = "github:Aylur/ags";
 
     anyrun.url = "github:Kirottu/anyrun";

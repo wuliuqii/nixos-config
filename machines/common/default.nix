@@ -35,9 +35,17 @@ with lib;
     };
 
     optional = {
-      cosmic = lib.mkEnableOption "cosmic profile";
+      cosmic = lib.mkEnableOption "cosmic profile" // {
+        default = false;
+      };
+      wm = lib.mkEnableOption "wm profile" // {
+        default = true;
+      };
       hypr = lib.mkEnableOption "hyprland profile" // {
         default = true;
+      };
+      niri = lib.mkEnableOption "niri profile" // {
+        default = false;
       };
 
       podman = lib.mkEnableOption "podman profile";

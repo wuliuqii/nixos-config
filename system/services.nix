@@ -8,14 +8,6 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    minecraft-servers = {
-      enable = false;
-      eula = true;
-      # dataDir = $HOME/Documents/minecraft;
-      servers.survival = {
-        enable = true;
-      };
-    };
 
     keyd = {
       enable = true;

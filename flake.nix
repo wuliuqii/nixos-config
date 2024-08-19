@@ -40,11 +40,6 @@
     };
     catppuccin.url = "github:catppuccin/nix";
 
-    nix-minecraft = {
-      url = "github:Infinidoge/nix-minecraft";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -81,7 +76,6 @@
 
             inputs.home-manager.nixosModules.home-manager
             inputs.catppuccin.nixosModules.catppuccin
-            inputs.nix-minecraft.nixosModules.minecraft-servers
             (
               { config, ... }:
               {
@@ -104,12 +98,7 @@
               }
             )
 
-            {
-              nixpkgs.overlays = [
-                inputs.nix-minecraft.overlay
-                selfPkgs.overlay
-              ];
-            }
+            { nixpkgs.overlays = [ selfPkgs.overlay ]; }
           ];
         };
       };

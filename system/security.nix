@@ -11,7 +11,6 @@
       "wheel"
       "video"
       "audio"
-      "minecraft"
     ];
   };
 

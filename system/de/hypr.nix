@@ -6,7 +6,7 @@
   ...
 }:
 
-lib.mkIf config.optional.hypr {
+lib.mkIf config.optional.hypr.enable {
   programs = {
     dconf.enable = true;
     light.enable = true;

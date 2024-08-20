@@ -1,5 +1,11 @@
-{ pkgs, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+
+lib.mkIf config.optional.dev.vscode {
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;

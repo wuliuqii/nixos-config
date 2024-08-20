@@ -9,19 +9,24 @@
   optional = {
     cosmic = false;
     wm = true;
-    hypr = false;
-    niri = true;
+    hypr = {
+      enable = true;
+      scroller = true;
+    };
+    niri = false;
 
     podman = false;
 
     terminal = {
       foot = true;
-      kitty = false;
-      wezterm = false;
+      kitty = true;
+      wezterm = true;
     };
 
     dev = {
       helix = false;
+      zed = true;
+      vscode = false;
 
       rust = true;
       go = false;

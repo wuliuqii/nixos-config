@@ -1,44 +1,6 @@
-{
-  lib,
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ lib, config, ... }:
 
-lib.mkIf config.optional.hypr {
-  home.packages = with pkgs; [
-    networkmanagerapplet
-    qt6.qtwayland
-    libsForQt5.qt5.qtwayland
-  ];
-
-  # fake a tray to let apps start
-  # https://github.com/nix-community/home-manager/issues/2064
-  systemd.user.targets.tray = {
-    Unit = {
-      Description = "Home Manager System Tray";
-      Requires = [ "graphical-session-pre.target" ];
-    };
-  };
-
-  home.sessionVariables = {
-    # XDG_CURRENT_DESKTOP = "Hyprland";
-    # XDG_SESSION_DESKTOP = "Hyprland";
-    GDK_SCALE = "2";
-
-    QT_QPA_PLATFORM = "wayland";
-    SDL_VIDEODRIVER = "wayland";
-    XDG_SESSION_TYPE = "wayland";
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-  };
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
-    catppuccin.enable = true;
-  };
-
+lib.mkIf config.optional.hypr.enable {
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
     "$altMod" = "ALT";
@@ -52,7 +14,7 @@ lib.mkIf config.optional.hypr {
     ];
 
     general = {
-      layout = "master";
+      layout = if config.optional.hypr.scroller then "scroller" else "master";
       resize_on_border = true;
       border_size = 2;
       gaps_out = 6;
@@ -150,5 +112,13 @@ lib.mkIf config.optional.hypr {
     xwayland.force_zero_scaling = true;
 
     debug.disable_logs = false;
+
+    plugin = lib.optional config.optional.hypr.scroller {
+      scroller = {
+        focus_wrap = false;
+        column_default_width = "twothirds";
+        column_widths = "one twothirds onehalf onethird";
+      };
+    };
   };
 }

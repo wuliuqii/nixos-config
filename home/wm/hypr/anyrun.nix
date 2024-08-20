@@ -12,7 +12,7 @@ in
 {
   imports = [ inputs.anyrun.homeManagerModules.default ];
 
-  config = lib.mkIf config.optional.hypr {
+  config = lib.mkIf config.optional.hypr.enable {
     programs.anyrun = {
       enable = true;
 

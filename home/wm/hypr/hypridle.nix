@@ -14,7 +14,7 @@ let
   '';
 in
 
-lib.mkIf config.optional.hypr {
+lib.mkIf config.optional.hypr.enable {
   # screen idle
   services.hypridle = {
     enable = true;

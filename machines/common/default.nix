@@ -41,8 +41,11 @@ with lib;
       wm = lib.mkEnableOption "wm profile" // {
         default = true;
       };
-      hypr = lib.mkEnableOption "hyprland profile" // {
-        default = true;
+      hypr = {
+        enable = lib.mkEnableOption "hyprland profile" // {
+          default = true;
+        };
+        scroller = lib.mkEnableOption "hyprland scroller profile";
       };
       niri = lib.mkEnableOption "niri profile" // {
         default = false;
@@ -58,6 +61,8 @@ with lib;
 
       dev = {
         helix = lib.mkEnableOption "helix profile";
+        zed = lib.mkEnableOption "zed profile";
+        vscode = lib.mkEnableOption "vscode profile";
 
         go = lib.mkEnableOption "go profile";
         rust = lib.mkEnableOption "rust profile";

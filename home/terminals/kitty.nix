@@ -8,7 +8,7 @@ lib.mkIf config.optional.terminal.kitty {
       environment = { };
       keybindings = { };
       font.name = "JetBrains Mono";
-      font.size = 16;
+      font.size = 14;
       settings = {
         italic_font = "auto";
         bold_italic_font = "auto";

@@ -1,6 +1,6 @@
 { lib, config, ... }:
 
-lib.mkIf config.optional.hypr {
+lib.mkIf config.optional.hypr.enable {
   wayland.windowManager.hyprland.settings = {
     # layer rules
     layerrule =

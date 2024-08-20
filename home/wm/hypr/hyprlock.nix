@@ -9,7 +9,7 @@ let
   font_family = "JetBrains Mono 10";
 in
 
-lib.mkIf config.optional.hypr {
+lib.mkIf config.optional.hypr.enable {
   programs.hyprlock = {
     enable = true;
 

@@ -6,21 +6,17 @@
   ...
 }:
 let
-  myAnyrunPkgs = inputs.anyrun-plugins.packages.${pkgs.system};
   anyrunPkgs = inputs.anyrun.packages.${pkgs.system};
 in
 {
   imports = [ inputs.anyrun.homeManagerModules.default ];
 
-  config = lib.mkIf config.optional.hypr.enable {
+  config = lib.mkIf config.optional.wm {
     programs.anyrun = {
       enable = true;
 
       config = {
         plugins = [
-          myAnyrunPkgs.cliphist
-          # myAnyrunPkgs.hyprwin
-          # myAnyrunPkgs.applications
           anyrunPkgs.applications
         ];
 

@@ -80,7 +80,8 @@ in
     settings = {
       substituters = [
         # "https://mirror.sjtu.edu.cn/nix-channels/store"
-        "https://mirrors.cernet.edu.cn/nix-channels/store"
+        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+        # "https://mirrors.ustc.edu.cn/nix-channels/store"
       ];
       trusted-users = [ "${user}" ];
       auto-optimise-store = true; # Optimise syslinks

@@ -35,10 +35,6 @@ lib.mkIf config.optional.hypr.enable {
   };
 
   services = {
-    blueman.enable = true;
-    # battery info & stuff
-    upower.enable = true;
-    power-profiles-daemon.enable = true;
     gnome.gnome-keyring.enable = true;
     gvfs.enable = true;
     # needed for GNOME services outside of GNOME Desktop

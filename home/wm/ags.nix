@@ -8,7 +8,7 @@
 {
   imports = [ inputs.ags.homeManagerModules.default ];
 
-  config = lib.mkIf config.optional.hypr.enable {
+  config = lib.mkIf config.optional.wm {
     home.packages = with pkgs; [
       imagemagick
       sassc

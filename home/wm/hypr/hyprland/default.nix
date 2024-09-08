@@ -45,7 +45,7 @@
       catppuccin.enable = true;
       plugins =
         [ ]
-        ++ lib.optional config.optional.hypr.enable
+        ++ lib.optional config.optional.hypr.scroller
           inputs.hyprscroller.packages.${pkgs.system}.hyprscroller;
     };
   };

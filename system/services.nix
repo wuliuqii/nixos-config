@@ -2,6 +2,9 @@
 {
   services = {
     # getty.autologinUser = "${user}";
+    upower.enable = true;
+    power-profiles-daemon.enable = true;
+    blueman.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

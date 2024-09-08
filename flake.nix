@@ -24,7 +24,8 @@
     home-manager.url = "github:nix-community/home-manager";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.42.0";
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.42.0";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprpaper.url = "github:hyprwm/hyprpaper";
     hyprlock = {
       url = "github:hyprwm/hyprlock";
@@ -42,10 +43,7 @@
     ags.url = "github:Aylur/ags";
 
     anyrun.url = "github:Kirottu/anyrun";
-    anyrun-plugins = {
-      url = "github:wuliuqii/anyrun-plugins";
-      # inputs.nixpkgs.follows = "nixpkgs";
-    };
+
     catppuccin.url = "github:catppuccin/nix";
 
     sops-nix = {

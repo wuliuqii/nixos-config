@@ -11,7 +11,7 @@
 
       settings = {
         input = {
-          mouse.accel-speed = 0.4;
+          # mouse.accel-speed = 0.4;
           touchpad = {
             tap = true;
             dwt = true;
@@ -35,27 +35,26 @@
         };
 
         layout = {
-          gaps = 10; # px
-          center-focused-column = "on-overflow";
+          gaps = 8; # px
+          # center-focused-column = "on-overflow";
           # center-focused-column = "never";
-          # center-focused-column = "always";
+          center-focused-column = "always";
           preset-column-widths = [
             { proportion = 1.0 / 3.0; }
             { proportion = 1.0 / 2.0; }
             { proportion = 2.0 / 3.0; }
           ];
-          # default-column-width = {proportion = 1.0 / 3.0;};
           default-column-width = {
-            proportion = 1.0 / 2.0;
+            proportion = 2.0 / 3.0;
           };
-          # default-column-width = {proportion = 1.0;};
           focus-ring = {
             enable = true;
-            width = 4;
+            width = 2;
             active.gradient = {
-              from = "#80c8ff";
-              to = "#d3549a";
+              from = "#7dc4e4";
+              to = "#f5bde6";
               angle = 45;
+              relative-to = "workspace-view";
             };
           };
         };
@@ -79,7 +78,15 @@
           {
             # dim unfocused windows
             matches = [ { is-focused = false; } ];
-            opacity = 0.95;
+            opacity = 0.85;
+          }
+          {
+            matches = [ { app-id = "firefox"; } ];
+            open-maximized = true;
+          }
+          {
+            matches = [ { app-id = "neovide"; } ];
+            open-maximized = true;
           }
           # { open-maximized = true; }
         ];
@@ -100,6 +107,7 @@
 
         spawn-at-startup = map (s: { command = pkgs.lib.strings.splitString " " s; }) [
           "fcitx5"
+          "ags"
           "wl-paste --type text --watch cliphist store"
           "wl-paste --type image --watch cliphist store"
         ];
@@ -158,11 +166,12 @@
           "Mod+B".action = spawn "firefox";
           "Mod+E".action = spawn "nautilus";
           "Mod+D".action = spawn "neovide";
-          "Mod+Space".action = spawn "fuzzel";
+          "Mod+R".action = spawn "ags quit; ags";
+          "Mod+Space".action = spawn "anyrun";
           "Mod+Escape".action = spawn "wlogout";
           "Mod+Q".action = close-window;
 
-          "Alt+Plus".action = set-column-width "+10%";
+          "Alt+Equal".action = set-column-width "+10%";
           "Alt+Minus".action = set-column-width "-10%";
           "Alt+H".action = focus-column-left;
           "Alt+L".action = focus-column-right;
@@ -189,6 +198,9 @@
           # // There are also commands that consume or expel a single window to the side.
           "Mod+BracketLeft".action = consume-or-expel-window-left;
           "Mod+BracketRight".action = consume-or-expel-window-right;
+
+          "Mod+Semicolon".action = switch-layout "prev";
+          "Mod+Apostrophe".action = switch-layout "next";
 
           "Mod+Tab".action = focus-workspace-previous;
 

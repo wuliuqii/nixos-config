@@ -30,5 +30,6 @@
     # build tools
     gcc
     gnumake
+    pkg-config
   ];
 }

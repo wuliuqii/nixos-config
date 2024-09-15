@@ -3,22 +3,22 @@
 {
   catppuccin-fcitx5 = {
     pname = "catppuccin-fcitx5";
-    version = "ce244cfdf43a648d984719fdfd1d60aab09f5c97";
+    version = "3471b918d4b5aab2d3c3dd9f2c3b9c18fb470e8e";
     src = fetchFromGitHub {
       owner = "catppuccin";
       repo = "fcitx5";
-      rev = "ce244cfdf43a648d984719fdfd1d60aab09f5c97";
+      rev = "3471b918d4b5aab2d3c3dd9f2c3b9c18fb470e8e";
       fetchSubmodules = false;
-      sha256 = "sha256-uFaCbyrEjv4oiKUzLVFzw+UY54/h7wh2cntqeyYwGps=";
+      sha256 = "sha256-1IqFVTEY6z8yNjpi5C+wahMN1kpt0OJATy5echjPXmc=";
     };
-    date = "2022-10-05";
+    date = "2024-09-01";
   };
   fcitx5-pinyin-moegirl = {
     pname = "fcitx5-pinyin-moegirl";
-    version = "20240809";
+    version = "20240909";
     src = fetchurl {
-      url = "https://github.com/outloudvi/mw2fcitx/releases/download/20240809/moegirl.dict";
-      sha256 = "sha256-2jSKzDgjxuz0/Agqefy4JrScmqM7SXnIuZlLMkqAGT0=";
+      url = "https://github.com/outloudvi/mw2fcitx/releases/download/20240909/moegirl.dict";
+      sha256 = "sha256-+e4azEWHYSh3Gy9Xa+Y8E7f7rAA8YlWlbvbva9kNXCI=";
     };
   };
   fcitx5-pinyin-zhwiki = {
@@ -79,15 +79,15 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "0367c85243ecf22d064f45cab29a47a3a1652e80";
+    version = "2cf8aa100b6712ba3f0bbe9c68dd0cf88b57f4f4";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "0367c85243ecf22d064f45cab29a47a3a1652e80";
+      rev = "2cf8aa100b6712ba3f0bbe9c68dd0cf88b57f4f4";
       fetchSubmodules = false;
-      sha256 = "sha256-uzEN8xjfpEdYMDX2AisS0Df+V0+gdOeJGQxQJZIuffo=";
+      sha256 = "sha256-cSYeMe52asAkKgzIrUurimT+kO1bcOPpbt7Ux8WQUV4=";
     };
-    date = "2024-08-29";
+    date = "2024-09-13";
   };
   shyfox = {
     pname = "shyfox";

@@ -38,14 +38,15 @@
           gaps = 8; # px
           # center-focused-column = "on-overflow";
           # center-focused-column = "never";
-          center-focused-column = "always";
+          # center-focused-column = "always";
           preset-column-widths = [
             { proportion = 1.0 / 3.0; }
             { proportion = 1.0 / 2.0; }
             { proportion = 2.0 / 3.0; }
+            { proportion = 1.0; }
           ];
           default-column-width = {
-            proportion = 2.0 / 3.0;
+            proportion = 1.0 / 2.0;
           };
           focus-ring = {
             enable = true;
@@ -108,8 +109,6 @@
         spawn-at-startup = map (s: { command = pkgs.lib.strings.splitString " " s; }) [
           "fcitx5"
           "ags"
-          "wl-paste --type text --watch cliphist store"
-          "wl-paste --type image --watch cliphist store"
         ];
 
         animations.shaders.window-resize = ''
@@ -161,16 +160,16 @@
           "Alt+8".action = focus-workspace 8;
           "Alt+9".action = focus-workspace 9;
 
-          # "Mod+?".action = show-hotkey-overlay;
           "Mod+Return".action = spawn "${config.profile.terminal}";
           "Mod+B".action = spawn "firefox";
           "Mod+E".action = spawn "nautilus";
           "Mod+D".action = spawn "neovide";
-          "Mod+R".action = spawn "ags quit; ags";
+          "Mod+R".action = spawn "ags -q; ags";
           "Mod+Space".action = spawn "anyrun";
           "Mod+Escape".action = spawn "wlogout";
-          "Mod+Q".action = close-window;
 
+          "Mod+Q".action = close-window;
+          "Mod+S".action = screenshot;
           "Alt+Equal".action = set-column-width "+10%";
           "Alt+Minus".action = set-column-width "-10%";
           "Alt+H".action = focus-column-left;
@@ -199,8 +198,7 @@
           "Mod+BracketLeft".action = consume-or-expel-window-left;
           "Mod+BracketRight".action = consume-or-expel-window-right;
 
-          "Mod+Semicolon".action = switch-layout "prev";
-          "Mod+Apostrophe".action = switch-layout "next";
+          "Mod+Equal".action = switch-preset-column-width;
 
           "Mod+Tab".action = focus-workspace-previous;
 

@@ -40,7 +40,16 @@
 
     niri.url = "github:sodiboo/niri-flake";
 
-    ags.url = "github:Aylur/ags";
+    # ags.url = "github:Aylur/ags";
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ags = {
+      url = "github:aylur/ags/v2";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.astal.follows = "astal";
+    };
 
     anyrun.url = "github:Kirottu/anyrun";
 

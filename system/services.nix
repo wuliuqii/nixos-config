@@ -1,9 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services = {
     # getty.autologinUser = "${user}";
     upower.enable = true;
+    # needed for GNOME services outside of GNOME Desktop
+    dbus.packages = [ pkgs.gcr ];
     power-profiles-daemon.enable = true;
+    gnome.gnome-keyring.enable = true;
     blueman.enable = true;
     pipewire = {
       enable = true;

@@ -29,7 +29,7 @@
     discord
     # cinny-desktop
     slack
-    # qq
+    qq
     (wechat-uos.override {
       uosLicense = pkgs.fetchurl {
         url = "https://aur.archlinux.org/cgit/aur.git/plain/license.tar.gz?h=wechat-uos-bwrap";
@@ -37,7 +37,6 @@
       };
     })
     thunderbird
-    (pkgs.prismlauncher.override { withWaylandGLFW = true; })
 
     nautilus
     sushi

@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   networking = {
     hostName = "nixos";
@@ -31,9 +36,9 @@
   };
 
   # after sleep, v2raya will be not working,
-  # so we need to restart it
   powerManagement.resumeCommands = ''
-    ${pkgs.systemd}/bin/systemctl restart v2raya.service
+      ${pkgs.systemd}/bin/systemctl restart v2raya.service
+    # so we need to restart it
   '';
 
   systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;

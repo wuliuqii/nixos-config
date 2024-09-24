@@ -45,7 +45,6 @@ with lib;
         enable = lib.mkEnableOption "hyprland profile" // {
           default = true;
         };
-        scroller = lib.mkEnableOption "hyprland scroller profile";
       };
       niri = lib.mkEnableOption "niri profile" // {
         default = false;

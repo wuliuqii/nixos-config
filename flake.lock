@@ -567,26 +567,6 @@
         "type": "github"
       }
     },
-    "hyprscroller": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ]
-      },
-      "locked": {
-        "lastModified": 1726337920,
-        "narHash": "sha256-x7JB4op1By5ZZcVjPV1w4BWWIIEWS+DFUBDRE5cxt2k=",
-        "owner": "dawsers",
-        "repo": "hyprscroller",
-        "rev": "57c0ee55af74cbfa5e0467f552a88c11994f7f0d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dawsers",
-        "repo": "hyprscroller",
-        "type": "github"
-      }
-    },
     "hyprutils": {
       "inputs": {
         "nixpkgs": [
@@ -1051,7 +1031,6 @@
         "hyprland": "hyprland",
         "hyprlock": "hyprlock",
         "hyprpaper": "hyprpaper",
-        "hyprscroller": "hyprscroller",
         "neovim-nightly": "neovim-nightly",
         "niri": "niri",
         "nixos-cosmic": "nixos-cosmic",

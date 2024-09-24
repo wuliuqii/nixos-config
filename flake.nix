@@ -24,18 +24,11 @@
     home-manager.url = "github:nix-community/home-manager";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.42.0";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprpaper.url = "github:hyprwm/hyprpaper";
     hyprlock = {
       url = "github:hyprwm/hyprlock";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprscroller = {
-      # Only support hyprland v0.42.0
-      # FIXME: https://github.com/KZDKM/Hyprspace/pull/75
-      url = "github:dawsers/hyprscroller";
-      inputs.hyprland.follows = "hyprland";
     };
 
     niri.url = "github:sodiboo/niri-flake";

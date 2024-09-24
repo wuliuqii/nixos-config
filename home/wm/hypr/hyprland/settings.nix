@@ -14,7 +14,7 @@ lib.mkIf config.optional.hypr.enable {
     ];
 
     general = {
-      layout = if config.optional.hypr.scroller then "scroller" else "master";
+      layout = "master";
       resize_on_border = true;
       border_size = 2;
       gaps_out = 6;
@@ -112,13 +112,5 @@ lib.mkIf config.optional.hypr.enable {
     xwayland.force_zero_scaling = true;
 
     debug.disable_logs = false;
-
-    plugin = lib.optional config.optional.hypr.scroller {
-      scroller = {
-        focus_wrap = false;
-        column_default_width = "twothirds";
-        column_widths = "one twothirds onehalf onethird";
-      };
-    };
   };
 }

@@ -10,10 +10,9 @@
     cosmic = false;
     wm = true;
     hypr = {
-      enable = false;
-      scroller = false;
+      enable = true;
     };
-    niri = true;
+    niri = false;
 
     podman = false;
 

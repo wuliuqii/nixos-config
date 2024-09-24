@@ -43,10 +43,6 @@
       enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.default;
       catppuccin.enable = true;
-      plugins =
-        [ ]
-        ++ lib.optional config.optional.hypr.scroller
-          inputs.hyprscroller.packages.${pkgs.system}.hyprscroller;
     };
   };
 }

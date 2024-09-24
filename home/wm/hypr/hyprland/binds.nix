@@ -83,27 +83,7 @@ lib.mkIf config.optional.hypr.enable {
           "$altMod SHIFT, period, focusmonitor, r"
         ]
         ++ workspaces
-        ++ lib.lists.optionals config.optional.hypr.scroller [
-          "$mainMod, backetleft, scroller:setmode, c"
-          "$mainMod, backetright, scroller:setmode, r"
-
-          "$altMod, equal, scroller:cyclesize, next"
-          "$altMod, minus, scroller:cyclesize, prev"
-          "$altMod, semicolon, scroller:admitwindow"
-          "$altMod, apostrophe, scroller:expelwindow"
-
-          "$altMod, h, scroller:movefocus, l"
-          "$altMod, l, scroller:movefocus, r"
-          "$altMod, k, scroller:movefocus, u"
-          "$altMod, j, scroller:movefocus, d"
-
-          "$altMod SHIFT, h, scroller:movewindow, l"
-          "$altMod SHIFT, l, scroller:movewindow, r"
-          "$altMod SHIFT, k, scroller:movewindow, u"
-          "$altMod SHIFT, j, scroller:movewindow, d"
-
-        ]
-        ++ lib.lists.optionals (!config.optional.hypr.scroller) [
+        ++ [
           "$mainMod, G, togglegroup"
           "$mainMod, N, changegroupactive, f"
           "$mainMod, P, changegroupactive, b"
@@ -147,104 +127,21 @@ lib.mkIf config.optional.hypr.enable {
       ];
     };
 
-    extraConfig =
-      ''
-        # Resize submap
-        # will switch to a submap called resize
-        bind = $altMod, r, submap, resize
-        # will start a submap called "resize"
-        submap = resize
-        # sets repeatable binds for resizing the active window
-        binde = , l, resizeactive, 10 0
-        binde = , h, resizeactive, -10 0
-        binde = , k, resizeactive, 0 -10
-        binde = , j, resizeactive, 0 10
-        # use reset to go back to the global submap
-        bind = , escape, submap, reset
-        # will reset the submap, meaning end the current one and return to the global one
-        submap = reset
-      ''
-      + lib.strings.optionalString config.optional.hypr.scroller ''
-        bind = $mainMod, c, submap, center
-        submap = center
-        bind = , C, scroller:alignwindow, c
-        bind = , C, submap, reset
-        bind = , l, scroller:alignwindow, r
-        bind = , l, submap, reset
-        bind = , h, scroller:alignwindow, l
-        bind = , h, submap, reset
-        bind = , k, scroller:alignwindow, u
-        bind = , k, submap, reset
-        bind = , j, scroller:alignwindow, d
-        bind = , j, submap, reset
-        bind = , escape, submap, reset
-        submap = reset
-
-        bind = $mainMod, w, submap, fitsize
-        submap = fitsize
-        bind = , v, scroller:fitsize, visible
-        bind = , v, submap, reset
-        bind = , e, scroller:fitsize, toend
-        bind = , e, submap, reset
-        bind = , b, scroller:fitsize, tobeg
-        bind = , b, submap, reset
-        bind = , f, scroller:fitsize, active
-        bind = , f, submap, reset
-        bind = , a, scroller:fitsize, all
-        bind = , a, submap, reset
-        bind = , escape, submap, reset
-        submap = reset
-
-        bind = $altMod, tab, scroller:toggleoverview
-        bind = $altMod, tab, submap, overview
-        submap = overview
-        bind = , l, scroller:movefocus, right
-        bind = , h, scroller:movefocus, left
-        bind = , k, scroller:movefocus, up
-        bind = , j, scroller:movefocus, down
-        bind = , escape, scroller:toggleoverview,
-        bind = , escape, submap, reset
-        bind = , return, scroller:toggleoverview,
-        bind = , return, submap, reset
-        bind = $mainMod, tab, scroller:toggleoverview,
-        bind = $mainMod, tab, submap, reset
-        submap = reset
-
-        # Marks
-        bind = $altMod, M, submap, marksadd
-        submap = marksadd
-        bind = , a, scroller:marksadd, a
-        bind = , a, submap, reset
-        bind = , b, scroller:marksadd, b
-        bind = , b, submap, reset
-        bind = , c, scroller:marksadd, c
-        bind = , c, submap, reset
-        bind = , escape, submap, reset
-        submap = reset
-
-        bind = $altMod SHIFT, M, submap, marksdelete
-        submap = marksdelete
-        bind = , a, scroller:marksdelete, a
-        bind = , a, submap, reset
-        bind = , b, scroller:marksdelete, b
-        bind = , b, submap, reset
-        bind = , c, scroller:marksdelete, c
-        bind = , c, submap, reset
-        bind = , escape, submap, reset
-        submap = reset
-
-        bind = $mainMod, m, submap, marksvisit
-        submap = marksvisit
-        bind = , a, scroller:marksvisit, a
-        bind = , a, submap, reset
-        bind = , b, scroller:marksvisit, b
-        bind = , b, submap, reset
-        bind = , c, scroller:marksvisit, c
-        bind = , c, submap, reset
-        bind = , escape, submap, reset
-        submap = reset
-
-        bind = $mainMod CTRL, M, scroller:marksreset
-      '';
+    extraConfig = ''
+      # Resize submap
+      # will switch to a submap called resize
+      bind = $altMod, r, submap, resize
+      # will start a submap called "resize"
+      submap = resize
+      # sets repeatable binds for resizing the active window
+      binde = , l, resizeactive, 10 0
+      binde = , h, resizeactive, -10 0
+      binde = , k, resizeactive, 0 -10
+      binde = , j, resizeactive, 0 10
+      # use reset to go back to the global submap
+      bind = , escape, submap, reset
+      # will reset the submap, meaning end the current one and return to the global one
+      submap = reset
+    '';
   };
 }

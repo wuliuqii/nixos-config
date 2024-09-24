@@ -8,6 +8,7 @@
     ./zathura.nix
     ./cli.nix
     ./mimelist.nix
+    ./yazi.nix
   ];
 
   programs = {

@@ -10,7 +10,8 @@ lib.mkIf config.optional.dev.node {
   home.packages = with pkgs; [
     nodejs
     nodePackages.prettier
-    typescript-language-server
+    vtsls
+    # typescript-language-server
     typescript
     deno
 

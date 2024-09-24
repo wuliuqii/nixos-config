@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./yazi.nix
+  ];
+
   programs = {
     direnv = {
       enable = true;

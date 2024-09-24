@@ -13,13 +13,13 @@
       #   imagemagick
       #   sassc
       #   brightnessctl
-      #   inotify-tools
-      #   libnotify
+      inotify-tools
+      libnotify
       #   wf-recorder
       #   swappy
       #   wayshot
       #   hyprpicker
-      #   wl-clipboard
+      wl-clipboard
       #   wl-screenrec
       #   cliphist
       #   wlr-randr

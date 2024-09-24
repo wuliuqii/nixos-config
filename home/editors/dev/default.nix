@@ -28,6 +28,7 @@
     vscode-langservers-extracted
 
     # build tools
+    shellcheck
     gcc
     gnumake
     pkg-config

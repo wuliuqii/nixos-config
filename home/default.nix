@@ -1,25 +1,19 @@
 { config, ... }:
-let
-  user = config.profile.userName;
-  editor = config.profile.editor;
-in
 {
   imports = [
     ./editors
     ./programs
-    ./shell
-    ./terminals
+    ./terminal
     ./secrets
-
     ./wm
   ];
 
   home = {
-    username = "${user}";
+    username = "${config.profile.userName}";
     homeDirectory = "/home/${config.profile.userName}";
 
     sessionVariables = {
-      EDITOR = "${editor}";
+      EDITOR = "${config.profile.editor}";
       BROWSER = "${config.profile.browser}";
       TERMINAL = "${config.profile.terminal}";
     };

@@ -19,12 +19,12 @@
 
     terminal = {
       foot = true;
-      kitty = true;
-      wezterm = true;
+      kitty = false;
+      wezterm = false;
     };
 
     dev = {
-      helix = false;
+      helix = true;
       zed = true;
       vscode = false;
 

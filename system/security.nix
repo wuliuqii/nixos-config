@@ -38,7 +38,14 @@
               }
             }
           }
-        })
+        });
+
+
+        polkit.addRule(function(action, subject) {
+          if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 && subject.isInGroup("network")) {
+            return polkit.Result.YES;
+          }
+        });
       '';
     };
   };

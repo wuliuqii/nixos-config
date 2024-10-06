@@ -14,4 +14,6 @@
       opencl.enable = true;
     };
   };
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
 }

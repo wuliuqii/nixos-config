@@ -46,7 +46,7 @@ in
       };
       timeout = 3;
     };
-    kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
       "quiet"
       "splash"

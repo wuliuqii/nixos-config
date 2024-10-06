@@ -30,7 +30,6 @@
     programs.ags = {
       enable = true;
       extraPackages = with pkgs; [
-        # inputs.ags.packages.${pkgs.system}.astal
         inputs.ags.packages.${pkgs.system}.mpris
         inputs.ags.packages.${pkgs.system}.wireplumber
         inputs.ags.packages.${pkgs.system}.tray
@@ -41,6 +40,7 @@
         inputs.ags.packages.${pkgs.system}.bluetooth
         inputs.ags.packages.${pkgs.system}.notifd
         inputs.ags.packages.${pkgs.system}.powerprofiles
+        inputs.ags.packages.${pkgs.system}.hyprland
       ];
     };
   };

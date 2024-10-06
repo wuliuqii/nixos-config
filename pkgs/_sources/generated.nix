@@ -79,27 +79,27 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "2ea99c5e4f3afaa24ebef61d17ea097557ca36b3";
+    version = "ea74e40bec2bd6580fa8d807075cd107739ba6cd";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "2ea99c5e4f3afaa24ebef61d17ea097557ca36b3";
+      rev = "ea74e40bec2bd6580fa8d807075cd107739ba6cd";
       fetchSubmodules = false;
-      sha256 = "sha256-6leug6CxZjg855fjW2mKPLcmMTO/KE9xjLm9hbZH2Fo=";
+      sha256 = "sha256-R2K2LNycXqsUxXvMMq5fcQJUhDnhQMcTlvryMLeiKH0=";
     };
-    date = "2024-09-16";
+    date = "2024-09-25";
   };
   shyfox = {
     pname = "shyfox";
-    version = "bd41f885f19771b12e23c522ccaafe33af59a1c7";
+    version = "e48b04277161701630420379fae450178f0d7b72";
     src = fetchFromGitHub {
       owner = "Naezr";
       repo = "ShyFox";
-      rev = "bd41f885f19771b12e23c522ccaafe33af59a1c7";
+      rev = "e48b04277161701630420379fae450178f0d7b72";
       fetchSubmodules = false;
-      sha256 = "sha256-w4kaOjz51FYYS58TrPVI/OgZ8At9mbPXj2G3X/N7Lu8=";
+      sha256 = "sha256-xuAe4bx6AngGGkeZpvwjWPUovqoon/ZnsPNPx5r1ddE=";
     };
-    date = "2024-08-22";
+    date = "2024-10-02";
   };
   wallpaper = {
     pname = "wallpaper";

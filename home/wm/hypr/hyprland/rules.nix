@@ -65,6 +65,9 @@ lib.mkIf config.optional.hypr.enable {
         "idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$"
         "idleinhibit fullscreen, class:^(firefox)$"
 
+        "workspace 10, class:^(steam)$"
+        "float, class:^(steam)$, title:^(好友列表)$"
+
         "dimaround, class:^(xdg-desktop-portal-gtk|polkit-gnome-authentication-agent-1)$"
 
         "rounding 0, xwayland:1"

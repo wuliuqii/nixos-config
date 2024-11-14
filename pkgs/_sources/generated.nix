@@ -15,10 +15,10 @@
   };
   fcitx5-pinyin-moegirl = {
     pname = "fcitx5-pinyin-moegirl";
-    version = "20240909";
+    version = "20241109";
     src = fetchurl {
-      url = "https://github.com/outloudvi/mw2fcitx/releases/download/20240909/moegirl.dict";
-      sha256 = "sha256-+e4azEWHYSh3Gy9Xa+Y8E7f7rAA8YlWlbvbva9kNXCI=";
+      url = "https://github.com/outloudvi/mw2fcitx/releases/download/20241109/moegirl.dict";
+      sha256 = "sha256-Vg1Kx/7m1gNEJAe3bhxoIogXsNV8I0NYyhGt9SvqfM4=";
     };
   };
   fcitx5-pinyin-zhwiki = {
@@ -43,15 +43,15 @@
   };
   librime-lua = {
     pname = "librime-lua";
-    version = "fa6563cf7b40f3bfbf09e856420bff8de6820558";
+    version = "b210d0cfbd2a3cc6edd4709dd0a92c479bfca10b";
     src = fetchFromGitHub {
       owner = "hchunhui";
       repo = "librime-lua";
-      rev = "fa6563cf7b40f3bfbf09e856420bff8de6820558";
+      rev = "b210d0cfbd2a3cc6edd4709dd0a92c479bfca10b";
       fetchSubmodules = false;
-      sha256 = "sha256-jv5TZSp36UGbaRiXv9iUNLu3DE/yrWANQhY6TWLPD8c=";
+      sha256 = "sha256-ETjLN40G4I0FEsQgNY8JM4AInqyb3yJwEJTGqdIHGWg=";
     };
-    date = "2024-08-19";
+    date = "2024-11-02";
   };
   librime-octagram = {
     pname = "librime-octagram";
@@ -79,27 +79,27 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "ea74e40bec2bd6580fa8d807075cd107739ba6cd";
+    version = "18a958380ad169b22286b6864f7d0cf52d989fb4";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "ea74e40bec2bd6580fa8d807075cd107739ba6cd";
+      rev = "18a958380ad169b22286b6864f7d0cf52d989fb4";
       fetchSubmodules = false;
-      sha256 = "sha256-R2K2LNycXqsUxXvMMq5fcQJUhDnhQMcTlvryMLeiKH0=";
+      sha256 = "sha256-r7EEPvmVDWNQbwUwkZght3o7ieGgGg95N+Z48WVbST4=";
     };
-    date = "2024-09-25";
+    date = "2024-11-12";
   };
   shyfox = {
     pname = "shyfox";
-    version = "e48b04277161701630420379fae450178f0d7b72";
+    version = "6488ff1934c184a7b81770c67f5c3b5e983152e3";
     src = fetchFromGitHub {
       owner = "Naezr";
       repo = "ShyFox";
-      rev = "e48b04277161701630420379fae450178f0d7b72";
+      rev = "6488ff1934c184a7b81770c67f5c3b5e983152e3";
       fetchSubmodules = false;
-      sha256 = "sha256-xuAe4bx6AngGGkeZpvwjWPUovqoon/ZnsPNPx5r1ddE=";
+      sha256 = "sha256-9InO33jS+YP+aupQc8OadvGSyXEIBcTbN8kTo91hAbY=";
     };
-    date = "2024-10-02";
+    date = "2024-11-02";
   };
   wallpaper = {
     pname = "wallpaper";

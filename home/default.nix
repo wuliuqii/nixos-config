@@ -16,6 +16,8 @@
       EDITOR = "${config.profile.editor}";
       BROWSER = "${config.profile.browser}";
       TERMINAL = "${config.profile.terminal}";
+
+      QT_AUTO_SCREEN_SCALE_FACTOR = "auto";
     };
 
   };

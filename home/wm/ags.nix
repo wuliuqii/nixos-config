@@ -24,7 +24,7 @@
       #   cliphist
       #   wlr-randr
       #   slurp
-      inputs.ags.packages.${pkgs.system}.astal
+      inputs.ags.packages.${pkgs.system}.io
     ];
 
     programs.ags = {

@@ -2,7 +2,7 @@
 {
   programs.neovim = {
     enable = true;
-    package = inputs.neovim-nightly.packages.${pkgs.system}.default;
+    # package = inputs.neovim-nightly.packages.${pkgs.system}.default;
     viAlias = true;
     vimAlias = true;
     withRuby = false;

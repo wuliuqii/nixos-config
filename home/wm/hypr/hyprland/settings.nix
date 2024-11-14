@@ -7,7 +7,7 @@ lib.mkIf config.optional.hypr.enable {
 
     exec-once = [
       "fcitx5"
-      "ags"
+      "ags run"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
       "hyprlock"
@@ -25,7 +25,6 @@ lib.mkIf config.optional.hypr.enable {
 
     decoration = {
       rounding = 10;
-      drop_shadow = false;
 
       blur = {
         enabled = true;

@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -8,7 +8,5 @@
     ./hypridle.nix
     ./hyprpaper.nix
     ./polkit-agent.nix
-
-    inputs.hyprland.homeManagerModules.default
   ];
 }

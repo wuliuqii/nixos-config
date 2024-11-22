@@ -5,13 +5,11 @@
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://cosmic.cachix.org/"
-      "https://hyprland.cachix.org/"
       "https://anyrun.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
     ];
 
@@ -20,14 +18,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs.follows = "nixos-cosmic/nixpkgs";
 
     home-manager.url = "github:nix-community/home-manager";
-    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    hyprpaper.url = "github:hyprwm/hyprpaper";
-    hyprlock.url = "github:hyprwm/hyprlock";
 
     niri.url = "github:sodiboo/niri-flake";
 

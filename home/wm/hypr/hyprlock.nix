@@ -1,6 +1,5 @@
 {
   lib,
-  inputs,
   config,
   pkgs,
   ...
@@ -12,8 +11,6 @@ in
 lib.mkIf config.optional.hypr.enable {
   programs.hyprlock = {
     enable = true;
-
-    package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
 
     settings = {
       source = [ (config.catppuccin.sources.hyprland + "/themes/${config.catppuccin.flavor}.conf") ];

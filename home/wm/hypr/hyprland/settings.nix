@@ -8,9 +8,8 @@ lib.mkIf config.optional.hypr.enable {
     exec-once = [
       "fcitx5"
       "ags run"
-      "wl-paste --type text --watch cliphist store"
-      "wl-paste --type image --watch cliphist store"
-      "hyprlock"
+      # "wl-paste --type text --watch cliphist store"
+      # "wl-paste --type image --watch cliphist store"
     ];
 
     general = {
@@ -24,16 +23,31 @@ lib.mkIf config.optional.hypr.enable {
     };
 
     decoration = {
-      rounding = 10;
+      rounding = 16;
 
       blur = {
         enabled = true;
-        passes = 3;
-        size = 6;
-        new_optimizations = "on";
-        ignore_opacity = "on";
-        xray = false;
+        brightness = 1.0;
+        contrast = 1.0;
+        noise = 1.0e-2;
+        vibrancy = 0.2;
+        vibrancy_darkness = 0.5;
+        passes = 4;
+        size = 7;
+        popups = true;
+        popups_ignorealpha = 0.2;
       };
+
+      shadow = {
+        enabled = true;
+        color = "rgba(00000055)";
+        ignore_window = true;
+        offset = "0 15";
+        range = 100;
+        render_power = 2;
+        scale = 0.97;
+      };
+
     };
 
     animations = {
@@ -100,6 +114,8 @@ lib.mkIf config.optional.hypr.enable {
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
     };
+
+    render.direct_scanout = true;
 
     # touchpad gestures
     gestures = {

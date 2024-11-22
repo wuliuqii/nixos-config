@@ -1,6 +1,5 @@
 {
   lib,
-  inputs,
   pkgs,
   config,
   ...
@@ -13,7 +12,6 @@ lib.mkIf config.optional.hypr.enable {
     kdeconnect.enable = true;
     hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       xwayland.enable = true;
     };
   };
@@ -34,7 +32,7 @@ lib.mkIf config.optional.hypr.enable {
         };
       in
       {
-        enable = true;
+        enable = false;
         settings = {
           terminal.vt = 1;
           default_session = session;

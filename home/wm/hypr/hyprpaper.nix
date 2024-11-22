@@ -22,7 +22,7 @@ lib.mkIf config.optional.hypr.enable {
       PartOf = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${lib.getExe inputs.hyprpaper.packages.${pkgs.system}.default}";
+      ExecStart = "${lib.getExe pkgs.hyprpaper}";
       Restart = "on-failure";
     };
     Install.WantedBy = [ "graphical-session.target" ];

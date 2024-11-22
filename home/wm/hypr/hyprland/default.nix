@@ -1,10 +1,13 @@
 {
   lib,
   config,
-  inputs,
   pkgs,
   ...
 }:
+let
+  cursor = "Bibata-Modern-Classic-Hyprcursor";
+  cursorPackage = pkgs.bibata-hyprcursor;
+in
 {
   imports = [
 
@@ -18,6 +21,8 @@
       qt6.qtwayland
       libsForQt5.qt5.qtwayland
     ];
+
+    xdg.dataFile."icons/${cursor}".source = "${cursorPackage}/share/icons/${cursor}";
 
     # fake a tray to let apps start
     # https://github.com/nix-community/home-manager/issues/2064

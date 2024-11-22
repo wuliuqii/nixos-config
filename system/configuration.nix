@@ -2,7 +2,6 @@
   config,
   pkgs,
   inputs,
-  lib,
   ...
 }:
 let
@@ -20,7 +19,6 @@ in
       addons = with pkgs; [
         catppuccin-fcitx5
         (fcitx5-rime.override {
-          librime = librime-with-plugins;
           rimeDataPkgs = [
             rime-ice
             fcitx5-pinyin-moegirl

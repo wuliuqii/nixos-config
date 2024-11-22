@@ -1,9 +1,9 @@
 {
-    "catppuccin-fcitx5": {
+    "bibata-hyprcursor": {
         "cargoLocks": null,
-        "date": "2024-09-01",
+        "date": "2024-06-18",
         "extract": null,
-        "name": "catppuccin-fcitx5",
+        "name": "bibata-hyprcursor",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -11,43 +11,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "catppuccin",
-            "repo": "fcitx5",
-            "rev": "3471b918d4b5aab2d3c3dd9f2c3b9c18fb470e8e",
-            "sha256": "sha256-1IqFVTEY6z8yNjpi5C+wahMN1kpt0OJATy5echjPXmc=",
+            "owner": "ful1e5",
+            "repo": "Bibata_Cursor",
+            "rev": "35ccfe209a808e40d6c2ca60a46cbe4faf68b690",
+            "sha256": "sha256-kIKidw1vditpuxO1gVuZeUPdWBzkiksO/q2R/+DUdEc=",
             "type": "github"
         },
-        "version": "3471b918d4b5aab2d3c3dd9f2c3b9c18fb470e8e"
-    },
-    "fcitx5-pinyin-moegirl": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "fcitx5-pinyin-moegirl",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-Vg1Kx/7m1gNEJAe3bhxoIogXsNV8I0NYyhGt9SvqfM4=",
-            "type": "url",
-            "url": "https://github.com/outloudvi/mw2fcitx/releases/download/20241109/moegirl.dict"
-        },
-        "version": "20241109"
-    },
-    "fcitx5-pinyin-zhwiki": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "fcitx5-pinyin-zhwiki",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-CcXyC/vnplJleDlhpgiYhwcA4hHjzqt5K1FMDjmamqc=",
-            "type": "url",
-            "url": "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-20240426.dict.yaml"
-        },
-        "version": "20240426"
+        "version": "35ccfe209a808e40d6c2ca60a46cbe4faf68b690"
     },
     "librime-charcode": {
         "cargoLocks": null,

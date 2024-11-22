@@ -1,7 +1,5 @@
 { lib, config, ... }:
 let
-  e = "exec, ags";
-
   workspaces = builtins.concatLists (
     builtins.genList (
       x:
@@ -61,14 +59,8 @@ lib.mkIf config.optional.hypr.enable {
           "$mainMod, E, exec, nautilus"
           # logout menu
           "$mainMod, Escape, exec, wlogout"
-          # restart ags
-          "$mainMod, R, ${e} quit; ags"
           # lock screen
           "$mainMod, L, exec, hyprlock"
-          # screenshot
-          "$mainMod, R, ${e} -r 'recorder.start()'"
-          "$altMod CTRL, Z, ${e} -r 'recorder.screenshot()'"
-          "$mainMod, Z, ${e} -r 'recorder.screenshot(true)'"
 
           # cycle workspaces
           "$altMod, period, workspace, m+1"
@@ -108,22 +100,12 @@ lib.mkIf config.optional.hypr.enable {
 
       bindl = [
         # media controls
-        ", XF86AudioPlay, ${e} -r 'mpris?.playPause()"
-        ", XF86AudioStop, ${e} -r 'mpris?.stop()"
-        ", XF86AudioPause, ${e} -r 'mpris?.pause()"
-        ", XF86AudioNext, ${e} -r 'mpris?.next()"
-        ", XF86AudioPrev, ${e} -r 'mpris?.previous()"
-        ", XF86AudioMicMute, ${e} -r 'audio.microphone.isMuted = !aduio.microphone.isMuted'"
       ];
 
       bindle = [
         # volume
-        ", XF86AudioRaiseVolume, ${e} -r 'audio.speaker.volume += 0.05; indicator.speaker()'"
-        ", XF86AudioLowerVolume, ${e} -r 'audio.speaker.volume -= 0.05; indicator.speaker()'"
 
         # backlight
-        ", XF86MonBrightnessUp, ${e} -r 'brightness.screen += 0.05; indicator.display()'"
-        ", XF86MonBrightnessDown, ${e} -r 'brightness.screen -= 0.05; indicator.display()'"
       ];
     };
 

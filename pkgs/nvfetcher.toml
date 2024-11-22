@@ -1,19 +1,6 @@
-[fcitx5-pinyin-zhwiki]
-src.webpage = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/expanded_assets/0.2.4"
-src.regex = "zhwiki-([0-9]{8})\\.dict\\.yaml"
-fetch.url = "https://github.com/felixonmars/fcitx5-pinyin-zhwiki/releases/download/0.2.4/zhwiki-$ver.dict.yaml"
-
-[fcitx5-pinyin-moegirl]
-src.github = "outloudvi/mw2fcitx"
-fetch.url = "https://github.com/outloudvi/mw2fcitx/releases/download/$ver/moegirl.dict"
-
 [rime-ice]
 src.git = "https://github.com/iDvel/rime-ice"
 fetch.github = "iDvel/rime-ice"
-
-[catppuccin-fcitx5]
-src.git = "https://github.com/catppuccin/fcitx5"
-fetch.github = "catppuccin/fcitx5"
 
 [librime-charcode]
 src.git = "https://github.com/rime/librime-charcode.git"
@@ -30,3 +17,7 @@ fetch.github = "lotem/librime-proto"
 [wallpaper]
 src.git = "https://github.com/wuliuqii/wallpaper.git"
 fetch.github = "wuliuqii/wallpaper"
+
+[bibata-hyprcursor]
+src.git = "https://github.com/ful1e5/Bibata_Cursor.git"
+fetch.github = "ful1e5/Bibata_Cursor"

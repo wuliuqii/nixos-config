@@ -1,13 +1,23 @@
 { lib, config, ... }:
+let
+  pointer = config.home.pointerCursor;
+  cursorName = "Bibata-Modern-Classic-Hyprcursor";
+in
 
 lib.mkIf config.optional.hypr.enable {
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
     "$altMod" = "ALT";
 
+    env = [
+      "HYPRCURSOR_THENE, ${cursorName}"
+      "HYPRCURSOR_SIZE, ${toString pointer.size}"
+    ];
+
     exec-once = [
       "fcitx5"
       "ags run"
+      "hyprctl setcursor ${cursorName} ${toString pointer.size}"
       # "wl-paste --type text --watch cliphist store"
       # "wl-paste --type image --watch cliphist store"
     ];

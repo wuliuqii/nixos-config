@@ -23,17 +23,9 @@ fetch.github = "rime/librime-charcode"
 src.git = "https://github.com/hchunhui/librime-lua"
 fetch.github = "hchunhui/librime-lua"
 
-[librime-octagram]
-src.git = "https://github.com/lotem/librime-octagram.git"
-fetch.github = "lotem/librime-octagram"
-
 [librime-proto]
 src.git = "https://github.com/lotem/librime-proto.git"
 fetch.github = "lotem/librime-proto"
-
-[shyfox]
-src.git = "https://github.com/Naezr/ShyFox.git"
-fetch.github = "Naezr/ShyFox"
 
 [wallpaper]
 src.git = "https://github.com/wuliuqii/wallpaper.git"

@@ -32,6 +32,10 @@ with lib;
         type = types.package;
         default = pkgs.fish;
       };
+      font = mkOption {
+        type = types.str;
+        default = "JetBrains Mono";
+      };
     };
 
     optional = {

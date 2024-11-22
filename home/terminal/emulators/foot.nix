@@ -7,7 +7,7 @@ lib.mkIf config.optional.terminal.foot {
     catppuccin.enable = true;
     settings = {
       main = {
-        font = "JetBrains Mono:size=16";
+        font = "${config.profile.font}:size=16";
         box-drawings-uses-font-glyphs = "yes";
         pad = "0x0 center";
         selection-target = "clipboard";

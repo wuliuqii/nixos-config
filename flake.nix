@@ -27,10 +27,7 @@
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprpaper.url = "github:hyprwm/hyprpaper";
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    hyprlock.url = "github:hyprwm/hyprlock";
 
     niri.url = "github:sodiboo/niri-flake";
 
@@ -58,6 +55,12 @@
     };
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
+    #WARN: private repo
+    monolisa = {
+      url = "git+ssh://git@github.com/wuliuqii/MonoLisa";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

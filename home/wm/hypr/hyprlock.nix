@@ -6,7 +6,7 @@
   ...
 }:
 let
-  font_family = "JetBrains Mono 10";
+  font_family = "${config.profile.font} 10";
 in
 
 lib.mkIf config.optional.hypr.enable {

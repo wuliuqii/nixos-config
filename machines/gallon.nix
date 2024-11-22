@@ -4,6 +4,7 @@
 
   profile = {
     terminal = "footclient";
+    font = "MonoLisa";
   };
 
   optional = {

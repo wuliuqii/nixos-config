@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   fonts = {
@@ -17,6 +17,7 @@
 
       # monospace fonts
       jetbrains-mono
+      inputs.monolisa.packages.${pkgs.system}.monolisa
 
       # nerdfonts
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
@@ -35,7 +36,10 @@
           "Noto Sans"
           "Noto Sans CJK SC"
         ];
-        monospace = [ "JetBrains Mono" ];
+        monospace = [
+          # "JetBrains Mono"
+          "MonoLisa"
+        ];
         emoji = [ ];
       };
   };

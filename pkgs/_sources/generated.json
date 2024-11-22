@@ -89,26 +89,6 @@
         },
         "version": "b210d0cfbd2a3cc6edd4709dd0a92c479bfca10b"
     },
-    "librime-octagram": {
-        "cargoLocks": null,
-        "date": "2024-02-05",
-        "extract": null,
-        "name": "librime-octagram",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "lotem",
-            "repo": "librime-octagram",
-            "rev": "bd12863f45fbbd5c7db06d5ec8be8987b10253bf",
-            "sha256": "sha256-77g72tee4ahNcu3hfW1Okqr9z8Y6WrPgUhw316O72Ng=",
-            "type": "github"
-        },
-        "version": "bd12863f45fbbd5c7db06d5ec8be8987b10253bf"
-    },
     "librime-proto": {
         "cargoLocks": null,
         "date": "2023-10-17",
@@ -131,7 +111,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-11-12",
+        "date": "2024-11-21",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -143,31 +123,11 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "18a958380ad169b22286b6864f7d0cf52d989fb4",
-            "sha256": "sha256-r7EEPvmVDWNQbwUwkZght3o7ieGgGg95N+Z48WVbST4=",
+            "rev": "19f6e0578dd0b3d08b3273eacf2246cb06e6fcfe",
+            "sha256": "sha256-tY++51Shx/XoFsdAbajB4RXWu/u7kXwZCj6C5mhM1X4=",
             "type": "github"
         },
-        "version": "18a958380ad169b22286b6864f7d0cf52d989fb4"
-    },
-    "shyfox": {
-        "cargoLocks": null,
-        "date": "2024-11-02",
-        "extract": null,
-        "name": "shyfox",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "Naezr",
-            "repo": "ShyFox",
-            "rev": "6488ff1934c184a7b81770c67f5c3b5e983152e3",
-            "sha256": "sha256-9InO33jS+YP+aupQc8OadvGSyXEIBcTbN8kTo91hAbY=",
-            "type": "github"
-        },
-        "version": "6488ff1934c184a7b81770c67f5c3b5e983152e3"
+        "version": "19f6e0578dd0b3d08b3273eacf2246cb06e6fcfe"
     },
     "wallpaper": {
         "cargoLocks": null,

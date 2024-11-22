@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }:
 let
@@ -38,7 +39,7 @@ in
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
-        configurationLimit = 10;
+        gfxmodeEfi = "1024x768";
       };
       efi = {
         canTouchEfiVariables = true;
@@ -46,7 +47,8 @@ in
       };
       timeout = 3;
     };
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    # kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "quiet"
       "splash"
@@ -88,7 +90,7 @@ in
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 2d";
+      options = "--delete-older-than 7d";
     };
     registry.nixpkgs.flake = inputs.nixpkgs;
     extraOptions = ''

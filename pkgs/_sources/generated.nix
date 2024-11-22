@@ -53,18 +53,6 @@
     };
     date = "2024-11-02";
   };
-  librime-octagram = {
-    pname = "librime-octagram";
-    version = "bd12863f45fbbd5c7db06d5ec8be8987b10253bf";
-    src = fetchFromGitHub {
-      owner = "lotem";
-      repo = "librime-octagram";
-      rev = "bd12863f45fbbd5c7db06d5ec8be8987b10253bf";
-      fetchSubmodules = false;
-      sha256 = "sha256-77g72tee4ahNcu3hfW1Okqr9z8Y6WrPgUhw316O72Ng=";
-    };
-    date = "2024-02-05";
-  };
   librime-proto = {
     pname = "librime-proto";
     version = "657a923cd4c333e681dc943e6894e6f6d42d25b4";
@@ -79,27 +67,15 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "18a958380ad169b22286b6864f7d0cf52d989fb4";
+    version = "19f6e0578dd0b3d08b3273eacf2246cb06e6fcfe";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "18a958380ad169b22286b6864f7d0cf52d989fb4";
+      rev = "19f6e0578dd0b3d08b3273eacf2246cb06e6fcfe";
       fetchSubmodules = false;
-      sha256 = "sha256-r7EEPvmVDWNQbwUwkZght3o7ieGgGg95N+Z48WVbST4=";
+      sha256 = "sha256-tY++51Shx/XoFsdAbajB4RXWu/u7kXwZCj6C5mhM1X4=";
     };
-    date = "2024-11-12";
-  };
-  shyfox = {
-    pname = "shyfox";
-    version = "6488ff1934c184a7b81770c67f5c3b5e983152e3";
-    src = fetchFromGitHub {
-      owner = "Naezr";
-      repo = "ShyFox";
-      rev = "6488ff1934c184a7b81770c67f5c3b5e983152e3";
-      fetchSubmodules = false;
-      sha256 = "sha256-9InO33jS+YP+aupQc8OadvGSyXEIBcTbN8kTo91hAbY=";
-    };
-    date = "2024-11-02";
+    date = "2024-11-21";
   };
   wallpaper = {
     pname = "wallpaper";

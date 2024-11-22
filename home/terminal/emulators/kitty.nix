@@ -7,7 +7,7 @@ lib.mkIf config.optional.terminal.kitty {
       catppuccin.enable = true;
       environment = { };
       keybindings = { };
-      font.name = "JetBrains Mono";
+      font.name = "${config.profile.font}";
       font.size = 14;
       settings = {
         italic_font = "auto";

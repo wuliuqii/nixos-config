@@ -11,7 +11,7 @@ lib.mkIf config.optional.wm {
     catppuccin.enable = true;
     catppuccin.icon.enable = true;
     font = {
-      name = "JetBrains Mono";
+      name = "${config.profile.font}";
       # size = 11;
     };
   };

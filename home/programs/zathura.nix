@@ -1,10 +1,10 @@
-{ ... }:
+{ config, ... }:
 {
   programs.zathura = {
     enable = true;
     catppuccin.enable = true;
     options = {
-      font = "jetbrains mono 16";
+      font = "${config.profile.font} 16";
 
       selection-clipboard = "clipboard";
       adjust-open = "best-fit";

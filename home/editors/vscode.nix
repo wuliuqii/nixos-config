@@ -14,14 +14,14 @@ lib.mkIf config.optional.dev.vscode {
       "security.workspace.trust.enabled" = false;
 
       "editor.formatOnSave" = true;
-      "editor.fontFamily" = "'JetBrains Mono'";
+      "editor.fontFamily" = "'${config.profile.font}'";
       "editor.fontSize" = 16;
       "editor.fontLigatures" = true;
       "editor.inlineSuggest.enabled" = true;
       "editor.lineNumbers" = "relative";
 
       "terminal.integrated.commandsToSkipShell" = [ "-workbench.action.quickOpen" ];
-      "terminal.integrated.fontFamily" = "'JetBrains Mono'";
+      "terminal.integrated.fontFamily" = "'${config.profile.font}'";
       "terminal.integrated.fontSize" = 16;
       "terminal.integrated.shellIntegration.enabled" = true;
 

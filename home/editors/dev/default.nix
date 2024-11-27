@@ -15,6 +15,9 @@
 
     # markdown
     marksman
+    markdownlint-cli
+    markdownlint-cli2
+    markdown-oxide
 
     # lua
     lua-language-server

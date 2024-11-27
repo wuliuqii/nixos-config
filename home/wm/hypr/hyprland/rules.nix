@@ -101,7 +101,7 @@ lib.mkIf config.optional.hypr.enable {
               in
               builtins.toString (x + 1 - (c * 10));
           in
-          [ "DP-3, ${ws}" ]
+          [ "DP-1, ${ws}" ]
         ) 5
       )
       ++ [ "eDP-1, 1" ];

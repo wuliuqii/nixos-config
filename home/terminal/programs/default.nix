@@ -43,6 +43,12 @@
     };
 
     eza.enable = true;
+
+    mcfly = {
+      enable = true;
+      enableFishIntegration = true;
+      fzf.enable = true;
+    };
   };
 
   home = {

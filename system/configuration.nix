@@ -69,6 +69,12 @@ in
     ];
   };
 
+  # run appimage
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   nixpkgs.config = {
     allowUnfree = true;
   };

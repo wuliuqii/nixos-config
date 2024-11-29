@@ -19,6 +19,21 @@
         },
         "version": "35ccfe209a808e40d6c2ca60a46cbe4faf68b690"
     },
+    "ikun-music-desktop": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "ikun-music-desktop",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-YjG4dazabrnw/Y3N2HFayM/q42++MGz6nOkN+oPUvTs=",
+            "type": "url",
+            "url": "https://github.com/ikunshare/ikun-music-desktop/releases/download/v3.5.8/ikun-music-desktop_3.5.8_x64.AppImage"
+        },
+        "version": "3.5.8"
+    },
     "librime-charcode": {
         "cargoLocks": null,
         "date": "2024-03-19",

@@ -13,6 +13,14 @@
     };
     date = "2024-06-18";
   };
+  ikun-music-desktop = {
+    pname = "ikun-music-desktop";
+    version = "3.5.8";
+    src = fetchurl {
+      url = "https://github.com/ikunshare/ikun-music-desktop/releases/download/v3.5.8/ikun-music-desktop_3.5.8_x64.AppImage";
+      sha256 = "sha256-YjG4dazabrnw/Y3N2HFayM/q42++MGz6nOkN+oPUvTs=";
+    };
+  };
   librime-charcode = {
     pname = "librime-charcode";
     version = "55e7f563e999802d41a13ba02657c1be4b2011b4";

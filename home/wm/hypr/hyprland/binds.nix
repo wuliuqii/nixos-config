@@ -51,6 +51,9 @@ lib.mkIf config.optional.hypr.enable {
           "$mainMod, Return, exec, ${config.profile.terminal}"
           "$mainMod, d, exec, neovide"
 
+          # music player
+          "$mainMod, m, exec, ikun-music-desktop"
+
           # launcher
           "$mainMod, Space, exec, anyrun"
           # browser

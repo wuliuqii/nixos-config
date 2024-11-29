@@ -4,6 +4,7 @@
     packages = with pkgs; [
       g4music
       netease-cloud-music-gtk
+      lx-music-desktop
       pavucontrol
     ];
   };

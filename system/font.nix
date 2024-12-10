@@ -10,31 +10,32 @@
       material-symbols
 
       # Sans(Serif) fonts
+      libertinus
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-emoji
       roboto
+      (google-fonts.override { fonts = [ "Inter" ]; })
 
       # monospace fonts
       jetbrains-mono
       inputs.monolisa.packages.${pkgs.system}.monolisa
 
       # nerdfonts
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.symbols-only
     ];
 
     fontconfig.defaultFonts =
       let
-        addAll = builtins.mapAttrs (k: v: [ "Symbols Nerd Font" ] ++ v ++ [ "Noto Color Emoji" ]);
+        addAll = builtins.mapAttrs (_: v: v ++ [ "Noto Color Emoji" ]);
       in
       addAll {
         serif = [
-          "Noto Serif"
-          "Noto Serif CJK SC"
+          "Libertinus Serif"
         ];
         sansSerif = [
-          "Noto Sans"
-          "Noto Sans CJK SC"
+          "Inter"
         ];
         monospace = [
           # "JetBrains Mono"

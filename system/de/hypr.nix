@@ -8,6 +8,7 @@
 lib.mkIf config.optional.hypr.enable {
   programs = {
     dconf.enable = true;
+
     light.enable = true;
     kdeconnect.enable = true;
     hyprland = {

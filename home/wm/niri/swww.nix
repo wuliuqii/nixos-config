@@ -34,7 +34,7 @@ lib.mkIf config.optional.niri {
       };
       Install.WantedBy = [ "swww.service" ];
       Service = {
-        ExecStart = ''${pkgs.swww}/bin/swww img "${pkgs.wallpaper}/catppuccin/evening-sky.png" --transition-type random'';
+        ExecStart = ''${pkgs.swww}/bin/swww img "${config.profile.wallpaper}" --transition-type random'';
         Restart = "on-failure";
         Type = "oneshot";
       };

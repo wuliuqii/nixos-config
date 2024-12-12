@@ -1,18 +1,14 @@
 {
   pkgs,
-  inputs,
   lib,
   config,
   ...
 }:
-let
-  wallpaper = "${pkgs.wallpaper}/catppuccin/evening-sky.png";
-in
 
 lib.mkIf config.optional.hypr.enable {
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload = ${wallpaper}
-    wallpaper = , ${wallpaper}
+    preload = ${config.profile.wallpaper}
+    wallpaper = , ${config.profile.wallpaper}
     ipc = off
   '';
 

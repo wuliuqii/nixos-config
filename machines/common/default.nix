@@ -36,6 +36,14 @@ with lib;
         type = types.str;
         default = "JetBrains Mono";
       };
+      darkMode = mkOption {
+        type = types.bool;
+        default = true;
+      };
+      wallpaper = mkOption {
+        type = types.str;
+        default = "${pkgs.wallpaper}/catppuccin/evening-sky.png";
+      };
     };
 
     optional = {

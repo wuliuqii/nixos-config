@@ -12,7 +12,7 @@ in
 {
   imports = [
     ./fcitx5
-    ./firefox
+    ./browser
 
     ./media.nix
     ./zathura.nix
@@ -22,6 +22,7 @@ in
   programs = {
     obs-studio = {
       enable = true;
+      catppuccin.enable = true;
       plugins = with pkgs.obs-studio-plugins; [
         wlrobs
         input-overlay
@@ -40,12 +41,6 @@ in
     slack
     qq
     wechat-uos
-    # (wechat-uos.override {
-    #   uosLicense = pkgs.fetchurl {
-    #     url = "https://aur.archlinux.org/cgit/aur.git/plain/license.tar.gz?h=wechat-uos-bwrap";
-    #     hash = "sha256-U3YAecGltY8vo9Xv/h7TUjlZCyiIQdgSIp705VstvWk=";
-    #   };
-    # })
     (wechat)
     thunderbird
 

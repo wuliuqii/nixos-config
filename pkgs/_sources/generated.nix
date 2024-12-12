@@ -71,14 +71,14 @@
   };
   wallpaper = {
     pname = "wallpaper";
-    version = "6cc862c1d5e8bcd455179f20d32b6373a42c92ea";
+    version = "4e74d42ab8ac6bc845f0c40416343d70c52a72bb";
     src = fetchFromGitHub {
       owner = "wuliuqii";
       repo = "wallpaper";
-      rev = "6cc862c1d5e8bcd455179f20d32b6373a42c92ea";
+      rev = "4e74d42ab8ac6bc845f0c40416343d70c52a72bb";
       fetchSubmodules = false;
-      sha256 = "sha256-D2ElvYY3DvLUxZeKBE+ks6OpMyhrUfNepQzcQQPnSGo=";
+      sha256 = "sha256-HFAG0kFI6QbaA7qn4PRcDs6gu6LhPw1cXwGgsdRUGsY=";
     };
-    date = "2024-08-17";
+    date = "2024-12-12";
   };
 }

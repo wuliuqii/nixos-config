@@ -57,7 +57,7 @@ lib.mkIf config.optional.hypr.enable {
           # launcher
           "$mainMod, Space, exec, anyrun"
           # browser
-          "$mainMod, B, exec, firefox"
+          "$mainMod, B, exec, ${config.profile.browser}"
           # file manager
           "$mainMod, E, exec, nautilus"
           # logout menu

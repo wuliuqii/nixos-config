@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 let
@@ -11,10 +10,9 @@ in
 lib.mkIf config.optional.hypr.enable {
   programs.hyprlock = {
     enable = true;
+    catppuccin.enable = true;
 
     settings = {
-      source = [ (config.catppuccin.sources.hyprland + "/themes/${config.catppuccin.flavor}.conf") ];
-
       general = {
         # disable_loading_bar = true;
         hide_cursor = false;
@@ -25,7 +23,7 @@ lib.mkIf config.optional.hypr.enable {
       background = [
         {
           monitor = "";
-          path = "${pkgs.wallpaper}/catppuccin/evening-sky.png"; # Only png supported
+          path = "${config.profile.wallpaper}"; # Only png supported
           # path = "screenshot";
           blur_passes = 3; # 0 disables blur
           contrast = 0.8916;

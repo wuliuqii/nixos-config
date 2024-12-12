@@ -24,8 +24,8 @@
 
   catppuccin = {
     # enable = true;
-    accent = "mauve";
-    flavor = "macchiato";
+    accent = if config.profile.darkMode then "mauve" else "flamingo";
+    flavor = if config.profile.darkMode then "macchiato" else "latte";
   };
 
   programs = {

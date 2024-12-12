@@ -16,6 +16,15 @@ lib.mkIf config.optional.wm {
     };
   };
 
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = if config.profile.darkMode then "prefer-dark" else "prefer-light";
+      };
+    };
+  };
+
   home = {
     pointerCursor = {
       package = pkgs.bibata-cursors;

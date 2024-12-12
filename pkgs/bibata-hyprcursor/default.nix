@@ -7,9 +7,9 @@
   python3Packages,
   hyprcursor,
   variant ? "modern",
-  baseColor ? "#000000",
-  outlineColor ? "#FFFFFF",
-  watchBackgroundColor ? "#000000",
+  baseColor ? "#ffffff",
+  outlineColor ? "#000000",
+  watchBackgroundColor ? "#ffffff",
   colorName ? "classic",
 }:
 let

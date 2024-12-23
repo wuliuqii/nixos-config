@@ -32,7 +32,7 @@
       vscode = false;
 
       rust = true;
-      go = false;
+      go = true;
       node = true;
       zig = false;
     };

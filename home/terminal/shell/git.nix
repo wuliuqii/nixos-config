@@ -1,5 +1,6 @@
 { config, ... }:
 {
+  catppuccin.lazygit.enable = true;
   programs = {
     git = {
       inherit (config.profile) userName userEmail;
@@ -21,7 +22,7 @@
 
     lazygit = {
       enable = true;
-      catppuccin.enable = true;
+
       settings = {
         theme.nerdFontsVersion = 3;
         update.method = false;

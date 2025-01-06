@@ -1,10 +1,10 @@
 { lib, config, ... }:
 
 lib.mkIf config.optional.terminal.foot {
+  catppuccin.foot.enable = true;
   programs.foot = {
     enable = true;
     server.enable = true;
-    catppuccin.enable = true;
     settings = {
       main = {
         font = "${config.profile.font}:size=16";

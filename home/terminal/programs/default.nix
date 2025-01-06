@@ -4,6 +4,11 @@
     ./yazi.nix
   ];
 
+  catppuccin = {
+    btop.enable = true;
+    imv.enable = true;
+    fzf.enable = true;
+  };
   programs = {
     direnv = {
       enable = true;
@@ -19,7 +24,7 @@
     btop = {
       enable = true;
       package = pkgs.btop.override { rocmSupport = true; };
-      catppuccin.enable = true;
+
       settings = {
         theme_background = false;
         update_ms = 500;
@@ -28,12 +33,11 @@
 
     imv = {
       enable = true;
-      catppuccin.enable = true;
     };
 
     fzf = {
       enable = true;
-      catppuccin.enable = true;
+
       enableFishIntegration = true;
       defaultCommand = "rg --files --hidden";
       changeDirWidgetOptions = [

@@ -5,9 +5,9 @@
   ...
 }:
 lib.mkIf config.optional.dev.helix {
+  catppuccin.helix.enable = true;
   programs.helix = {
     enable = true;
-    catppuccin.enable = true;
     extraPackages = with pkgs; [
       markdown-oxide
       nodePackages.vscode-langservers-extracted

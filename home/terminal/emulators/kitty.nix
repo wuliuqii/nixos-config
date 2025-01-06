@@ -1,10 +1,11 @@
 { lib, config, ... }:
 
 lib.mkIf config.optional.terminal.kitty {
+  catppuccin.kitty.enable = true;
   programs = {
     kitty = {
       enable = true;
-      catppuccin.enable = true;
+
       environment = { };
       keybindings = { };
       font.name = "${config.profile.font}";

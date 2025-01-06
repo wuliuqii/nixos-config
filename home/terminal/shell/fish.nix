@@ -1,9 +1,10 @@
 { pkgs, ... }:
 
 {
+  catppuccin.fish.enable = true;
   programs.fish = {
     enable = true;
-    catppuccin.enable = true;
+
     functions = {
       gitignore = "curl -sL https://www.gitignore.io/api/$argv";
     };

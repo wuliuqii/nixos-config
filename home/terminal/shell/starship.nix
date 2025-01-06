@@ -1,8 +1,9 @@
 { ... }:
 {
+  catppuccin.starship.enable = true;
   programs.starship = {
     enable = true;
-    catppuccin.enable = true;
+
     enableFishIntegration = true;
     settings = {
       character = {

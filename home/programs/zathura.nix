@@ -1,8 +1,9 @@
 { config, ... }:
 {
+  catppuccin.zathura.enable = true;
   programs.zathura = {
     enable = true;
-    catppuccin.enable = true;
+
     options = {
       font = "${config.profile.font} 16";
 

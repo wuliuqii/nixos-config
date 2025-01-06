@@ -29,11 +29,11 @@ in
     };
   };
 
+  catppuccin.grub.enable = true;
   boot = {
     loader = {
       grub = {
         enable = true;
-        catppuccin.enable = true;
         device = "nodev";
         efiSupport = true;
         useOSProber = true;

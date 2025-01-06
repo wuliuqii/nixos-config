@@ -6,10 +6,11 @@
 }:
 
 lib.mkIf config.optional.wm {
+  catppuccin.gtk.enable = true;
+  catppuccin.gtk.icon.enable = true;
   gtk = {
     enable = true;
-    catppuccin.enable = true;
-    catppuccin.icon.enable = true;
+
     font = {
       name = "${config.profile.font}";
       # size = 11;

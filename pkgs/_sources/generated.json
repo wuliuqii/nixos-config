@@ -28,11 +28,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-xOicffl+YYV0TE7JxyW/tVbB31364uW5NoSUsKaW3CU=",
+            "sha256": "sha256-naAEhzPT2pOWW6SXj7EWN7nzUCObL+zxPd2UkAGava0=",
             "type": "url",
-            "url": "https://github.com/ikunshare/ikun-music-desktop/releases/download/v3.5.10/ikun-music-desktop_3.5.10_x64.AppImage"
+            "url": "https://github.com/ikunshare/ikun-music-desktop/releases/download/v3.5.12/ikun-music-desktop_3.5.12_x64.AppImage"
         },
-        "version": "3.5.10"
+        "version": "3.5.12"
     },
     "librime-charcode": {
         "cargoLocks": null,
@@ -56,7 +56,7 @@
     },
     "librime-lua": {
         "cargoLocks": null,
-        "date": "2024-11-02",
+        "date": "2024-12-21",
         "extract": null,
         "name": "librime-lua",
         "passthru": null,
@@ -68,11 +68,11 @@
             "name": null,
             "owner": "hchunhui",
             "repo": "librime-lua",
-            "rev": "b210d0cfbd2a3cc6edd4709dd0a92c479bfca10b",
-            "sha256": "sha256-ETjLN40G4I0FEsQgNY8JM4AInqyb3yJwEJTGqdIHGWg=",
+            "rev": "e3912a4b3ac2c202d89face3fef3d41eb1d7fcd6",
+            "sha256": "sha256-zx0F41szn5qlc2MNjt1vizLIsIFQ67fp5cb8U8UUgtY=",
             "type": "github"
         },
-        "version": "b210d0cfbd2a3cc6edd4709dd0a92c479bfca10b"
+        "version": "e3912a4b3ac2c202d89face3fef3d41eb1d7fcd6"
     },
     "librime-proto": {
         "cargoLocks": null,
@@ -96,7 +96,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2024-12-19",
+        "date": "2025-01-05",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -108,11 +108,11 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "3eedb0c6c41e2f6affd1fb1057b44ab420f7c1d2",
-            "sha256": "sha256-vbiytygCiGWY/GHCHqf7Wl+GGE+boMMGS/jh3qVcr0U=",
+            "rev": "f4c62972a2ebe6145b39e98fabe4789ef2c936bb",
+            "sha256": "sha256-pegWBg6sOtcQUoNI3qxmS6ZCNQHuLcTPKAAmsR6jK0I=",
             "type": "github"
         },
-        "version": "3eedb0c6c41e2f6affd1fb1057b44ab420f7c1d2"
+        "version": "f4c62972a2ebe6145b39e98fabe4789ef2c936bb"
     },
     "wallpaper": {
         "cargoLocks": null,

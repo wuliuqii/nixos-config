@@ -9,17 +9,18 @@
     ];
   };
 
+  catppuccin.mpv.enable = true;
   programs = {
     mpv = {
       enable = true;
-      catppuccin.enable = true;
+
       defaultProfiles = [ "gpu-hq" ];
       scripts = [ pkgs.mpvScripts.mpris ];
     };
 
     # cava = {
     #   enable = true;
-    #   catppuccin.enable = true;
+    #
     # };
   };
 }

@@ -3,9 +3,9 @@
   # general file info
   home.packages = [ pkgs.exiftool ];
 
+  catppuccin.yazi.enable = true;
   programs.yazi = {
     enable = true;
-    catppuccin.enable = true;
 
     enableFishIntegration = true;
 

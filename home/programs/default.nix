@@ -19,10 +19,11 @@ in
     ./mimelist.nix
   ];
 
+  catppuccin.obs.enable = true;
   programs = {
     obs-studio = {
       enable = true;
-      catppuccin.enable = true;
+
       plugins = with pkgs.obs-studio-plugins; [
         wlrobs
         input-overlay

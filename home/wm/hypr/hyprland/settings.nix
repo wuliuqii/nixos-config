@@ -88,7 +88,7 @@ lib.mkIf config.optional.hypr.enable {
         render_titles = false;
         height = 1;
         "col.active" = "$mauve";
-        "col.inactive" = "$mauveAlpha";
+        "col.inactive" = "$surface0";
       };
 
       "col.border_active" = "$flamingo";

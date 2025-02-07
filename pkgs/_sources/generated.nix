@@ -15,10 +15,10 @@
   };
   ikun-music-desktop = {
     pname = "ikun-music-desktop";
-    version = "3.5.12";
+    version = "8.8.10";
     src = fetchurl {
-      url = "https://github.com/ikunshare/ikun-music-desktop/releases/download/v3.5.12/ikun-music-desktop_3.5.12_x64.AppImage";
-      sha256 = "sha256-naAEhzPT2pOWW6SXj7EWN7nzUCObL+zxPd2UkAGava0=";
+      url = "https://github.com/ikunshare/ikun-music-desktop/releases/download/v8.8.10/ikun-music-desktop_8.8.10_x64.AppImage";
+      sha256 = "sha256-1ZOAUUsDc419qPLAII5MiaFFtrSTd0j5IQLsfVKj1eg=";
     };
   };
   librime-charcode = {
@@ -59,15 +59,15 @@
   };
   rime-ice = {
     pname = "rime-ice";
-    version = "4ac962ef7ebb455d6ecea44fa4aad88fc14f229b";
+    version = "a07cdd0f60ba56ec7fc0329fff7bf4637d02a08f";
     src = fetchFromGitHub {
       owner = "iDvel";
       repo = "rime-ice";
-      rev = "4ac962ef7ebb455d6ecea44fa4aad88fc14f229b";
+      rev = "a07cdd0f60ba56ec7fc0329fff7bf4637d02a08f";
       fetchSubmodules = false;
-      sha256 = "sha256-BT5rCgDcZwCaOKS4Do++o+FveazE60FjzSJE4lSnUgc=";
+      sha256 = "sha256-mB5hmn+2p58TdilDz9ozGyibBqLAIjwGuu558Ye30JY=";
     };
-    date = "2025-01-12";
+    date = "2025-02-05";
   };
   wallpaper = {
     pname = "wallpaper";

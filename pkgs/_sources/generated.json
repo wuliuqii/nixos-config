@@ -15,6 +15,7 @@
             "repo": "Bibata_Cursor",
             "rev": "35ccfe209a808e40d6c2ca60a46cbe4faf68b690",
             "sha256": "sha256-kIKidw1vditpuxO1gVuZeUPdWBzkiksO/q2R/+DUdEc=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "35ccfe209a808e40d6c2ca60a46cbe4faf68b690"
@@ -28,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-naAEhzPT2pOWW6SXj7EWN7nzUCObL+zxPd2UkAGava0=",
+            "sha256": "sha256-1ZOAUUsDc419qPLAII5MiaFFtrSTd0j5IQLsfVKj1eg=",
             "type": "url",
-            "url": "https://github.com/ikunshare/ikun-music-desktop/releases/download/v3.5.12/ikun-music-desktop_3.5.12_x64.AppImage"
+            "url": "https://github.com/ikunshare/ikun-music-desktop/releases/download/v8.8.10/ikun-music-desktop_8.8.10_x64.AppImage"
         },
-        "version": "3.5.12"
+        "version": "8.8.10"
     },
     "librime-charcode": {
         "cargoLocks": null,
@@ -50,6 +51,7 @@
             "repo": "librime-charcode",
             "rev": "55e7f563e999802d41a13ba02657c1be4b2011b4",
             "sha256": "sha256-KfKkpph+2ChQpkkGKubmpg/18uPX9qUHTqJT1PSGorI=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "55e7f563e999802d41a13ba02657c1be4b2011b4"
@@ -70,6 +72,7 @@
             "repo": "librime-lua",
             "rev": "e3912a4b3ac2c202d89face3fef3d41eb1d7fcd6",
             "sha256": "sha256-zx0F41szn5qlc2MNjt1vizLIsIFQ67fp5cb8U8UUgtY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "e3912a4b3ac2c202d89face3fef3d41eb1d7fcd6"
@@ -90,13 +93,14 @@
             "repo": "librime-proto",
             "rev": "657a923cd4c333e681dc943e6894e6f6d42d25b4",
             "sha256": "sha256-HdypebfmzreSdEQBwbvRG6sJZPASP+e8Tew+GrMnpOQ=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "657a923cd4c333e681dc943e6894e6f6d42d25b4"
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2025-01-12",
+        "date": "2025-02-05",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -108,11 +112,12 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "4ac962ef7ebb455d6ecea44fa4aad88fc14f229b",
-            "sha256": "sha256-BT5rCgDcZwCaOKS4Do++o+FveazE60FjzSJE4lSnUgc=",
+            "rev": "a07cdd0f60ba56ec7fc0329fff7bf4637d02a08f",
+            "sha256": "sha256-mB5hmn+2p58TdilDz9ozGyibBqLAIjwGuu558Ye30JY=",
+            "sparseCheckout": [],
             "type": "github"
         },
-        "version": "4ac962ef7ebb455d6ecea44fa4aad88fc14f229b"
+        "version": "a07cdd0f60ba56ec7fc0329fff7bf4637d02a08f"
     },
     "wallpaper": {
         "cargoLocks": null,
@@ -130,6 +135,7 @@
             "repo": "wallpaper",
             "rev": "4e74d42ab8ac6bc845f0c40416343d70c52a72bb",
             "sha256": "sha256-HFAG0kFI6QbaA7qn4PRcDs6gu6LhPw1cXwGgsdRUGsY=",
+            "sparseCheckout": [],
             "type": "github"
         },
         "version": "4e74d42ab8ac6bc845f0c40416343d70c52a72bb"

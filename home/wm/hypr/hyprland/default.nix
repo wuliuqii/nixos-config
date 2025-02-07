@@ -20,6 +20,9 @@ in
       networkmanagerapplet
       qt6.qtwayland
       libsForQt5.qt5.qtwayland
+
+      # screenshot
+      grimblast
     ];
 
     xdg.dataFile."icons/${cursor}".source = "${cursorPackage}/share/icons/${cursor}";

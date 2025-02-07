@@ -64,6 +64,8 @@ lib.mkIf config.optional.hypr.enable {
           "$mainMod, Escape, exec, wlogout"
           # lock screen
           "$mainMod, L, exec, hyprlock"
+          # screenshot
+          "$mainMod, Z, exec, grimblast --notify copysave area"
 
           # cycle workspaces
           "$altMod, period, workspace, m+1"

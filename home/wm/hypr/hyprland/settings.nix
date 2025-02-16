@@ -18,6 +18,7 @@ lib.mkIf config.optional.hypr.enable {
       "fcitx5"
       "ags run"
       "hyprctl setcursor ${cursorName} ${toString pointer.size}"
+      "mihomo-party &"
       # "wl-paste --type text --watch cliphist store"
       # "wl-paste --type image --watch cliphist store"
     ];

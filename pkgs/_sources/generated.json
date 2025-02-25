@@ -20,21 +20,6 @@
         },
         "version": "35ccfe209a808e40d6c2ca60a46cbe4faf68b690"
     },
-    "ikun-music-desktop": {
-        "cargoLocks": null,
-        "date": null,
-        "extract": null,
-        "name": "ikun-music-desktop",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-U2tInqmPiuvhZiRTOYUoA4LHCoKOAaExj0NMolOUL9g=",
-            "type": "url",
-            "url": "https://github.com/ikunshare/ikun-music-desktop/releases/download/v8.8.13/ikun-music-desktop_8.8.13_x64.AppImage"
-        },
-        "version": "8.8.13"
-    },
     "librime-charcode": {
         "cargoLocks": null,
         "date": "2024-03-19",
@@ -100,7 +85,7 @@
     },
     "rime-ice": {
         "cargoLocks": null,
-        "date": "2025-02-11",
+        "date": "2025-02-24",
         "extract": null,
         "name": "rime-ice",
         "passthru": null,
@@ -112,12 +97,12 @@
             "name": null,
             "owner": "iDvel",
             "repo": "rime-ice",
-            "rev": "b8eb8d7bfee4cf55c761e809d49958eff3ba1687",
-            "sha256": "sha256-Z0Mjh/FNS4ZwAvfFTp7m5uOrJzor5EfkTOnFYIf508I=",
+            "rev": "e3fd65b4f806e7e7e48402ea75d8e6def6281a86",
+            "sha256": "sha256-eAOkda8IdDKBgfXNVezlgA7BmyUortonlinHdCb/Tr4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "b8eb8d7bfee4cf55c761e809d49958eff3ba1687"
+        "version": "e3fd65b4f806e7e7e48402ea75d8e6def6281a86"
     },
     "wallpaper": {
         "cargoLocks": null,

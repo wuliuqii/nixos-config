@@ -40,10 +40,10 @@ in
     discord
     # cinny-desktop
     slack
-    qq
-    wechat-uos
-    (wechat)
-    thunderbird
+    # qq
+    # wechat-uos
+    # (wechat)
+    # thunderbird
 
     nautilus
     sushi

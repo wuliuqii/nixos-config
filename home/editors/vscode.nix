@@ -10,27 +10,31 @@ lib.mkIf config.optional.dev.vscode {
     enable = true;
     package = pkgs.vscode;
 
-    userSettings = {
+    profiles.default.userSettings = {
       "security.workspace.trust.enabled" = false;
 
       "editor.formatOnSave" = true;
       "editor.fontFamily" = "'${config.profile.font}'";
-      "editor.fontSize" = 16;
+      "editor.fontSize" = 20;
       "editor.fontLigatures" = true;
       "editor.inlineSuggest.enabled" = true;
       "editor.lineNumbers" = "relative";
 
       "terminal.integrated.commandsToSkipShell" = [ "-workbench.action.quickOpen" ];
       "terminal.integrated.fontFamily" = "'${config.profile.font}'";
-      "terminal.integrated.fontSize" = 16;
+      "terminal.integrated.fontSize" = 20;
       "terminal.integrated.shellIntegration.enabled" = true;
+
+      "chat.editor.fontSize" = 18;
 
       "window.menuBarVisibility" = "toggle";
       "window.newWindowDimensions" = "inherit";
       "window.zoomLevel" = 1;
 
-      "workbench.colorTheme" = "Catppuccin Macchiato";
-      "workbench.iconTheme" = "catppuccin-macchiato";
+      "workbench.colorTheme" =
+        if config.profile.darkMode then "Catppuccin Macchiato" else "Catppuccin Latte";
+      "workbench.iconTheme" =
+        if config.profile.darkMode then "catppuccin-macchiato" else "catppuccin-latte";
       "workbench.startupEditor" = "none";
       "workbench.editorAssociations" = {
         "*.wasm" = "hexEditor.hexedit";

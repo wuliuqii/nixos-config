@@ -29,7 +29,7 @@
     dev = {
       helix = true;
       zed = true;
-      vscode = false;
+      vscode = true;
 
       rust = true;
       go = true;

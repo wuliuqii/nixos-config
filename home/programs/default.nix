@@ -50,8 +50,5 @@ in
     loupe
 
     libsForQt5.kdenlive
-
-    # proxy
-    mihomo-party
   ];
 }

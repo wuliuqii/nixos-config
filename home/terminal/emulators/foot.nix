@@ -22,14 +22,6 @@ lib.mkIf config.optional.terminal.foot {
         multiplier = 3;
       };
 
-      url = {
-        launch = "xdg-open \${url}";
-        label-letters = "sadfjklewcmpgh";
-        osc8-underline = "url-mode";
-        protocols = "http, https, ftp, ftps, file";
-        uri-characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.,~:;/?#@!$&%*+=\"'()[]";
-      };
-
       cursor = {
         style = "beam";
         beam-thickness = 1;

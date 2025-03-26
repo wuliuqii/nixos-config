@@ -41,8 +41,8 @@ in
     # cinny-desktop
     slack
     # qq
-    # wechat-uos
-    # (wechat)
+    wechat-uos
+    (wechat)
     # thunderbird
 
     nautilus

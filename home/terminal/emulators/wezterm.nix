@@ -27,6 +27,7 @@ lib.mkIf config.optional.terminal.wezterm {
         color_scheme = scheme_for_appearance(get_appearance()),
         default_cursor_style = 'SteadyBar',
         enable_scroll_bar = false,
+        font = wezterm.font '${config.profile.font}',
         font_size = 16.0,
         hide_tab_bar_if_only_one_tab = true,
         scrollback_lines = 10000,

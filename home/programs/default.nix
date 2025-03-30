@@ -50,5 +50,7 @@ in
     loupe
 
     libsForQt5.kdenlive
+
+    mihomo-party
   ];
 }

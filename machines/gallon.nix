@@ -3,7 +3,7 @@
   imports = [ ./common ];
 
   profile = {
-    terminal = "footclient";
+    terminal = "foot";
     font = "MonoLisa";
     darkMode = false;
     browser = "zen";
@@ -27,12 +27,12 @@
     };
 
     dev = {
-      helix = true;
+      helix = false;
       zed = true;
       vscode = true;
 
       rust = true;
-      go = true;
+      go = false;
       node = true;
       zig = false;
     };

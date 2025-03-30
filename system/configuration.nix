@@ -80,8 +80,6 @@ in
   };
 
   nix = {
-    package = pkgs.lix;
-
     settings = {
       substituters = [
         # "https://mirror.sjtu.edu.cn/nix-channels/store"

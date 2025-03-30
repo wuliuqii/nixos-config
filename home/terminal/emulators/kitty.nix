@@ -9,7 +9,7 @@ lib.mkIf config.optional.terminal.kitty {
       environment = { };
       keybindings = { };
       font.name = "${config.profile.font}";
-      font.size = 14;
+      font.size = 16;
       settings = {
         italic_font = "auto";
         bold_italic_font = "auto";

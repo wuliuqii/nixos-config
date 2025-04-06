@@ -23,6 +23,7 @@ lib.mkIf config.optional.dev.zed {
     extraPackages = with pkgs; [
       # LSP
       nixd
+      nixfmt-rfc-style
       nodejs
       taplo-lsp
       vscode-langservers-extracted

@@ -6,7 +6,7 @@
     terminal = "foot";
     font = "MonoLisa";
     darkMode = false;
-    browser = "zen";
+    browser = "firefox";
     wallpaper = "${pkgs.wallpaper}/7qlsln.jpg";
   };
 

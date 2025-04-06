@@ -11,11 +11,8 @@ My personal nixos configuration.
 
 ## Screen Previews
 
-Hyprland with ags widgets.
-
-![desktop](https://github.com/wuliuqii/nixos-config/assets/34090258/193822d0-825c-4d22-af2f-4724fec142c5)
-
-![neofetch](https://github.com/wuliuqii/nixos-config/assets/34090258/03dd3462-603e-4df1-90d5-df7ad08faaa2)
+> [!NOTE]
+> Cureently, I am working on a new desktop environment using my own widgets based on [mgs](https://github.com/wuliuqii/mgs).
 
 ## Inspirations
 

@@ -58,21 +58,16 @@ lib.mkIf config.optional.dev.vscode {
         };
       };
 
-      "gopls" = {
-        "ui.semanticTokens" = true;
-      };
-
       "rust-analyzer.check.command" = "clippy";
       "rust-analyzer.typing.autoClosingAngleBrackets.enable" = true;
-
-      "zig.path" = "${pkgs.zig}/bin/zig";
-      "zig.zls.path" = "${pkgs.zls}/bin/zls";
 
       "github.copilot.enable" = {
         "markdown" = "true";
       };
 
       "javascript.updateImportsOnFileMove.enabled" = "always";
+
+      "github.copilot.nextEditSuggestions.enabled" = true;
 
       # "extensions.experimental.affinity" = {
       #   "jasew.vscode-helix-emulation" = 1;

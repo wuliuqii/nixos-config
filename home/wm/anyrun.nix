@@ -9,8 +9,6 @@ let
   anyrunPkgs = inputs.anyrun.packages.${pkgs.system};
 in
 {
-  imports = [ inputs.anyrun.homeManagerModules.default ];
-
   config = lib.mkIf config.optional.wm {
     programs.anyrun = {
       enable = true;

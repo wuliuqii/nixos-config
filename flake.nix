@@ -38,8 +38,6 @@
       url = "github:lilyinstarlight/nixos-cosmic";
     };
 
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
     #WARN: private repo
     monolisa = {
       url = "git+ssh://git@github.com/wuliuqii/MonoLisa";
@@ -72,7 +70,6 @@
 
             inputs.home-manager.nixosModules.home-manager
             inputs.catppuccin.nixosModules.catppuccin
-            inputs.chaotic.nixosModules.default
             (
               { config, ... }:
               {
@@ -88,14 +85,18 @@
                       [ ./home ]
                       ++ [
                         inputs.sops-nix.homeManagerModules.sops
-                        inputs.catppuccin.homeManagerModules.catppuccin
+                        inputs.catppuccin.homeModules.catppuccin
                       ];
                   };
                 };
               }
             )
 
-            { nixpkgs.overlays = [ selfPkgs.overlay ]; }
+            {
+              nixpkgs.overlays = [
+                selfPkgs.overlay
+              ];
+            }
           ];
         };
       };

@@ -8,11 +8,11 @@
 
     graphics.enable = true;
 
-    amdgpu = {
-      amdvlk.enable = true;
-      initrd.enable = true;
-      opencl.enable = true;
-    };
+    # amdgpu = {
+    #   amdvlk.enable = true;
+    #   initrd.enable = true;
+    #   opencl.enable = true;
+    # };
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];

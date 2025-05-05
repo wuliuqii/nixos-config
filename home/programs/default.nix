@@ -51,6 +51,8 @@ in
 
     libsForQt5.kdenlive
 
+    obsidian
+
     mihomo-party
   ];
 }

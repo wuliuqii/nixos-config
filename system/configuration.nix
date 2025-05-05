@@ -77,7 +77,12 @@ in
 
   nixpkgs.config = {
     allowUnfree = true;
+
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "mihomo-party-1.7.2"
+  ];
 
   nix = {
     settings = {

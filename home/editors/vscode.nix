@@ -1,8 +1,7 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
+{ lib
+, config
+, pkgs
+, ...
 }:
 
 lib.mkIf config.optional.dev.vscode {
@@ -62,7 +61,7 @@ lib.mkIf config.optional.dev.vscode {
       "rust-analyzer.typing.autoClosingAngleBrackets.enable" = true;
 
       "github.copilot.enable" = {
-        "markdown" = "true";
+        "markdown" = true;
       };
 
       "javascript.updateImportsOnFileMove.enabled" = "always";

@@ -11,7 +11,6 @@
   };
 
   optional = {
-    cosmic = false;
     wm = true;
     hypr = {
       enable = true;

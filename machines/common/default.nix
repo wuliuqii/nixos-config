@@ -47,9 +47,6 @@ with lib;
     };
 
     optional = {
-      cosmic = lib.mkEnableOption "cosmic profile" // {
-        default = false;
-      };
       wm = lib.mkEnableOption "wm profile" // {
         default = true;
       };

@@ -5,7 +5,6 @@
     ./vscode.nix
 
     ./zed
-    ./nvim
     ./dev
   ];
 }

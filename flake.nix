@@ -19,8 +19,6 @@
 
     home-manager.url = "github:nix-community/home-manager";
 
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-
     niri.url = "github:sodiboo/niri-flake";
 
     anyrun.url = "github:Kirottu/anyrun";

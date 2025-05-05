@@ -26,7 +26,7 @@
     };
 
     dev = {
-      helix = false;
+      helix = true;
       zed = true;
       vscode = true;
 

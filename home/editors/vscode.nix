@@ -1,7 +1,8 @@
-{ lib
-, config
-, pkgs
-, ...
+{
+  lib,
+  config,
+  pkgs,
+  ...
 }:
 
 lib.mkIf config.optional.dev.vscode {
@@ -48,11 +49,11 @@ lib.mkIf config.optional.dev.vscode {
 
       "nixEnvSelector.suggestion" = false;
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nil";
+      "nix.serverPath" = "nixd";
       "nix.serverSettings" = {
         "nil" = {
           "formatting" = {
-            "command" = [ "nixpkgs-fmt" ];
+            "command" = [ "nixfmt-rfc-style" ];
           };
         };
       };

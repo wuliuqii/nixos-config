@@ -26,7 +26,7 @@ with lib;
       };
       editor = mkOption {
         type = types.str;
-        default = "nvim";
+        default = "vi";
       };
       shell = mkOption {
         type = types.package;

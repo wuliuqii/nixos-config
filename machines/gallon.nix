@@ -3,6 +3,7 @@
   imports = [ ./common ];
 
   profile = {
+    editor = "hx";
     terminal = "foot";
     font = "MonoLisa";
     darkMode = false;

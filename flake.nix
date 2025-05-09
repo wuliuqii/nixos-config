@@ -30,6 +30,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mgs = {
+      url = "github:wuliuqii/mgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     #WARN: private repo
     monolisa = {
       url = "git+ssh://git@github.com/wuliuqii/MonoLisa";
@@ -38,10 +43,11 @@
   };
 
   outputs =
-    inputs@{ self
-    , nixpkgs
-    , home-manager
-    , ...
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      ...
     }:
     let
       system = "x86_64-linux";

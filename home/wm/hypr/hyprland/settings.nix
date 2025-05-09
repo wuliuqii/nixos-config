@@ -17,6 +17,8 @@ lib.mkIf config.optional.hypr.enable {
     exec-once = [
       "fcitx5"
       "hyprctl setcursor ${cursorName} ${toString pointer.size}"
+      "mgs"
+      "mihomo-party --ozone-platform=wayland"
       # "wl-paste --type text --watch cliphist store"
       # "wl-paste --type image --watch cliphist store"
     ];

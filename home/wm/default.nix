@@ -8,6 +8,6 @@
     ./wlogout.nix
     ./theme.nix
     ./udiskie.nix
-    ./ags.nix
+    ./mgs.nix
   ];
 }

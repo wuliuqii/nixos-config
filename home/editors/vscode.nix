@@ -18,7 +18,6 @@ lib.mkIf config.optional.dev.vscode {
       "editor.fontSize" = 20;
       "editor.fontLigatures" = true;
       "editor.inlineSuggest.enabled" = true;
-      "editor.lineNumbers" = "relative";
 
       "terminal.integrated.commandsToSkipShell" = [ "-workbench.action.quickOpen" ];
       "terminal.integrated.fontFamily" = "'${config.profile.font}'";

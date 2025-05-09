@@ -68,6 +68,8 @@ lib.mkIf config.optional.hypr.enable {
         "workspace 10, class:^(steam)$"
         "float, class:^(steam)$, title:^(好友列表)$"
 
+        "workspace 9, class:^(mihomo-party)$"
+
         "dimaround, class:^(xdg-desktop-portal-gtk|polkit-gnome-authentication-agent-1)$"
 
         "rounding 0, xwayland:1"

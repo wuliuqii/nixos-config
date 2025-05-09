@@ -38,6 +38,21 @@
         "type": "github"
       }
     },
+    "crane": {
+      "locked": {
+        "lastModified": 1746291859,
+        "narHash": "sha256-DdWJLA+D5tcmrRSg5Y7tp/qWaD05ATI4Z7h22gd1h7Q=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "dfd9a8dfd09db9aad544c4d3b6c47b12562544a5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -92,6 +107,28 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "mgs": {
+      "inputs": {
+        "crane": "crane",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1746799858,
+        "narHash": "sha256-buIHYuDjWVJBDG1L7rBquxtN1t96kRarKrn2yDt8Vl0=",
+        "owner": "wuliuqii",
+        "repo": "mgs",
+        "rev": "7e82ea57e34dee9cee2d37ee851c230b4521bbba",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wuliuqii",
+        "repo": "mgs",
         "type": "github"
       }
     },
@@ -273,10 +310,32 @@
         "anyrun": "anyrun",
         "catppuccin": "catppuccin",
         "home-manager": "home-manager",
+        "mgs": "mgs",
         "monolisa": "monolisa",
         "niri": "niri",
         "nixpkgs": "nixpkgs_5",
         "sops-nix": "sops-nix"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "mgs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1746585402,
+        "narHash": "sha256-Pf+ufu6bYNA1+KQKHnGMNEfTwpD9ZIcAeLoE2yPWIP0=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "72dd969389583664f87aa348b3458f2813693617",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "sops-nix": {

@@ -10,6 +10,5 @@
     ./services.nix
     ./virtualisation.nix
     ./network.nix
-    ./steam.nix
   ];
 }

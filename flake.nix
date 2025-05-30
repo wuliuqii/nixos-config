@@ -32,7 +32,6 @@
 
     mgs = {
       url = "github:wuliuqii/mgs";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     #WARN: private repo

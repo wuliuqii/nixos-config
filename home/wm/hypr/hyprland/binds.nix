@@ -24,6 +24,7 @@ lib.mkIf config.optional.hypr.enable {
       monitor = [
         "DP-1, preferred, auto, 2"
         "eDP-1, preferred, 0x0, auto"
+        "HDMI-A-1, preferred, auto, 2"
       ];
 
       # mouse movements

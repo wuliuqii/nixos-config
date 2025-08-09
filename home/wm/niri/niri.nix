@@ -99,7 +99,7 @@
             scale = 2.0;
           };
 
-          "DP-3" = {
+          "DP-1" = {
             scale = 2.0;
             position.x = 1440;
             position.y = 0;

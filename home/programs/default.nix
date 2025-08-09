@@ -36,13 +36,13 @@ in
     xdg-utils
 
     # Social Apps
-    telegram-desktop
-    discord
+    # telegram-desktop
+    # discord
     # cinny-desktop
-    slack
+    # slack
     # qq
-    wechat-uos
-    (wechat)
+    # wechat-uos
+    # (wechat)
     # thunderbird
 
     nautilus
@@ -51,7 +51,7 @@ in
 
     libsForQt5.kdenlive
 
-    obsidian
+    # obsidian
 
     mihomo-party
   ];

@@ -11,6 +11,7 @@
       inotify-tools
       libnotify
       wl-clipboard
+      overskride
 
       inputs.mgs.packages.${pkgs.system}.default
     ];

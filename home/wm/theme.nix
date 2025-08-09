@@ -6,14 +6,22 @@
 }:
 
 lib.mkIf config.optional.wm {
-  catppuccin.gtk.enable = true;
-  catppuccin.gtk.icon.enable = true;
   gtk = {
     enable = true;
 
     font = {
       name = "${config.profile.font}";
       # size = 11;
+    };
+
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+
+    theme = {
+      name = "adw-gtk3-light";
+      package = pkgs.adw-gtk3;
     };
   };
 

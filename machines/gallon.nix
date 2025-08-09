@@ -18,7 +18,7 @@
     };
     niri = false;
 
-    podman = false;
+    podman = true;
 
     terminal = {
       foot = true;

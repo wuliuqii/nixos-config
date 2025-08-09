@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 lib.mkIf config.optional.podman {
 
@@ -6,6 +11,7 @@ lib.mkIf config.optional.podman {
     podman = {
       enable = true;
       dockerCompat = true;
+      extraPackages = [ pkgs.podman-compose ];
     };
   };
 }

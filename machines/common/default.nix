@@ -59,7 +59,7 @@ with lib;
         default = false;
       };
 
-      podman = lib.mkEnableOption "podman profile";
+      vir = lib.mkEnableOption "virtualisation profile";
 
       terminal = {
         wezterm = lib.mkEnableOption "wezterm profile";

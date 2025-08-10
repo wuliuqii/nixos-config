@@ -30,8 +30,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mgs = {
-      url = "github:wuliuqii/mgs";
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     #WARN: private repo
@@ -77,12 +78,13 @@
                   };
                   sharedModules = [ (./. + "/machines/${config.profile.userName}.nix") ];
                   users.${config.profile.userName} = {
-                    imports =
-                      [ ./home ]
-                      ++ [
-                        inputs.sops-nix.homeManagerModules.sops
-                        inputs.catppuccin.homeModules.catppuccin
-                      ];
+                    imports = [
+                      ./home
+                    ]
+                    ++ [
+                      inputs.sops-nix.homeManagerModules.sops
+                      inputs.catppuccin.homeModules.catppuccin
+                    ];
                   };
                 };
               }

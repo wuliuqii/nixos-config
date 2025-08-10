@@ -22,7 +22,7 @@ lib.mkIf config.optional.hypr.enable {
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [
-        "DP-1, 5120x2160@120, auto, 2"
+        "DP-1, preferred, auto, 2"
         "eDP-1, preferred, 0x0, auto"
       ];
 

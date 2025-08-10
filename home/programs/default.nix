@@ -17,6 +17,8 @@ in
     ./media.nix
     ./zathura.nix
     ./mimelist.nix
+    ./gtk.nix
+    ./qt.nix
   ];
 
   catppuccin.obs.enable = true;

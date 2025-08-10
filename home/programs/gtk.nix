@@ -1,11 +1,9 @@
 {
-  lib,
   config,
   pkgs,
   ...
 }:
-
-lib.mkIf config.optional.wm {
+{
   gtk = {
     enable = true;
 
@@ -42,11 +40,5 @@ lib.mkIf config.optional.wm {
       x11.enable = true;
       gtk.enable = true;
     };
-  };
-
-  qt = {
-    enable = true;
-    style.name = "kvantum";
-    platformTheme.name = "kvantum";
   };
 }

@@ -23,6 +23,11 @@ in
 
       # screenshot
       grimblast
+
+      inotify-tools
+      libnotify
+      wl-clipboard
+      overskride
     ];
 
     xdg.dataFile."icons/${cursor}".source = "${cursorPackage}/share/icons/${cursor}";

@@ -24,6 +24,7 @@
       c = "clear";
       lg = "lazygit";
       vd = "neovide";
+      vim = "hx";
     };
     plugins = [
       {

@@ -19,6 +19,7 @@ in
     ./mimelist.nix
     ./gtk.nix
     ./qt.nix
+    ./ai.nix
   ];
 
   catppuccin.obs.enable = true;
